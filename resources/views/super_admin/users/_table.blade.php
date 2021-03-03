@@ -1,6 +1,6 @@
 @if($users->count() > 0)
     <div class="table-responsive">
-        <table class="table mb-0 thead-border-top-0 table-striped">
+        <table class="table mb-0 thead-border-top-0 table-striped text-center">
             <thead>
                 <tr>
                     <th class="w-30px" class="text-center">{{ __('messages.#id') }}</th>
@@ -11,15 +11,15 @@
                     <th>{{ __('messages.role') }}</th>
                     <th class="text-center width: 120px;">{{ __('messages.created_at') }}</th>
                     <th class="w-50px">{{ __('messages.edit') }}</th>
-                </tr> 
+                </tr>
             </thead>
-            <tbody class="list" id="users">
+            <tbody class="list " id="users">
                 @foreach ($users as $user)
                     <tr>
                         <td>
-                            <div class="badge">#{{ $user->id }}</div>
+                            <div class="badge badge-info">#{{ $user->id }}</div>
                         </td>
-                        <td> 
+                        <td>
                             <p class="mb-0">{{ $user->currentCompany()->name }}</p>
                         </td>
                         <td>
@@ -30,9 +30,9 @@
                         </td>
                         <td>
                             @if($user->currentSubscriptionPlan())
-                                <a class="mb-0" href="{{ route('super_admin.plans.edit', $user->currentSubscriptionPlan()->id) }}">{{ $user->currentSubscriptionPlan()->name }}</a>
+                                <a class="mb-0 btn btn-primary btn-sm" href="{{ route('super_admin.plans.edit', $user->currentSubscriptionPlan()->id) }}">{{ $user->currentSubscriptionPlan()->name }}</a>
                             @else
-                                <a class="mb-0">-</a>
+                                <a class="mb-0">-----</a>
                             @endif
                         </td>
                         <td>
@@ -44,8 +44,8 @@
                                 <p class="mb-0">{{ __('messages.staff') }}</p>
                             @endif
                         </td>
-                        <td class="text-center"><i class="material-icons icon-16pt text-muted-light mr-1">today</i> {{ $user->created_at->format('Y-m-d') }}</td>
-                        <td><a href="{{ route('super_admin.users.edit', $user->id) }}" class="btn btn-sm btn-link"><i class="material-icons icon-16pt">arrow_forward</i></a> </td>
+                        <td class="text-center"><i class="ft-calendar ft-ca"></i> {{ $user->created_at->format('Y-m-d') }}</td>
+                        <td><a href="{{ route('super_admin.users.edit', $user->id) }}" class="btn btn-sm btn-link text-warning"><i class="ft-arrow-right"></i></a> </td>
                     </tr>
                 @endforeach
             </tbody>
