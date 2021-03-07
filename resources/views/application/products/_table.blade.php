@@ -15,7 +15,7 @@
                 @foreach ($products as $product)
                     <tr>
                         <td>
-                            <div class="badge badge-light">
+                            <div class="badge badge-primary">
                                 <a class="mb-0" href="{{ route('products.edit', ['product' => $product->id, 'company_uid' => $currentCompany->uid]) }}">
                                     #{{ $product->id }}
                                 </a>
@@ -33,12 +33,13 @@
                             {{ money($product->price, $product->currency_code) }}
                         </td>
                         <td class="text-center">
+                            <i class="ft-calendar"></i>
                             {{ $product->formatted_created_at }}
                         </td>
                         <td>
                             <a href="{{ route('products.edit', ['product' => $product->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-link">
-                                <i class="material-icons icon-16pt">arrow_forward</i>
-                            </a> 
+                                <i class="ft-arrow-right"></i>
+                            </a>
                         </td>
                     </tr>
                 @endforeach
@@ -50,7 +51,7 @@
     </div>
 @else
     <div class="row justify-content-center card-body pb-0 pt-5">
-        <i class="material-icons fs-64px">store</i>
+        <i class="ft-upload-cloud font-20"></i>
     </div>
     <div class="row justify-content-center card-body pb-5">
         <p class="h4">{{ __('messages.no_products_yet') }}</p>

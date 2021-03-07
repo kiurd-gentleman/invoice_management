@@ -18,6 +18,13 @@
 <!-- BEGIN PAGE LEVEL JS-->
 <script type="text/javascript" src="{{asset('/app-assets/js/scripts/ui/br')}}eadcrumbs-with-stats.js"></script>
 <script src="{{asset('/app-assets/js/scripts/pages/dashboard-ecommerce.js')}}" type="text/javascript"></script>
+
+<!-- BEGIN PAGE VENDOR JS-->
+<script src="{{asset('app-assets/vendors/js/forms/select/select2.full.min.js')}}" type="text/javascript"></script>
+<!-- END PAGE VENDOR JS-->
+<!-- BEGIN PAGE LEVEL JS-->
+<script src="{{asset('app-assets/js/scripts/forms/select/form-select2.js')}}" type="text/javascript"></script>
+<!-- END PAGE LEVEL JS-->
 <!-- END PAGE LEVEL JS-->
 
 @yield('page_body_scripts')

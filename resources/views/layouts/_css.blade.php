@@ -31,7 +31,11 @@
 <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/core/colors/palette-gradient.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/pages/timeline.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/pages/dashboard-ecommerce.css')}}">
-<!-- END Page Level CSS-->
+
+
+<!-- BEGIN VENDOR CSS-->
+{{--<link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/vendors.css')}}">--}}
+<link rel="stylesheet" type="text/css" href="{{asset('app-assets/vendors/css/forms/selects/select2.min.css')}}">
 <!-- BEGIN Custom CSS-->
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
 <!-- END Custom CSS-->

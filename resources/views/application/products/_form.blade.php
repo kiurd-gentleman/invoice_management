@@ -6,7 +6,7 @@
         </div>
         <div class="col-lg-8 card-form__body card-body">
             <div class="row">
-                <div class="col"> 
+                <div class="col">
                     <div class="form-group required">
                         <label for="name">{{ __('messages.name') }}</label>
                         <input name="name" type="text" class="form-control" placeholder="{{ __('messages.name') }}" value="{{ $product->name }}" required>
@@ -18,8 +18,8 @@
                 <div class="col">
                     <div class="form-group select-container required">
                         <label for="unit">{{ __('messages.unit') }}</label>
-                        <select id="unit_id" name="unit_id" data-toggle="select" class="form-control select2-hidden-accessible select-with-footer" data-select2-id="unit_id" data-minimum-results-for-search="-1">
-                            <option disabled selected>{{ __('messages.select_unit') }}</option>
+                        <select id="unit_id" name="unit_id" data-toggle="select" class="form-control select2" multiple data-select2-id="unit_id" data-minimum-results-for-search="-1">
+                            <option disabled >{{ __('messages.select_unit') }}</option>
                             @foreach(get_product_units_select2_array($currentCompany->id) as $option)
                                 <option value="{{ $option['id'] }}" {{ $product->unit_id == $option['id'] ? 'selected=""' : '' }}>{{ $option['text'] }}</option>
                             @endforeach
@@ -40,8 +40,8 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group select-container">
-                        <label for="taxes">{{ __('messages.taxes') }}</label> 
-                        <select id="taxes" name="taxes[]" data-toggle="select" multiple="multiple" class="form-control select2-hidden-accessible select-with-footer" data-select2-id="taxes">
+                        <label for="taxes">{{ __('messages.taxes') }}</label>
+                        <select id="taxes" name="taxes[]"  multiple="multiple" class="select2 form-control" >
                             @foreach(get_tax_types_select2_array($currentCompany->id) as $option)
                                 <option value="{{ $option['id'] }}" {{ $product->hasTax($option['id']) ? 'selected=""' : '' }}>{{ $option['text'] }}</option>
                             @endforeach
@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </div>
- 
+
             <div class="row">
                 <div class="col">
                     <div class="form-group">
@@ -73,7 +73,7 @@
             @endif
 
             <div class="form-group text-center mt-3">
-                <button type="button" class="btn btn-primary form_with_price_input_submit">{{ __('messages.save_product') }}</button>
+                <button type="submit" class="btn btn-primary form_with_price_input_submit">{{ __('messages.save_product') }}</button>
             </div>
         </div>
     </div>
