@@ -90,15 +90,15 @@
     <div class="row">
         <div id="recent-transactions" class="col-12">
             <div class="card">
-        <div class="card-header bg-white d-flex align-items-center">
-            <h3 class="card-header__title mb-0 fs-1-3rem">{{ __('messages.earnings_this_year') }}</h3>
-        </div>
-        <div class="card-body">
-            <div class="chart">
-                <canvas id="earningsChart" class="chart-canvas chartjs-render-monitor" width="1998" height="600"></canvas>
+                <div class="card-header bg-white d-flex align-items-center">
+                    <h3 class="card-header__title mb-0 fs-1-3rem">{{ __('messages.earnings_this_year') }}</h3>
+                </div>
+                <div class="card-body">
+                    <div class="chart">
+                        <canvas id="earningsChart" class="chart-canvas chartjs-render-monitor" width="1998" height="600"></canvas>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
         </div>
     </div>
     <div class="row">

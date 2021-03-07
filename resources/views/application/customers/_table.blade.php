@@ -16,18 +16,18 @@
                 @foreach ($customers as $customer)
                     <tr>
                         <td>
-                            <div class="badge badge-light">#{{ $customer->id }}</div>
+                            <div class="badge badge-info">#{{ $customer->id }}</div>
                         </td>
                         <td>
                             <div class="d-flex align-items-center">
                                 <div class="d-flex align-items-center">
-                                    <i class="material-icons icon-16pt mr-1 text-primary">business</i>
+                                    <i class="ft-briefcase icon-16pt mr-1 text-primary"></i>
                                     <a href="{{ route('customers.details', ['customer' => $customer->id,'company_uid' => $currentCompany->uid]) }}">{{ $customer->display_name }}</a>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center">
                                 <small class="text-muted">
-                                    <i class="material-icons icon-16pt mr-1">pin_drop</i>
+                                    <i class="ft-map-pin mr-1 text-danger"></i>
                                     {{ $customer->displayShortAddress('billing') }}
                                 </small>
                             </div>
@@ -35,27 +35,27 @@
                         <td>
                             <div class="d-flex align-items-center">
                                 <div class="d-flex align-items-center">
-                                    <i class="material-icons icon-16pt mr-1 text-muted">person</i>
+                                    <i class="ft-user mr-1 text-primary"></i>
                                     <p class="text-muted mb-0">{{ $customer->contact_name }}</p>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="d-flex align-items-center">
                                 <small class="text-muted">
-                                    <i class="material-icons icon-16pt mr-1">email</i>
+                                    <i class="ft-mail mr-1 text-danger"></i>
                                     {{ $customer->email }}
                                 </small>
                             </div>
-                            
+
                         </td>
                         <td class="w-80px" class="text-center">
-                            <i class="material-icons icon-16pt text-muted mr-1">receipt</i>
+                            <i class="ft-file-text mr-1 text-info"></i>
                             <a class="text-muted">{{ $customer->invoices()->count() }}</a>
                         </td>
                         <td class="text-center">
                             <strong>{{ money($customer->invoice_due_amount, $customer->currency_code) }}</strong>
                         </td>
-                        <td class="text-center"><i class="material-icons icon-16pt text-muted-light mr-1">today</i> {{ $customer->created_at->format('Y-m-d') }}</td>
-                        <td><a href="{{ route('customers.details', ['customer' => $customer->id,'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-link"><i class="material-icons icon-16pt">arrow_forward</i></a> </td>
+                        <td class="text-center"><i class="ft-calendar mr-1 text-primary"></i> {{ $customer->created_at->format('Y-m-d') }}</td>
+                        <td><a href="{{ route('customers.details', ['customer' => $customer->id,'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-link"><i class="ft-arrow-right"></i></a> </td>
                     </tr>
                 @endforeach
             </tbody>

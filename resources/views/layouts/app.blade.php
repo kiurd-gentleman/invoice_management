@@ -24,6 +24,7 @@
                 </div>
             </div>
         </div>
+
     @include('layouts._js')
     @include('layouts._flash')
 </body>

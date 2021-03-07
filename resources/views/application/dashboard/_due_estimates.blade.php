@@ -9,7 +9,7 @@
                                 <strong>{{ $estimate->estimate_number }}</strong>
                             </a>
                         </div>
-                    </td> 
+                    </td>
                     <td class="text-center">
                         <a href="{{ route('customers.details', ['customer' => $estimate->customer->id, 'company_uid' => $currentCompany->uid]) }}">
                             {{ $estimate->customer->display_name }}
@@ -39,7 +39,7 @@
     </table>
 @else
     <div class="row justify-content-center card-body pb-0 pt-5">
-        <i class="material-icons fs-64px">description</i>
+        <i class="ft-mote fs-64px"></i>
     </div>
     <div class="row justify-content-center card-body pb-5">
         <p class="h4">{{ __('messages.no_due_estimates') }}</p>

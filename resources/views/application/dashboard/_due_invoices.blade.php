@@ -1,5 +1,5 @@
 @if($dueInvoices->count() > 0)
-    <table class="table table-striped border-bottom mb-0">
+    <table class="table table-hover table-xl mb-0">
         <tbody>
             @foreach ($dueInvoices as $invoice)
                 <tr>
@@ -47,7 +47,7 @@
     </table>
 @else
     <div class="row justify-content-center card-body pb-0 pt-5">
-        <i class="material-icons fs-64px">receipt</i>
+        <i class="ft-repeat fs-64px"></i>
     </div>
     <div class="row justify-content-center card-body pb-5">
         <p class="h4">{{ __('messages.no_due_invoices') }}</p>

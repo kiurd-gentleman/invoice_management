@@ -186,7 +186,7 @@
 {{--    </div>--}}
 {{--</div>--}}
 <div class="header-navbar navbar-expand-sm navbar navbar-horizontal navbar-fixed navbar-dark navbar-without-dd-arrow navbar-shadow" role="navigation" data-menu="menu-wrapper">
-    <div class="navbar-container main-menu-content" data-menu="menu-container">
+    <div class="navbar-container main-menu-content " data-menu="menu-container">
         @if(auth()->user()->hasRole('super_admin'))
         <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
             <li class="dropdown nav-item" >

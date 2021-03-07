@@ -1,9 +1,6 @@
-<div class="card card-form">
-    <div class="row no-gutters">
-        <div class="col-lg-4 card-body">
-            <p><strong class="headings-color">{{ __('messages.user_information') }}</strong></p>
-        </div>
-        <div class="col-lg-8 card-form__body card-body">
+<div >
+    <div class="form-body">
+        <div class="col-lg-12">
             <div class="row">
                 <div class="col">
                     <div class="form-group">
@@ -20,7 +17,7 @@
                                     <a class="btn btn-sm btn-light choose-button">{{ __('messages.choose_photo') }}</a>
                                 </div>
                             </div>
-                        </label> 
+                        </label>
                     </div>
                 </div>
             </div>
@@ -95,7 +92,7 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <label for="plan_id">{{ __('messages.plans') }}</label> 
+                        <label for="plan_id">{{ __('messages.plans') }}</label>
                         <select name="plan_id" data-toggle="select" class="form-control select2-hidden-accessible" data-select2-id="plan_id">
                             <option selected value="">{{ __('messages.no_plan') }}</option>
                             @foreach(get_all_plans_available() as $option)
@@ -104,7 +101,7 @@
                         </select>
                     </div>
                 </div>
-            </div> 
+            </div>
 
             <div class="form-group text-center mt-5">
                 <button type="submit" class="btn btn-primary">{{ __('messages.save_user') }}</button>

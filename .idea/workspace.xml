@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a69208ad-0c3d-48b9-aa75-95a2cd7e3f54" name="Default Changelist" comment="" />
+    <list default="true" id="a69208ad-0c3d-48b9-aa75-95a2cd7e3f54" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/foxtrot-saas-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/foxtrot-saas-master.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/customers/_filters.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/customers/_filters.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/customers/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/customers/_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/customers/_table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/customers/_table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/customers/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/customers/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/customers/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/customers/details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/customers/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/customers/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/customers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/customers/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/dashboard/_due_estimates.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/dashboard/_due_estimates.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/dashboard/_due_invoices.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/dashboard/_due_invoices.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/dashboard/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/_drawer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/_drawer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/super_admin/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/super_admin/dashboard/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/super_admin/users/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/super_admin/users/_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/super_admin/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/super_admin/users/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/super_admin/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/super_admin/users/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/super_admin/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/super_admin/users/index.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,6 +170,10 @@
       <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
       <path value="$PROJECT_DIR$/vendor/clue/stream-filter" />
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
     </include_path>
   </component>
   <component name="ProjectId" id="1p9QPybUZjKY5YoEGjlsmFp1WR6" />
@@ -181,6 +208,9 @@
       <updated>1614592805214</updated>
       <workItem from="1614592807442" duration="6599000" />
       <workItem from="1614671765060" duration="14315000" />
+      <workItem from="1614763842656" duration="6861000" />
+      <workItem from="1614831188036" duration="5138000" />
+      <workItem from="1615100884152" duration="10206000" />
     </task>
     <servers />
   </component>
@@ -188,9 +218,9 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1614679470241">
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1615102479582">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1614679470241" />
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1615102479582" />
   </component>
 </project>

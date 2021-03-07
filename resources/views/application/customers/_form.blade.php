@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group required">
-                        <label for="currency_id">{{ __('messages.currency') }}</label> 
+                        <label for="currency_id">{{ __('messages.currency') }}</label>
                         <select name="currency_id" data-toggle="select" class="form-control select2-hidden-accessible" data-select2-id="currency_id" required>
                             <option disabled selected>{{ __('messages.select_currency') }}</option>
                             @foreach(get_currencies_select2_array() as $option)
