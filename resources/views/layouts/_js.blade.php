@@ -26,6 +26,18 @@
 <script src="{{asset('app-assets/js/scripts/forms/select/form-select2.js')}}" type="text/javascript"></script>
 <!-- END PAGE LEVEL JS-->
 <!-- END PAGE LEVEL JS-->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+    $( function() {
+        $( ".datepicker" ).datepicker(
+            {   dateFormat: 'yy-mm-dd',
+                changeMonth: true,
+                changeYear: true,
+            }
+        );
+    } );
+</script>
 
 @yield('page_body_scripts')
 

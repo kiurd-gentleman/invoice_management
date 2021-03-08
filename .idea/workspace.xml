@@ -3,12 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a69208ad-0c3d-48b9-aa75-95a2cd7e3f54" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/products/_filters.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/products/_filters.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/products/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/products/_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/products/_table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/products/_table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/products/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/products/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/products/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/_filters.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/_filters.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/_js.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/_js.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/_css.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/_css.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/_js.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/_js.blade.php" afterDir="false" />
     </list>
@@ -197,7 +196,8 @@
       <workItem from="1614671765060" duration="14315000" />
       <workItem from="1614763842656" duration="6861000" />
       <workItem from="1614831188036" duration="5138000" />
-      <workItem from="1615100884152" duration="15576000" />
+      <workItem from="1615100884152" duration="15942000" />
+      <workItem from="1615176726163" duration="17233000" />
     </task>
     <servers />
   </component>

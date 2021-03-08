@@ -1,8 +1,8 @@
 <script>
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-    
+
     $("#customer").select2({
-        ajax: { 
+        ajax: {
             url: "{{ route('ajax.customers', ['company_uid' => $currentCompany->uid]) }}",
             type: "get",
             dataType: "json",
@@ -29,7 +29,7 @@
     });
 
     $("#customer").change(function() {
-        setupCustomer();            
+        setupCustomer();
     });
 
     $("#add_product_row").click(function() {
@@ -38,12 +38,12 @@
 
     $(".save_form_button").click(function() {
         var form = $(this).closest('form');
-       
+
         // Remove price mask from values
         var price_inputs = form.find('.price_input');
         price_inputs.each(function (index, elem) {
             var price_input = $(elem);
-            price_input.val(price_input.unmask());
+            price_input.val(price_input.val());
         });
 
         // remove template from form
@@ -56,11 +56,11 @@
             var taxesInput = row.find('[name="taxes[]"]');
             taxesInput.attr('name', 'taxes[' + index + '][]');
         });
-        
+
         // Submit form
         form.submit();
     });
-    
+
     function calculatePercent(percent, amount) {
         var factor = Number(percent) / Number(100);
         return Number(amount) * Number(factor);
@@ -69,7 +69,7 @@
     function setupCustomer(billing_address, shipping_address) {
         var customer_id = $("#customer").val();
         var currency = $('#customer').find(':selected').data('currency');
-        
+
         // Setup currency
         window.sharedData.company_currency = currency;
         setupPriceInput(window.sharedData.company_currency);
@@ -84,7 +84,7 @@
 
     function initializeProductSelect2(elem) {
         elem.select2({
-            ajax: { 
+            ajax: {
                 url: "{{ route('ajax.products', ['company_uid' => $currentCompany->uid]) }}",
                 type: "get",
                 dataType: "json",
@@ -97,18 +97,21 @@
                 },
                 processResults: function (response) {
                     return {
+                        // console.log(response);
                         results: response
                     };
                 },
                 cache: true
             },
             tags: true,
+
             templateSelection: function (data, container) {
                 $(data.element).attr('data-taxes', JSON.stringify(data.taxes));
                 $(data.element).attr('data-price', data.price);
                 return data.text;
             }
         });
+
 
         elem.change(function() {
             var element = $(this);
@@ -153,7 +156,8 @@
             var quantity = Number(row.find('[name="quantity[]"]').val());
 
             // price
-            var price = Number(row.find('.price_input').unmask()) / 100;
+            // console.log(row.find('.price_input').val())
+            var price = Number(row.find('.price_input').val()) ;
 
             // amount
             var amount = (quantity * price);
@@ -216,7 +220,7 @@
                 taxes[taxName] = Number(taxAmount);
             }
         });
- 
+
         // Display total tax list
         $('.total_tax_list').empty();
         for (var [name, amount] of Object.entries(taxes)) {
@@ -233,7 +237,7 @@
 
             total = Number(total) + Number(amount);
         }
- 
+
         // total discount
         var total_discount = $('#total_discount').val();
         if(total_discount != undefined && total_discount != 0) {
@@ -248,7 +252,7 @@
 
     function initializePriceListener() {
         $(".priceListener").change(function() {
-            calculateRowPrice()    
+            calculateRowPrice()
         });
     }
 
@@ -258,9 +262,13 @@
                 .clone()
                 .removeAttr('id')
                 .removeClass('d-none');
+
         productItems.append(template);
 
+
         var product_select = template.find('[name="product[]"]');
+        // console.table(product_select);
+        // return true;
         initializeProductSelect2(product_select);
 
         var tax_select = template.find('[name="taxes[]"]');
@@ -282,5 +290,5 @@
             var product = row.find('[name="product[]"]')
         });
     }
-    
+
 </script>
