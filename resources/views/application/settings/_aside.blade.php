@@ -1,11 +1,10 @@
-<ul class="sidebar-menu">
-    <li class="sidebar-menu-item">
-        <a href="{{ route('settings.account', ['company_uid' => $currentCompany->uid]) }}" class="sidebar-menu-button {{ $tab == 'account' ? 'text-primary' : 'text-secondary' }}">
-            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">person</i>
+<ul class="list-group list-group-messages">
+    <li class=" ">
+        <a href="{{ route('settings.account', ['company_uid' => $currentCompany->uid]) }}" class="list-group-item active {{ $tab == 'account' ? 'text-primary' : 'text-secondary' }}">
+            <i class="sidebar-menu-icon sidebar-menu-icon--left ft-user">person</i>
             <span class="sidebar-menu-text">{{ __('messages.account_settings') }}</span>
         </a>
     </li>
-
     <li class="sidebar-menu-item">
         <a href="{{ route('settings.membership', ['company_uid' => $currentCompany->uid]) }}" class="sidebar-menu-button {{ $tab == 'membership' ? 'text-primary' : 'text-secondary' }}">
             <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">card_membership</i>
@@ -97,3 +96,5 @@
         </a>
     </li>
 </ul>
+
+

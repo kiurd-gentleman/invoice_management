@@ -109,11 +109,13 @@
                         <tr id="product_row_template" class="d-none">
                             <td class="select-container" style="width:30%">
                                 <div class="form-group"  >
-                                    <select name="product[]" class="form-control priceListener" required>
-                                        <option disabled selected>{{ __('messages.select_product') }}</option>
-                                    </select>
-                                    <div class="d-none select-footer">
-                                        <a href="{{ route('products.create', ['company_uid' => $currentCompany->uid]) }}" target="_blank" class="font-weight-300">+ {{ __('messages.add_new_product') }}</a>
+                                    <div class="input-group">
+                                        <select name="product[]" class="form-control priceListener" required>
+                                            <option disabled selected>{{ __('messages.select_product') }}</option>
+                                        </select>
+                                        <div class="input-group-append">
+                                            <a href="{{ route('products.create', ['company_uid' => $currentCompany->uid]) }}" target="_blank" class="btn  btn-success"><i class="ft-plus"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </td>
