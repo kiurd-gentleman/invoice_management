@@ -8,7 +8,7 @@
     <div class="col-12">
         <div class="form-group">
             <label for="description">{{ __('messages.description') }}</label>
-            <textarea name="description" class="form-control" rows="4" placeholder="{{ __('messages.description') }}">{{ $expense_category->name }}</textarea>
+            <textarea name="description" class="form-control" rows="4" placeholder="{{ __('messages.description') }}">{{ $expense_category->description }}</textarea>
         </div>
     </div>
 </div>

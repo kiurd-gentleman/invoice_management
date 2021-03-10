@@ -3,7 +3,7 @@
         <table class="table table-xl mb-0 thead-border-top-0 table-striped">
             <thead>
                 <tr>
-                    <th>{{ __('messages.name') }}</th> 
+                    <th>{{ __('messages.name') }}</th>
                     <th>{{ __('messages.label') }}</th>
                     <th>{{ __('messages.model') }}</th>
                     <th>{{ __('messages.type') }}</th>
@@ -34,13 +34,11 @@
                             {{ $custom_field->is_required ? __('messages.yes') : __('messages.no') }}
                         </td>
                         <td class="h6">
-                            <a href="{{ route('settings.custom_fields.edit', ['custom_field' => $custom_field->id, 'company_uid' => $currentCompany->uid]) }}" class="btn text-primary">
-                                <i class="material-icons icon-16pt">edit</i>
-                                {{ __('messages.edit') }}
+                            <a href="{{ route('settings.custom_fields.edit', ['custom_field' => $custom_field->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-warning btn-sm ">
+                                <i class="ft-edit"></i>
                             </a>
-                            <a href="{{ route('settings.custom_fields.delete', ['custom_field' => $custom_field->id, 'company_uid' => $currentCompany->uid]) }}" class="btn text-danger delete-confirm">
-                                <i class="material-icons icon-16pt">delete</i>
-                                {{ __('messages.delete') }}
+                            <a href="{{ route('settings.custom_fields.delete', ['custom_field' => $custom_field->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-danger delete-confirm">
+                                <i class="ft-trash"></i>
                             </a>
                         </td>
                     </tr>
