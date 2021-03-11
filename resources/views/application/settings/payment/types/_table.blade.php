@@ -3,7 +3,7 @@
         <table class="table table-xl mb-0 thead-border-top-0 table-striped">
             <thead>
                 <tr>
-                    <th>{{ __('messages.name') }}</th> 
+                    <th>{{ __('messages.name') }}</th>
                     <th class="w-30">{{ __('messages.actions') }}</th>
                 </tr>
             </thead>
@@ -18,13 +18,13 @@
                             </a>
                         </td>
                         <td class="h6">
-                            <a href="{{ route('settings.payment.type.edit', ['type' => $payment_type->id, 'company_uid' => $currentCompany->uid]) }}" class="btn text-primary">
-                                <i class="material-icons icon-16pt">edit</i>
-                                {{ __('messages.edit') }}
+                            <a href="{{ route('settings.payment.type.edit', ['type' => $payment_type->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-warning">
+                                <i class="ft-edit"></i>
+
                             </a>
-                            <a href="{{ route('settings.payment.type.delete', ['type' => $payment_type->id, 'company_uid' => $currentCompany->uid]) }}" class="btn text-danger delete-confirm">
-                                <i class="material-icons icon-16pt">delete</i>
-                                {{ __('messages.delete') }}
+                            <a href="{{ route('settings.payment.type.delete', ['type' => $payment_type->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-danger delete-confirm">
+                                <i class="ft-trash"></i>
+
                             </a>
                         </td>
                     </tr>

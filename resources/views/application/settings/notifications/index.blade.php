@@ -159,7 +159,7 @@
 
 
 
-<div class="row">
+{{--<div class="row">
         <div class="col-lg-3">
             @include('application.settings._aside', ['tab' => 'notification'])
         </div>
@@ -236,6 +236,6 @@
             </div>
 
         </div>
-    </div>
+    </div>--}}
 @endsection
 

@@ -378,7 +378,7 @@
         .pl-0 {
             padding-left: 0;
         }
- 
+
         .mb-0 {
             margin-top: 0px;
             margin-bottom: 0px;
@@ -390,6 +390,7 @@
 <body>
     <div class="header-container">
         <table width="100%">
+            @dd(1)
             <tr>
                 @if(get_company_setting('avatar', $invoice->company->id))
                 <td width="60%" class="header-section-left">
@@ -460,7 +461,7 @@
                     <p class="mb-0">{{ __('messages.vat_number') . ': ' . $invoice->customer->vat_number }}</p>
                 @endif
             </div>
-            
+
             @if($invoice->customer->shipping->address_1)
             <div class="billing-address-container billing-address">
                 @else
@@ -497,7 +498,7 @@
                     </div>
                     {{ $invoice->notes }}
                 @endif
-                
+
                 <div class="py-8">
                     {{ $invoice->company->getSetting('invoice_footer') }}
                 </div>

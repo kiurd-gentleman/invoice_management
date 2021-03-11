@@ -2,15 +2,15 @@
     <table class="table table-xl mb-0 thead-border-top-0 table-striped">
         <thead>
             <tr>
-                <th>{{ __('messages.name') }}</th> 
-                <th>{{ __('messages.status') }}</th> 
+                <th>{{ __('messages.name') }}</th>
+                <th>{{ __('messages.status') }}</th>
                 <th class="text-right">{{ __('messages.actions') }}</th>
             </tr>
         </thead>
         <tbody class="list" id="gateways">
             <tr>
                 <td class="h6">
-                    <a href="{{ route('settings.payment.gateway.edit', ['company_uid' => $currentCompany->uid, 'gateway' => 'paypal']) }}">
+                    <a href="{{ route('settings.payment.gateway.edit', ['company_uid' => $currentCompany->uid, 'gateway' => 'paypal']) }}" >
                         <strong class="h6">
                             {{ __('messages.paypal') }}
                         </strong>
@@ -28,9 +28,8 @@
                     @endif
                 </td>
                 <td class="h6 text-right">
-                    <a href="{{ route('settings.payment.gateway.edit', ['company_uid' => $currentCompany->uid, 'gateway' => 'paypal']) }}" class="btn text-primary">
-                        <i class="material-icons icon-16pt">edit</i>
-                        {{ __('messages.edit') }}
+                    <a href="{{ route('settings.payment.gateway.edit', ['company_uid' => $currentCompany->uid, 'gateway' => 'paypal']) }}" class="btn btn-sm btn-warning">
+                        <i class="ft-edit"></i>
                     </a>
                 </td>
             </tr>
@@ -54,9 +53,8 @@
                     @endif
                 </td>
                 <td class="h6 text-right">
-                    <a href="{{ route('settings.payment.gateway.edit', ['company_uid' => $currentCompany->uid, 'gateway' => 'stripe']) }}" class="btn text-primary">
-                        <i class="material-icons icon-16pt">edit</i>
-                        {{ __('messages.edit') }}
+                    <a href="{{ route('settings.payment.gateway.edit', ['company_uid' => $currentCompany->uid, 'gateway' => 'stripe']) }}" class="btn btn-sm btn-warning">
+                        <i class="ft-edit"></i>
                     </a>
                 </td>
             </tr>
@@ -80,9 +78,9 @@
                     @endif
                 </td>
                 <td class="h6 text-right">
-                    <a href="{{ route('settings.payment.gateway.edit', ['company_uid' => $currentCompany->uid, 'gateway' => 'razorpay']) }}" class="btn text-primary">
-                        <i class="material-icons icon-16pt">edit</i>
-                        {{ __('messages.edit') }}
+                    <a href="{{ route('settings.payment.gateway.edit', ['company_uid' => $currentCompany->uid, 'gateway' => 'razorpay']) }}" class="btn btn-sm btn-warning">
+                        <i class="ft-edit"></i>
+
                     </a>
                 </td>
             </tr>
@@ -106,9 +104,9 @@
                     @endif
                 </td>
                 <td class="h6 text-right">
-                    <a href="{{ route('settings.payment.gateway.edit', ['company_uid' => $currentCompany->uid, 'gateway' => 'mollie']) }}" class="btn text-primary">
-                        <i class="material-icons icon-16pt">edit</i>
-                        {{ __('messages.edit') }}
+                    <a href="{{ route('settings.payment.gateway.edit', ['company_uid' => $currentCompany->uid, 'gateway' => 'mollie']) }}" class="btn btn-warning btn-sm">
+                        <i class="ft-edit"></i>
+
                     </a>
                 </td>
             </tr>

@@ -255,7 +255,7 @@
 
 
 
-<div class="row">
+{{--<div class="row">
         <div class="col-lg-3">
             @include('application.settings._aside', ['tab' => 'invoice'])
         </div>
@@ -339,7 +339,7 @@
             </div>
 
         </div>
-    </div>
+    </div>--}}
 @endsection
 
 @section('page_body_scripts')

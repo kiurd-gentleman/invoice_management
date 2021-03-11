@@ -13,9 +13,9 @@ class PDFController extends Controller
 {
     /**
      * Get Invoice Pdf
-     * 
+     *
      * @param \Illuminate\Http\Request $request
-     * 
+     *
      * @return pdf
      */
     public function invoice(Request $request)
@@ -26,6 +26,7 @@ class PDFController extends Controller
         $pdf = PDF::loadView('pdf.invoice.'.$template, ['invoice' => $invoice]);
 
         //Render or Download
+//        $pdf =0;
         if($request->has('download')) {
             return $pdf->download($invoice->invoice_number . '-invoice.pdf');
         } else {
@@ -37,7 +38,7 @@ class PDFController extends Controller
      * Get Estimate Pdf
      *
      * @param \Illuminate\Http\Request $request
-     * 
+     *
      * @return pdf
      */
     public function estimate(Request $request)
@@ -59,7 +60,7 @@ class PDFController extends Controller
      * Get Payment Pdf
      *
      * @param \Illuminate\Http\Request $request
-     * 
+     *
      * @return pdf
      */
     public function payment(Request $request)
