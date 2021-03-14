@@ -21,15 +21,15 @@
             </div>
             <div class="row mb-2">
                 <div class="col-12 button-group mt-1">
-                    <a href="{{ route('invoices', ['company_uid' => $currentCompany->uid]) }}" class="btn  btn-sm btn-outline-danger mt-2 ">{{ __('messages.clear_filters') }}</a>
-                    <button type="submit" class="btn btn-outline-info btn-sm mt-2">
-                        <i class="material-icons text-primary icon-20pt">refresh</i>
+                    <a href="{{ route('invoices', ['company_uid' => $currentCompany->uid]) }}" class="btn  btn-sm btn-danger mt-2 text-uppercase"><i class="ft-refresh-cw"></i> {{ __('messages.clear_filters') }}</a>
+                    <button type="submit" class="btn btn-info btn-sm mt-2 text-uppercase">
+                        <i class="ft-search"></i>
                         {{ __('messages.filter') }}
                     </button>
-                    <a href="{{ route('invoices.create', ['company_uid' => $currentCompany->uid]) }}" class="btn btn-outline-success btn-sm mt-2"><i class="ft-plus"></i> {{ __('messages.create_invoice') }}</a>
                 </div>
             </div>
         </div>
-
     </div>
+
+
 </form>

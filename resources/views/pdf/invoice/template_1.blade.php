@@ -311,15 +311,12 @@
             padding-top: 8px;
             padding-bottom: 8px;
         }
-
         .py-3 {
             padding: 3px 0;
         }
-
         .pr-20 {
             padding-right: 20px;
         }
-
         .pr-10 {
             padding-right: 10px;
         }
@@ -327,15 +324,12 @@
         .pl-20 {
             padding-left: 20px;
         }
-
         .pl-10 {
             padding-left: 10px;
         }
-
         .pl-0 {
             padding-left: 0;
         }
-
         .mb-0 {
             margin-top: 0px;
             margin-bottom: 0px;
@@ -350,7 +344,7 @@
             <tr>
                 <td class="text-center">
                     @if(get_company_setting('avatar', $invoice->company->id))
-                        <img class="header-logo" src="{{ $invoice->company->avatar }}" alt="{{ $invoice->company->name }}">
+                        <img class="header-logo" src="{{ public_path($invoice->company->avatar) }}" alt="{{ $invoice->company->name }}">
                     @else
                         <h2 class="header-logo">{{$invoice->company->name}}</h2>
                     @endif
@@ -375,7 +369,6 @@
                 @if($invoice->company->billing->city or $invoice->company->billing->state)
                     <p class="mb-0">{{ $invoice->company->billing->city }}, {{ $invoice->company->billing->state }}</p>
                 @endif
-{{--                @dd($invoice->company->billing)--}}
                 @if($invoice->company->billing->country->name)
                     <p class="mb-0">{{ $invoice->company->billing->country->name }}</p>
                 @endif
@@ -467,6 +460,7 @@
                 {{ $invoice->company->getSetting('invoice_footer') }}
             </div>
         </div>
+    </div>
 </body>
 
 </html>

@@ -55,7 +55,7 @@ class Invoice extends Model
 
     /**
      * Automatically cast date attributes to Carbon
-     * 
+     *
      * @var array
      */
     protected $dates = [
@@ -68,7 +68,7 @@ class Invoice extends Model
 
     /**
      * Automatically cast attributes to given types
-     * 
+     *
      * @var array
      */
     protected $casts = [
@@ -90,7 +90,7 @@ class Invoice extends Model
 
     /**
      * Define Relation with InvoiceItem Model
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function items()
@@ -100,7 +100,7 @@ class Invoice extends Model
 
     /**
      * Define Relation with Payment Model
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function payments()
@@ -110,7 +110,7 @@ class Invoice extends Model
 
     /**
      * Define Relation with Customer Model
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function customer()
@@ -120,7 +120,7 @@ class Invoice extends Model
 
     /**
      * Define Relation with Company Model
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function company()
@@ -130,7 +130,7 @@ class Invoice extends Model
 
     /**
      * Get the Total Percentage of Invoice Taxes
-     * 
+     *
      * @return int
      */
     public function getTotalPercentageOfTaxes()
@@ -141,12 +141,12 @@ class Invoice extends Model
         }
 
         return (int) $total;
-    } 
+    }
 
     /**
      * Get the Total Percentage of Invoice Taxes with Tax Names
-     * 
-     * @return array 
+     *
+     * @return array
      */
     public function getTotalPercentageOfTaxesWithNames()
     {
@@ -164,8 +164,8 @@ class Invoice extends Model
 
     /**
      * Get the Items Sub Total by base price
-     * 
-     * @return array 
+     *
+     * @return array
      */
     public function getItemsSubTotalByBasePrice()
     {
@@ -179,8 +179,8 @@ class Invoice extends Model
 
     /**
      * Get the Total Percentage of Invoice Items Taxes with Tax Names
-     * 
-     * @return array 
+     *
+     * @return array
      */
     public function getItemsTotalPercentageOfTaxesWithNames()
     {
@@ -199,8 +199,8 @@ class Invoice extends Model
 
     /**
      * Get the Total Percentage of Invoice Items Taxes with Tax Names
-     * 
-     * @return array 
+     *
+     * @return array
      */
     public function getItemsTotalDiscount()
     {
@@ -217,7 +217,7 @@ class Invoice extends Model
 
     /**
      * Get Previous Status of Invoice
-     * 
+     *
      * @return string
      */
     public function getPreviousStatus()
@@ -234,13 +234,13 @@ class Invoice extends Model
     }
 
     /**
-     * Customized strpos helper function for excluding prefix 
+     * Customized strpos helper function for excluding prefix
      * from estimate number
-     * 
+     *
      * @param string $haystack
      * @param string $needle
      * @param int $number
-     * 
+     *
      * @return string
      */
     private function strposX($haystack, $needle, $number)
@@ -261,9 +261,9 @@ class Invoice extends Model
     /**
      * Helper function for getting the next Estimate Number
      * by searching the database and increase 1
-     * 
+     *
      * @param string $prefix
-     * 
+     *
      * @return string
      */
     public static function getNextInvoiceNumber($company_id, $prefix)
@@ -305,12 +305,12 @@ class Invoice extends Model
 
     /**
      * Set invoice_prefix attribute
-     * 
+     *
      * @return string
      */
     public function getInvoicePrefixAttribute ()
     {
-        return $this->id 
+        return $this->id
             ? explode("-", $this->invoice_number)[0]
             : CompanySetting::getSetting('invoice_prefix', $this->company_id);
     }
@@ -367,7 +367,7 @@ class Invoice extends Model
      */
     public function getFormattedInvoiceDateAttribute($value)
     {
-        $dateFormat = CompanySetting::getSetting('date_format', $this->company_id);
+        return $dateFormat = CompanySetting::getSetting('date_format', $this->company_id);
         return Carbon::parse($this->invoice_date)->format($dateFormat);
     }
 
@@ -421,8 +421,8 @@ class Invoice extends Model
         $active_stats = [
             self::STATUS_SENT,
             self::STATUS_VIEWED,
-            self::STATUS_OVERDUE, 
-            self::STATUS_COMPLETED, 
+            self::STATUS_OVERDUE,
+            self::STATUS_COMPLETED,
         ];
         $query->whereIn('status', $active_stats);
     }

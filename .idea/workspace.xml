@@ -3,26 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="a69208ad-0c3d-48b9-aa75-95a2cd7e3f54" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/InvoiceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/PDFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/PDFController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/invoice/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/invoice/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/notifications/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/notifications/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/payment/gateways/_table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/payment/gateways/_table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/payment/gateways/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/payment/gateways/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/payment/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/payment/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/payment/types/_table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/payment/types/_table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/payment/types/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/payment/types/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/payment/types/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/payment/types/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/preference/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/preference/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/product/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/product/unit/_table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/product/unit/_table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/product/unit/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/product/unit/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/product/unit/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/product/unit/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/tax_type/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/tax_type/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/tax_type/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/tax_type/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/tax_type/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/tax_type/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/team/create_member.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/team/create_member.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/team/edit_member.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/team/edit_member.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/team/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/team/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Invoice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/_filters.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/_filters.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/_table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/_table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pdf/invoice/template_1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/invoice/template_1.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pdf/invoice/template_2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/invoice/template_2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pdf/invoice/template_3.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/invoice/template_3.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +206,9 @@
       <workItem from="1615100884152" duration="15942000" />
       <workItem from="1615176726163" duration="17946000" />
       <workItem from="1615263247118" duration="13525000" />
-      <workItem from="1615434566557" duration="15284000" />
+      <workItem from="1615434566557" duration="16588000" />
+      <workItem from="1615610108755" duration="8360000" />
+      <workItem from="1615708180987" duration="12882000" />
     </task>
     <servers />
   </component>

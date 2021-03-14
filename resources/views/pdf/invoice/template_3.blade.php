@@ -319,7 +319,7 @@
             <tr>
                 <td width="50%" class="header-section-left">
                     @if(get_company_setting('avatar', $invoice->company->id))
-                        <img class="header-logo" src="{{ $invoice->company->avatar }}" alt="{{ $invoice->company->name }}">
+                        <img class="header-logo" src="{{ public_path($invoice->company->avatar) }}" alt="{{ $invoice->company->name }}">
                     @else
                         <h1 class="header-logo"> {{$invoice->company->name}} </h1>
                     @endif
@@ -409,7 +409,7 @@
                 </div>
 
                 <div class="invoice-details-container">
-                    <table>
+                    <table ">
                         <tr>
                             <td class="attribute-label">{{ __('messages.invoice_number') }}</td>
                             <td class="attribute-value"> &nbsp;{{$invoice->invoice_number}}</td>
@@ -429,7 +429,7 @@
             </div>
 
             @include('pdf.invoice._table')
-             
+
             <div class="notes">
                 @if($invoice->notes)
                     <div class="notes-label">
@@ -437,7 +437,7 @@
                     </div>
                     {{ $invoice->notes }}
                 @endif
-                
+
                 <div class="py-8">
                     {{ $invoice->company->getSetting('invoice_footer') }}
                 </div>

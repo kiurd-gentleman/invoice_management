@@ -21,8 +21,10 @@ class PDFController extends Controller
     public function invoice(Request $request)
     {
         $invoice = Invoice::findByUid($request->invoice);
+//        dd($invoice->company);
 
         $template = $invoice->company->getSetting('invoice_template');
+//        return view('pdf.invoice.template_1' ,compact('invoice'));
         $pdf = PDF::loadView('pdf.invoice.'.$template, ['invoice' => $invoice]);
 
         //Render or Download

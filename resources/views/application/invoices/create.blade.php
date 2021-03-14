@@ -55,7 +55,7 @@
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
-                            <div  class="">
+                            <div  class="container">
                                 <form action="{{ route('invoices.store', ['company_uid' => $currentCompany->uid]) }}" method="POST">
                                     @include('layouts._form_errors')
                                     @csrf

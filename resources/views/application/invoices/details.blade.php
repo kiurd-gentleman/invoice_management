@@ -40,7 +40,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title" id="basic-layout-round-controls">User List</h4>
+                        <h4 class="card-title" id="basic-layout-round-controls">Invoice Details</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
@@ -61,34 +61,49 @@
                                         </p>
                                     </div>
                                     <div class="col-12 col-md-8 text-right">
-                                        <div class="btn-group mb-2">
-                                            <a href="{{ route('pdf.invoice', ['invoice' => $invoice->uid, 'download' => true]) }}" target="_blank" class="btn btn-light">
-                                                <i class="material-icons">cloud_download</i>
-                                                {{ __('messages.download') }}
+                                        <div class="btn-group " role="group">
+                                            <a href="{{ route('pdf.invoice', ['invoice' => $invoice->uid, 'download' => true]) }}" target="_blank" class="btn btn-sm btn-pinterest">
+                                                <i class="ft-download-cloud"></i>
+                                                <span>Download</span>
+
                                             </a>
-                                            <a href="{{ route('invoices.send', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-light alert-confirm" data-alert-title="Are you sure?" data-alert-text="This action will send an email to customer.">
-                                                <i class="material-icons">send</i>
-                                                {{ __('messages.send_email') }}
+                                            <a href="{{ route('invoices.send', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-pinterest alert-confirm" data-alert-title="Are you sure?" data-alert-text="This action will send an email to customer.">
+                                                <i class="ft-share"></i>
+                                                <span>Send</span>
                                             </a>
-                                            <a href="{{ route('payments.create', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" target="_blank" class="btn btn-light">
-                                                <i class="material-icons">payment</i>
-                                                {{ __('messages.enter_payment') }}
+                                            <a href="{{ route('payments.create', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" target="_blank" class="btn btn-sm   btn-pinterest">
+                                                <i class="ft-credit-card"></i>
+                                                <span>Payment</span>
+
                                             </a>
-                                            <a href="{{ route('invoices.edit', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-light">
-                                                <i class="material-icons">edit</i>
-                                                {{ __('messages.edit') }}
+                                            <a href="{{ route('invoices.edit', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-pinterest">
+                                                <i class="ft-edit"></i>
+                                                <span>Edit</span>
                                             </a>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                    {{ __('messages.more') }} <span class="caret"></span>
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a href="{{ route('invoices.mark', ['invoice' => $invoice->id, 'status' => 'paid', 'company_uid' => $currentCompany->uid]) }}" class="dropdown-item">{{ __('messages.mark_paid') }}</a>
-                                                    <a href="{{ route('invoices.mark', ['invoice' => $invoice->id, 'status' => 'sent', 'company_uid' => $currentCompany->uid]) }}" class="dropdown-item">{{ __('messages.mark_sent') }}</a>
-                                                    <hr>
-                                                    <a href="{{ route('invoices.delete', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" class="dropdown-item text-danger delete-confirm">{{ __('messages.delete') }}</a>
-                                                </div>
-                                            </div>
+                                            <a href="{{ route('invoices.mark', ['invoice' => $invoice->id, 'status' => 'paid', 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-pinterest">
+                                                <i class="ft-check"></i>
+                                                <span>{{ __('messages.mark_paid') }}</span>
+                                            </a>
+                                            <a href="{{ route('invoices.mark', ['invoice' => $invoice->id, 'status' => 'sent', 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-pinterest">
+                                                <i class="ft-check-circle"></i>
+                                                <span>{{ __('messages.mark_sent') }}</span>
+                                            </a>
+                                            <a href="{{ route('invoices.delete', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-pinterest">
+                                                <i class="ft-trash"></i>
+                                                <span>{{ __('messages.delete') }}</span>
+                                            </a>
+
+{{--                                            <div class="btn-group">--}}
+{{--                                                <button type="button" class="btn btn-light dropdown-toggle btn-sm" data-toggle="dropdown" aria-expanded="false">--}}
+{{--                                                    {{ __('messages.more') }} <span class="caret"></span>--}}
+{{--                                                </button>--}}
+{{--                                                <div class="dropdown-menu dropdown-menu-right">--}}
+{{--                                                    <a href="{{ route('invoices.mark', ['invoice' => $invoice->id, 'status' => 'paid', 'company_uid' => $currentCompany->uid]) }}" class="dropdown-item">{{ __('messages.mark_paid') }}</a>--}}
+{{--                                                    <a href="{{ route('invoices.mark', ['invoice' => $invoice->id, 'status' => 'sent', 'company_uid' => $currentCompany->uid]) }}" class="dropdown-item">{{ __('messages.mark_sent') }}</a>--}}
+{{--                                                    <hr>--}}
+{{--                                                    <a href="{{ route('invoices.delete', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" class="dropdown-item text-danger delete-confirm">{{ __('messages.delete') }}</a>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -157,7 +172,7 @@
                                     </div>
                                 </div>
                                 <div class="pdf-iframe">
-                                    <iframe src="{{ route('pdf.invoice', $invoice->uid) }}" frameborder="0"></iframe>
+                                    <iframe src="{{ route('pdf.invoice', $invoice->uid) }}" frameborder="0" style="width: 100%;""></iframe>
                                 </div>
                             </div>
                         </div>

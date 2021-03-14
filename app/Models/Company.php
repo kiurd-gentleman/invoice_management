@@ -12,7 +12,7 @@ class Company extends Model
     use HasAddresses;
     use UUIDTrait;
     use HasSubscriptions;
-  
+
     /**
      * The attributes that are mass assignable.
      *
@@ -22,8 +22,8 @@ class Company extends Model
         'name',
         'owner_id',
         'vat_number',
-    ]; 
-    
+    ];
+
     /**
      * Define Relation with User Model
      *
@@ -50,7 +50,7 @@ class Company extends Model
      * of this company
      *
      * @param User $user
-     * 
+     *
      * @return bool
      */
     public function hasUser(User $user)
@@ -222,7 +222,7 @@ class Company extends Model
      * Get Company Specified setting
      *
      * @param string $key
-     * 
+     *
      * @return string
      */
     public function getSetting($key)
@@ -235,7 +235,7 @@ class Company extends Model
      *
      * @param string $key
      * @param string $value
-     * 
+     *
      * @return void
      */
     public function setSetting($key, $value)
@@ -245,7 +245,7 @@ class Company extends Model
 
     /**
      * Get Currency Attribute
-     * 
+     *
      * @return string
      */
     public function getCurrencyAttribute($value)
@@ -255,90 +255,91 @@ class Company extends Model
 
     /**
      * Check if Paypal Gateway is Active
-     * 
+     *
      * @return boolean
      */
     public function isPaypalActive()
-    {   
+    {
         if (
-            $this->getSetting('paypal_active') 
+            $this->getSetting('paypal_active')
             && $this->getSetting('paypal_username') != ''
             && $this->getSetting('paypal_password') != ''
             && $this->getSetting('paypal_signature') != ''
-        ) 
+        )
             return true;
-        else 
+        else
             return false;
     }
 
     /**
      * Check if Stripe Gateway is Active
-     * 
+     *
      * @return boolean
      */
     public function isStripeActive()
     {
         if (
-            $this->getSetting('stripe_active') 
+            $this->getSetting('stripe_active')
             && $this->getSetting('stripe_secret_key') != ''
             && $this->getSetting('stripe_public_key') != ''
-        ) 
+        )
             return true;
-        else 
+        else
             return false;
     }
 
     /**
      * Check if Razorpay Gateway is Active
-     * 
+     *
      * @return boolean
      */
     public function isRazorpayActive()
     {
         if (
-            $this->getSetting('razorpay_active') 
+            $this->getSetting('razorpay_active')
             && $this->getSetting('razorpay_id') != ''
             && $this->getSetting('razorpay_secret_key') != ''
-        ) 
+        )
             return true;
-        else 
+        else
             return false;
     }
 
     /**
      * Check if Mollie Gateway is Active
-     * 
+     *
      * @return boolean
      */
     public function isMollieActive()
     {
         if (
-            $this->getSetting('mollie_active') 
+            $this->getSetting('mollie_active')
             && $this->getSetting('mollie_api_key') != ''
-        ) 
+        )
             return true;
-        else 
+        else
             return false;
     }
 
     /**
      * Return Default Company Avatar Url
-     * 
+     *
      * @return string (url)
      */
     public function getDefaultAvatar()
     {
-        return asset('assets/images/avatar/company.png');
+        return asset('public/assets/images/avatar/company.png');
     }
 
     /**
      * Get User's Company Url || Default Avatar
-     * 
+     *
      * @return string (url)
      */
     public function getAvatarAttribute()
     {
         $avatar = CompanySetting::getSetting('avatar', $this->id);
-        return $avatar ? asset($avatar) : $this->getDefaultAvatar();
+//        return $avatar ? asset('public/'.$avatar) : $this->getDefaultAvatar();
+        return $avatar ;
     }
 }

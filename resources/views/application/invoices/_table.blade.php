@@ -69,7 +69,7 @@
                         </td>
                         <td class="h6">
                             <a href="{{ route('invoices.details', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-link">
-                                <i class="material-icons icon-16pt">arrow_forward</i>
+                                <i class="ft-arrow-right text-warning" style="font-size: 15px"></i>
                             </a>
                         </td>
                     </tr>

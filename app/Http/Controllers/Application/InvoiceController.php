@@ -84,7 +84,7 @@ class InvoiceController extends Controller
         $products = $currentCompany->products;
         $tax_per_item = (boolean) $currentCompany->getSetting('tax_per_item');
         $discount_per_item = (boolean) $currentCompany->getSetting('discount_per_item');
-        
+
         return view('application.invoices.create', [
             'invoice' => $invoice,
             'customers' => $customers,
@@ -111,12 +111,12 @@ class InvoiceController extends Controller
         if (!$canAdd) {
             session()->flash('alert-danger', __('messages.you_have_reached_the_limit'));
             return redirect()->route('invoices', ['company_uid' => $currentCompany->uid]);
-        } 
+        }
 
         // Get company based settings
         $tax_per_item = (boolean) $currentCompany->getSetting('tax_per_item');
         $discount_per_item = (boolean) $currentCompany->getSetting('discount_per_item');
- 
+
         // Save Invoice to Database
         $invoice = Invoice::create([
             'invoice_date' => $request->invoice_date,
@@ -185,7 +185,7 @@ class InvoiceController extends Controller
         // Add custom field values
         $invoice->addCustomFields($request->custom_fields);
 
-        // Record product 
+        // Record product
         $currentCompany->subscription('main')->recordFeatureUsage('invoices_per_month');
 
         session()->flash('alert-success', __('messages.invoice_added'));
@@ -433,7 +433,7 @@ class InvoiceController extends Controller
     {
         $user = $request->user();
         $currentCompany = $user->currentCompany();
-        
+
         $invoice = Invoice::findOrFail($request->invoice);
 
         // return error if payment already exists with the invoice

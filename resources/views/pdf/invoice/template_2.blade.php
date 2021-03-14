@@ -390,11 +390,10 @@
 <body>
     <div class="header-container">
         <table width="100%">
-            @dd(1)
             <tr>
                 @if(get_company_setting('avatar', $invoice->company->id))
                 <td width="60%" class="header-section-left">
-                    <img class="header-logo" src="{{ $invoice->company->avatar }}" alt="{{ $invoice->company->name }}">
+                    <img class="header-logo" src="{{ public_path($invoice->company->avatar) }}" alt="{{ $invoice->company->name }}">
                     @else
                 <td width="60%" class="header-section-left" style="padding-top: 0px;">
                     <h1 class="header-logo"> {{$invoice->company->name}} </h1>
