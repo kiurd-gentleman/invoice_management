@@ -3,20 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a69208ad-0c3d-48b9-aa75-95a2cd7e3f54" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/InvoiceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/PDFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/PDFController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Invoice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/_filters.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/_filters.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/_table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/_table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/details.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pdf/invoice/template_1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/invoice/template_1.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pdf/invoice/template_2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/invoice/template_2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pdf/invoice/template_3.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/invoice/template_3.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +194,8 @@
       <workItem from="1615263247118" duration="13525000" />
       <workItem from="1615434566557" duration="16588000" />
       <workItem from="1615610108755" duration="8360000" />
-      <workItem from="1615708180987" duration="12882000" />
+      <workItem from="1615708180987" duration="13269000" />
+      <workItem from="1615786222319" duration="2990000" />
     </task>
     <servers />
   </component>
@@ -216,6 +203,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1615806432383">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1615806432383" />
     <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1615102479582">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

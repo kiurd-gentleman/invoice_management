@@ -43,7 +43,7 @@
         var price_inputs = form.find('.price_input');
         price_inputs.each(function (index, elem) {
             var price_input = $(elem);
-            price_input.val(price_input.val());
+            price_input.val(price_input.unmask());
         });
 
         // remove template from form
@@ -97,21 +97,18 @@
                 },
                 processResults: function (response) {
                     return {
-                        // console.log(response);
                         results: response
                     };
                 },
                 cache: true
             },
             tags: true,
-
             templateSelection: function (data, container) {
                 $(data.element).attr('data-taxes', JSON.stringify(data.taxes));
                 $(data.element).attr('data-price', data.price);
                 return data.text;
             }
         });
-
 
         elem.change(function() {
             var element = $(this);
@@ -156,8 +153,7 @@
             var quantity = Number(row.find('[name="quantity[]"]').val());
 
             // price
-            // console.log(row.find('.price_input').val())
-            var price = Number(row.find('.price_input').val()) ;
+            var price = Number(row.find('.price_input').unmask()) / 100;
 
             // amount
             var amount = (quantity * price);
@@ -231,7 +227,7 @@
                 '<div class="ml-auto h6 mb-0">' +
                 '    <input type="text" class="price_input price-text w-100 fs-inherit" value="'+ Number(amount).toFixed(2) +'" disabled>' +
                 '</div>' +
-            '</div>';
+                '</div>';
 
             $('.total_tax_list').append(template);
 
@@ -259,16 +255,12 @@
     function addProductRow() {
         var productItems = $('#items');
         var template = $('#product_row_template')
-                .clone()
-                .removeAttr('id')
-                .removeClass('d-none');
-
+            .clone()
+            .removeAttr('id')
+            .removeClass('d-none');
         productItems.append(template);
 
-
         var product_select = template.find('[name="product[]"]');
-        // console.table(product_select);
-        // return true;
         initializeProductSelect2(product_select);
 
         var tax_select = template.find('[name="taxes[]"]');

@@ -22,6 +22,7 @@
                         <a class="btn btn-primary" href="{{ route('customers.create', ['company_uid' => $currentCompany->uid]) }}"><i class="ft-plus"></i></a>
                     </div>
                 </div>
+
             </div>
             <div id="address_component" class="form-row d-none">
                 <div class="col-6">
@@ -221,7 +222,7 @@
                 </table>
             </div>
             <div class="row card-body pagination-light justify-content-center text-center">
-                <button id="add_product_row" type="button" class="btn btn-outline-dark btn-sm text-uppercase">
+                <button id="add_product_row" type="button" class="btn btn-dark btn-sm text-uppercase">
                     <i class="ft-plus"></i> {{ __('messages.add_product') }}
                 </button>
             </div>

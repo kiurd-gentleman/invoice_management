@@ -232,7 +232,7 @@
                     <a class=" nav-link" href="{{ route('invoices', ['company_uid' => $currentCompany->uid]) }}"><i class="la la-columns"></i><span>Invoices</span></a>
                 </li>
                 <li class="dropdown nav-item" >
-                    <a class=" nav-link" href="{{ route('estimates', ['company_uid' => $currentCompany->uid]) }}"><i class="la la-columns"></i><span>Estimates</span></a>
+                    <a class=" nav-link" href="{{ route('estimates', ['company_uid' => $currentCompany->uid]) }}"><i class="la la-columns"></i><span>Quotations</span></a>
                 </li>
                 <li class="dropdown nav-item" >
                     <a class=" nav-link" href="{{ route('payments', ['company_uid' => $currentCompany->uid]) }}"><i class="la la-columns"></i><span>Payments</span></a>

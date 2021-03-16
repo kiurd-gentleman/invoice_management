@@ -1,8 +1,8 @@
 <script>
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-    
+
     $("#customer").select2({
-        ajax: { 
+        ajax: {
             url: "{{ route('ajax.customers', ['company_uid' => $currentCompany->uid]) }}",
             type: "get",
             dataType: "json",
@@ -29,7 +29,7 @@
     });
 
     $("#customer").change(function() {
-        setupCustomer();            
+        setupCustomer();
     });
 
     $("#add_product_row").click(function() {
@@ -38,7 +38,7 @@
 
     $(".save_form_button").click(function() {
         var form = $(this).closest('form');
-       
+
         // Remove price mask from values
         var price_inputs = form.find('.price_input');
         price_inputs.each(function (index, elem) {
@@ -56,7 +56,7 @@
             var taxesInput = row.find('[name="taxes[]"]');
             taxesInput.attr('name', 'taxes[' + index + '][]');
         });
-        
+
         // Submit form
         form.submit();
     });
@@ -69,7 +69,7 @@
     function setupCustomer(billing_address, shipping_address) {
         var customer_id = $("#customer").val();
         var currency = $('#customer').find(':selected').data('currency');
-        
+
         // Setup currency
         window.sharedData.company_currency = currency;
         setupPriceInput(window.sharedData.company_currency);
@@ -84,7 +84,7 @@
 
     function initializeProductSelect2(elem) {
         elem.select2({
-            ajax: { 
+            ajax: {
                 url: "{{ route('ajax.products', ['company_uid' => $currentCompany->uid]) }}",
                 type: "get",
                 dataType: "json",
@@ -227,7 +227,7 @@
                 '<div class="ml-auto h6 mb-0">' +
                 '    <input type="text" class="price_input price-text w-100 fs-inherit" value="'+ Number(amount).toFixed(2) +'" disabled>' +
                 '</div>' +
-            '</div>';
+                '</div>';
 
             $('.total_tax_list').append(template);
 
@@ -248,16 +248,16 @@
 
     function initializePriceListener() {
         $(".priceListener").change(function() {
-            calculateRowPrice()    
+            calculateRowPrice()
         });
     }
 
     function addProductRow() {
         var productItems = $('#items');
         var template = $('#product_row_template')
-                .clone()
-                .removeAttr('id')
-                .removeClass('d-none');
+            .clone()
+            .removeAttr('id')
+            .removeClass('d-none');
         productItems.append(template);
 
         var product_select = template.find('[name="product[]"]');
