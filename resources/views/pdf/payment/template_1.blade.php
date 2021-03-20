@@ -271,9 +271,9 @@
     <div class="header-container">
         <table width="100%">
             <tr>
-                @if(get_company_setting('avatar', $payment->company->id)) 
+                @if(get_company_setting('avatar', $payment->company->id))
                     <td width="50%" class="header-section-left">
-                        <img class="header-logo" src="{{ $payment->company->avatar }}" alt="{{ $payment->company->name }}">
+                        <img class="header-logo" src="{{ public_path($payment->company->avatar) }}" alt="{{ $payment->company->name }}">
                 @else
                     <td class="header-section-left" style="padding-top:0px;">
                         <h1 class="header-logo"> {{ $payment->company->name }}</h1>
@@ -343,6 +343,8 @@
     </div>
     <div class="total-display-box">
         <p class="total-display-label">{{ __('messages.amount') }}</p>
+{{--        @dump($payment->amount)--}}
+{{--        @dd(money($payment->amount, $payment->invoice->currency_code ,true)->format())--}}
         <span>{{ money($payment->amount, $payment->invoice->currency_code)->format() }}</span>
     </div>
 </body>

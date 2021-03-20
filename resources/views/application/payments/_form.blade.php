@@ -9,10 +9,10 @@
                 <div class="col">
                     <div class="form-group required">
                         <label for="payment_date">{{ __('messages.payment_date') }}</label>
-                        <input name="payment_date" type="text" class="form-control input" data-toggle="flatpickr" data-flatpickr-default-date="{{ $payment->payment_date ?? now() }}" placeholder="{{ __('messages.payment_date') }}" readonly="readonly" required>
+                        <input name="payment_date" type="text" class="form-control input datepicker" value="{{ date_format (date_create( $payment->payment_date), 'Y-m-d')  ?? date('Y-m-d') }}" placeholder="{{ __('messages.payment_date') }}" readonly="readonly" required>
                     </div>
                 </div>
-                <div class="col"> 
+                <div class="col">
                     <div class="form-group required">
                         <label for="payment_number">{{ __('messages.payment_number') }}</label>
                         <div class="input-group input-group-merge">
@@ -32,7 +32,7 @@
                 <div class="col">
                     <div class="form-group select-container required">
                         <label for="customer">{{ __('messages.customer') }}</label>
-                        <select id="customer" name="customer_id" data-toggle="select" class="form-control select2-hidden-accessible select-with-footer" data-select2-id="customer">
+                        <select id="customer" name="customer_id" data-toggle="select" class="form-control select2" data-select2-id="customer">
                             <option disabled selected>{{ __('messages.select_customer') }}</option>
                             @if($payment->customer_id)
                                 <option value="{{ $payment->customer_id }}" selected>{{ $payment->customer->display_name }}</option>
@@ -46,7 +46,7 @@
                 <div class="col">
                     <div class="form-group select-container required">
                         <label for="invoice_select">{{ __('messages.invoice') }}</label>
-                        <select id="invoice_select" name="invoice_id" data-toggle="select" class="form-control select2-hidden-accessible select-with-footer" data-minimum-results-for-search="-1" data-select2-id="invoice_select">
+                        <select id="invoice_select" name="invoice_id"  class="form-control select2" data-select2-id="invoice_select">
                             <option disabled selected>{{ __('messages.select_invoice') }}</option>
                             @if($payment->invoice_id)
                                 <option value="{{ $payment->invoice_id }}" selected>{{ $payment->invoice->invoice_number }}</option>
@@ -69,7 +69,7 @@
                 <div class="col">
                     <div class="form-group select-container required">
                         <label for="payment_method_id">{{ __('messages.payment_type') }}</label>
-                        <select id="payment_method_id" name="payment_method_id" data-toggle="select" class="form-control select2-hidden-accessible select-with-footer" data-minimum-results-for-search="-1" data-select2-id="payment_method_id">
+                        <select id="payment_method_id" name="payment_method_id"  class="form-control select2" >
                             <option disabled selected>{{ __('messages.select_payment_type') }}</option>
                             @foreach(get_payment_methods_select2_array($currentCompany->id) as $option)
                                 <option value="{{ $option['id'] }}" {{ $payment->payment_method_id == $option['id'] ? 'selected=""' : '' }}>{{ $option['text'] }}</option>

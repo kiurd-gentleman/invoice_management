@@ -24,12 +24,12 @@
                     <a href="{{ asset($expense->receipt) }}" target="_blank" class="btn btn-sm btn-info text-white choose-button">{{ __('messages.download_receipt') }}</a>
                 @endif
             </div>
-            
+
             <div class="row">
-                <div class="col"> 
+                <div class="col">
                     <div class="form-group select-container required">
-                        <label for="expense_category_id">{{ __('messages.category') }}</label> 
-                        <select id="expense_category_id" name="expense_category_id" data-toggle="select" class="form-control select2-hidden-accessible select-with-footer" data-select2-id="expense_category_id" data-minimum-results-for-search="-1" required>
+                        <label for="expense_category_id">{{ __('messages.category') }}</label>
+                        <select id="expense_category_id" name="expense_category_id" data-toggle="select" class="form-control select2 select-with-footer" data-select2-id="expense_category_id" required>
                             <option disabled selected>{{ __('messages.select_category') }}</option>
                             @foreach(get_expense_categories_select2_array($currentCompany->id) as $option)
                                 <option value="{{ $option['id'] }}" {{ $expense->expense_category_id == $option['id'] ? 'selected=""' : '' }}>{{ $option['text'] }}</option>
@@ -40,10 +40,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col"> 
+                <div class="col">
                     <div class="form-group select-container">
-                        <label for="vendor_id">{{ __('messages.vendor') }}</label> 
-                        <select name="vendor_id" data-toggle="select" class="form-control select2-hidden-accessible select-with-footer" data-select2-id="vendor_id">
+                        <label for="vendor_id">{{ __('messages.vendor') }}</label>
+                        <select name="vendor_id" data-toggle="select" class="form-control select2 select-with-footer" data-select2-id="vendor_id">
                             <option disabled selected>{{ __('messages.select_vendor') }}</option>
                             @foreach($vendors as $vendor)
                                 <option value="{{ $vendor->id }}" {{ $expense->vendor_id == $vendor->id ? 'selected=""' : '' }}>{{ $vendor->display_name }}</option>
@@ -57,10 +57,10 @@
             </div>
 
             <div class="row">
-                <div class="col"> 
+                <div class="col">
                     <div class="form-group required">
                         <label for="expense_date">{{ __('messages.expense_date') }}</label>
-                        <input name="expense_date" type="text"  class="form-control input" data-toggle="flatpickr" data-flatpickr-default-date="{{ $expense->expense_date ?? now() }}" placeholder="{{ __('messages.expense_date') }}" readonly="readonly" required>
+                        <input name="expense_date" type="text"  class="form-control input datepicker"  value="{{ date_format (date_create( $expense->expense_date), 'Y-m-d')  ?? date('Y-m-d') }}" placeholder="{{ __('messages.expense_date') }}" readonly="readonly" required>
                     </div>
                 </div>
                 <div class="col">
@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </div>
- 
+
             <div class="row">
                 <div class="col">
                     <div class="form-group">
@@ -89,7 +89,7 @@
                     </div>
                 @endif
             </div>
-            
+
             <div class="form-group text-center mt-3">
                 <button type="button" class="btn btn-primary form_with_price_input_submit">{{ __('messages.save_expense') }}</button>
             </div>

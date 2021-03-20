@@ -37,8 +37,8 @@
                         </td>
                         <td>
                             <a href="{{ route('payments.edit', ['payment' => $payment->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-link">
-                                <i class="material-icons icon-16pt">arrow_forward</i>
-                            </a> 
+                                <i class="ft-arrow-right"></i>
+                            </a>
                         </td>
                     </tr>
                 @endforeach

@@ -16,7 +16,7 @@
                     <tr>
                         <td class="h6">
                             <a href="{{ route('expenses.edit', ['expense' => $expense->id, 'company_uid' => $currentCompany->uid]) }}">
-                                #{{ $expense->id }}
+                                <div class="badge badge-info">#{{ $expense->id }}</div>
                             </a>
                         </td>
                         <td class="h6">
@@ -27,7 +27,7 @@
                             </a>
                         </td>
                         <td class="h6">
-                            {{ $expense->formatted_expense_date }} 
+                            {{ $expense->formatted_expense_date }}
                         </td>
                         <td class="h6 d-inline-block text-truncate maxw-13rem">
                             {{ $expense->notes ?? '-' }}
@@ -37,7 +37,7 @@
                         </td>
                         <td class="h6">
                             <a href="{{ route('expenses.edit', ['expense' => $expense->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-link">
-                                <i class="material-icons icon-16pt">arrow_forward</i>
+                                <i class="ft-arrow-right"></i>
                             </a>
                         </td>
                     </tr>
