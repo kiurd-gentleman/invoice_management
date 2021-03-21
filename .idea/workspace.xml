@@ -3,18 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a69208ad-0c3d-48b9-aa75-95a2cd7e3f54" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/expenses/_filters.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/expenses/_filters.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/expenses/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/expenses/_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/expenses/_table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/expenses/_table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/expenses/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/expenses/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/expenses/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/expenses/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/expenses/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/expenses/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/payments/_filters.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/payments/_filters.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/payments/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/payments/_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/payments/_table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/payments/_table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/payments/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/payments/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/payments/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/payments/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pdf/payment/template_1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/payment/template_1.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pdf/reports/customer_sales.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/reports/customer_sales.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pdf/reports/product_sales.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/reports/product_sales.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +200,7 @@
       <workItem from="1615786222319" duration="2990000" />
       <workItem from="1616215306181" duration="621000" />
       <workItem from="1616218444769" duration="580000" />
-      <workItem from="1616223914315" duration="11758000" />
+      <workItem from="1616223914315" duration="12990000" />
     </task>
     <servers />
   </component>

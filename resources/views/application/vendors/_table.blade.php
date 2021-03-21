@@ -15,18 +15,18 @@
                 @foreach ($vendors as $vendor)
                     <tr>
                         <td>
-                            <div class="badge badge-light">#{{ $vendor->id }}</div>
+                            <div class="badge badge-info">#{{ $vendor->id }}</div>
                         </td>
                         <td>
                             <div class="d-flex align-items-center">
                                 <div class="d-flex align-items-center">
-                                    <i class="material-icons icon-16pt mr-1 text-primary">business</i>
-                                    <a href="{{ route('vendors.details', ['vendor' => $vendor->id, 'company_uid' => $currentCompany->uid]) }}">{{ $vendor->display_name }}</a>
+                                    <i class="ft-briefcase text-warning "></i>
+                                    <a href="{{ route('vendors.details', ['vendor' => $vendor->id, 'company_uid' => $currentCompany->uid]) }}" class="ml-1"> {{ $vendor->display_name }}</a>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center">
                                 <small class="text-muted">
-                                    <i class="material-icons icon-16pt mr-1">pin_drop</i>
+                                    <i class="ft-map-pin mr-1 text-danger"></i>
                                     {{ $vendor->displayShortAddress('billing') }}
                                 </small>
                             </div>
@@ -34,24 +34,24 @@
                         <td>
                             <div class="d-flex align-items-center">
                                 <div class="d-flex align-items-center">
-                                    <i class="material-icons icon-16pt mr-1 text-muted">person</i>
+                                    <i class="ft-user mr-1"></i>
                                     <p class="text-muted mb-0">{{ $vendor->contact_name }}</p>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="d-flex align-items-center">
                                 <small class="text-muted">
-                                    <i class="material-icons icon-16pt mr-1">email</i>
+                                    <i class="ft-mail mr-1"></i>
                                     {{ $vendor->email }}
                                 </small>
                             </div>
-                            
+
                         </td>
                         <td class="text-center w-80px">
-                            <i class="material-icons icon-16pt text-muted mr-1">monetization_on</i>
+                            <i class="icon-flag text-muted mr-1"></i>
                             <a class="text-muted">{{ $vendor->expenses()->count() }}</a>
                         </td>
-                        <td class="text-center"><i class="material-icons icon-16pt text-muted-light mr-1">today</i> {{ $vendor->created_at->format('Y-m-d') }}</td>
-                        <td><a href="{{ route('vendors.details', ['vendor' => $vendor->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-link"><i class="material-icons icon-16pt">arrow_forward</i></a> </td>
+                        <td class="text-center"><i class="ft-calendar  mr-1"></i> {{ $vendor->created_at->format('Y-m-d') }}</td>
+                        <td><a href="{{ route('vendors.details', ['vendor' => $vendor->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-link"><i class="ft-arrow-right"></i></a> </td>
                     </tr>
                 @endforeach
             </tbody>

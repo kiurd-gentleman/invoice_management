@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <title>Product Sales Report</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <style type="text/css">
         body {
             font-family: "DejaVu Sans";
         }
-        
+
         table {
             border-collapse: collapse;
         }
@@ -156,7 +157,7 @@
                 </td>
             </tr>
         </table>
-        
+
         <p class="sales-items-title">{{ __('messages.products') }}</p>
         @foreach ($products as $product)
             <div class="items-table-container">
@@ -185,7 +186,7 @@
             </td>
             <td>
                 <p class="report-footer-value">
-                    {{ money($totalAmount, $company->currency->code)->format() }}
+                    {!! money($totalAmount, $company->currency->code)->format() !!}
                 </p>
             </td>
         </tr>

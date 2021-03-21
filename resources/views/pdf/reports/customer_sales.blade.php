@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <title>Customer Sales Report</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <style type="text/css">
         body {
             font-family: "DejaVu Sans";
         }
-        
+
         table {
             border-collapse: collapse;
         }
@@ -139,7 +140,7 @@
         }
     </style>
 </head>
-<body> 
+<body>
     <div class="sub-container">
         <table class="report-header">
             <tr>
@@ -183,6 +184,8 @@
                         <td class="sales-total-cell">
                             <p class="sales-total-amount">
                                 {{ money($customer->totalAmount, $customer->currency_code) }}
+
+                                {{ money($totalAmount,  $customer->currency_code) }}
                             </p>
                         </td>
                     </tr>
