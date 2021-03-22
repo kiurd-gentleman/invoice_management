@@ -32,15 +32,6 @@
                 </div>
             </div>
         </div>
-{{--        <div class="content-header-right col-md-6 col-12">--}}
-{{--            <div class="media width-250 float-right">--}}
-{{--                <div class="media-body media-right text-right">--}}
-{{--                    <a href="{{ route('payments.create', ['company_uid' => $currentCompany->uid]) }}" class="btn btn-success btn-sm mt-2 text-uppercase">--}}
-{{--                        <i class="ft-plus"></i> {{ __('messages.create_payment') }}--}}
-{{--                    </a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
     </div>
 @endsection
 
@@ -71,21 +62,21 @@
                                             <div class="col-12 col-md-2 pl-0 ml-3">
                                                 <div class="form-group ">
                                                     <label for="filter[from]">{{ __('messages.from') }}</label>
-                                                    <input name="filter[from]" type="text" class="form-control datepicker" value="{{ isset(Request::get("filter")['from']) ? Request::get("filter")['from'] : \Carbon\Carbon::now() }}"
+                                                    <input name="filter[from]" type="text" class="form-control datepicker" value="{{ isset(Request::get("filter")['from']) ? Request::get("filter")['from'] : date('Y-m-d') }}"
                                                            readonly="readonly" placeholder="{{ __('messages.from') }}">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-2 pl-0">
                                                 <div class="form-group ">
                                                     <label for="filter[to]">{{ __('messages.to') }}</label>
-                                                    <input name="filter[to]" type="text" class="form-control datepicker" value="{{ isset(Request::get("filter")['to']) ? Request::get("filter")['to'] : \Carbon\Carbon::now()->addMonth() }}"
+                                                    <input name="filter[to]" type="text" class="form-control datepicker" value="{{ isset(Request::get("filter")['to']) ? Request::get("filter")['to'] : date('Y-m-d') }}"
                                                            readonly="readonly" placeholder="{{ __('messages.to') }}">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-2 pl-0 mt-1">
-                                                <button type="submit" class="btn btn-light mt-1">
+                                                <button type="submit" class="btn btn-info mt-1">
                                                     <i class="ft-search"></i>
-                                                    {{ __('messages.update') }}
+                                                    {{ __('Search') }}
                                                 </button>
                                             </div>
                                         </div>
@@ -101,20 +92,22 @@
                                                     'from' => isset(Request::get("filter")['from']) ? Request::get("filter")['from'] : \Carbon\Carbon::now()->format('Y-m-d'),
                                                     'to' => isset(Request::get("filter")['to']) ? Request::get("filter")['to'] : \Carbon\Carbon::now()->addMonth()->format('Y-m-d'),
                                                     'download' => true
-                                                ]) }}" target="_blank" class="btn btn-primary">
-                                                <i class="material-icons">cloud_download</i>
+                                                ]) }}" target="_blank" class="btn btn-primary btn-sm">
+                                                <i class="ft-download-cloud"></i>
                                                 {{ __('messages.download') }}
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="pdf-iframe">
+                            <div class="pdf-iframe" >
                                 <iframe src="{{ route('reports.customer_sales.pdf', [
-            'company_uid' => $currentCompany->uid,
-            'from' => isset(Request::get("filter")['from']) ? Request::get("filter")['from'] : \Carbon\Carbon::now()->format('Y-m-d'),
-            'to' => isset(Request::get("filter")['to']) ? Request::get("filter")['to'] : \Carbon\Carbon::now()->addMonth()->format('Y-m-d')
-        ]) }}" frameborder="0"></iframe>
+                                        'company_uid' => $currentCompany->uid,
+                                        'from' => isset(Request::get("filter")['from']) ? Request::get("filter")['from'] : \Carbon\Carbon::now()->format('Y-m-d'),
+                                        'to' => isset(Request::get("filter")['to']) ? Request::get("filter")['to'] : \Carbon\Carbon::now()->addMonth()->format('Y-m-d')
+                                    ]) }}" frameborder="0" style="width: 100% ; height: 500px">
+
+                                </iframe>
                             </div>
                         </div>
                     </div>

@@ -102,29 +102,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
-                                {{--                                <div class="card-header bg-white p-0">--}}
-                                {{--                                    <div class="row no-gutters flex nav">--}}
-                                {{--                                        <a href="{{ route('invoices', ['tab' => '', 'company_uid' => $currentCompany->uid]) }}" class="col-2 border-right dashboard-area-tabs__tab card-body text-center {{ $tab == 'drafts' ? 'active' : '' }}">--}}
-                                {{--                                            <span class="card-header__title m-0">--}}
-                                {{--                                                {{ __('messages.drafts') }}--}}
-                                {{--                                            </span>--}}
-                                {{--                                        </a>--}}
-                                {{--                                        <a href="{{ route('invoices', ['tab' => 'due', 'company_uid' => $currentCompany->uid]) }}" class="col-2 border-right dashboard-area-tabs__tab card-body text-center {{ $tab == 'due' ? 'active' : '' }}">--}}
-                                {{--                                            <span class="card-header__title m-0">--}}
-                                {{--                                                {{ __('messages.due_invoices') }}--}}
-                                {{--                                            </span>--}}
-                                {{--                                        </a>--}}
-                                {{--                                        <a href="{{ route('invoices', ['tab' => 'all', 'company_uid' => $currentCompany->uid]) }}" class="col-2 border-right dashboard-area-tabs__tab card-body text-center {{ $tab == 'all' ? 'active' : '' }}">--}}
-                                {{--                                            <span class="card-header__title m-0">--}}
-                                {{--                                                {{ __('messages.all_invoices') }}--}}
-                                {{--                                            </span>--}}
-                                {{--                                        </a>--}}
-                                {{--                                    </div>--}}
-                                {{--                                </div>--}}
-
-
                             </div>
                         </div>
                     </div>
@@ -133,30 +110,4 @@
         </div>
     </section>
 
-
-{{--    @include('application.estimates._filters')--}}
-
-{{--    <div class="card">--}}
-{{--        <div class="card-header bg-white p-0">--}}
-{{--            <div class="row no-gutters flex nav">--}}
-{{--                <a href="{{ route('estimates', ['company_uid' => $currentCompany->uid, 'tab' => '']) }}" class="col-2 border-right dashboard-area-tabs__tab card-body text-center {{ $tab == 'drafts' ? 'active' : '' }}">--}}
-{{--                    <span class="card-header__title m-0">--}}
-{{--                        {{ __('messages.drafts') }}--}}
-{{--                    </span>--}}
-{{--                </a>--}}
-{{--                <a href="{{ route('estimates', ['company_uid' => $currentCompany->uid, 'tab' => 'sent']) }}" class="col-2 border-right dashboard-area-tabs__tab card-body text-center {{ $tab == 'sent' ? 'active' : '' }}">--}}
-{{--                    <span class="card-header__title m-0">--}}
-{{--                        {{ __('messages.sent') }}--}}
-{{--                    </span>--}}
-{{--                </a>--}}
-{{--                <a href="{{ route('estimates', ['company_uid' => $currentCompany->uid, 'tab' => 'all']) }}" class="col-2 border-right dashboard-area-tabs__tab card-body text-center {{ $tab == 'all' ? 'active' : '' }}">--}}
-{{--                    <span class="card-header__title m-0">--}}
-{{--                        {{ __('messages.all') }}--}}
-{{--                    </span>--}}
-{{--                </a>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
-{{--        @include('application.estimates._table')--}}
-{{--    </div>--}}
 @endsection

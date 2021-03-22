@@ -57,7 +57,7 @@
                         </td>
                         <td class="h6">
                             <a href="{{ route('estimates.details', ['estimate' => $estimate->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-link">
-                                <i class="material-icons icon-16pt">arrow_forward</i>
+                                <i class="ft-arrow-right"></i>
                             </a>
                         </td>
                     </tr>
