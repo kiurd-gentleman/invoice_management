@@ -10,18 +10,18 @@
                     <th>{{ __('messages.status') }}</th>
                     <th class="text-center">{{ __('messages.subscribed_at') }}</th>
                     <th class="text-right">{{ __('messages.cancel_subscription') }}</th>
-                </tr> 
-            </thead> 
+                </tr>
+            </thead>
             <tbody class="list" id="subscriptions">
                 @foreach ($subscriptions as $subscription)
                     <tr>
                         <td>
-                            <div class="badge">#{{ $subscription->id }}</div>
+                            <div class="badge badge-info">#{{ $subscription->id }}</div>
                         </td>
-                        <td> 
+                        <td>
                             <p class="mb-0">{{ $subscription->company->name }}</p>
                         </td>
-                        <td> 
+                        <td>
                             <a class="mb-0" href="{{ route('super_admin.users.edit', $subscription->company->owner->id) }}">{{ $subscription->company->owner->full_name }}</a>
                         </td>
                         <td>
@@ -30,8 +30,8 @@
                         <td>
                             {!! $subscription->html_status !!}
                         </td>
-                        <td class="text-center"><i class="material-icons icon-16pt text-muted-light mr-1">today</i> {{ $subscription->created_at->format('Y-m-d') }}</td>
-                        <td class="text-right"><a href="{{ route('super_admin.subscriptions.cancel', $subscription->id) }}" class="btn btn-sm btn-link delete-confirm"><i class="material-icons icon-16pt">close</i></a></td>
+                        <td class="text-center"><i class="ft-calendar text-muted-light mr-1"></i> {{ $subscription->created_at->format('Y-m-d') }}</td>
+                        <td class="text-right"><a href="{{ route('super_admin.subscriptions.cancel', $subscription->id) }}" class="btn btn-sm btn-link delete-confirm"><i class="ft-delete"></i></a></td>
                     </tr>
                 @endforeach
             </tbody>

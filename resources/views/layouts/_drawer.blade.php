@@ -257,9 +257,7 @@
                 <li class="dropdown nav-item" >
                     <a class=" nav-link" href="{{ route('logout') }}"><i class="la la-columns"></i><span>Logout</span></a>
                 </li>
-
             </ul>
-
         @endif
     </div>
 </div>

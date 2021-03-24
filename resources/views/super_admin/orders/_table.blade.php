@@ -10,8 +10,8 @@
                     <th>{{ __('messages.price') }}</th>
                     <th>{{ __('messages.payment_type') }}</th>
                     <th>{{ __('messages.created_at') }}</th>
-                </tr> 
-            </thead> 
+                </tr>
+            </thead>
             <tbody class="list" id="orders">
                 @foreach ($orders as $order)
                     <tr>
@@ -39,7 +39,7 @@
                             <p class="mb-0">{{ money($order->price, $order->currency) }}</p>
                         </td>
                         <td>
-                            {{ $order->payment_type }} 
+                            {{ $order->payment_type }}
                         </td>
                         <td class="text-center"><i class="material-icons icon-16pt text-muted-light mr-1">today</i> {{ $order->created_at->format('Y-m-d') }}</td>
                     </tr>
@@ -54,7 +54,7 @@
     @endif
 @else
     <div class="row justify-content-center card-body pb-0 pt-5">
-        <i class="material-icons fs-64px">account_box</i>
+        <i class="ft-inbox"></i>
     </div>
     <div class="row justify-content-center card-body pb-5">
         <p class="h4">{{ __('messages.no_orders_yet') }}</p>

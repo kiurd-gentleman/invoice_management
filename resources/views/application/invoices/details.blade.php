@@ -172,7 +172,7 @@
                                     </div>
                                 </div>
                                 <div class="pdf-iframe">
-                                    <iframe src="{{ route('pdf.invoice', $invoice->uid) }}" frameborder="0" style="width: 100%;""></iframe>
+                                    <iframe src="{{ route('pdf.invoice', $invoice->uid) }}" frameborder="0" style="width: 100%; height: 100vh"></iframe>
                                 </div>
                             </div>
                         </div>

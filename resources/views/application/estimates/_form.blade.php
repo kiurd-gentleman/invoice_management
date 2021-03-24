@@ -162,7 +162,7 @@
                         @if($estimate->items->count() > 0)
                             @foreach($estimate->items as $item)
                                 <tr>
-                                    <td class="select-container">
+                                    <td class="select-container" style="width:30%">
                                         <select name="product[]" class="form-control priceListener select-with-footer" required>
                                             <option value="{{ $item->product_id }}" selected="">{{ $item->product->name }}</option>
                                         </select>
@@ -202,13 +202,13 @@
                                     @endif
                                     <td class="text-right">
                                         <p class="mb-1">
-                                            <input type="text" name="total[]" class="price_input price-text amount_price" value="{{ $item->total }}" readonly>
+                                            <input type="text" name="total[]" class=" form-control price_input price-text amount_price" value="{{ $item->total }}" readonly>
                                         </p>
                                         <div class="tax_list"></div>
                                     </td>
                                     <td>
-                                        <a onclick="removeRow(this)">
-                                            <i class="material-icons icon-16pt">clear</i>
+                                        <a onclick="removeRow(this)" class="btn btn-danger btn-sm">
+                                            <i class="ft-trash-2 text-white"></i>
                                         </a>
                                     </td>
                                 </tr>
