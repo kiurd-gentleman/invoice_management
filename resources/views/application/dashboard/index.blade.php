@@ -9,9 +9,7 @@
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a>
-                        </li>
-                        <li class="breadcrumb-item"><a href="#">Form</a>
+                        <li class="breadcrumb-item"><a href="index.html">{{get_system_setting('application_name')}}</a>
                         </li>
                         <li class="breadcrumb-item active">{{ __('messages.dashboard') }}
                         </li>
@@ -133,7 +131,7 @@
                 </div>
                 <div class="card-body">
                     <div class="chart">
-                        <canvas id="expensesChart" class="chart-canvas chartjs-render-monitor" width="1998" height="600"></canvas>
+                        <canvas id="expensesChart" class="chart-canvas chartjs-render-monitor" width="1998" height="250"></canvas>
                     </div>
                 </div>
             </div>
@@ -176,7 +174,7 @@
         <div  class="col-6">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Due Estimates</h4>
+                    <h4 class="card-title">Due Quatation</h4>
                     <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     <div class="heading-elements">
                         <ul class="list-inline mb-0">

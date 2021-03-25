@@ -17,7 +17,7 @@
         @include('layouts._drawer')
         <div class="app-content content">
 
-            <div class="content-wrapper">
+            <div class="content-wrapper container">
                 @yield('page_header')
                 <div class="content-body">
                     @yield('content')

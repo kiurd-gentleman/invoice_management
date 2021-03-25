@@ -62,7 +62,7 @@
                                     </div>
                                     <div class="col-12 col-md-8 text-right">
                                         <div class="btn-group " role="group">
-                                            <a href="{{ route('pdf.invoice', ['invoice' => $invoice->uid, 'download' => true]) }}" target="_blank" class="btn btn-sm btn-pinterest">
+                                            <a href="{{ route('pdf.invoice', ['invoice' => $invoice->uid, 'download' => true]) }}" target="_blank" class="btn btn-sm btn-pinterest round">
                                                 <i class="ft-download-cloud"></i>
                                                 <span>Download</span>
 
@@ -88,7 +88,7 @@
                                                 <i class="ft-check-circle"></i>
                                                 <span>{{ __('messages.mark_sent') }}</span>
                                             </a>
-                                            <a href="{{ route('invoices.delete', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-pinterest">
+                                            <a href="{{ route('invoices.delete', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-pinterest round">
                                                 <i class="ft-trash"></i>
                                                 <span>{{ __('messages.delete') }}</span>
                                             </a>
