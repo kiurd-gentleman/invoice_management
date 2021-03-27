@@ -24,7 +24,7 @@ class DashboardController extends Controller
     {
         $user = $request->user();
         $company = $user->currentCompany();
-   
+
         // Dashboard Stats
         $customersCount = Customer::findByCompany($company->id)->count();
         $invoicesCount = Invoice::findByCompany($company->id)->count();
@@ -34,6 +34,7 @@ class DashboardController extends Controller
         // Due Invoices and Estimates
         $dueInvoices = Invoice::findByCompany($company->id)->active()->where('due_amount', '>', 0)->take(5)->latest()->get();
         $dueEstimates = Estimate::findByCompany($company->id)->active()->take(5)->latest('expiry_date')->get();
+//        dd($dueEstimates);
 
         // Financial Year Starts-Ends
         $financialYearStarts = $company->getSetting('financial_month_starts');
@@ -55,7 +56,7 @@ class DashboardController extends Controller
         $expense_stats_label = [];
         $expense_stats = [];
 
-        // Iterate over the Date Period 
+        // Iterate over the Date Period
         foreach ($period as $date) {
             // Add month as label
             $month = $date->format('M');

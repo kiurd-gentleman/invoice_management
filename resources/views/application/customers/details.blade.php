@@ -38,7 +38,7 @@
 @section('content')
     <div class="card">
         <div class="row pl-4 pr-4">
-            <div class="col-12 col-md-3 mt-4 mb-4">
+            <div class="col-12 col-md-4 mt-4 mb-4">
                 <h4 class="content-header-title">{{ __('messages.details') }}</h4>
                 <hr>
                 <p class="mb-1">
@@ -51,30 +51,33 @@
                     <strong>{{ __('messages.email') }}:</strong> {{ $customer->email }} <br>
                 </p>
             </div>
-            <div class="col-12 col-md-3 mt-4 mb-4">
+            <div class="col-12 col-md-4 mt-4 mb-4">
                 <h4 class="content-header-title">{{ __('messages.billing') }}</h4>
                 <hr>
                 <p>
                     {{ $customer->displayLongAddress('billing') }}
                 </p>
             </div>
-            <div class="col-12 col-md-3 mt-4 mb-4">
+            <div class="col-12 col-md-4 mt-4 mb-4">
                 <h4 class="content-header-title">{{ __('messages.standing') }}</h4>
                 <hr>
                 <strong>{{ __('messages.due_amount') }}:</strong>
                 <p class="h5 mt-1">{{ money($customer->invoice_due_amount, $customer->currency_code)  }}</p>
             </div>
-            <div class="col-12 col-md-3 text-right mt-4 mb-4">
-                <a href="{{ route('customers.edit', ['customer' => $customer->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-outline-primary">
+        </div>
+        <div class="row w-100">
+            <div class="col-12 col-md-12 text-right  mb-4 d-flex justify-content-center">
+                <a href="{{ route('customers.edit', ['customer' => $customer->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-primary">
                     <i class="ft-edit"></i>
                     {{ __('messages.edit') }}
                 </a>
-                <a href="{{ route('customers.delete', ['customer' => $customer->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-outline-danger delete-confirm">
+                <a href="{{ route('customers.delete', ['customer' => $customer->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm ml-1 btn-danger delete-confirm">
                     <i class="ft-trash"></i>
                     {{ __('messages.delete') }}
                 </a>
             </div>
         </div>
+
     </div>
 
     <nav class="nav nav-pills nav-justified w-100" role="tablist">

@@ -23,11 +23,16 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#">Form</a>
-                        </li>
                         <li class="breadcrumb-item active">{{ __('messages.customers') }}
                         </li>
                     </ol>
+                </div>
+            </div>
+        </div>
+        <div class="content-header-right col-md-6 col-12">
+            <div class="media width-250 float-right">
+                <div class="media-body media-right text-right">
+                    <a href="{{ route('customers.create', ['company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-success text-uppercase"><i class="ft-plus"></i> &nbsp;{{ __('messages.create_customer') }}</a>
                 </div>
             </div>
         </div>

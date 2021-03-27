@@ -23,57 +23,57 @@
 @section('content')
     <div class="row match-height">
         <div class="col-xl-3 col-lg-6 col-12">
-            <div class="card pull-up">
+            <div class="card pull-up" style="background-color: rgb(103 216 142 / 30%);">
                 <div class="card-content">
                     <div class="card-body">
                         <div class="media d-flex">
                             <div class="media-body text-left">
-                                <h3 class="info">{{ $customersCount}}</h3>
+                                <h3 class="info" style="color: #65bf4f !important;">{{ $customersCount}}</h3>
 
-                                <a href="{{route('customers', ['company_uid' => $currentCompany->uid])}}" class="text-decoration-none">
-                                    <div class="card-header__title text-muted mb-2 d-flex">
+                                <a href="{{route('customers', ['company_uid' => $currentCompany->uid])}}" class="text-decoration-none"  >
+                                    <div class="card-header__title text-muted mb-2 d-flex" style="color: #65bf4f !important;">
                                         {{ __('messages.customers') }}
                                     </div>
                                 </a>
                             </div>
                             <div>
-                                <i class="icon-basket-loaded info font-large-2 float-right"></i>
+                                <i class="icon-basket-loaded info font-large-2 float-right"  style="color: #65bf4f !important;"></i>
                             </div>
                         </div>
                         <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                            <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar " role="progressbar" style="width: 80%;background-color: #65bf4f !important;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-xl-3 col-lg-6 col-12">
-            <div class="card pull-up">
+            <div class="card pull-up" style="background-color: rgb(206 139 79 / 30%);">
                 <div class="card-content">
                     <div class="card-body">
                         <div class="media d-flex">
                             <div class="media-body text-left">
-                                <h3 class="info">{{ $invoicesCount}}</h3>
+                                <h3 class="info" style="color: #e68539 !important ;" >{{ $invoicesCount}}</h3>
 
                                 <a href="{{route('invoices', ['company_uid' => $currentCompany->uid])}}" class="text-decoration-none">
-                                    <div class="card-header__title text-muted mb-2 d-flex">
+                                    <div class="card-header__title text-muted mb-2 d-flex" style="color: #e68539 !important ;">
                                         {{ __('messages.invoices') }}
                                     </div>
                                 </a>
                             </div>
                             <div>
-                                <i class="icon-basket-loaded info font-large-2 float-right"></i>
+                                <i class="icon-basket-loaded info font-large-2 float-right" style="color: #e68539 !important ;"></i>
                             </div>
                         </div>
                         <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                            <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar" role="progressbar" style="width: 80%; background-color: #e68539 !important ;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-xl-3 col-lg-6 col-12">
-            <div class="card pull-up">
+            <div class="card pull-up" style="background-color: rgb(79 144 206 / 30%);">
                 <div class="card-content">
                     <div class="card-body">
                         <div class="media d-flex">
@@ -81,7 +81,7 @@
                                 <h3 class="info">{{ $estimatesCount}}</h3>
 
                                 <a href="{{route('estimates', ['company_uid' => $currentCompany->uid])}}" class="text-decoration-none">
-                                    <div class="card-header__title text-muted mb-2 d-flex">
+                                    <div class="card-header__title text-muted mb-2 d-flex info">
                                         {{ __('messages.estimates') }}
                                     </div>
 {{--                                    <span class="h4 m-0">{{ $estimatesCount }}</span>--}}
@@ -92,30 +92,30 @@
                             </div>
                         </div>
                         <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                            <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-xl-3 col-lg-6 col-12">
-            <div class="card pull-up">
+            <div class="card pull-up" style="background-color: rgb(247 93 89 / 30%); ;">
                 <div class="card-content">
                     <div class="card-body">
                         <div class="media d-flex">
                             <div class="media-body text-left">
-                                <h3 class="info">{{ __('messages.due_amount') }}</h3>
+                                <h3  style="color: #d2555a !important ;" >{{ __('messages.due_amount') }}</h3>
 
                                 <div class="card-header__title text-muted mb-2 d-flex"></div>
-                                <span class="h4 m-0">{{ money($totalDueAmount, $currentCompany->currency->code) }}</span>
+                                <span class="h4 m-0" style="color: #d2555a !important ;" >{{ money($totalDueAmount, $currentCompany->currency->code) }}</span>
 
                             </div>
                             <div>
-                                <i class="icon-basket-loaded info font-large-2 float-right"></i>
+                                <i class="icon-basket-loaded info font-large-2 float-right" style="color: #d2555a !important ;" ></i>
                             </div>
                         </div>
                         <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                            <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar" role="progressbar" style="width: 80%; background-color: #d2555a !important ;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                 </div>

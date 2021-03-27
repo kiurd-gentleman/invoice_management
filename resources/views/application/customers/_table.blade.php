@@ -3,13 +3,13 @@
         <table class="table mb-0 thead-border-top-0 table-striped">
             <thead>
                 <tr>
-                    <th class="w-30px" class="text-center">{{ __('messages.#id') }}</th>
-                    <th>{{ __('messages.display_name') }}</th>
-                    <th>{{ __('messages.contact_name') }}</th>
-                    <th class="w-50px">{{ __('messages.invoices') }}</th>
-                    <th class="text-center">{{ __('messages.amount_due') }}</th>
-                    <th class="text-center width: 120px;">{{ __('messages.created_at') }}</th>
-                    <th class="w-50px">{{ __('messages.view') }}</th>
+                    <th width=0%"" class="text-center">{{ __('messages.#id') }}</th>
+                    <th width=25%">{{ __('messages.display_name') }}</th>
+                    <th width=30%">{{ __('messages.contact_name') }}</th>
+                    <th width="10%">{{ __('messages.invoices') }}</th>
+                    <th class="text-center" width=10%">{{ __('messages.amount_due') }}</th>
+                    <th class="text-center" width="20%">{{ __('messages.created_at') }}</th>
+                    <th width="5%">{{ __('messages.view') }}</th>
                 </tr>
             </thead>
             <tbody class="list" id="customers">
@@ -54,7 +54,7 @@
                         <td class="text-center">
                             <strong>{{ money($customer->invoice_due_amount, $customer->currency_code) }}</strong>
                         </td>
-                        <td class="text-center"><i class="ft-calendar mr-1 text-primary"></i> {{ $customer->created_at->format('Y-m-d') }}</td>
+                        <td class="text-center"><i class="ft-calendar mr-1 text-primary"></i>{{ $customer->created_at->format('Y-m-d') }}</td>
                         <td><a href="{{ route('customers.details', ['customer' => $customer->id,'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-link"><i class="ft-arrow-right"></i></a> </td>
                     </tr>
                 @endforeach

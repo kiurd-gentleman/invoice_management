@@ -24,15 +24,11 @@
             </div>
             <div class="col-md-3">
                 <div class=" button-group mt-2">
-                    <a href="{{ route('customers', ['company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-outline-danger"><i class="ft-refresh-ccw"></i> {{ __('messages.clear_filters') }}</a>
-
-                    <button type="submit" class="btn btn-sm  btn-outline-info bg-white ">
-{{--                        <i class="material-icons text-primary icon-20pt">refresh</i>--}}
+                    <button type="submit" class="btn btn-sm  btn-info bg-white ">
+                        <i class="ft-search"></i>&nbsp;
                         {{ __('Find') }}
                     </button>
-
-                    <a href="{{ route('customers.create', ['company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-outline-success">{{ __('messages.create_customer') }}</a>
-
+                    <a href="{{ route('customers', ['company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-danger"><i class="ft-refresh-ccw"></i>&nbsp; {{ __('messages.clear_filters') }}</a>
                 </div>
             </div>
 
