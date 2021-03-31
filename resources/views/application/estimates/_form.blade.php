@@ -5,7 +5,7 @@
             <div class="form-group required select-container">
                 <label for="customer">{{ __('messages.customer') }}</label>
                 <div class="input-group">
-                    <select id="customer" name="customer_id" class="form-control select2" >
+                    <select id="customer" name="customer_id" class="form-control" >
                         <option disabled selected>{{ __('messages.select_customer') }}</option>
                         @if($estimate->customer_id)
                             <option value="{{ $estimate->customer_id }}"
@@ -37,11 +37,11 @@
 
         <div class="col-md-4 pr-4 pl-4">
             <div class="form-group required">
-                <label for="estimate_date">{{ __('messages.estimate_date') }}</label>
-                <input name="estimate_date" type="text" class="form-control input datepicker"  value="{{ $estimate->estimate_date ?? date('Y-m-d') }}" readonly="readonly" required>
+                <label for="estimate_date">{{ __('messages.quotation_date') }}</label>
+                <input name="estimate_date" type="text" class="form-control input datepicker"  value="{{  date_format (date_create($estimate->estimate_date), 'Y-m-d') ?? date('Y-m-d') }}" readonly="readonly" required>
             </div>
             <div class="form-group required">
-                <label for="estimate_number">{{ __('messages.estimate_number') }}</label>
+                <label for="estimate_number">{{ __('messages.quotation_number') }}</label>
                 <div class="input-group input-group-merge">
                     <input name="estimate_prefix" type="hidden" value="{{ $estimate->estimate_prefix }}">
                     <input name="estimate_number" type="text" maxlength="6" class="form-control form-control-prepended" value="{{ $estimate->estimate_num }}" autocomplete="off" required>
@@ -57,7 +57,7 @@
         <div class="col-md-4 pl-4">
             <div class="form-group required">
                 <label for="expiry_date">{{ __('messages.expiry_date') }}</label>
-                <input name="expiry_date" type="text" class="form-control input datepicker" value="{{ $estimate->expiry_date ?? date('Y-m-d') }}" readonly="readonly" required>
+                <input name="expiry_date" type="text" class="form-control input datepicker" value="{{date_format (date_create( $estimate->expiry_date), 'Y-m-d')  ?? date('Y-m-d') }}" readonly="readonly" required>
             </div>
             <div class="form-group">
                 <label for="reference_number">{{ __('messages.reference_number') }}</label>
@@ -311,7 +311,7 @@
         @endif
 
         <div class="col-12 text-center float-right mt-3">
-            <button type="button" class="btn btn-primary save_form_button">{{ __('messages.save_estimate') }}</button>
+            <button type="button" class="btn btn-primary btn-sm save_form_button">{{ __('messages.save_quotation') }}</button>
         </div>
     </div>
 </div>

@@ -16,12 +16,12 @@
                 @foreach ($payments as $payment)
                     <tr>
                         <td>
-                            <a href="{{ route('payments.edit', ['payment' => $payment->id, 'company_uid' => $currentCompany->uid]) }}">
+                            <a href="{{ route('payments.edit', ['payment' => $payment->id, 'company_uid' => $currentCompany->uid]) }}" class="text-danger">
                                 {{ $payment->payment_number }}
                             </a>
                         </td>
                         <td>
-                            {{ $payment->formatted_payment_date }}
+                            <i class="fa-calendar-times"></i>{{ $payment->formatted_payment_date }}
                         </td>
                         <td>
                             {{ $payment->customer->display_name }}
@@ -49,9 +49,9 @@
         {{ $payments->links() }}
     </div>
 @else
-    <div class="row justify-content-center card-body pb-0 pt-5">
-        <i class="material-icons fs-64px">payment</i>
-    </div>
+{{--    <div class="row justify-content-center card-body pb-0 pt-5">--}}
+{{--        <i class="material-icons fs-64px">payment</i>--}}
+{{--    </div>--}}
     <div class="row justify-content-center card-body pb-5">
         <p class="h4">{{ __('messages.no_payments_yet') }}</p>
     </div>

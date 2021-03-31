@@ -22,9 +22,9 @@
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a>
+                        <li class="breadcrumb-item"><a href="#">{{get_system_setting('application_name')}}</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#">{{ __('messages.invoice') }}</a>
+                        <li class="breadcrumb-item"><a href="{{ route('invoices', ['company_uid' => $currentCompany->uid]) }}" >{{ __('messages.invoices') }}</a>
                         </li>
                         <li class="breadcrumb-item active">Edit
                         </li>
@@ -39,10 +39,10 @@
 
     <section id="basic-form-layouts w-100">
         <div class="row match-height d-flex justify-content-center   ">
-            <div class="col-md-8 ">
+            <div class="col-md-12 ">
                 <div class="card ">
                     <div class="card-header">
-                        <h4 class="card-title" id="basic-layout-round-controls">User List</h4>
+                        <h4 class="card-title" id="basic-layout-round-controls">{{ __('messages.update_invoice') }}</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
@@ -55,14 +55,14 @@
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
-                            <div  class="">
+
                                 <form action="{{ route('invoices.update', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" method="POST">
                                     @include('layouts._form_errors')
                                     @csrf
 
                                     @include('application.invoices._form')
                                 </form>
-                            </div>
+
                         </div>
                     </div>
                 </div>

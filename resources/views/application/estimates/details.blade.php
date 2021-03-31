@@ -6,15 +6,15 @@
 
     <div class="content-header row">
         <div class="content-header-left col-md-6 col-12 mb-2">
-            <h3 class="content-header-title text-uppercase">{{ __('messages.estimate_details') }}</h3>
+            <h3 class="content-header-title text-uppercase">{{ __('messages.quotation_details') }}</h3>
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a>
+                        <li class="breadcrumb-item"><a href="#">{{get_system_setting('application_name')}}</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="{{ route('estimates', ['company_uid' => $currentCompany->uid]) }}">{{ __('messages.estimates') }}</a>
+                        <li class="breadcrumb-item"><a href="{{ route('estimates', ['company_uid' => $currentCompany->uid]) }}">{{ __('messages.quotation') }}</a>
                         </li>
-                        <li class="breadcrumb-item active">{{ __('messages.estimate_details') }}
+                        <li class="breadcrumb-item active">{{ __('messages.quotation_details') }}
                         </li>
                     </ol>
                 </div>
@@ -30,7 +30,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title" id="basic-layout-round-controls">Invoice Details</h4>
+                        <h4 class="card-title" id="basic-layout-round-controls">{{ __('messages.quotation_details') }}</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
@@ -52,7 +52,7 @@
                                     </div>
                                     <div class="col-12 col-md-8 text-right">
                                         <div class="btn-group mb-2">
-                                            <a href="{{ route('pdf.estimate', ['estimate' => $estimate->uid, 'download' => true]) }}" target="_blank" class="btn btn-pinterest btn-sm">
+                                            <a href="{{ route('pdf.estimate', ['estimate' => $estimate->uid, 'download' => true]) }}" target="_blank" class="btn btn-pinterest btn-sm round">
                                                 <i class="ft-download-cloud"></i>
                                                 {{ __('messages.download') }}
                                             </a>
@@ -67,7 +67,7 @@
                                             <a href="{{ route('estimates.mark', ['estimate' => $estimate->id, 'company_uid' => $currentCompany->uid, 'status' => 'accepted']) }}" class=" btn btn-sm btn-pinterest"><i class="ft-check"></i> {{ __('messages.mark_accepted') }}</a>
                                             <a href="{{ route('estimates.mark', ['estimate' => $estimate->id, 'company_uid' => $currentCompany->uid, 'status' => 'rejected']) }}" class=" btn btn-sm btn-pinterest"><i class="ft-check-circle"></i>{{ __('messages.mark_rejected') }}</a>
                                             <a href="{{ route('estimates.mark', ['estimate' => $estimate->id, 'company_uid' => $currentCompany->uid, 'status' => 'sent']) }}" class=" btn btn-sm btn-pinterest"> <i class="ft-check-circle"></i>{{ __('messages.mark_sent') }}</a>
-                                            <a href="{{ route('estimates.delete', ['estimate' => $estimate->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-pinterest delete-confirm"><i class="ft-trash"></i>{{ __('messages.delete') }}</a>
+                                            <a href="{{ route('estimates.delete', ['estimate' => $estimate->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-pinterest round delete-confirm"><i class="ft-trash"></i>{{ __('messages.delete') }}</a>
 
 
 {{--                                            <div class="btn-group">--}}

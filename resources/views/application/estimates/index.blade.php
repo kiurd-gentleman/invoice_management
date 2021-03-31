@@ -25,9 +25,9 @@
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a>
+                        <li class="breadcrumb-item"><a href="#">{{get_system_setting('application_name')}}</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#">{{ __('Quotation') }}</a>
+                        <li class="breadcrumb-item"><a href="{{ route('estimates', ['company_uid' => $currentCompany->uid]) }}">{{ __('Quotation') }}</a>
                         </li>
                         <li class="breadcrumb-item active">List
                         </li>
@@ -38,7 +38,7 @@
         <div class="content-header-right col-md-6 col-12">
             <div class="media width-250 float-right">
                 <div class="media-body media-right text-right">
-                    <a href="{{ route('estimates.create', ['company_uid' => $currentCompany->uid]) }}" class="btn btn-success btn-sm mt-2 text-uppercase"><i class="ft-plus"></i> {{ __('Quotation') }}</a>
+                    <a href="{{ route('estimates.create', ['company_uid' => $currentCompany->uid]) }}" class="btn btn-success btn-sm mt-2 text-uppercase"><i class="ft-plus"></i> {{ __('New Quotation') }}</a>
                 </div>
             </div>
         </div>

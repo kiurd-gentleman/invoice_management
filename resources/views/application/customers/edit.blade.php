@@ -18,15 +18,15 @@
 
     <div class="content-header row">
         <div class="content-header-left col-md-6 col-12 mb-2">
-            <h3 class="content-header-title">{{ __('messages.customers') }}</h3>
+            <h3 class="content-header-title">{{ __('messages.update_customer')  }}</h3>
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a>
+                        <li class="breadcrumb-item"><a href="#">{{get_system_setting('application_name')}}</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#">Form</a>
+                        <li class="breadcrumb-item"><a href="{{route('customers',  ['company_uid' => $currentCompany->uid])}}" >{{ __('messages.customers') }}</a>
                         </li>
-                        <li class="breadcrumb-item active">{{ __('messages.update_customer')  }}
+                        <li class="breadcrumb-item active">{{ __('Update')  }}
                         </li>
                     </ol>
                 </div>

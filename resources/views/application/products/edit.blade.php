@@ -25,11 +25,11 @@
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a>
+                        <li class="breadcrumb-item"><a href="#">{{get_system_setting('application_name')}}</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#">Form</a>
+                        <li class="breadcrumb-item"><a href="{{ route('products', ['company_uid' => $currentCompany->uid]) }}">Product</a>
                         </li>
-                        <li class="breadcrumb-item active">{{ __('messages.update_product') }}
+                        <li class="breadcrumb-item active">Edit
                         </li>
                     </ol>
                 </div>
@@ -44,7 +44,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title" id="basic-layout-round-controls">User List</h4>
+                        <h4 class="card-title" id="basic-layout-round-controls">{{ __('messages.update_product') }}</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
@@ -58,10 +58,7 @@
                     <div class="card-content collapse show">
                         <div class="card-body">
                             <div class="form-group text-center ">
-                                <a href="{{ route('products.delete', ['product' => $product->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-danger btn-sm float-left">
-                                    <i class="ft-trash"></i>
-                                    {{ __('messages.delete_product') }}
-                                </a>
+
                             </div>
                             <div  class="container">
                                 <form action="{{ route('products.update', ['product' => $product->id, 'company_uid' => $currentCompany->uid]) }}" method="POST">

@@ -65,6 +65,7 @@
             </div>
         </div>
     </div>
+    <hr>
 
     <div class="row no-gutters">
         <div class="col-lg-4 card-body">
@@ -129,7 +130,7 @@
             </div>
         </div>
     </div>
-
+    <hr>
     <div class="row no-gutters">
         <div class="col-lg-4 card-body">
             <p><strong class="headings-color">{{ __('messages.shipping_address') }}</strong></p>

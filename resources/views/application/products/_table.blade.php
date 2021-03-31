@@ -5,7 +5,7 @@
                 <tr>
                     <th class="text-center w-30px">{{ __('messages.#id') }}</th>
                     <th>{{ __('messages.product') }}</th>
-                    <th>{{ __('messages.unit') }}</th>
+                    <th class="text-center">{{ __('messages.unit') }}</th>
                     <th class="text-center">{{ __('messages.price') }}</th>
                     <th class="text-center width: 120px;">{{ __('messages.created_at') }}</th>
                     <th class="w-50px">{{ __('messages.view') }}</th>
@@ -22,7 +22,7 @@
                             </div>
                         </td>
                         <td>
-                            <a  class="h6 mb-0" href="{{ route('products.edit', ['product' => $product->id, 'company_uid' => $currentCompany->uid]) }}">
+                            <a  class="h6 mb-0 text-danger " href="{{ route('products.edit', ['product' => $product->id, 'company_uid' => $currentCompany->uid]) }}">
                                 <strong>{{ $product->name }}</strong>
                             </a>
                         </td>

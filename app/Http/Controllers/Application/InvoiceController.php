@@ -84,7 +84,6 @@ class InvoiceController extends Controller
         $products = $currentCompany->products;
         $tax_per_item = (boolean) $currentCompany->getSetting('tax_per_item');
         $discount_per_item = (boolean) $currentCompany->getSetting('discount_per_item');
-
         return view('application.invoices.create', [
             'invoice' => $invoice,
             'customers' => $customers,

@@ -72,9 +72,13 @@
                 </div>
             @endif
 
-            <div class="form-group text-center mt-3">
-                <button type="submit" class="btn btn-primary form_with_price_input_submit">{{ __('messages.save_product') }}</button>
-            </div>
         </div>
     </div>
+</div>
+<div class="form-group text-center mt-3">
+    <button type="submit" class="btn btn-primary btn-sm form_with_price_input_submit">{{ __('messages.save_product') }}</button>
+    <a href="{{ route('products.delete', ['product' => $product->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-danger btn-sm">
+        <i class="ft-trash"></i>
+        {{ __('messages.delete_product') }}
+    </a>
 </div>

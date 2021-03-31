@@ -5,7 +5,7 @@
             <div class="form-group required select-container">
                 <label for="customer">{{ __('messages.customer') }}</label>
                 <div class="input-group">
-                    <select id="customer" name="customer_id" data-toggle="" class="form-control select2" >
+                    <select id="customer" name="customer_id" data-toggle="" class="form-control " >
                         <option disabled selected>{{ __('messages.select_customer') }}</option>
                         @if($invoice->customer_id)
                             <option value="{{ $invoice->customer_id }}"

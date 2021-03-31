@@ -21,9 +21,11 @@
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a>
+                        <li class="breadcrumb-item"><a href="#">{{get_system_setting('application_name')}}</a>
                         </li>
-                        <li class="breadcrumb-item active">{{ __('messages.customers') }}
+                        <li class="breadcrumb-item "><a href="{{route('customers',  ['company_uid' => $currentCompany->uid])}}" >{{ __('messages.customers') }}</a>
+                        </li>
+                        <li class="breadcrumb-item active">{{ __('List') }}
                         </li>
                     </ol>
                 </div>

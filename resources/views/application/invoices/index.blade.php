@@ -20,13 +20,13 @@
 {{--    </div>--}}
     <div class="content-header row">
         <div class="content-header-left col-md-6 col-12 mb-2">
-            <h3 class="content-header-title text-uppercase">{{ __('messages.invoice') }}</h3>
+            <h3 class="content-header-title text-uppercase">{{ __('messages.invoices') }}</h3>
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a>
+                        <li class="breadcrumb-item"><a href="#">{{get_system_setting('application_name')}}</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#">{{ __('messages.invoice') }}</a>
+                        <li class="breadcrumb-item"><a href="{{ route('invoices', ['company_uid' => $currentCompany->uid]) }}" >{{ __('messages.invoices') }}</a>
                         </li>
                         <li class="breadcrumb-item active">List
                         </li>

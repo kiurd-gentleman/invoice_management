@@ -131,15 +131,15 @@ Route::group(['namespace' => 'Application', 'prefix' => '/{company_uid}', 'middl
     Route::get('/invoices/{tab?}', 'InvoiceController@index')->name('invoices');
 
     // Estimates
-    Route::get('/estimates/create', 'EstimateController@create')->name('estimates.create');
-    Route::post('/estimates/create', 'EstimateController@store')->name('estimates.store');
-    Route::get('/estimates/{estimate}/details', 'EstimateController@show')->name('estimates.details');
-    Route::get('/estimates/{estimate}/edit', 'EstimateController@edit')->name('estimates.edit');
-    Route::post('/estimates/{estimate}/edit', 'EstimateController@update')->name('estimates.update');
-    Route::get('/estimates/{estimate}/delete', 'EstimateController@delete')->name('estimates.delete');
-    Route::get('/estimates/{estimate}/send', 'EstimateController@send')->name('estimates.send');
-    Route::get('/estimates/{estimate}/mark/{status?}', 'EstimateController@mark')->name('estimates.mark');
-    Route::get('/estimates/{tab?}', 'EstimateController@index')->name('estimates');
+    Route::get('/quotations/create', 'EstimateController@create')->name('estimates.create');
+    Route::post('/quotations/create', 'EstimateController@store')->name('estimates.store');
+    Route::get('/quotations/{estimate}/details', 'EstimateController@show')->name('estimates.details');
+    Route::get('/quotations/{estimate}/edit', 'EstimateController@edit')->name('estimates.edit');
+    Route::post('/quotations/{estimate}/edit', 'EstimateController@update')->name('estimates.update');
+    Route::get('/quotations/{estimate}/delete', 'EstimateController@delete')->name('estimates.delete');
+    Route::get('/quotations/{estimate}/send', 'EstimateController@send')->name('estimates.send');
+    Route::get('/quotations/{estimate}/mark/{status?}', 'EstimateController@mark')->name('estimates.mark');
+    Route::get('/quotations/{tab?}', 'EstimateController@index')->name('estimates');
 
     // Payments
     Route::get('/payments', 'PaymentController@index')->name('payments');

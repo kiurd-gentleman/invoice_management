@@ -31,15 +31,7 @@
                         <input name="filter[to]" type="text" class="form-control datepicker" value="{{ isset(Request::get("filter")['to']) ? Request::get("filter")['to'] : '' }}" readonly="readonly" placeholder="{{ __('messages.to') }}">
                     </div>
                 </div>
-                <div class="row mt-2 col-md-3">
-                    <div class="col-12">
-                        <a href="{{ route('payments', ['company_uid' => $currentCompany->uid]) }}" class="btn btn-danger "><i class="ft-refresh-cw"></i> {{ __('messages.clear_filters') }}</a>
-                        <button type="submit" class="btn btn-success">
-                            <i class="ft-search"></i>
-                            {{ __('messages.filter') }}
-                        </button>
-                    </div>
-                </div>
+
             </div>
         </div>
 

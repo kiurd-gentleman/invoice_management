@@ -1,6 +1,6 @@
-@extends('layouts.app', ['page' => 'estimates'])
+@extends('layouts.app', ['page' => 'quotations'])
 
-@section('title', __('messages.create_estimate'))
+@section('title', __('messages.create_quotation'))
 
 @section('page_header')
 {{--    <div class="page__heading d-flex align-items-center">--}}
@@ -17,15 +17,15 @@
 {{--    </div>--}}
     <div class="content-header row">
         <div class="content-header-left col-md-6 col-12 mb-2">
-            <h3 class="content-header-title text-uppercase">{{ __('Quotation') }}</h3>
+            <h3 class="content-header-title text-uppercase">{{ __('messages.quotation') }}</h3>
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a>
+                        <li class="breadcrumb-item"><a href="index.html">{{get_system_setting('application_name')}}</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#">{{ __('Quotation ') }}</a>
+                        <li class="breadcrumb-item"><a href="{{ route('estimates', ['company_uid' => $currentCompany->uid]) }}" >{{ __('Quotation') }}</a>
                         </li>
-                        <li class="breadcrumb-item active">Create
+                        <li class="breadcrumb-item active">{{ __('messages.create_quotation')}}
                         </li>
                     </ol>
                 </div>
@@ -47,7 +47,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title" id="basic-layout-round-controls">Quotation List</h4>
+                        <h4 class="card-title" id="basic-layout-round-controls">Quotation Create</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
@@ -60,14 +60,12 @@
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
-                            <div  class="container">
-                                <form action="{{ route('estimates.store', ['company_uid' => $currentCompany->uid]) }}" method="POST">
-                                    @include('layouts._form_errors')
-                                    @csrf
+                            <form action="{{ route('estimates.store', ['company_uid' => $currentCompany->uid]) }}" method="POST">
+                                @include('layouts._form_errors')
+                                @csrf
 
-                                    @include('application.estimates._form')
-                                </form>
-                            </div>
+                                @include('application.estimates._form')
+                            </form>
                         </div>
                     </div>
                 </div>

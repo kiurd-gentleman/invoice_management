@@ -20,12 +20,11 @@
             </div>
             <div class="row mb-2">
                 <div class="col-12 button-group mt-1">
-                    <a href="{{ route('products', ['company_uid' => $currentCompany->uid]) }}" class="btn  btn-sm btn-outline-danger mt-1 "><i class="ft-trash"></i> {{ __('messages.clear_filters') }}</a>
-                    <button type="submit" class="btn btn-outline-info btn-sm mt-1 "> <i class="ft-search"></i>
+                    <a href="{{ route('products', ['company_uid' => $currentCompany->uid]) }}" class="btn  btn-sm btn-danger mt-1 text-uppercase"><i class="ft-trash"></i> {{ __('messages.clear_filters') }}</a>
+                    <button type="submit" class="btn btn-info btn-sm mt-1 text-uppercase "> <i class="ft-search"></i>
 {{--                        <i class="material-icons text-primary">refresh</i>--}}
                         {{ __('messages.filter') }}
                     </button>
-                    <a href="{{ route('products.create', ['company_uid' => $currentCompany->uid]) }}" class="btn btn-outline-success btn-sm mt-1"><i class="ft-plus"></i> {{ __('messages.create_product') }}</a>
                 </div>
             </div>
         </div>

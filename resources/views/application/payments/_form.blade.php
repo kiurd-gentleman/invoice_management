@@ -99,7 +99,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
                 @if($payment->getCustomFields()->count() > 0)
                     <div class="col-12">
@@ -109,10 +108,9 @@
                     </div>
                 @endif
             </div>
-
-            <div class="form-group text-center mt-3">
-                <button type="button" class="btn btn-primary form_with_price_input_submit">{{ __('messages.save_payment') }}</button>
-            </div>
         </div>
     </div>
+{{--    <div class="form-group text-center mt-3">--}}
+{{--        <button type="button" class="btn btn-primary btn-sm form_with_price_input_submit">{{ __('messages.save_payment') }}</button>--}}
+{{--    </div>--}}
 </div>

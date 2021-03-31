@@ -30,6 +30,8 @@
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">{{get_system_setting('application_name')}}</a>
+                        </li>
                         <li class="breadcrumb-item"><a href="{{ route('customers', ['company_uid' => $currentCompany->uid]) }}">{{ __('messages.payments') }}</a>
                         </li>
                         <li class="breadcrumb-item active">{{ __('messages.update_payment') }}
@@ -38,22 +40,22 @@
                 </div>
             </div>
         </div>
-        <div class="content-header-right col-md-6 col-12">
-            <div class="media width-250 float-right">
-                <div class="media-body media-right text-right">
-                    <div class="btn-group">
-                        <a href="{{ route('pdf.payment', ['payment' => $payment->uid, 'download' => true]) }}" target="_blank" class="btn btn-info btn-sm">
-                            <i class="ft-download-cloud"></i>
-                            {{ __('messages.download') }}
-                        </a>
-                        <a href="{{ route('payments.delete', ['payment' => $payment->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-danger btn-sm delete-confirm">
-                            <i class="ft-trash"></i>
-                            {{ __('messages.delete_payment') }}
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+{{--        <div class="content-header-right col-md-6 col-12">--}}
+{{--            <div class="media width-250 float-right">--}}
+{{--                <div class="media-body media-right text-right">--}}
+{{--                    <div class="btn-group">--}}
+{{--                        <a href="{{ route('pdf.payment', ['payment' => $payment->uid, 'download' => true]) }}" target="_blank" class="btn btn-info btn-sm">--}}
+{{--                            <i class="ft-download-cloud"></i>--}}
+{{--                            {{ __('messages.download') }}--}}
+{{--                        </a>--}}
+{{--                        <a href="{{ route('payments.delete', ['payment' => $payment->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-danger btn-sm delete-confirm">--}}
+{{--                            <i class="ft-trash"></i>--}}
+{{--                            {{ __('messages.delete_payment') }}--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
 @endsection
 
@@ -84,6 +86,20 @@
                                     @csrf
 
                                     @include('application.payments._form')
+
+
+                                    <div class="form-group text-center mt-3">
+                                        <button type="button" class="btn btn-primary btn-sm form_with_price_input_submit">{{ __('messages.save_payment') }}</button>
+                                        <a href="{{ route('pdf.payment', ['payment' => $payment->uid, 'download' => true]) }}" target="_blank" class="btn btn-info btn-sm">
+                                            <i class="ft-download-cloud"></i>
+                                            {{ __('messages.download') }}
+                                        </a>
+                                        <a href="{{ route('payments.delete', ['payment' => $payment->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-danger btn-sm delete-confirm">
+                                            <i class="ft-trash"></i>
+                                            {{ __('messages.delete_payment') }}
+                                        </a>
+                                    </div>
+
                                 </form>
                             </div>
                         </div>
