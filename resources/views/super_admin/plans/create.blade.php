@@ -22,9 +22,9 @@
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a>
+                        <li class="breadcrumb-item"><a href="#">{{get_system_setting('application_name')}}</a>
                         </li>
-                        <li class="breadcrumb-item "><a href="{{ route('super_admin.plans') }}">{{ __('messages.plans') }}</a>
+                        <li class="breadcrumb-item"><a href="{{ route('super_admin.plans') }}">{{ __('messages.plans') }}</a>
                         </li>
                         <li class="breadcrumb-item active">{{ __('messages.create_plan') }}
                         </li>

@@ -172,6 +172,8 @@
                                 </td>
                                 <td>
                                     <p class="sales-amount">
+
+
                                         {{ money($invoice->total, $invoice->currency_code) }}
                                     </p>
                                 </td>
@@ -183,6 +185,7 @@
                     <tr>
                         <td class="sales-total-cell">
                             <p class="sales-total-amount">
+{{--                                @dd($customer->totalAmount)--}}
                                 {{ money($customer->totalAmount, $customer->currency_code) }}
 
                                 {{ money($totalAmount,  $customer->currency_code) }}

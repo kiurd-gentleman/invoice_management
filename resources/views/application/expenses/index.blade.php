@@ -25,12 +25,12 @@
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a>
+                        <li class="breadcrumb-item"><a href="index.html">{{get_system_setting('application_name')}}</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#">{{ __('messages.expenses') }}</a>
+                        <li class="breadcrumb-item"><a href="{{ route('expenses', ['company_uid' => $currentCompany->uid]) }}">{{ __('messages.expenses') }}</a>
                         </li>
-{{--                        <li class="breadcrumb-item active">List--}}
-{{--                        </li>--}}
+                        <li class="breadcrumb-item active">List
+                        </li>
                     </ol>
                 </div>
             </div>

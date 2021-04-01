@@ -27,7 +27,7 @@
                             </a>
                         </td>
                         <td class="h6">
-                            {{ $expense->formatted_expense_date }}
+                            <i class="ft-calendar"></i>&nbsp{{ $expense->formatted_expense_date }}
                         </td>
                         <td class="h6 d-inline-block text-truncate maxw-13rem">
                             {{ $expense->notes ?? '-' }}
@@ -49,9 +49,9 @@
         {{ $expenses->links() }}
     </div>
 @else
-    <div class="row justify-content-center card-body pb-0 pt-5">
-        <i class="material-icons fs-64px">monetization_on</i>
-    </div>
+{{--    <div class="row justify-content-center card-body pb-0 pt-5">--}}
+{{--        <i class="material-icons fs-64px">monetization_on</i>--}}
+{{--    </div>--}}
     <div class="row justify-content-center card-body pb-5">
         <p class="h4">{{ __('messages.no_expenses_yet') }}</p>
     </div>

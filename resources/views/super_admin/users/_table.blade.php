@@ -3,14 +3,14 @@
         <table class="table mb-0 thead-border-top-0 table-striped text-center">
             <thead>
                 <tr>
-                    <th class="w-30px" class="text-center">{{ __('messages.#id') }}</th>
-                    <th>{{ __('messages.company') }}</th>
-                    <th>{{ __('messages.name') }}</th>
-                    <th>{{ __('messages.email') }}</th>
-                    <th>{{ __('messages.subscribed_to') }}</th>
-                    <th>{{ __('messages.role') }}</th>
-                    <th class="text-center width: 120px;">{{ __('messages.created_at') }}</th>
-                    <th class="w-50px">{{ __('messages.edit') }}</th>
+                    <th width="5%"  class="text-center">{{ __('messages.#id') }}</th>
+                    <th width="10%" >{{ __('messages.company') }}</th>
+                    <th width="20%">{{ __('messages.name') }}</th>
+                    <th width="20%">{{ __('messages.email') }}</th>
+                    <th width="10%">{{ __('messages.subscribed_to') }}</th>
+                    <th width="10%">{{ __('messages.role') }}</th>
+                    <th width="20%" class="text-center width: 120px;">{{ __('messages.created_at') }}</th>
+                    <th width="5%">{{ __('messages.edit') }}</th>
                 </tr>
             </thead>
             <tbody class="list " id="users">
@@ -30,7 +30,7 @@
                         </td>
                         <td>
                             @if($user->currentSubscriptionPlan())
-                                <a class="mb-0 btn btn-primary btn-sm" href="{{ route('super_admin.plans.edit', $user->currentSubscriptionPlan()->id) }}">{{ $user->currentSubscriptionPlan()->name }}</a>
+                                <a class="mb-0 badge badge-primary badge-sm" href="{{ route('super_admin.plans.edit', $user->currentSubscriptionPlan()->id) }}">{{ $user->currentSubscriptionPlan()->name }}</a>
                             @else
                                 <a class="mb-0">-----</a>
                             @endif

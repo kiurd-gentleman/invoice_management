@@ -19,6 +19,8 @@
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">{{get_system_setting('application_name')}}</a>
+                        </li>
                         <li class="breadcrumb-item"><a href="index.html">business</a>
                         </li>
                         <li class="breadcrumb-item"><a href="#">{{ __('messages.settings') }}</a>

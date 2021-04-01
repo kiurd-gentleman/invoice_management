@@ -37,23 +37,28 @@ function setupDatePickerInput() {
 }
 
 function setupPriceInput(currency) {
-    // Price format
-    if(currency.swap_currency_symbol) {
-        var settings = {
-            prefix: '',
-            centsSeparator: currency.thousand_separator,
-            thousandsSeparator: currency.decimal_separator,
-            suffix: currency.symbol
+
+    if (typeof (currency) != 'undefined'){
+        // Price format
+        // console.log(currency)
+        if(currency.swap_currency_symbol) {
+            var settings = {
+                prefix: '',
+                centsSeparator: currency.thousand_separator,
+                thousandsSeparator: currency.decimal_separator,
+                suffix: currency.symbol
+            }
+        } else {
+            var settings = {
+                prefix: currency.symbol,
+                centsSeparator: currency.thousand_separator,
+                thousandsSeparator: currency.decimal_separator,
+                suffix: '',
+            }
         }
-    } else {
-        var settings = {
-            prefix: currency.symbol,
-            centsSeparator: currency.thousand_separator,
-            thousandsSeparator: currency.decimal_separator,
-            suffix: '',
-        }
+        $('.price_input').priceFormat(settings);
     }
-    $('.price_input').priceFormat(settings);
+
 }
 
 function setupSelect2FooterListener() {
@@ -74,7 +79,9 @@ $(document).ready(function(){
     setupDatePickerInput();
 
     // Setup price formatter
+    // console.log(window.sharedData.company_currency)
     setupPriceInput(window.sharedData.company_currency);
+
 
     $('.form_with_price_input_submit').click(function() {
         var form = $(this).closest('form');
@@ -93,7 +100,7 @@ $(document).ready(function(){
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#dc3545',
-            cancelButtonColor: '#6c757d', 
+            cancelButtonColor: '#6c757d',
             confirmButtonText: 'Delete!',
             focusConfirm: false,
             focusCancel: false,
@@ -114,7 +121,7 @@ $(document).ready(function(){
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#308AF3',
-            cancelButtonColor: '#6c757d', 
+            cancelButtonColor: '#6c757d',
             confirmButtonText: 'Okay!',
             focusConfirm: false,
             focusCancel: false,

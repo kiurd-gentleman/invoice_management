@@ -87,7 +87,7 @@
         </div>
         <div class="card-body">
             <div class="card-block">
-{{--                    <p>Customer Info</p>--}}
+{{--           <p>Customer Info</p>--}}
                 <ul class="nav nav-pills nav-pill-toolbar nav-justified">
                     <li class="nav-item">
                         <a class="nav-link active" id="active2-pill1" data-toggle="pill" href="#active21" aria-expanded="true">{{ __('messages.invoices') }}</a>

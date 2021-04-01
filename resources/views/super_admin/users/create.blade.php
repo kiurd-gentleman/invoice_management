@@ -21,9 +21,9 @@
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a>
+                        <li class="breadcrumb-item"><a href="index.html">{{get_system_setting('application_name')}}</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#">Form</a>
+                        <li class="breadcrumb-item"><a href="{{ route('super_admin.users') }}">User</a>
                         </li>
                         <li class="breadcrumb-item active">Create
                         </li>
@@ -47,7 +47,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title" id="basic-layout-round-controls">User List</h4>
+                        <h4 class="card-title" id="basic-layout-round-controls">User Create</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">

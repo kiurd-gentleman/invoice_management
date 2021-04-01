@@ -15,9 +15,9 @@ class PDFReportController extends Controller
 {
     /**
      * Get Customer Sales Report Pdf
-     * 
+     *
      * @param \Illuminate\Http\Request $request
-     * 
+     *
      * @return pdf
      */
     public function customer_sales(Request $request)
@@ -46,7 +46,16 @@ class PDFReportController extends Controller
             $customer->totalAmount = $customerTotalAmount;
             $totalAmount += $customerTotalAmount;
         }
+//        dd(money($customer->totalAmount, $customer->currency_code));
 
+//        dd($totalAmount);
+        foreach ($customers as $customer){
+            foreach ($customer->invoices as $invoice){
+                dump($invoice->total, $invoice->currency_code);
+            }
+        }
+
+        dd(2);
         $pdf = PDF::loadView('pdf.reports.customer_sales', [
             'company' => $company,
             'from' => $from,
@@ -67,7 +76,7 @@ class PDFReportController extends Controller
      * Get Product Sales Report Pdf
      *
      * @param \Illuminate\Http\Request $request
-     * 
+     *
      * @return pdf
      */
     public function product_sales(Request $request)
@@ -116,7 +125,7 @@ class PDFReportController extends Controller
      * Get Profit & Loss Report Pdf
      *
      * @param \Illuminate\Http\Request $request
-     * 
+     *
      * @return pdf
      */
     public function profit_loss(Request $request)
@@ -142,11 +151,11 @@ class PDFReportController extends Controller
         // Total Expenses
         $total_loss = 0;
         foreach ($expense_categories as $expense_category) {
-            // Add Report Items 
+            // Add Report Items
             $expense_category->total_expense = collect($expense_category->expenses)->sum('amount');
             $total_loss += $expense_category->total_expense;
         }
-        
+
         $pdf = PDF::loadView('pdf.reports.profit_loss', [
             'company' => $company,
             'from' => $from,
@@ -168,7 +177,7 @@ class PDFReportController extends Controller
      * Get Profit & Expenses Pdf
      *
      * @param \Illuminate\Http\Request $request
-     * 
+     *
      * @return pdf
      */
     public function expenses(Request $request)
@@ -191,11 +200,11 @@ class PDFReportController extends Controller
         // Total Expenses
         $total_loss = 0;
         foreach ($expense_categories as $expense_category) {
-            // Add Report Items 
+            // Add Report Items
             $expense_category->total_expense = collect($expense_category->expenses)->sum('amount');
             $total_loss += $expense_category->total_expense;
         }
-        
+
         $pdf = PDF::loadView('pdf.reports.expenses', [
             'company' => $company,
             'from' => $from,

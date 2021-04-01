@@ -20,7 +20,7 @@
                                     <a class="btn btn-sm btn-light choose-button">{{ __('messages.choose_photo') }}</a>
                                 </div>
                             </div>
-                        </label> 
+                        </label>
                     </div>
                 </div>
                 <div class="col">
@@ -38,7 +38,7 @@
                                     <a class="btn btn-sm btn-light choose-button">{{ __('messages.choose_photo') }}</a>
                                 </div>
                             </div>
-                        </label> 
+                        </label>
                     </div>
                 </div>
             </div>
@@ -64,8 +64,8 @@
                 </div>
                 <div class="col-12">
                     <div class="form-group required">
-                        <label for="application_currency">{{ __('messages.currency') }}</label> 
-                        <select name="application_currency" data-toggle="select" class="form-control select2-hidden-accessible" data-select2-id="application_currency" required>
+                        <label for="application_currency">{{ __('messages.currency') }}</label>
+                        <select name="application_currency" data-toggle="select" class="form-control" data-select2-id="application_currency" required>
                             <option disabled selected>{{ __('messages.select_currency') }}</option>
                             @php $appCurrency = get_system_setting('application_currency') @endphp
                             @foreach(get_currencies_select2_array() as $option)

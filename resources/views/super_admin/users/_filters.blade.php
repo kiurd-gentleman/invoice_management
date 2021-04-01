@@ -14,16 +14,12 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="mt-2 button-group">
-                            <a href="{{ route('super_admin.users') }}" class="btn btn-danger"><i class="ft-trash"></i> Clear</a>
-                            <button type="submit" class="btn btn-info">
+                        <div class="mt-1 button-group">
+                            <a href="{{ route('super_admin.users') }}" class="btn btn-danger btn-sm mt-2"><i class="ft-trash"></i> Clear</a>
+                            <button type="submit" class="btn btn-info btn-sm mt-2">
                                 <i class="ft-search"></i>
                                 {{ __('Search') }}
                             </button>
-                            <a href="{{ route('super_admin.users.create') }}" class="btn btn-success">
-                                <i class="ft-plus"></i>
-                                {{ __('Create') }}
-                            </a>
                         </div>
                     </div>
                 </div>

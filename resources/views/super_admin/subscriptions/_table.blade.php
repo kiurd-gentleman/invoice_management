@@ -25,13 +25,13 @@
                             <a class="mb-0" href="{{ route('super_admin.users.edit', $subscription->company->owner->id) }}">{{ $subscription->company->owner->full_name }}</a>
                         </td>
                         <td>
-                            <a class="mb-0" href="{{ route('super_admin.plans.edit', $subscription->plan->id) }}">{{ $subscription->plan->name }}</a>
+                            <a class=" badge badge-info badge-sm mb-0" href="{{ route('super_admin.plans.edit', $subscription->plan->id) }}">{{ $subscription->plan->name }}</a>
                         </td>
                         <td>
                             {!! $subscription->html_status !!}
                         </td>
-                        <td class="text-center"><i class="ft-calendar text-muted-light mr-1"></i> {{ $subscription->created_at->format('Y-m-d') }}</td>
-                        <td class="text-right"><a href="{{ route('super_admin.subscriptions.cancel', $subscription->id) }}" class="btn btn-sm btn-link delete-confirm"><i class="ft-delete"></i></a></td>
+                        <td class="text-center"><i class="ft-calendar text-muted-light"></i> {{ $subscription->created_at->format('Y-m-d') }}</td>
+                        <td class="text-right "><a href="{{ route('super_admin.subscriptions.cancel', $subscription->id) }}" class="btn btn-sm btn-link font-weight-bolder delete-confirm"><i class="ft-delete font-weight-bolder"></i></a></td>
                     </tr>
                 @endforeach
             </tbody>
@@ -41,9 +41,9 @@
         {{ $subscriptions->links() }}
     </div>
 @else
-    <div class="row justify-content-center card-body pb-0 pt-5">
-        <i class="material-icons fs-64px">account_box</i>
-    </div>
+{{--    <div class="row justify-content-center card-body pb-0 pt-5">--}}
+{{--        <i class="material-icons fs-64px">account_box</i>--}}
+{{--    </div>--}}
     <div class="row justify-content-center card-body pb-5">
         <p class="h4">{{ __('messages.no_subscriptions_yet') }}</p>
     </div>

@@ -29,28 +29,32 @@
                 <div class="col">
                     <div class="form-group select-container required">
                         <label for="expense_category_id">{{ __('messages.category') }}</label>
-                        <select id="expense_category_id" name="expense_category_id" data-toggle="select" class="form-control select2 select-with-footer" data-select2-id="expense_category_id" required>
-                            <option disabled selected>{{ __('messages.select_category') }}</option>
-                            @foreach(get_expense_categories_select2_array($currentCompany->id) as $option)
-                                <option value="{{ $option['id'] }}" {{ $expense->expense_category_id == $option['id'] ? 'selected=""' : '' }}>{{ $option['text'] }}</option>
-                            @endforeach
-                        </select>
-                        <div class="d-none select-footer">
-                            <a href="{{ route('settings.expense_categories.create', ['company_uid' => $currentCompany->uid]) }}" target="_blank" class="font-weight-300">+ {{ __('messages.add_new_expense_category') }}</a>
-                        </div>
+                       <div class="input-group">
+                           <select id="expense_category_id" name="expense_category_id" data-toggle="select" class="form-control select2 select-with-footer" data-select2-id="expense_category_id" required>
+                               <option disabled selected>{{ __('messages.select_category') }}</option>
+                               @foreach(get_expense_categories_select2_array($currentCompany->id) as $option)
+                                   <option value="{{ $option['id'] }}" {{ $expense->expense_category_id == $option['id'] ? 'selected=""' : '' }}>{{ $option['text'] }}</option>
+                               @endforeach
+                           </select>
+                           <div class="input-group-append ">
+                               <a href="{{ route('settings.expense_categories.create', ['company_uid' => $currentCompany->uid]) }}" target="_blank" class="font-weight-300 btn btn-info ">+</a>
+                           </div>
+                       </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group select-container">
                         <label for="vendor_id">{{ __('messages.vendor') }}</label>
-                        <select name="vendor_id" data-toggle="select" class="form-control select2 select-with-footer" data-select2-id="vendor_id">
-                            <option disabled selected>{{ __('messages.select_vendor') }}</option>
-                            @foreach($vendors as $vendor)
-                                <option value="{{ $vendor->id }}" {{ $expense->vendor_id == $vendor->id ? 'selected=""' : '' }}>{{ $vendor->display_name }}</option>
-                            @endforeach
-                        </select>
-                        <div class="d-none select-footer">
-                            <a href="{{ route('vendors.create', ['company_uid' => $currentCompany->uid]) }}" target="_blank" class="font-weight-300">+ {{ __('messages.add_new_vendor') }}</a>
+                        <div class="input-group">
+                            <select name="vendor_id" data-toggle="select" class="form-control select2 select-with-footer" data-select2-id="vendor_id">
+                                <option disabled selected>{{ __('messages.select_vendor') }}</option>
+                                @foreach($vendors as $vendor)
+                                    <option value="{{ $vendor->id }}" {{ $expense->vendor_id == $vendor->id ? 'selected=""' : '' }}>{{ $vendor->display_name }}</option>
+                                @endforeach
+                            </select>
+                            <div class="input-group-append ">
+                                <a href="{{ route('vendors.create', ['company_uid' => $currentCompany->uid]) }}" target="_blank" class="font-weight-300 btn btn-info">+</a>
+                            </div>
                         </div>
                     </div>
                 </div>

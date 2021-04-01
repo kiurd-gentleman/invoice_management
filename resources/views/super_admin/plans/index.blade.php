@@ -22,7 +22,10 @@
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a>
+
+                        <li class="breadcrumb-item"><a href="#">{{get_system_setting('application_name')}}</a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="{{ route('super_admin.plans') }}">{{ __('messages.plans') }}</a>
                         </li>
                         <li class="breadcrumb-item active">{{ __('messages.plans') }}
                         </li>
@@ -33,7 +36,7 @@
         <div class="content-header-right col-md-6 col-12">
             <div class="media width-250 float-right">
                 <div class="media-body media-right text-right">
-                    <a href="{{ route('super_admin.plans.create') }}" class="btn btn-success ml-3"><i class="ft-plus"></i> {{ __('messages.create_plan') }}</a>
+                    <a href="{{ route('super_admin.plans.create') }}" class="btn btn-success ml-3 text-uppercase btn-sm"><i class="ft-plus"></i> {{ __('messages.create_plan') }}</a>
                 </div>
             </div>
         </div>
@@ -48,7 +51,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title" id="basic-layout-round-controls">Invoice List</h4>
+                        <h4 class="card-title" id="basic-layout-round-controls">Plan List</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">

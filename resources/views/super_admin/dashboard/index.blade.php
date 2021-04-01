@@ -9,9 +9,7 @@
         <div class="row breadcrumbs-top">
             <div class="breadcrumb-wrapper col-12">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a>
-                    </li>
-                    <li class="breadcrumb-item"><a href="#">Form</a>
+                    <li class="breadcrumb-item"><a href="index.html">{{get_system_setting('application_name')}}</a>
                     </li>
                     <li class="breadcrumb-item active">DashBoard
                     </li>
@@ -26,13 +24,13 @@
     <section>
         <div class="row match-height ">
             <div class="col-xl-3 col-lg-6 col-12">
-                <div class="card pull-up">
+                <div class="card pull-up" style="background-color: rgb(202 229 255);">
                     <div class="card-content">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="media-body text-left">
                                     <h3 class="info">{{ isset($users) ? $users : '0'}}</h3>
-                                    <h6>Users</h6>
+                                    <h6 class="text-info">Users</h6>
                                 </div>
                                 <div>
                                     <i class="icon-basket-loaded info font-large-2 float-right"></i>
@@ -46,40 +44,40 @@
                 </div>
             </div>
             <div class="col-xl-3 col-lg-6 col-12">
-                <div class="card pull-up">
+                <div class="card pull-up" style="background-color: rgb(247 93 89 / 30%); ;">
                     <div class="card-content">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="media-body text-left">
-                                    <h3 class="danger">{{ isset($active_subscriptions) ? $active_subscriptions : '0'}}</h3>
-                                    <h6>Active Subscriptions</h6>
+                                    <h3 style="color: #d2555a !important ;">{{ isset($active_subscriptions) ? $active_subscriptions : '0'}}</h3>
+                                    <h6 style="color: #d2555a !important ;">Active Subscriptions</h6>
                                 </div>
                                 <div>
-                                    <i class="icon-basket-loaded danger font-large-2 float-right"></i>
+                                    <i class="icon-basket-loaded danger font-large-2 float-right" style="color: #d2555a !important ;"></i>
                                 </div>
                             </div>
                             <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                                <div class="progress-bar bg-gradient-x-danger" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar "  role="progressbar" style="width: 80%;background-color: #d2555a !important ;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-lg-6 col-12">
-                <div class="card pull-up">
+                <div class="card pull-up" style="background-color: rgb(103 216 142 / 30%);">
                     <div class="card-content">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="media-body text-left">
-                                    <h3 class="success">{{ money($total_earnings, get_system_setting('application_currency')) }}</h3>
-                                    <h6>Total Earnings</h6>
+                                    <h3  style="color: #65bf4f !important;">{{ money($total_earnings, get_system_setting('application_currency')) }}</h3>
+                                    <h6  style="color: #65bf4f !important;" >Total Earnings</h6>
                                 </div>
                                 <div>
-                                    <i class="icon-basket-loaded success font-large-2 float-right"></i>
+                                    <i class="icon-basket-loaded success font-large-2 float-right" style="color: #65bf4f !important;"></i>
                                 </div>
                             </div>
                             <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                                <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar" role="progressbar" style="width: 80% ; background-color: #65bf4f !important;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                     </div>
@@ -95,7 +93,7 @@
                 </div>
                 <div class="card-body">
                     <div class="chart">
-                        <canvas id="earningsChart" class="chart-canvas chartjs-render-monitor" width="1998" height="600"></canvas>
+                        <canvas id="earningsChart" class="chart-canvas chartjs-render-monitor" width="1998" height="300"></canvas>
                     </div>
                 </div>
             </div>

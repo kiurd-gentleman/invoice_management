@@ -19,27 +19,17 @@
 
     <div class="content-header row">
         <div class="content-header-left col-md-6 col-12 mb-2">
-            <h3 class="content-header-title">{{ __('messages.update_vendor') }}
+            <h3 class="content-header-title">{{ __('messages.update_vendor') }}</h3>
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
+                        <li class="breadcrumb-item active"><a href="#">{{get_system_setting('application_name')}}</a>
+                        </li>
                         <li class="breadcrumb-item"><a href="{{ route('vendors', ['company_uid' => $currentCompany->uid]) }}">{{ __('messages.vendors') }}</a>
                         </li>
                         <li class="breadcrumb-item active">{{ __('messages.update_vendor') }}
                         </li>
                     </ol>
-                </div>
-            </div>
-        </div>
-        <div class="content-header-right col-md-6 col-12">
-            <div class="media width-250 float-right">
-                <div class="media-body media-right text-right">
-                    <div class="btn-group">
-                        <a href="{{ route('vendors.delete', ['vendor' => $vendor->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-danger ml-3 text-uppercase delete-confirm">
-                            <i class="ft-trash-2"></i>
-                            {{ __('messages.delete_vendor') }}
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -72,8 +62,11 @@
                                     @csrf
 
                                     @include('application.vendors._form')
-
-                                    <div class="form-group text-center mt-5">
+                                    <div class="btn-group d-flex justify-content-center">
+                                        <a href="{{ route('vendors.delete', ['vendor' => $vendor->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-danger text-uppercase delete-confirm">
+                                            <i class="ft-trash-2"></i>
+                                            {{ __('messages.delete_vendor') }}
+                                        </a>
                                         <button type="submit" class="btn btn-primary">{{ __('messages.save_vendor') }}</button>
                                     </div>
                                 </form>
