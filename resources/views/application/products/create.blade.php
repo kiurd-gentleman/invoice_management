@@ -60,6 +60,9 @@
                                     @csrf
 
                                     @include('application.products._form')
+                                    <div class="form-group text-center mt-3">
+                                        <button type="submit" class="btn btn-primary btn-sm form_with_price_input_submit">{{ __('messages.save_product') }}</button>
+                                    </div>
                                 </form>
                             </div>
 
