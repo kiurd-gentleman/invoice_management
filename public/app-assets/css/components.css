@@ -3,7 +3,7 @@ html {
   height: 100%; }
   html body {
     height: 100%;
-    background-color: #F4F5FA;
+    background-color: #e8e8e8;
     direction: ltr; }
     html body.fixed-navbar {
       padding-top: 5rem; }

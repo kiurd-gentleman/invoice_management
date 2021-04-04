@@ -3,11 +3,27 @@
   <component name="ChangeListManager">
     <list default="true" id="a69208ad-0c3d-48b9-aa75-95a2cd7e3f54" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/products/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/products/_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/products/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/products/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/auth.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/auth.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/PDFReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/PDFReportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app-assets/css/components.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/app-assets/css/components.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/dashboard/_due_estimates.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/dashboard/_due_estimates.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/_aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/_aside.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/account/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/account/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/company/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/company/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/expense_category/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/expense_category/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/expense_category/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/expense_category/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/membership/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/membership/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/preference/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/preference/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/product/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/product/unit/_table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/product/unit/_table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/product/unit/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/product/unit/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/product/unit/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/product/unit/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/tax_type/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/tax_type/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/tax_type/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/tax_type/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/tax_type/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/tax_type/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/team/create_member.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/team/create_member.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/team/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/team/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pdf/reports/customer_sales.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/reports/customer_sales.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,6 +224,7 @@
       <workItem from="1617163500227" duration="20677000" />
       <workItem from="1617250092671" duration="18712000" />
       <workItem from="1617422537298" duration="7241000" />
+      <workItem from="1617511606924" duration="14352000" />
     </task>
     <servers />
   </component>

@@ -18,7 +18,7 @@
                             </a>
                         </td>
                         <td class="h6">
-                            <a href="{{ route('settings.product.unit.edit', ['product_unit' => $product_unit->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-primary btn-sm">
+                            <a href="{{ route('settings.product.unit.edit', ['product_unit' => $product_unit->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-warning btn-sm">
                                 <i class="ft-edit"></i>
                                 {{ __('messages.edit') }}
                             </a>
@@ -36,9 +36,9 @@
         {{ $product_units->links() }}
     </div>
 @else
-    <div class="row justify-content-center card-body pb-0 pt-5">
-        <i class="material-icons fs-64px">style</i>
-    </div>
+{{--    <div class="row justify-content-center card-body pb-0 pt-5">--}}
+{{--        <i class="material-icons fs-64px">style</i>--}}
+{{--    </div>--}}
     <div class="row justify-content-center card-body pb-5">
         <p class="h4">{{ __('messages.no_product_units_yet') }}</p>
     </div>

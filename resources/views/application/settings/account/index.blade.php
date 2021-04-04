@@ -40,22 +40,11 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">All Bugs</h4>
-                        <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
-                        <div class="heading-elements">
-                            <button class="btn btn-primary btn-sm"><i class="ft-plus white"></i> Submit Bug</button>
-                            <span class="dropdown">
-                      <button id="btnSearchDrop1" type="button" data-toggle="dropdown" aria-haspopup="true"
-                              aria-expanded="false" class="btn btn-warning btn-sm dropdown-toggle dropdown-menu-right"><i class="ft-download white"></i></button>
-                      <span aria-labelledby="btnSearchDrop1" class="dropdown-menu mt-1 dropdown-menu-right">
-                        <a href="#" class="dropdown-item"><i class="la la-calendar"></i> Due Date</a>
-                        <a href="#" class="dropdown-item"><i class="la la-random"></i> Priority </a>
-                        <a href="#" class="dropdown-item"><i class="la la-bar-chart"></i> Progress</a>
-                        <a href="#" class="dropdown-item"><i class="la la-user"></i> Assign to</a>
-                      </span>
-                    </span>
-                            <button class="btn btn-success btn-sm"><i class="ft-settings white"></i></button>
-                        </div>
+                        <h4 class="card-title">{{ __('messages.account_settings') }}</h4>
+{{--                        <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>--}}
+{{--                        <div class="heading-elements">--}}
+{{--                            <button class="btn btn-primary btn-sm"><i class="ft-plus white"></i> Submit Bug</button>--}}
+{{--                        </div>--}}
                     </div>
                     <div class="card-content">
                         <div class="card-body">
@@ -146,16 +135,16 @@
         <div class="bug-list-sidebar-content">
             <!-- Predefined Views -->
             <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Predefined Views</h4>
-                    <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
-                    <div class="heading-elements">
-                        <ul class="list-inline mb-0">
-                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
-                            <li><a data-action="close"><i class="ft-x"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+{{--                <div class="card-header">--}}
+{{--                    <h4 class="card-title">Predefined Views</h4>--}}
+{{--                    <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>--}}
+{{--                    <div class="heading-elements">--}}
+{{--                        <ul class="list-inline mb-0">--}}
+{{--                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>--}}
+{{--                            <li><a data-action="close"><i class="ft-x"></i></a></li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
                 <!-- bug-list search -->
                 <div class="card-content">
                     <!-- /bug-list search -->

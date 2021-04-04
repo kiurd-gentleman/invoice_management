@@ -46,16 +46,7 @@ class PDFReportController extends Controller
             $customer->totalAmount = $customerTotalAmount;
             $totalAmount += $customerTotalAmount;
         }
-//        dd(money($customer->totalAmount, $customer->currency_code));
 
-//        dd($totalAmount);
-        foreach ($customers as $customer){
-            foreach ($customer->invoices as $invoice){
-                dump($invoice->total, $invoice->currency_code);
-            }
-        }
-
-        dd(2);
         $pdf = PDF::loadView('pdf.reports.customer_sales', [
             'company' => $company,
             'from' => $from,

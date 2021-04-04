@@ -43,12 +43,9 @@
                         <h4 class="card-title">{{ __('messages.edit_tax') }}</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
-                            <ul class="list-inline mb-0">
-                                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
-                                <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
-                                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
-                                <li><a data-action="close"><i class="ft-x"></i></a></li>
-                            </ul>
+                            <a href="{{ route('settings.tax_types', ['company_uid' => $currentCompany->uid]) }}" class="btn btn-primary text-white">
+                                {{ __('messages.tax_types') }}
+                            </a>
                         </div>
                     </div>
                     <div class="card-content">
@@ -62,8 +59,8 @@
 
                                 <div class="form-group text-right mt-4">
                                     <button type="submit" class="btn btn-primary">{{ __('messages.update_tax') }}</button>
-                                    <a href="{{ route('settings.tax_types.delete', ['tax_type' => $tax_type->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-light text-danger delete-confirm">
-                                        <i class="material-icons icon-16pt">delete</i>
+                                    <a href="{{ route('settings.tax_types.delete', ['tax_type' => $tax_type->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-light delete-confirm">
+                                        <i class="ft-trash"></i>
                                         {{ __('messages.delete') }}
                                     </a>
                                 </div>
@@ -81,16 +78,16 @@
         <div class="bug-list-sidebar-content">
             <!-- Predefined Views -->
             <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Predefined Views</h4>
-                    <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
-                    <div class="heading-elements">
-                        <ul class="list-inline mb-0">
-                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
-                            <li><a data-action="close"><i class="ft-x"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+{{--                <div class="card-header">--}}
+{{--                    <h4 class="card-title">Predefined Views</h4>--}}
+{{--                    <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>--}}
+{{--                    <div class="heading-elements">--}}
+{{--                        <ul class="list-inline mb-0">--}}
+{{--                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>--}}
+{{--                            <li><a data-action="close"><i class="ft-x"></i></a></li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
                 <!-- bug-list search -->
                 <div class="card-content">
                     <!-- /bug-list search -->

@@ -42,6 +42,6 @@
         <i class="ft-mote fs-64px"></i>
     </div>
     <div class="row justify-content-center card-body pb-5">
-        <p class="h4">{{ __('messages.no_due_estimates') }}</p>
+        <p class="h4">{{ __('No Due Quotation') }}</p>
     </div>
 @endif

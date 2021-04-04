@@ -39,30 +39,25 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title" id="basic-layout-round-controls">{{ __('messages.tax_types') }}</h4>
-                        <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
-                            <ul class="list-inline mb-0">
-                                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
-                                <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
-                                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
-                                <li><a data-action="close"><i class="ft-x"></i></a></li>
-                            </ul>
+                            <a href="{{ route('settings.tax_types.create', ['company_uid' => $currentCompany->uid]) }}" class="btn btn-primary text-white">
+                                {{ __('messages.add_tax') }}
+                            </a>
                         </div>
                     </div>
                     <div class="card-content">
                         <div class="card-body">
-                            <!-- Task List table --> <div class="form-row align-items-center mb-4">
+                            <!-- Task List table -->
+{{--                            <div class="form-row align-items-center mb-4">--}}
 {{--                                <div class="col">--}}
 {{--                                    <p class="h4 mb-0">--}}
 {{--                                        <strong class="headings-color">{{ __('messages.tax_types') }}</strong>--}}
 {{--                                    </p>--}}
 {{--                                </div>--}}
-                                <div class="col-auto">
-                                    <a href="{{ route('settings.tax_types.create', ['company_uid' => $currentCompany->uid]) }}" class="btn btn-primary text-white">
-                                        {{ __('messages.add_tax') }}
-                                    </a>
-                                </div>
-                            </div>
+{{--                                <div class="col-auto">--}}
+{{--                                    --}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
                             @if($tax_types->count() > 0)
                                 <div class="table-responsive" data-toggle="lists">
@@ -88,7 +83,7 @@
                                                     {{ $tax_type->percent }}
                                                 </td>
                                                 <td class="h6">
-                                                    <a href="{{ route('settings.tax_types.edit', ['tax_type' => $tax_type->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-primary">
+                                                    <a href="{{ route('settings.tax_types.edit', ['tax_type' => $tax_type->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-warning">
                                                         <i class="ft-edit"></i>
                                                         {{ __('messages.edit') }}
                                                     </a>

@@ -40,9 +40,8 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">
-                            </h4>
-                        <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
+                        <h4 class="card-title">Expense Category Create</h4>
+{{--                        <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>--}}
                         <div class="heading-elements">
                             <a href="{{route('settings.expense_categories', ['company_uid' => $currentCompany->uid])}}" class="btn btn-sm btn-primary">{{ __('messages.expense_categories') }}</a>
                         </div>
