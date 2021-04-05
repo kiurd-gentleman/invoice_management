@@ -8,8 +8,14 @@
                     <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
                     <li class="nav-item">
                         <a class="navbar-brand" href="index.html">
-                            <img class="brand-logo" alt="modern admin logo" src="../../../app-assets/images/logo/logo.png">
-                            <h3 class="brand-text text-white">Invoice Management</h3>
+                            @if(get_system_setting('application_logo'))
+                                <img class="brand-logo" src="{{ get_system_setting('application_logo') }}" width="125" alt="{{ get_system_setting('application_name') }}">
+                                <h3 class="brand-text text-white">{{ get_system_setting('application_name') }}</h3>
+                            @else
+                                <h3 class="brand-text text-white">{{ get_system_setting('application_name') }}</h3>
+                            @endif
+{{--                            <img class="brand-logo" alt="modern admin logo" src="../../../app-assets/images/logo/logo.png">--}}
+{{--                            <h3 class="brand-text text-white">Invoice Management</h3>--}}
                         </a>
                     </li>
                     <li class="nav-item d-md-none">
@@ -35,7 +41,7 @@
                                         <span class="user-name text-bold-700 text-white">{{auth()->user()->first_name}}&nbsp{{auth()->user()->last_name}}</span>
                                     </span>
                                 <span class="avatar avatar-online">
-                      <img src="../../../app-assets/images/portrait/small/avatar-s-19.png" alt="avatar"><i></i></span>
+                                <img src="https://ui-avatars.com/api/?name={{auth()->user()->first_name}}+{{auth()->user()->last_name}}" alt="avatar"><i></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{route('super_admin.users.edit', auth()->user()->id)}}"><i class="ft-user"></i> Edit Profile</a>
                                 <div class="dropdown-divider"></div><a class="dropdown-item"href="{{ route('logout') }}"><i class="ft-power"></i> Logout</a>

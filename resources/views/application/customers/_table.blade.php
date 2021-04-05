@@ -65,9 +65,9 @@
         {{ $customers->links() }}
     </div>
 @else
-    <div class="row justify-content-center card-body pb-0 pt-5">
-        <i class="material-icons fs-64px">account_box</i>
-    </div>
+{{--    <div class="row justify-content-center card-body pb-0 pt-5">--}}
+{{--        <i class="material-icons fs-64px">account_box</i>--}}
+{{--    </div>--}}
     <div class="row justify-content-center card-body pb-5">
         <p class="h4">{{ __('messages.no_customers_yet') }}</p>
     </div>

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 // Landing
-Route::get('/', 'HomeController@index')->middleware('installed')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 // Auth routes
 Auth::routes();
@@ -59,7 +59,7 @@ Route::group(['namespace' => 'SuperAdmin', 'prefix' => '/admin'], function () {
 });
 
 // Customer Portal Routes
-Route::group(['namespace' => 'CustomerPortal', 'prefix' => '/portal/{customer}', 'middleware' => ['installed', 'customer_portal']], function () {
+Route::group(['namespace' => 'CustomerPortal', 'prefix' => '/portal/{customer}', 'middleware' => ['customer_portal']], function () {
     // Dashboard
     Route::get('/', 'DashboardController@index');
     Route::get('/dashboard', 'DashboardController@index')->name('customer_portal.dashboard');
@@ -98,7 +98,7 @@ Route::group(['namespace' => 'CustomerPortal', 'prefix' => '/portal/{customer}',
 });
 
 // Application Routes
-Route::group(['namespace' => 'Application', 'prefix' => '/{company_uid}', 'middleware' => ['installed', 'auth', 'dashboard']], function () {
+Route::group(['namespace' => 'Application', 'prefix' => '/{company_uid}', 'middleware' => ['auth', 'dashboard']], function () {
     // Company Dashboard
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
@@ -271,7 +271,7 @@ Route::group(['namespace' => 'Application', 'prefix' => '/{company_uid}', 'middl
 });
 
 // Order & Checkout Routes
-Route::group(['namespace' => 'Application', 'middleware' => ['installed', 'auth', 'dashboard']], function () {
+Route::group(['namespace' => 'Application', 'middleware' => ['auth', 'dashboard']], function () {
    // Orders
     Route::get('/order/plans', 'OrderController@plans')->name('order.plans');
     Route::get('/order/checkout/{plan}', 'OrderController@checkout')->name('order.checkout');

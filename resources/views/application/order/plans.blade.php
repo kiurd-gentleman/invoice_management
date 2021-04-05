@@ -65,6 +65,7 @@
                                     <li class="na"><s>{{ __('bikin.advertisement_on_mails') }}</s></li>
                                 @endif
                             </ul>
+                            @dump($currentCompany->subscriptions)
                             @if($plan->hasTrial() & !$currentCompany->subscriptions->isNotEmpty())
                                 <a href="{{ route('order.checkout', ['company_uid' => $currentCompany->uid, 'plan' => $plan->slug]) }}" class="btn btn-primary mt-auto">{{ __('messages.start_trial') }}</a>
                             @else

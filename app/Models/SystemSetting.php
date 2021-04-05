@@ -22,11 +22,11 @@ class SystemSetting extends Model
      * @var array
      */
     public static $defaultSettings = [
-        'application_name' => 'Foxtrot',
-        'application_logo' => '/assets/images/foxtrot-black.png',
-        'application_favicon' => '/assets/images/fox-logo-black.svg',
+        'application_name' => 'AnalytiQ',
+        'application_logo' => '',
+        'application_favicon' => '',
         'application_currency' => 'USD',
-        'meta_description' => 'Foxtrot - Customer, Invoice and Expense Management System',
+        'meta_description' => 'Analytiq - Customer, Invoice and Expense Management System',
         'meta_keywords' => 'accounting, billing, business management, client management',
         'theme' => 'bikin',
         'paypal_username' => '',

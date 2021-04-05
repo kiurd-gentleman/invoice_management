@@ -22,8 +22,8 @@
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item  " href="{{ route('super_admin.settings.application') }}"><i class="ft-minimize-2 "></i> Application Settings</a></li>
                     <li><a class="dropdown-item " href="{{ route('super_admin.settings.mail') }}"><i class="ft-minimize-2 "></i> Mail Settings</a></li>
-                    <li><a class="dropdown-item " href="{{ route('super_admin.settings.payment') }}"><i class="ft-minimize-2 "></i> Payment Settings</a></li>
-                    <li><a class="dropdown-item " href="{{ route('super_admin.settings.theme', get_system_setting('theme')) }}"><i class="ft-minimize-2 "></i> Theme Settings</a></li>
+{{--                    <li><a class="dropdown-item " href="{{ route('super_admin.settings.payment') }}"><i class="ft-minimize-2 "></i> Payment Settings</a></li>--}}
+{{--                    <li><a class="dropdown-item " href="{{ route('super_admin.settings.theme', get_system_setting('theme')) }}"><i class="ft-minimize-2 "></i> Theme Settings</a></li>--}}
                 </ul>
             </li>
             <li class="dropdown nav-item" >

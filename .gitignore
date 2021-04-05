@@ -9,6 +9,7 @@ npm-debug.log
 yarn-error.log
 **/.DS_Store
 /vendor
+/server
 
 # Unifont
 **/*.cw.dat
