@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a69208ad-0c3d-48b9-aa75-95a2cd7e3f54" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PlanSubscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PlanSubscription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/_aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/_aside.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/_drawer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/_drawer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/super_admin/plans/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/super_admin/plans/_form.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
