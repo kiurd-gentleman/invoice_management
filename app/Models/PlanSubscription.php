@@ -36,7 +36,7 @@ class PlanSubscription extends Model
 
     /**
      * Automatically cast attributes to given types
-     * 
+     *
      * @var array
      */
     protected $casts = [
@@ -91,7 +91,7 @@ class PlanSubscription extends Model
 
     /**
      * Get Status Attribute
-     * 
+     *
      * @return string
      */
     public function getHtmlStatusAttribute()
@@ -106,7 +106,7 @@ class PlanSubscription extends Model
             return '<div class="badge badge-success">'.__('messages.active').'</div>';
         }
     }
- 
+
     /**
      * The subscription may have many usage.
      *
@@ -124,10 +124,25 @@ class PlanSubscription extends Model
      */
     public function active(): bool
     {
-        if ($this->id == null) return false;
-        if ($this->cancelled()) return false;
-        if ($this->ends_at && $this->ended()) return false;
-        if (!$this->onTrial() && !$this->starts_at) return false;
+
+//        dd(1);
+        if ($this->id == null) {
+//            dd(2);
+            return false;
+        }
+        if ($this->cancelled()) {
+//            dd(3);
+            return false;
+        }
+        if (!$this->onTrial() && !$this->starts_at) {
+//            dd(4);
+            return false;
+        }
+        if ($this->ends_at && $this->ended()) {
+//            dd(5);
+            return false;
+        }
+
         return true;
     }
 

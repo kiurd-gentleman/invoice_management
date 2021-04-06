@@ -10,14 +10,14 @@
                         <label for="name">{{ __('messages.name') }}</label>
                         <input name="name" type="text" class="form-control" placeholder="{{ __('messages.name') }}" value="{{ $plan->name }}" required>
                     </div>
-                </div> 
+                </div>
                 <div class="col">
                     <div class="form-group">
                         <label for="description">{{ __('messages.description') }}</label>
                         <input name="description" type="text" class="form-control" placeholder="{{ __('messages.description') }}" value="{{ $plan->description }}">
                     </div>
                 </div>
-            </div> 
+            </div>
 
             <div class="row">
                 <div class="col">
@@ -27,7 +27,7 @@
                         <small class="form-text text-muted">{{ __('messages.plan_price_helper') }}</small>
                     </div>
                 </div>
-            </div> 
+            </div>
 
             <div class="row">
                 <div class="col">
@@ -73,7 +73,7 @@
                         <input name="features[customers]" type="text" class="form-control" placeholder="{{ __('messages.feature_customers') }}" value="{{ isset($plan->getFeatureBySlug('customers')->value) ? $plan->getFeatureBySlug('customers')->value : '' }}" required>
                         <small class="form-text text-muted">{{ __('messages.plan_feature_unlimited_helper') }}</small>
                     </div>
-                </div> 
+                </div>
                 <div class="col">
                     <div class="form-group required">
                         <label for="features[products]">{{ __('messages.feature_products') }}</label>
@@ -81,16 +81,16 @@
                         <small class="form-text text-muted">{{ __('messages.plan_feature_unlimited_helper') }}</small>
                     </div>
                 </div>
-            </div> 
+            </div>
 
             <div class="row">
                 <div class="col">
                     <div class="form-group required">
-                        <label for="features[estimates_per_month]">{{ __('messages.feature_estimates_per_month') }}</label>
+                        <label for="features[estimates_per_month]">{{ __('messages.feature_quotations_per_month') }}</label>
                         <input name="features[estimates_per_month]" type="text" class="form-control" placeholder="{{ __('messages.feature_estimates_per_month') }}" value="{{ isset($plan->getFeatureBySlug('estimates_per_month')->value) ? $plan->getFeatureBySlug('estimates_per_month')->value : '' }}" required>
                         <small class="form-text text-muted">{{ __('messages.plan_feature_unlimited_helper') }}</small>
                     </div>
-                </div> 
+                </div>
                 <div class="col">
                     <div class="form-group required">
                         <label for="features[invoices_per_month]">{{ __('messages.feature_invoices_per_month') }}</label>
@@ -98,7 +98,7 @@
                         <small class="form-text text-muted">{{ __('messages.plan_feature_unlimited_helper') }}</small>
                     </div>
                 </div>
-            </div> 
+            </div>
 
             <div class="row">
                 <div class="col">
@@ -120,7 +120,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="form-group text-center mt-5">
                 <button class="btn btn-primary save_form_button">{{ __('messages.save_plan') }}</button>
             </div>

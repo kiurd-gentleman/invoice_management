@@ -10,24 +10,24 @@
                 <a class=" nav-link" href="{{ route('super_admin.users') }}" ><i class="la la-users text-white"></i><span  style="color: #ffffff;">User</span></a>
             </li>
             <li class="dropdown nav-item">
-                <a class=" nav-link" href="{{ route('super_admin.plans') }}"><i class="la la-television text-white"></i><span  style="color: #ffffff;">Plans</span></a>
+                <a class=" nav-link" href="{{ route('super_admin.plans') }}"><i class="la la-puzzle-piece text-white"></i><span  style="color: #ffffff;">Plans</span></a>
             </li>
             <li class="dropdown nav-item" >
-                <a class=" nav-link" href="{{ route('super_admin.subscriptions') }}"><i class="la la-columns text-white"></i><span  style="color: #ffffff;">Subscriptions</span></a>
+                <a class=" nav-link" href="{{ route('super_admin.subscriptions') }}"><i class="la la-thumbs-o-up text-white"></i><span  style="color: #ffffff;">Subscriptions</span></a>
             </li>
             <li class="dropdown nav-item" >
-                <a class=" nav-link" href="{{ route('super_admin.orders') }}"><i class="la la-columns text-white"></i><span  style="color: #ffffff;">Orders</span></a>
+                <a class=" nav-link" href="{{ route('super_admin.orders') }}"><i class="la la-paste text-white"></i><span  style="color: #ffffff;">Orders</span></a>
             </li>
-            <li class="dropdown nav-item" data-menu="dropdown"><a class=" nav-link" href="#" data-toggle="dropdown"><i class="la la-folder-open text-white"></i><span style="color: #ffffff;">Settings</span></a>
+            <li class="dropdown nav-item" data-menu="dropdown"><a class=" nav-link" href="#" data-toggle="dropdown"><i class="la la-cogs text-white"></i><span style="color: #ffffff;">Settings</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item  " href="{{ route('super_admin.settings.application') }}"><i class="ft-minimize-2 "></i> Application Settings</a></li>
                     <li><a class="dropdown-item " href="{{ route('super_admin.settings.mail') }}"><i class="ft-minimize-2 "></i> Mail Settings</a></li>
-{{--                    <li><a class="dropdown-item " href="{{ route('super_admin.settings.payment') }}"><i class="ft-minimize-2 "></i> Payment Settings</a></li>--}}
+                    <li><a class="dropdown-item " href="{{ route('super_admin.settings.payment') }}"><i class="ft-minimize-2 "></i> Payment Settings</a></li>
 {{--                    <li><a class="dropdown-item " href="{{ route('super_admin.settings.theme', get_system_setting('theme')) }}"><i class="ft-minimize-2 "></i> Theme Settings</a></li>--}}
                 </ul>
             </li>
             <li class="dropdown nav-item" >
-                <a class=" nav-link" href="{{ route('logout') }}"><i class="la la-columns text-white"></i><span  style="color: #ffffff;">Logout</span></a>
+                <a class=" nav-link" href="{{ route('logout') }}"><i class="la la-sign-out text-white"></i><span  style="color: #ffffff;">Logout</span></a>
             </li>
 
         </ul>
