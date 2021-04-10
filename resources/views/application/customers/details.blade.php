@@ -66,19 +66,21 @@
                 <p class="h5 mt-1 ">{{ money($customer->invoice_due_amount, $customer->currency_code)  }}</p>
             </div>
         </div>
-        <div class="row w-100">
-            <div class="col-12 col-md-12 text-right  mb-4 d-flex justify-content-center">
-                <a href="{{ route('customers.edit', ['customer' => $customer->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-primary">
-                    <i class="ft-edit"></i>
-                    {{ __('messages.edit') }}
-                </a>
-                <a href="{{ route('customers.delete', ['customer' => $customer->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm ml-1 btn-danger delete-confirm">
-                    <i class="ft-trash"></i>
-                    {{ __('messages.delete') }}
-                </a>
+
+        <div class="card-footer">
+            <div class="row w-100 ">
+                <div class="col-12 col-md-12 text-right  d-flex justify-content-center">
+                    <a href="{{ route('customers.edit', ['customer' => $customer->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-primary">
+                        <i class="ft-edit"></i>
+                        {{ __('messages.edit') }}
+                    </a>
+                    <a href="{{ route('customers.delete', ['customer' => $customer->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm ml-1 btn-danger delete-confirm">
+                        <i class="ft-trash"></i>
+                        {{ __('messages.delete') }}
+                    </a>
+                </div>
             </div>
         </div>
-
     </div>
     <div class="card">
         <div class="col-xl-12 col-lg-12">

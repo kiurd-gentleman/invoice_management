@@ -13,6 +13,7 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Mail;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
+use Illuminate\Support\Facades\Crypt;
 
 class InvoiceController extends Controller
 {
@@ -222,10 +223,16 @@ class InvoiceController extends Controller
         $invoice = Invoice::findOrFail($request->invoice);
 
         // If demo mode is active then block this action
+
+//        dd();
+        $encrypted = Crypt::encryptString($request->invoice);
+//        print_r($encrypted);
+
         if (config('app.is_demo')) {
             session()->flash('alert-danger', __('messages.action_blocked_in_demo'));
             return redirect()->route('invoices.details', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]);
-        };
+        }
+
 
         // Send mail to customer
         try {
@@ -247,10 +254,12 @@ class InvoiceController extends Controller
 
         // Dispatch InvoiceSentEvent
         InvoiceSentEvent::dispatch($invoice);
+        return  'http://viewer/invoice/link/'.$encrypted.'/pdf';
 
-        session()->flash('alert-success', __('messages.an_email_sent_to_customer'));
+        session()->flash('alert-success', __($encrypted));
         return redirect()->route('invoices.details', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]);
     }
+
 
     /**
      * Change Status of the Invoice by Given Status

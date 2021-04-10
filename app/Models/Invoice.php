@@ -367,7 +367,7 @@ class Invoice extends Model
      */
     public function getFormattedInvoiceDateAttribute($value)
     {
-        return $dateFormat = CompanySetting::getSetting('date_format', $this->company_id);
+        $dateFormat = CompanySetting::getSetting('date_format', $this->company_id);
         return Carbon::parse($this->invoice_date)->format($dateFormat);
     }
 

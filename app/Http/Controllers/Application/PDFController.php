@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Invoice;
 use App\Models\Estimate;
 use App\Models\Payment;
+use Illuminate\Support\Facades\Crypt;
 use PDF;
 use Illuminate\Http\Request;
 
@@ -20,8 +21,29 @@ class PDFController extends Controller
      */
     public function invoice(Request $request)
     {
+//        dd($request->invoice);
         $invoice = Invoice::findByUid($request->invoice);
-//        dd($invoice->company);
+//        dd($invoice);
+
+        $template = $invoice->company->getSetting('invoice_template');
+//        return view('pdf.invoice.template_1' ,compact('invoice'));
+        $pdf = PDF::loadView('pdf.invoice.'.$template, ['invoice' => $invoice]);
+
+        //Render or Download
+//        $pdf =0;
+        if($request->has('download')) {
+            return $pdf->download($invoice->invoice_number . '-invoice.pdf');
+        } else {
+            return $pdf->stream('invoice.pdf');
+        }
+    }
+    public function invoice_view(Request $request)
+    {
+//        dd($request->invoice);
+        $decrypt= Crypt::decryptString($request->invoice);
+//        dd($decrypt);
+        $invoice = Invoice::find($decrypt);
+//        dd($invoice);
 
         $template = $invoice->company->getSetting('invoice_template');
 //        return view('pdf.invoice.template_1' ,compact('invoice'));

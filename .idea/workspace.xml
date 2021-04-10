@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a69208ad-0c3d-48b9-aa75-95a2cd7e3f54" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/PlanSubscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PlanSubscription.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/_aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/_aside.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/_drawer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/_drawer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/super_admin/plans/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/super_admin/plans/_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Invoice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/customers/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/customers/details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/membership/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/membership/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,6 +215,8 @@
       <workItem from="1617422537298" duration="7241000" />
       <workItem from="1617511606924" duration="14352000" />
       <workItem from="1617635180743" duration="4069000" />
+      <workItem from="1617768594816" duration="7877000" />
+      <workItem from="1617855425611" duration="2301000" />
     </task>
     <servers />
   </component>
@@ -231,10 +228,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1615806432383" />
-    <state x="634" y="353" key="NewPhpFileDialog" timestamp="1617177493920">
+    <state x="634" y="353" key="NewPhpFileDialog" timestamp="1617856195554">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="634" y="353" key="NewPhpFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1617177493920" />
+    <state x="634" y="353" key="NewPhpFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1617856195554" />
     <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1617266795851">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
