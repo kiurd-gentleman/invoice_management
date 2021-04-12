@@ -116,6 +116,7 @@
             var taxesSelect = element.closest('tr').find('[name="taxes[]"]');
             var priceInput = element.closest('tr').find('.price_input');
 
+            // console.log(priceInput);
             // Set selected taxes from product
             var taxIds = [];
             var taxes = selectedOption.data('taxes');
@@ -153,7 +154,9 @@
             var quantity = Number(row.find('[name="quantity[]"]').val());
 
             // price
-            var price = Number(row.find('.price_input').unmask()) / 100;
+            // var price = Number(row.find('.price_input').unmask()) / 100;
+            var price = Number(row.find('.price_input').unmask()) ;
+            console.log(price);
 
             // amount
             var amount = (quantity * price);
@@ -225,7 +228,7 @@
                 '    <strong class="text-muted">' + name + '</strong>' +
                 '</div>' +
                 '<div class="ml-auto h6 mb-0">' +
-                '    <input type="text" class="price_input price-text w-100 fs-inherit" value="'+ Number(amount).toFixed(2) +'" disabled>' +
+                '    <input type="text" class="price_input price-text w-100" value="'+ Number(amount).toFixed(2) +'" disabled>' +
                 '</div>' +
                 '</div>';
 

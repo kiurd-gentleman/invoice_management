@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 // Landing
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/Generate/invoice', 'HomeController@generate')->name('Generate-invoice');
 
 // Auth routes
 Auth::routes();

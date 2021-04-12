@@ -37,6 +37,7 @@ function setupDatePickerInput() {
 }
 
 function setupPriceInput(currency) {
+    console.log(currency)
 
     if (typeof (currency) != 'undefined'){
         // Price format

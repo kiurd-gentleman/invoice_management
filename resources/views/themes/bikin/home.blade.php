@@ -30,6 +30,9 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                   </li>
                   <li class="nav-item">
+                    <a class="nav-link" href="{{ route('Generate-invoice') }}">Invoice</a>
+                  </li>
+                    <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">Login</a>
                   </li>
                   <li class="nav-item dropdown">
@@ -61,7 +64,7 @@
                 </div>
                 </div>
             </div>
-            
+
         </div>
     </section>
     <section id="about" class="pt-5 pb-5 bg-light">
@@ -154,28 +157,28 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="tomato" class="bi bi-check2-all" viewBox="0 0 16 16">
               <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7l-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z"/>
               <path d="M5.354 7.146l.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z"/>
-              </svg> 
+              </svg>
             Create a profile for Each Client and add related notes or attach files to it (with the ability to share with the client).
           </p>
           <p data-aos="fade-right" class="fs-5 text-success" >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="tomato" class="bi bi-check2-all" viewBox="0 0 16 16">
             <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7l-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z"/>
             <path d="M5.354 7.146l.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z"/>
-            </svg> 
+            </svg>
           Create a profile for Each Client and add related notes or attach files to it (with the ability to share with the client).
         </p>
         <p data-aos="fade-right" class="fs-5 text-success" >
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="tomato" class="bi bi-check2-all" viewBox="0 0 16 16">
           <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7l-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z"/>
           <path d="M5.354 7.146l.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z"/>
-          </svg> 
+          </svg>
         Create a profile for Each Client and add related notes or attach files to it (with the ability to share with the client).
       </p>
       <p data-aos="fade-right" class="fs-5 text-success" >
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="tomato" class="bi bi-check2-all" viewBox="0 0 16 16">
         <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7l-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z"/>
         <path d="M5.354 7.146l.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z"/>
-        </svg> 
+        </svg>
       Create a profile for Each Client and add related notes or attach files to it (with the ability to share with the client).
     </p>
           </div>
@@ -212,7 +215,7 @@
     <section id="income" class="pt-5 pb-5 bg-primary text-white">
       <div class="container">
         <div class="row align-items-center">
-          
+
           <div class="col-md-8">
             <h1>Track Sales, Invoices & Clients' Payments Easily</h1>
             <div class="heading-bar mt-2 mb-5"></div>
@@ -254,7 +257,7 @@
                     <img src="https://www.onlineinvoices.com/img/uploads/54bbc6efc854e_bill.png" alt="Paris" class="img-fluid w-50">
                     <p>Free and quick support</p>
                   </div>
-                  
+
                 </div>
                 <div class="flip-box-back rounded">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptate eaque consectetur iste error voluptatum minima eius. Ducimus voluptates dicta exercitationem! Reprehenderit delectus distinctio blanditiis inventore modi a, ullam eius.</p>
@@ -270,7 +273,7 @@
                     <img src="https://www.onlineinvoices.com/img/uploads/54bbc6efc854e_bill.png" alt="Paris" class="img-fluid w-50">
                     <p>Free and quick support</p>
                   </div>
-                  
+
                 </div>
                 <div class="flip-box-back rounded">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptate eaque consectetur iste error voluptatum minima eius. Ducimus voluptates dicta exercitationem! Reprehenderit delectus distinctio blanditiis inventore modi a, ullam eius.</p>
@@ -286,7 +289,7 @@
                     <img src="https://www.onlineinvoices.com/img/uploads/54bbc6efc854e_bill.png" alt="Paris" class="img-fluid w-50">
                     <p>Free and quick support</p>
                   </div>
-                  
+
                 </div>
                 <div class="flip-box-back rounded">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptate eaque consectetur iste error voluptatum minima eius. Ducimus voluptates dicta exercitationem! Reprehenderit delectus distinctio blanditiis inventore modi a, ullam eius.</p>
@@ -302,7 +305,7 @@
                     <img src="https://www.onlineinvoices.com/img/uploads/54bbc6efc854e_bill.png" alt="Paris" class="img-fluid w-50">
                     <p>Free and quick support</p>
                   </div>
-                  
+
                 </div>
                 <div class="flip-box-back rounded">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptate eaque consectetur iste error voluptatum minima eius. Ducimus voluptates dicta exercitationem! Reprehenderit delectus distinctio blanditiis inventore modi a, ullam eius.</p>
@@ -318,7 +321,7 @@
                     <img src="https://www.onlineinvoices.com/img/uploads/54bbc6efc854e_bill.png" alt="Paris" class="img-fluid w-50">
                     <p>Free and quick support</p>
                   </div>
-                  
+
                 </div>
                 <div class="flip-box-back rounded">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptate eaque consectetur iste error voluptatum minima eius. Ducimus voluptates dicta exercitationem! Reprehenderit delectus distinctio blanditiis inventore modi a, ullam eius.</p>
@@ -334,7 +337,7 @@
                     <img src="https://www.onlineinvoices.com/img/uploads/54bbc6efc854e_bill.png" alt="Paris" class="img-fluid w-50">
                     <p>Free and quick support</p>
                   </div>
-                  
+
                 </div>
                 <div class="flip-box-back rounded">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptate eaque consectetur iste error voluptatum minima eius. Ducimus voluptates dicta exercitationem! Reprehenderit delectus distinctio blanditiis inventore modi a, ullam eius.</p>
@@ -350,7 +353,7 @@
                     <img src="https://www.onlineinvoices.com/img/uploads/54bbc6efc854e_bill.png" alt="Paris" class="img-fluid w-50">
                     <p>Free and quick support</p>
                   </div>
-                  
+
                 </div>
                 <div class="flip-box-back rounded">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptate eaque consectetur iste error voluptatum minima eius. Ducimus voluptates dicta exercitationem! Reprehenderit delectus distinctio blanditiis inventore modi a, ullam eius.</p>
@@ -366,7 +369,7 @@
                     <img src="https://www.onlineinvoices.com/img/uploads/54bbc6efc854e_bill.png" alt="Paris" class="img-fluid w-50">
                     <p>Free and quick support</p>
                   </div>
-                  
+
                 </div>
                 <div class="flip-box-back rounded">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptate eaque consectetur iste error voluptatum minima eius. Ducimus voluptates dicta exercitationem! Reprehenderit delectus distinctio blanditiis inventore modi a, ullam eius.</p>
@@ -377,9 +380,9 @@
         </div>
       </div>
     </section>
-    
 
-    
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script
@@ -390,7 +393,7 @@
     <script src="{{ asset('themes/bikin/js/script.js') }}"></script>
     <script>
       AOS.init();
-      
+
     </script>
   </body>
 </html>

@@ -50,19 +50,19 @@
         </a>
     </li>
 
-{{--    <li class="list-group-item  {{ $tab == 'invoice' ? '' : '' }}">--}}
-{{--        <a href="{{ route('settings.invoice', ['company_uid' => $currentCompany->uid]) }}" class="sidebar-menu-button {{ $tab == 'invoice' ? 'text-danger' : 'text-secondary' }} sidebarNav">--}}
-{{--            <i class="sidebar-menu-icon sidebar-menu-icon--left la la-clipboard"></i>--}}
-{{--            <span class="sidebar-menu-text">{{ __('messages.invoice_settings') }}</span>--}}
-{{--        </a>--}}
-{{--    </li>--}}
+    <li class="list-group-item  {{ $tab == 'invoice' ? '' : '' }}">
+        <a href="{{ route('settings.invoice', ['company_uid' => $currentCompany->uid]) }}" class="sidebar-menu-button {{ $tab == 'invoice' ? 'text-danger' : 'text-secondary' }} sidebarNav">
+            <i class="sidebar-menu-icon sidebar-menu-icon--left la la-clipboard"></i>
+            <span class="sidebar-menu-text">{{ __('messages.invoice_settings') }}</span>
+        </a>
+    </li>
 
-{{--    <li class="list-group-item  {{ $tab == 'estimate' ? '' : '' }}">--}}
-{{--        <a href="{{ route('settings.estimate', ['company_uid' => $currentCompany->uid]) }}" class="sidebar-menu-button {{ $tab == 'estimate' ? 'text-danger' : 'text-secondary' }} sidebarNav">--}}
-{{--            <i class="sidebar-menu-icon sidebar-menu-icon--left la la-align-justify"></i>--}}
-{{--            <span class="sidebar-menu-text">{{ __('messages.quotation_settings') }}</span>--}}
-{{--        </a>--}}
-{{--    </li>--}}
+    <li class="list-group-item  {{ $tab == 'estimate' ? '' : '' }}">
+        <a href="{{ route('settings.estimate', ['company_uid' => $currentCompany->uid]) }}" class="sidebar-menu-button {{ $tab == 'estimate' ? 'text-danger' : 'text-secondary' }} sidebarNav">
+            <i class="sidebar-menu-icon sidebar-menu-icon--left la la-align-justify"></i>
+            <span class="sidebar-menu-text">{{ __('messages.quotation_settings') }}</span>
+        </a>
+    </li>
 
     <li class="list-group-item  {{ $tab == 'payment' ? '' : '' }}">
         <a href="{{ route('settings.payment', ['company_uid' => $currentCompany->uid]) }}" class="sidebar-menu-button {{ $tab == 'payment' ? 'text-danger' : 'text-secondary' }} sidebarNav">
@@ -85,12 +85,12 @@
         </a>
     </li>
 
-{{--    <li class="list-group-item  {{ $tab == 'custom_fields' ? '' : '' }}">--}}
-{{--        <a href="{{ route('settings.custom_fields', ['company_uid' => $currentCompany->uid]) }}" class="sidebar-menu-button {{ $tab == 'custom_fields' ? 'text-danger' : 'text-secondary' }} sidebarNav">--}}
-{{--            <i class="sidebar-menu-icon sidebar-menu-icon--left la la-edit"></i>--}}
-{{--            <span class="sidebar-menu-text">{{ __('messages.custom_fields') }}</span>--}}
-{{--        </a>--}}
-{{--    </li>--}}
+    <li class="list-group-item  {{ $tab == 'custom_fields' ? '' : '' }}">
+        <a href="{{ route('settings.custom_fields', ['company_uid' => $currentCompany->uid]) }}" class="sidebar-menu-button {{ $tab == 'custom_fields' ? 'text-danger' : 'text-secondary' }} sidebarNav">
+            <i class="sidebar-menu-icon sidebar-menu-icon--left la la-edit"></i>
+            <span class="sidebar-menu-text">{{ __('messages.custom_fields') }}</span>
+        </a>
+    </li>
 
     <li class="list-group-item  {{ $tab == 'expense_categories' ? '' : '' }}">
         <a href="{{ route('settings.expense_categories', ['company_uid' => $currentCompany->uid]) }}" class="sidebar-menu-button {{ $tab == 'expense_categories' ? 'text-danger' : 'text-secondary' }} sidebarNav">
@@ -99,12 +99,12 @@
         </a>
     </li>
 
-{{--    <li class="list-group-item  {{ $tab == 'email_template' ? '' : '' }}">--}}
-{{--        <a href="{{ route('settings.email_template', ['company_uid' => $currentCompany->uid]) }}" class="sidebar-menu-button {{ $tab == 'email_template' ? 'text-danger' : 'text-secondary' }} sidebarNav">--}}
-{{--            <i class="sidebar-menu-icon sidebar-menu-icon--left la la-envelope-o"></i>--}}
-{{--            <span class="sidebar-menu-text">{{ __('messages.email_templates') }}</span>--}}
-{{--        </a>--}}
-{{--    </li>--}}
+    <li class="list-group-item  {{ $tab == 'email_template' ? '' : '' }}">
+        <a href="{{ route('settings.email_template', ['company_uid' => $currentCompany->uid]) }}" class="sidebar-menu-button {{ $tab == 'email_template' ? 'text-danger' : 'text-secondary' }} sidebarNav">
+            <i class="sidebar-menu-icon sidebar-menu-icon--left la la-envelope-o"></i>
+            <span class="sidebar-menu-text">{{ __('messages.email_templates') }}</span>
+        </a>
+    </li>
 
     <li class="list-group-item  {{ $tab == 'team' ? '' : '' }}">
         <a href="{{ route('settings.team', ['company_uid' => $currentCompany->uid]) }}" class="sidebar-menu-button {{ $tab == 'team' ? 'text-danger' : 'text-secondary' }} sidebarNav">

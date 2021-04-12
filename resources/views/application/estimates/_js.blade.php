@@ -153,7 +153,8 @@
             var quantity = Number(row.find('[name="quantity[]"]').val());
 
             // price
-            var price = Number(row.find('.price_input').unmask()) / 100;
+            // var price = Number(row.find('.price_input').unmask()) / 100;
+            var price = Number(row.find('.price_input').unmask()) ;
 
             // amount
             var amount = (quantity * price);

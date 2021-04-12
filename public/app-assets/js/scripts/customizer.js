@@ -45,7 +45,7 @@
     }
     if(header_navbar.hasClass('navbar-semi-dark')){
         semiDark = true;
-    }    
+    }
 
     if(menu_type == 'horizontal-menu'){
         horz_layout = true;
@@ -57,7 +57,7 @@
         $('#collapsible-navigation').parent('.custom-checkbox').attr('style','display: none !important');
         $('#static-navigation').parent('.custom-checkbox').attr('style','display: none !important');
         $('#flipped-navigation').parent('.custom-checkbox').attr('style','display: none !important');
-        
+
         $('.color-options li:eq(3) a').tab('show');
     }
 
@@ -72,7 +72,7 @@
         $('.color-options .nav-semi-light').parent('.nav-item').attr('style','display: none !important');
         $('.color-options .nav-semi-dark').parent('.nav-item').attr('style','display: none !important');
     }
-    
+
     // Layouts
 
     // If overlay menu template then collapsed sidebar should be checked by default
@@ -83,7 +83,6 @@
     }
 
     $('#collapsed-sidebar').on('click',function(){
-
         // Toggle menu
         $.app.menu.toggle();
 

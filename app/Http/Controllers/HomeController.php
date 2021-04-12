@@ -27,7 +27,27 @@ class HomeController extends Controller
         }
 
         $theme = SystemSetting::getSetting('theme');
+//        dd($theme);
 
         return view('themes.'.$theme.'.home');
-    } 
+    }
+
+    public function generate(Request $request)
+    {
+        $user = $request->user();
+
+        // If user is authenticated
+        if ($user) {
+            if ($user->hasRole('super_admin')) {
+                return redirect()->route('super_admin.dashboard');
+            }
+
+            $currentCompany = $user->currentCompany();
+            return redirect()->route('dashboard', ['company_uid' => $currentCompany->uid]);
+        }
+
+        $theme = SystemSetting::getSetting('theme');
+
+        return view('themes.'.$theme.'.invoice');
+    }
 }
