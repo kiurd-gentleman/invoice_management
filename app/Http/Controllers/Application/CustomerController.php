@@ -64,11 +64,15 @@ class CustomerController extends Controller
      */
     public function store(Store $request)
     {
+
         $user = $request->user();
         $currentCompany = $user->currentCompany();
 
+//        dump($currentCompany);
+//        dump($currentCompany->subscription('main'));
         // Redirect back
         $canAdd = $currentCompany->subscription('main')->canUseFeature('customers');
+//        dd($canAdd);
         if (!$canAdd) {
             session()->flash('alert-danger', __('messages.you_have_reached_the_limit'));
             return redirect()->route('customers', ['company_uid' => $currentCompany->uid]);

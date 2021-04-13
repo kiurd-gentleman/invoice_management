@@ -134,10 +134,14 @@
                                 </td>
                             @endif
                             <td>
-                                <input name="quantity[]" type="number" class="form-control priceListener" value="1" required>
+                                <div class="form-group">
+                                <input name="quantity[]" type="number" class="form-control-plaintext priceListener" value="1" required style="border-bottom: 1px solid black;">
+                                </div>
                             </td>
                             <td>
-                                <input name="price[]" type="text" class="form-control price_input priceListener" autocomplete="off" value="0" required>
+                                <div class="form-group">
+                                <input name="price[]" type="text" class="form-control-plaintext price_input priceListener" autocomplete="off" value="0" required style="border-bottom: 1px solid black;">
+                                </div>
                             </td>
                             @if($discount_per_item)
                                 <td>

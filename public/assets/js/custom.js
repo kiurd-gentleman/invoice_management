@@ -38,22 +38,31 @@ function setupDatePickerInput() {
 
 function setupPriceInput(currency) {
     console.log(currency)
-
     if (typeof (currency) != 'undefined'){
         // Price format
         // console.log(currency)
-        if(currency.swap_currency_symbol) {
+        if(currency.swap_currency_symbol != '0') {
             var settings = {
                 prefix: '',
-                centsSeparator: currency.thousand_separator,
-                thousandsSeparator: currency.decimal_separator,
+
+                // centsSeparator: currency.thousand_separator,
+                // thousandsSeparator: currency.decimal_separator,
+
+                centsSeparator: currency.decimal_separator,
+                thousandsSeparator: currency.thousand_separator ,
+
                 suffix: currency.symbol
             }
         } else {
+            console.log('eikhan teke')
             var settings = {
                 prefix: currency.symbol,
-                centsSeparator: currency.thousand_separator,
-                thousandsSeparator: currency.decimal_separator,
+                // centsSeparator: currency.thousand_separator,
+                // thousandsSeparator: currency.decimal_separator,
+
+                centsSeparator: currency.decimal_separator,
+                thousandsSeparator: currency.thousand_separator ,
+
                 suffix: '',
             }
         }

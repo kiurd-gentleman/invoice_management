@@ -3,6 +3,11 @@
 @section('title', __('messages.create_customer'))
 
 @section('page_header')
+    <style>
+        .form-control{
+            border-bottom: 2px solid red;
+        }
+    </style>
 {{--    <div class="page__heading d-flex align-items-center">--}}
 {{--        <div class="flex">--}}
 {{--            <nav aria-label="breadcrumb">--}}
@@ -70,4 +75,5 @@
 
         </div>
     </section>
+
 @endsection

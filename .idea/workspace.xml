@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a69208ad-0c3d-48b9-aa75-95a2cd7e3f54" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Invoice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/customers/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/customers/details.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/membership/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/membership/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Application/Customer/Store.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Application/Customer/Store.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PlanSubscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PlanSubscription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/customers/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/customers/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/invoices/_js.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/invoices/_js.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,6 +221,7 @@
       <workItem from="1617635180743" duration="4069000" />
       <workItem from="1617768594816" duration="7877000" />
       <workItem from="1617855425611" duration="2301000" />
+      <workItem from="1618289680123" duration="11619000" />
     </task>
     <servers />
   </component>
@@ -232,9 +237,9 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="634" y="353" key="NewPhpFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1617856195554" />
-    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1617266795851">
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1618295772297">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1617266795851" />
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1618295772297" />
   </component>
 </project>

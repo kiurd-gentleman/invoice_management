@@ -448,7 +448,8 @@ class PlanSubscription extends Model
         }
 
         // If the plan feature is unlimited then return true
-        if ($featureValue === -1) {
+        if ($featureValue === '-1') {
+
             return true;
         }
 

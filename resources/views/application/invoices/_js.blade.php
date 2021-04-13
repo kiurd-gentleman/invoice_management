@@ -42,7 +42,9 @@
         // Remove price mask from values
         var price_inputs = form.find('.price_input');
         price_inputs.each(function (index, elem) {
+            // console.log(price_input)
             var price_input = $(elem);
+            // console.log(price_input.val(price_input.unmask()))
             price_input.val(price_input.unmask());
         });
 
@@ -154,9 +156,9 @@
             var quantity = Number(row.find('[name="quantity[]"]').val());
 
             // price
-            // var price = Number(row.find('.price_input').unmask()) / 100;
-            var price = Number(row.find('.price_input').unmask()) ;
-            console.log(price);
+            var price = Number(row.find('.price_input').unmask()) / 100;
+            // var price = Number(row.find('.price_input').unmask()) ;
+            // console.log(price);
 
             // amount
             var amount = (quantity * price);
@@ -167,7 +169,7 @@
             selected_taxes.each(function (index, tax) {
                 var percent = $(tax).data('percent');
                 var taxAmount = calculatePercent(percent, amount);
-                console.log("taxAmount", taxAmount);
+                // console.log("taxAmount", taxAmount);
                 totalTaxAmount += Number(taxAmount);
             });
 
@@ -250,7 +252,7 @@
     }
 
     function initializePriceListener() {
-        $(".priceListener").change(function() {
+        $(".priceListener").keyup(function() {
             calculateRowPrice()
         });
     }
