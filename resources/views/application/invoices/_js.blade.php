@@ -42,7 +42,9 @@
         // Remove price mask from values
         var price_inputs = form.find('.price_input');
         price_inputs.each(function (index, elem) {
+            // console.log(price_input)
             var price_input = $(elem);
+            // console.log(price_input.val(price_input.unmask()))
             price_input.val(price_input.unmask());
         });
 
@@ -116,6 +118,7 @@
             var taxesSelect = element.closest('tr').find('[name="taxes[]"]');
             var priceInput = element.closest('tr').find('.price_input');
 
+            // console.log(priceInput);
             // Set selected taxes from product
             var taxIds = [];
             var taxes = selectedOption.data('taxes');
@@ -154,6 +157,8 @@
 
             // price
             var price = Number(row.find('.price_input').unmask()) / 100;
+            // var price = Number(row.find('.price_input').unmask()) ;
+            // console.log(price);
 
             // amount
             var amount = (quantity * price);
@@ -164,7 +169,7 @@
             selected_taxes.each(function (index, tax) {
                 var percent = $(tax).data('percent');
                 var taxAmount = calculatePercent(percent, amount);
-                console.log("taxAmount", taxAmount);
+                // console.log("taxAmount", taxAmount);
                 totalTaxAmount += Number(taxAmount);
             });
 
@@ -225,7 +230,7 @@
                 '    <strong class="text-muted">' + name + '</strong>' +
                 '</div>' +
                 '<div class="ml-auto h6 mb-0">' +
-                '    <input type="text" class="price_input price-text w-100 fs-inherit" value="'+ Number(amount).toFixed(2) +'" disabled>' +
+                '    <input type="text" class="price_input price-text w-100" value="'+ Number(amount).toFixed(2) +'" disabled>' +
                 '</div>' +
                 '</div>';
 
@@ -247,7 +252,7 @@
     }
 
     function initializePriceListener() {
-        $(".priceListener").change(function() {
+        $(".priceListener").keyup(function() {
             calculateRowPrice()
         });
     }

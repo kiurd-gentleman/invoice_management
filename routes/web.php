@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 // Landing
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/Generate/invoice', 'HomeController@generate')->name('Generate-invoice');
 
 // Auth routes
 Auth::routes();
@@ -12,6 +13,7 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 // PDF Views
 Route::get('/viewer/invoice/{invoice}/pdf', 'Application\PDFController@invoice')->name('pdf.invoice');
+Route::get('/viewer/invoice/link/{invoice}/pdf', 'Application\PDFController@invoice_view')->name('pdf.invoice.link');
 Route::get('/viewer/estimate/{estimate}/pdf', 'Application\PDFController@estimate')->name('pdf.estimate');
 Route::get('/viewer/payment/{payment}/pdf', 'Application\PDFController@payment')->name('pdf.payment');
 
@@ -96,6 +98,11 @@ Route::group(['namespace' => 'CustomerPortal', 'prefix' => '/portal/{customer}',
     Route::get('/payments', 'PaymentController@index')->name('customer_portal.payments');
     Route::get('/payments/{payment}', 'PaymentController@show')->name('customer_portal.payments.details');
 });
+
+Route::group(['namespace' => 'Application', 'prefix' => '/{company_uid}', 'middleware' => ['auth', 'dashboard']], function () {
+
+});
+
 
 // Application Routes
 Route::group(['namespace' => 'Application', 'prefix' => '/{company_uid}', 'middleware' => ['auth', 'dashboard']], function () {

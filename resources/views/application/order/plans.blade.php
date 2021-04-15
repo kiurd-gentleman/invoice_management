@@ -1,16 +1,16 @@
-@extends('layouts.onboard')
-
+@extends('layouts.app', ['page' => 'Plans'])
 @section('title', __('messages.plans'))
 
 @section('content')
     <div class="page__heading">
         <h1>{{ __('messages.plans') }}</h1>
         <p class="m-0"><strong class="headings-color">{{ __('messages.plans_description') }}</strong></p>
-    </div> 
+    </div>
 
     <div class="row card-group-row pt-2">
         @foreach(\App\Models\Plan::orderBy('order', 'asc')->get() as $plan)
-            <div class="col-md-6 col-lg-4 card-group-row__col">
+            @if($plan->getFeatureBySlug('customers'))
+                <div class="col-md-6 col-lg-4 card-group-row__col">
                 <div class="card card-group-row__card pricing__card">
                     <div class="card-body d-flex flex-column">
                         <div class="text-center">
@@ -27,8 +27,7 @@
                             </div>
                         </div>
                         <div class="card-body d-flex flex-column">
-                            <ul class="list-unstyled pricing__features"> 
-
+                            <ul class="list-unstyled pricing__features">
                                 @if($plan->getFeatureBySlug('customers')->value === '-1')
                                     <li>{{ __('bikin.unlimited_customers') }}</li>
                                 @else
@@ -75,6 +74,7 @@
                     </div>
                 </div>
             </div>
+            @endif
         @endforeach
     </div>
 @endsection

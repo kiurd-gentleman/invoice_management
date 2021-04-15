@@ -18,7 +18,6 @@
 <!-- BEGIN PAGE LEVEL JS-->
 <script type="text/javascript" src="{{asset('/app-assets/js/scripts/ui/breadcrumbs-with-stats.js')}}"></script>
 {{--<script src="{{asset('/app-assets/js/scripts/pages/dashboard-ecommerce.js')}}" type="text/javascript"></script>--}}
-
 <!-- BEGIN PAGE VENDOR JS-->
 <script src="{{asset('app-assets/vendors/js/forms/select/select2.full.min.js')}}" type="text/javascript"></script>
 <!-- END PAGE VENDOR JS-->
