@@ -11,7 +11,7 @@
     @include('layouts._css')
 </head>
 
-<body class="horizontal-layout horizontal-menu 2-columns   menu-expanded" data-open="hover" data-menu="horizontal-menu" data-col="2-columns">
+<body class="horizontal-layout horizontal-menu 2-columns   menu-expanded" data-open="click" data-menu="horizontal-menu" data-col="2-columns">
 
         @include('layouts._header')
         @include('layouts._drawer')

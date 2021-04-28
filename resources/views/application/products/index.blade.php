@@ -34,7 +34,7 @@
         <div class="content-header-right col-md-6 col-12">
             <div class="media width-250 float-right">
                 <div class="media-body media-right text-right">
-                    <a href="{{ route('products.create', ['company_uid' => $currentCompany->uid]) }}" class="btn btn-success btn-sm mt-1 text-uppercase"><i class="ft-plus"></i> {{ __('messages.create_product') }}</a>
+                    <a href="{{ route('products.create', ['company_uid' => $currentCompany->uid]) }}" class="btn btn-success rounded mt-1 "><i class="ft-plus"></i> {{ __('messages.create_product') }}</a>
                 </div>
             </div>
         </div>
@@ -68,6 +68,7 @@
                         <div class="card-body">
                             <div class="card-text">
                                 @include('application.products._filters')
+                                <hr>
                             </div>
                             @include('application.products._table')
                         </div>
