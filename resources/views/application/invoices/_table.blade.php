@@ -24,7 +24,7 @@
                             {{ $invoice->formatted_invoice_date }}
                         </td>
                         <td class="h6">
-                            {{ $invoice->customer->display_name }}
+                            <a href="{{ route('customers.details', ['customer' => $invoice->customer->id,'company_uid' => $currentCompany->uid]) }}">{{ $invoice->customer->display_name }}</a>
                         </td>
                         <td class="h6">
                             @if($invoice->status == 'DRAFT')

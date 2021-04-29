@@ -152,14 +152,14 @@ pre {
 
 .table thead th {
   vertical-align: bottom;
-  border-bottom: 2px solid #e3ebf3;
-  border-top: 1px solid #e3ebf3; }
+  border-bottom: 2px solid #e3ebf300;
+  border-top: 1px solid #e3ebf300; }
 
 .table-bordered th, .table-bordered td {
   border: 1px solid #e3ebf3; }
 
 .table th, .table td {
-  border-bottom: 1px solid #e3ebf3; }
+  border-bottom: 1px solid #e3ebf300; }
 
 .table-bordered {
   border: 1px solid #e3ebf3; }

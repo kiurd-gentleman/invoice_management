@@ -57,7 +57,7 @@
                                 <div class="row">
                                     <div class="col-12 col-md-4">
                                         <p class="h2 pb-4">
-                                            #{{ $invoice->invoice_number }}
+                                            Invoice No : #{{ $invoice->invoice_number }}
                                         </p>
                                     </div>
                                     <div class="col-12 col-md-8 text-right">

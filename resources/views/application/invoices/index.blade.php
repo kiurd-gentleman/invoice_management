@@ -72,8 +72,8 @@
                             </div>
                             <div class="card">
                                 <div class="card">
-                                    <div class="card-header">
-                                        <h4 class="card-title">Your All Invoice is here. Filter for specific invoice</h4>
+                                    <div class="card-header w-100 bg-gradient-directional-black">
+                                        <h4 class="card-title text-center font-weight-bold">Your All Invoice is here. Filter for specific invoice</h4>
                                     </div>
                                     <div class="card-content">
                                         <div class="card-body">
