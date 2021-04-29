@@ -1,6 +1,6 @@
 @if($products->count() > 0)
     <div class="table-responsive" data-toggle="lists">
-        <table class="table mb-0 thead-border-top-0 table-striped">
+        <table class="table table-striped sourced-data dataTable">
             <thead>
                 <tr>
                     <th class="text-center w-30px">{{ __('messages.#id') }}</th>
@@ -12,12 +12,12 @@
                 </tr>
             </thead>
             <tbody class="list" id="products">
-                @foreach ($products as $product)
+                @foreach ($products as $key=>$product)
                     <tr>
                         <td>
                             <div class="badge badge-primary">
                                 <a class="mb-0" href="{{ route('products.edit', ['product' => $product->id, 'company_uid' => $currentCompany->uid]) }}">
-                                    #{{ $product->id }}
+                                    #{{ $key+1 }}
                                 </a>
                             </div>
                         </td>
@@ -33,12 +33,12 @@
                             {{ money($product->price, $product->currency_code) }}
                         </td>
                         <td class="text-center">
-                            <i class="ft-calendar"></i>
+                            <i class="ft-calendar text-danger"></i>
                             {{ $product->formatted_created_at }}
                         </td>
                         <td>
                             <a href="{{ route('products.edit', ['product' => $product->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-link">
-                                <i class="ft-arrow-right"></i>
+                                <i class="ft-arrow-right text-danger"></i>
                             </a>
                         </td>
                     </tr>

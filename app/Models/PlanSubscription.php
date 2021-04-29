@@ -481,7 +481,6 @@ class PlanSubscription extends Model
         if (!$usage) {
             return 0;
         }
-
         return ! $usage->expired() ? $usage->used : 0;
     }
 
