@@ -1,42 +1,9 @@
-<div class="card card-form">
+<div class="card-form p-5">
     <div class="row no-gutters ">
 
-        <div class="col-md-4 pr-2">
-            <div class="form-group required select-container">
-                <label for="customer">{{ __('messages.customer') }}</label>
-                <div class="input-group">
-                    <select id="customer" name="customer_id" data-toggle="" class="form-control " >
-                        <option disabled selected>{{ __('messages.select_customer') }}</option>
-                        @if($invoice->customer_id)
-                            <option value="{{ $invoice->customer_id }}"
-                                    selected=""
-                                    data-currency="{{ $invoice->customer->currency }}"
-                                    data-billing_address="{{$invoice->customer->displayLongAddress('billing')}}"
-                                    data-shipping_address="{{$invoice->customer->displayLongAddress('shipping')}}"
-                            >
-                                {{ $invoice->customer->display_name }}
-                            </option>
-                        @endif
-                    </select>
-                    <div class="input-group-append">
-                        <a class="btn btn-primary" href="{{ route('customers.create', ['company_uid' => $currentCompany->uid]) }}"><i class="ft-plus"></i></a>
-                    </div>
-                </div>
+        
 
-            </div>
-            <div id="address_component" class="form-row d-none">
-                <div class="col-6">
-                    <strong>{{ __('messages.bill_to') }}:</strong>
-                    <p id="billing_address"></p>
-                </div>
-                <div class="col-6">
-                    <strong>{{ __('messages.ship_to') }}:</strong>
-                    <p id="shipping_address"></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 pr-4 pl-4">
+        <div class="col-md-4">
             <div class="form-group required">
                 <label for="invoice_date">{{ __('messages.invoice_date') }}</label>
 {{--                @dd(date($invoice->invoice_date))--}}
@@ -56,7 +23,7 @@
             </div>
         </div>
 
-        <div class="col-md-4 pl-4">
+        <div class="col-md-4 offset-md-4">
             <div class="form-group required">
                 <label for="due_date">{{ __('messages.due_date') }}</label>
                 <input name="due_date" type="text" class="form-control input datepicker" value="{{ date_format (date_create( $invoice->due_date), 'Y-m-d')  ?? date('Y-m-d') }}"  readonly="readonly" required>
@@ -73,10 +40,52 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-5">
+            <h4>Invoice From</h4>
+            <hr>
+        </div>
+        <div class="col-md-5 offset-md-2">
+            <h4>Invoice For</h4>
+            <hr>
+            <div class="">
+                <div class="form-group required select-container">
+                    <label for="customer">{{ __('messages.customer') }}</label>
+                    <div class="input-group">
+                        <select id="customer" name="customer_id" data-toggle="" class="form-control " >
+                            <option disabled selected>{{ __('messages.select_customer') }}</option>
+                            @if($invoice->customer_id)
+                                <option value="{{ $invoice->customer_id }}"
+                                        selected=""
+                                        data-currency="{{ $invoice->customer->currency }}"
+                                        data-billing_address="{{$invoice->customer->displayLongAddress('billing')}}"
+                                        data-shipping_address="{{$invoice->customer->displayLongAddress('shipping')}}"
+                                >
+                                    {{ $invoice->customer->display_name }}
+                                </option>
+                            @endif
+                        </select>
+                        <div class="input-group-append">
+                            <a class="btn btn-primary" href="{{ route('customers.create', ['company_uid' => $currentCompany->uid]) }}"><i class="ft-plus"></i></a>
+                        </div>
+                    </div>
+    
+                </div>
+                <div id="address_component" class="form-row d-none">
+                    <div class="col-6">
+                        <strong>{{ __('messages.bill_to') }}:</strong>
+                        <p id="billing_address"></p>
+                    </div>
+                    <div class="col-6">
+                        <strong>{{ __('messages.ship_to') }}:</strong>
+                        <p id="shipping_address"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="col-12 mt-5">
             <div class="table-responsive" data-toggle="lists">
-                <table class=" table-xl mb-0 thead-border-top-0 table-striped">
+                <table class=" table-xl mb-0 thead-border-top-0 table-striped w-100">
                     <thead>
                         <tr>
                             @if($tax_per_item and $discount_per_item)
@@ -112,7 +121,7 @@
                             <td class="select-container" style="width:30%">
                                 <div class="form-group"  >
                                     <div class="input-group">
-                                        <select name="product[]" class="form-control priceListener" required>
+                                        <select name="product[]" class="form-control priceListener" required >
                                             <option disabled selected>{{ __('messages.select_product') }}</option>
                                         </select>
                                         <div class="input-group-append">
@@ -135,12 +144,12 @@
                             @endif
                             <td>
                                 <div class="form-group">
-                                <input name="quantity[]" type="number" class="form-control-plaintext priceListener" value="1" required style="border-bottom: 1px solid black;">
+                                <input name="quantity[]" type="number" class="form-control priceListener invoice-input" value="1" required>
                                 </div>
                             </td>
                             <td>
                                 <div class="form-group">
-                                <input name="price[]" type="text" class="form-control-plaintext price_input priceListener" autocomplete="off" value="0" required style="border-bottom: 1px solid black;">
+                                <input name="price[]" type="text" class="form-control-plaintext price_input priceListener invoice-input" autocomplete="off" value="0" required>
                                 </div>
                             </td>
                             @if($discount_per_item)
@@ -156,15 +165,17 @@
                                 </td>
                             @endif
                             <td class="text-right">
-                                <p class="mb-1">
-                                    <input type="text" name="total[]" class="form-control price_input price-text amount_price" value="0" readonly>
-                                </p>
+                                <div class="form-group">
+                                    <input type="text" name="total[]" class="form-control price_input price-text amount_price invoice-input" value="0" readonly >
+                                </div>
                                 <div class="tax_list"></div>
                             </td>
                             <td>
+                                <div class="form-group">
                                 <a onclick="removeRow(this)" class="btn btn-danger btn-sm text-white">
                                     <i class="ft-trash"></i>
                                 </a>
+                            </div>
                             </td>
                         </tr>
                         @if($invoice->items->count() > 0)
@@ -232,20 +243,22 @@
             </div>
         </div>
 
-        <div class="col-md-5 mt-5 pr-4">
-            <div class="form-group">
-                <label for="notes">{{ __('messages.notes') }}</label>
-                <textarea name="notes" class="form-control" rows="4">{{ $invoice->notes }}</textarea>
-            </div>
+        <div class="col-md-5 mt-5">
+            <div class="card card-body">
+                <div class="form-group">
+                    <label for="notes">{{ __('messages.notes') }}</label>
+                    <textarea name="notes" class="form-control" rows="4">{{ $invoice->notes }}</textarea>
+                </div>
 
-            <div class="form-group">
-                <label for="private_notes">{{ __('messages.private_notes') }}</label>
-                <textarea name="private_notes" class="form-control" rows="4">{{ $invoice->private_notes }}</textarea>
+                <div class="form-group">
+                    <label for="private_notes">{{ __('messages.private_notes') }}</label>
+                    <textarea name="private_notes" class="form-control" rows="4">{{ $invoice->private_notes }}</textarea>
+                </div>
             </div>
         </div>
 
-        <div class="col-md-4 offset-md-3 mt-5 pl-4">
-            <div class="card card-body shadow-none border">
+        <div class="col-md-4 offset-md-3 mt-5">
+            <div class="card card-body">
 
                 <div class="d-flex align-items-center mb-3">
                     <div class="h6 mb-0 w-50">

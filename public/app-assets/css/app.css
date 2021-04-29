@@ -1,3 +1,11 @@
 @import url("bootstrap-extended.css");
 @import url("colors.css");
 @import url("components.css");
+
+.invoice-input{
+    border-bottom: 1px solid gray !important; 
+    border-top: none !important; 
+    border-right: none !important; 
+    border-left: none !important;
+    background-color: transparent !important;
+}
