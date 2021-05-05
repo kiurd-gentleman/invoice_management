@@ -23,8 +23,11 @@ trait CompanyUserTrait
      */
     public function currentCompany()
     {
+        // dd($this->id);
         if ($this->id == null) return null;
 
+//        dump($this->companies()->exists());
+//        dd($this->companies()->first());
         return $this->companies()->exists()
             ? $this->companies()->first()
             : null;
@@ -38,7 +41,7 @@ trait CompanyUserTrait
     public function currentSubscriptionPlan()
     {
         if (!$this->currentCompany()) return null;
-        
+
         $subscription = $this->currentCompany()->subscription('main');
 
         return $subscription != null ? $subscription->plan : null;
@@ -54,7 +57,7 @@ trait CompanyUserTrait
     public function subscribedTo($planId): bool
     {
         if (!$this->currentCompany()) return false;
-        
+
         $subscribed = $this->currentCompany()->subscribedTo($planId);
 
         return $subscribed;
@@ -110,7 +113,7 @@ trait CompanyUserTrait
     public function attachCompany($company, $pivotData = [])
     {
         $company = $this->retrieveCompanyId($company);
-    
+
         // Reload relation
         $this->load('companies');
 

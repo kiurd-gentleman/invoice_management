@@ -23,6 +23,7 @@ class CustomerController extends Controller
     public function index(Request $request)
     {
         $user = $request->user();
+//        dd($request->user());
         $currentCompany = $user->currentCompany();
 
         // Get Customers by Company and Filters
@@ -46,8 +47,10 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $user = $request->user();
+//        dd($request->user());
         $customer = new Customer();
 
         return view('application.customers.create', [

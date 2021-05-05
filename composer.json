@@ -28,7 +28,7 @@
         "rachidlaasri/laravel-installer": "^4.0",
         "razorpay/razorpay": "^2.5",
         "spatie/laravel-activitylog": "^3.14",
-        "spatie/laravel-permission": "^3.11",
+        "spatie/laravel-permission": "^4.0",
         "spatie/laravel-query-builder": "^2.8"
     },
     "require-dev": {

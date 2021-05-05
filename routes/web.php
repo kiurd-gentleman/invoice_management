@@ -107,6 +107,8 @@ Route::group(['namespace' => 'Application', 'prefix' => '/{company_uid}', 'middl
 // Application Routes
 Route::group(['namespace' => 'Application', 'prefix' => '/{company_uid}', 'middleware' => ['auth', 'dashboard']], function () {
     // Company Dashboard
+    Route::get('/company', 'CompanyController@index')->name('company-list');
+    Route::get('/company-create', 'CompanyController@create')->name('company-create');
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
     // Customers
