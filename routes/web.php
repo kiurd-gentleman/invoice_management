@@ -105,178 +105,185 @@ Route::group(['namespace' => 'Application', 'prefix' => '/{company_uid}', 'middl
 
 
 // Application Routes
-Route::group(['namespace' => 'Application', 'prefix' => '/{company_uid}', 'middleware' => ['auth', 'dashboard']], function () {
-    // Company Dashboard
-    Route::get('/company', 'CompanyController@index')->name('company-list');
-    Route::get('/company-create', 'CompanyController@create')->name('company-create');
-    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::group(['namespace' => 'Application', 'middleware' => ['auth', 'dashboard']], function () {
+    Route::get('{user_uid}/company', 'CompanyController@index')->name('company-list');
+    Route::get('/{user_uid}/company-create', 'CompanyController@create')->name('company-create');
+    Route::get('/{user_uid}/company-store', 'CompanyController@store')->name('company-store');
 
-    // Customers
-    Route::get('/customers', 'CustomerController@index')->name('customers');
-    Route::get('/customers/create', 'CustomerController@create')->name('customers.create');
-    Route::post('/customers/create', 'CustomerController@store')->name('customers.store');
-    Route::get('/customers/{customer}/details', 'CustomerController@details')->name('customers.details');
-    Route::get('/customers/{customer}/edit', 'CustomerController@edit')->name('customers.edit');
-    Route::post('/customers/{customer}/edit', 'CustomerController@update')->name('customers.update');
-    Route::get('/customers/{customer}/delete', 'CustomerController@delete')->name('customers.delete');
 
-    // Products & Services
-    Route::get('/products', 'ProductController@index')->name('products');
-    Route::get('/products/create', 'ProductController@create')->name('products.create');
-    Route::post('/products/create', 'ProductController@store')->name('products.store');
-    Route::get('/products/{product}/edit', 'ProductController@edit')->name('products.edit');
-    Route::post('/products/{product}/edit', 'ProductController@update')->name('products.update');
-    Route::get('/products/{product}/delete', 'ProductController@delete')->name('products.delete');
+//    Route::group(['prefix' => '/{company_uid}'], function () {
+        // Company Dashboard
+//        Route::get('/company', 'CompanyController@index')->name('company-list');
+        Route::get('/{company_uid}/dashboard', 'DashboardController@index')->name('dashboard');
 
-    // Invoices
-    Route::get('/invoices/create', 'InvoiceController@create')->name('invoices.create');
-    Route::post('/invoices/create', 'InvoiceController@store')->name('invoices.store');
-    Route::get('/invoices/{invoice}/details', 'InvoiceController@show')->name('invoices.details');
-    Route::get('/invoices/{invoice}/edit', 'InvoiceController@edit')->name('invoices.edit');
-    Route::post('/invoices/{invoice}/edit', 'InvoiceController@update')->name('invoices.update');
-    Route::get('/invoices/{invoice}/delete', 'InvoiceController@delete')->name('invoices.delete');
-    Route::get('/invoices/{invoice}/send', 'InvoiceController@send')->name('invoices.send');
-    Route::get('/invoices/{invoice}/mark/{status?}', 'InvoiceController@mark')->name('invoices.mark');
-    Route::get('/invoices/{tab?}', 'InvoiceController@index')->name('invoices');
+        // Customers
+        Route::get('/{company_uid}/customers', 'CustomerController@index')->name('customers');
+        Route::get('/{company_uid}/customers/create', 'CustomerController@create')->name('customers.create');
+        Route::post('/{company_uid}/customers/create', 'CustomerController@store')->name('customers.store');
+        Route::get('/{company_uid}/customers/{customer}/details', 'CustomerController@details')->name('customers.details');
+        Route::get('/{company_uid}/customers/{customer}/edit', 'CustomerController@edit')->name('customers.edit');
+        Route::post('/{company_uid}/customers/{customer}/edit', 'CustomerController@update')->name('customers.update');
+        Route::get('/{company_uid}/customers/{customer}/delete', 'CustomerController@delete')->name('customers.delete');
 
-    // Estimates
-    Route::get('/quotations/create', 'EstimateController@create')->name('estimates.create');
-    Route::post('/quotations/create', 'EstimateController@store')->name('estimates.store');
-    Route::get('/quotations/{estimate}/details', 'EstimateController@show')->name('estimates.details');
-    Route::get('/quotations/{estimate}/edit', 'EstimateController@edit')->name('estimates.edit');
-    Route::post('/quotations/{estimate}/edit', 'EstimateController@update')->name('estimates.update');
-    Route::get('/quotations/{estimate}/delete', 'EstimateController@delete')->name('estimates.delete');
-    Route::get('/quotations/{estimate}/send', 'EstimateController@send')->name('estimates.send');
-    Route::get('/quotations/{estimate}/mark/{status?}', 'EstimateController@mark')->name('estimates.mark');
-    Route::get('/quotations/{tab?}', 'EstimateController@index')->name('estimates');
+        // Products & Services
+        Route::get('/{company_uid}/products', 'ProductController@index')->name('products');
+        Route::get('/{company_uid}/products/create', 'ProductController@create')->name('products.create');
+        Route::post('/{company_uid}/products/create', 'ProductController@store')->name('products.store');
+        Route::get('/{company_uid}/products/{product}/edit', 'ProductController@edit')->name('products.edit');
+        Route::post('/{company_uid}/products/{product}/edit', 'ProductController@update')->name('products.update');
+        Route::get('/{company_uid}/products/{product}/delete', 'ProductController@delete')->name('products.delete');
 
-    // Payments
-    Route::get('/payments', 'PaymentController@index')->name('payments');
-    Route::get('/payments/create', 'PaymentController@create')->name('payments.create');
-    Route::post('/payments/create', 'PaymentController@store')->name('payments.store');
-    Route::get('/payments/{payment}/edit', 'PaymentController@edit')->name('payments.edit');
-    Route::post('/payments/{payment}/edit', 'PaymentController@update')->name('payments.update');
-    Route::get('/payments/{payment}/delete', 'PaymentController@delete')->name('payments.delete');
+        // Invoices
+        Route::get('/{company_uid}/invoices/create', 'InvoiceController@create')->name('invoices.create');
+        Route::post('/{company_uid}/invoices/create', 'InvoiceController@store')->name('invoices.store');
+        Route::get('/{company_uid}/invoices/{invoice}/details', 'InvoiceController@show')->name('invoices.details');
+        Route::get('/{company_uid}/invoices/{invoice}/edit', 'InvoiceController@edit')->name('invoices.edit');
+        Route::post('/{company_uid}/invoices/{invoice}/edit', 'InvoiceController@update')->name('invoices.update');
+        Route::get('/{company_uid}/invoices/{invoice}/delete', 'InvoiceController@delete')->name('invoices.delete');
+        Route::get('/{company_uid}/invoices/{invoice}/send', 'InvoiceController@send')->name('invoices.send');
+        Route::get('/{company_uid}/invoices/{invoice}/mark/{status?}', 'InvoiceController@mark')->name('invoices.mark');
+        Route::get('/{company_uid}/invoices/{tab?}', 'InvoiceController@index')->name('invoices');
 
-    // Expenses
-    Route::get('/expenses', 'ExpenseController@index')->name('expenses');
-    Route::get('/expenses/create', 'ExpenseController@create')->name('expenses.create');
-    Route::post('/expenses/create', 'ExpenseController@store')->name('expenses.store');
-    Route::get('/expenses/{expense}/edit', 'ExpenseController@edit')->name('expenses.edit');
-    Route::post('/expenses/{expense}/edit', 'ExpenseController@update')->name('expenses.update');
-    Route::get('/expenses/{expense}/receipt', 'ExpenseController@download_receipt')->name('expenses.download_receipt');
-    Route::get('/expenses/{expense}/delete', 'ExpenseController@delete')->name('expenses.delete');
+        // Estimates
+        Route::get('/{company_uid}/quotations/create', 'EstimateController@create')->name('estimates.create');
+        Route::post('/{company_uid}/quotations/create', 'EstimateController@store')->name('estimates.store');
+        Route::get('/{company_uid}/quotations/{estimate}/details', 'EstimateController@show')->name('estimates.details');
+        Route::get('/{company_uid}/quotations/{estimate}/edit', 'EstimateController@edit')->name('estimates.edit');
+        Route::post('/{company_uid}/quotations/{estimate}/edit', 'EstimateController@update')->name('estimates.update');
+        Route::get('/{company_uid}/quotations/{estimate}/delete', 'EstimateController@delete')->name('estimates.delete');
+        Route::get('/{company_uid}/quotations/{estimate}/send', 'EstimateController@send')->name('estimates.send');
+        Route::get('/{company_uid}/quotations/{estimate}/mark/{status?}', 'EstimateController@mark')->name('estimates.mark');
+        Route::get('/{company_uid}/quotations/{tab?}', 'EstimateController@index')->name('estimates');
 
-    // Vendors
-    Route::get('/vendors', 'VendorController@index')->name('vendors');
-    Route::get('/vendors/create', 'VendorController@create')->name('vendors.create');
-    Route::post('/vendors/create', 'VendorController@store')->name('vendors.store');
-    Route::get('/vendors/{vendor}/details', 'VendorController@details')->name('vendors.details');
-    Route::get('/vendors/{vendor}/edit', 'VendorController@edit')->name('vendors.edit');
-    Route::post('/vendors/{vendor}/edit', 'VendorController@update')->name('vendors.update');
-    Route::get('/vendors/{vendor}/delete', 'VendorController@delete')->name('vendors.delete');
+        // Payments
+        Route::get('/{company_uid}/payments', 'PaymentController@index')->name('payments');
+        Route::get('/{company_uid}/payments/create', 'PaymentController@create')->name('payments.create');
+        Route::post('/{company_uid}/payments/create', 'PaymentController@store')->name('payments.store');
+        Route::get('/{company_uid}/payments/{payment}/edit', 'PaymentController@edit')->name('payments.edit');
+        Route::post('/{company_uid}/payments/{payment}/edit', 'PaymentController@update')->name('payments.update');
+        Route::get('/{company_uid}/payments/{payment}/delete', 'PaymentController@delete')->name('payments.delete');
 
-    // Reports
-    Route::get('/reports/customer-sales', 'ReportController@customer_sales')->name('reports.customer_sales');
-    Route::get('/reports/customer-sales/pdf', 'PDFReportController@customer_sales')->name('reports.customer_sales.pdf');
-    Route::get('/reports/product-sales', 'ReportController@product_sales')->name('reports.product_sales');
-    Route::get('/reports/product-sales/pdf', 'PDFReportController@product_sales')->name('reports.product_sales.pdf');
-    Route::get('/reports/profit-loss', 'ReportController@profit_loss')->name('reports.profit_loss');
-    Route::get('/reports/profit-loss/pdf', 'PDFReportController@profit_loss')->name('reports.profit_loss.pdf');
-    Route::get('/reports/expenses', 'ReportController@expenses')->name('reports.expenses');
-    Route::get('/reports/expenses/pdf', 'PDFReportController@expenses')->name('reports.expenses.pdf');
+        // Expenses
+        Route::get('/{company_uid}/expenses', 'ExpenseController@index')->name('expenses');
+        Route::get('/{company_uid}/expenses/create', 'ExpenseController@create')->name('expenses.create');
+        Route::post('/{company_uid}/expenses/create', 'ExpenseController@store')->name('expenses.store');
+        Route::get('/{company_uid}/expenses/{expense}/edit', 'ExpenseController@edit')->name('expenses.edit');
+        Route::post('/{company_uid}/expenses/{expense}/edit', 'ExpenseController@update')->name('expenses.update');
+        Route::get('/{company_uid}/expenses/{expense}/receipt', 'ExpenseController@download_receipt')->name('expenses.download_receipt');
+        Route::get('/{company_uid}/expenses/{expense}/delete', 'ExpenseController@delete')->name('expenses.delete');
 
-    // Setting Routes
-    Route::group(['namespace' => 'Settings', 'prefix' => 'settings'], function () {
-        // Settings>Account Settings
-        Route::get('/account', 'AccountController@index')->name('settings.account');
-        Route::post('/account', 'AccountController@update')->name('settings.account.update');
+        // Vendors
+        Route::get('/{company_uid}/vendors', 'VendorController@index')->name('vendors');
+        Route::get('/{company_uid}/vendors/create', 'VendorController@create')->name('vendors.create');
+        Route::post('/{company_uid}/vendors/create', 'VendorController@store')->name('vendors.store');
+        Route::get('/{company_uid}/vendors/{vendor}/details', 'VendorController@details')->name('vendors.details');
+        Route::get('/{company_uid}/vendors/{vendor}/edit', 'VendorController@edit')->name('vendors.edit');
+        Route::post('/{company_uid}/vendors/{vendor}/edit', 'VendorController@update')->name('vendors.update');
+        Route::get('/{company_uid}/vendors/{vendor}/delete', 'VendorController@delete')->name('vendors.delete');
 
-        // Settings>Account Settings
-        Route::get('/membership', 'MembershipController@index')->name('settings.membership');
+        // Reports
+        Route::get('/{company_uid}/reports/customer-sales', 'ReportController@customer_sales')->name('reports.customer_sales');
+        Route::get('/{company_uid}/reports/customer-sales/pdf', 'PDFReportController@customer_sales')->name('reports.customer_sales.pdf');
+        Route::get('/{company_uid}/reports/product-sales', 'ReportController@product_sales')->name('reports.product_sales');
+        Route::get('/{company_uid}/reports/product-sales/pdf', 'PDFReportController@product_sales')->name('reports.product_sales.pdf');
+        Route::get('/{company_uid}/reports/profit-loss', 'ReportController@profit_loss')->name('reports.profit_loss');
+        Route::get('/{company_uid}/reports/profit-loss/pdf', 'PDFReportController@profit_loss')->name('reports.profit_loss.pdf');
+        Route::get('/{company_uid}/reports/expenses', 'ReportController@expenses')->name('reports.expenses');
+        Route::get('/{company_uid}/reports/expenses/pdf', 'PDFReportController@expenses')->name('reports.expenses.pdf');
 
-        // Settings>Notification Settings
-        Route::get('/notifications', 'NotificationController@index')->name('settings.notifications');
-        Route::post('/notifications', 'NotificationController@update')->name('settings.notifications.update');
+        // Setting Routes
+        Route::group(['namespace' => 'Settings', 'prefix' => 'settings'], function () {
+            // Settings>Account Settings
+            Route::get('/account', 'AccountController@index')->name('settings.account');
+            Route::post('/account', 'AccountController@update')->name('settings.account.update');
 
-        // Settings>Company Settings
-        Route::get('/company', 'CompanyController@index')->name('settings.company');
-        Route::post('/company', 'CompanyController@update')->name('settings.company.update');
+            // Settings>Account Settings
+            Route::get('/membership', 'MembershipController@index')->name('settings.membership');
 
-        // Settings>Preferences
-        Route::get('/preferences', 'PreferenceController@index')->name('settings.preferences');
-        Route::post('/preferences', 'PreferenceController@update')->name('settings.preferences.update');
+            // Settings>Notification Settings
+            Route::get('/notifications', 'NotificationController@index')->name('settings.notifications');
+            Route::post('/notifications', 'NotificationController@update')->name('settings.notifications.update');
 
-        // Settings>Invoice Settings
-        Route::get('/invoice', 'InvoiceController@index')->name('settings.invoice');
-        Route::post('/invoice', 'InvoiceController@update')->name('settings.invoice.update');
+            // Settings>Company Settings
+            Route::get('/company', 'CompanyController@index')->name('settings.company');
+            Route::post('/company', 'CompanyController@update')->name('settings.company.update');
 
-        // Settings>Estimate Settings
-        Route::get('/estimate', 'EstimateController@index')->name('settings.estimate');
-        Route::post('/estimate', 'EstimateController@update')->name('settings.estimate.update');
+            // Settings>Preferences
+            Route::get('/preferences', 'PreferenceController@index')->name('settings.preferences');
+            Route::post('/preferences', 'PreferenceController@update')->name('settings.preferences.update');
 
-        // Settings>Payment Settings
-        Route::get('/payment', 'PaymentController@index')->name('settings.payment');
-        Route::post('/payment', 'PaymentController@update')->name('settings.payment.update');
-        Route::get('/payment/type/create', 'PaymentTypeController@create')->name('settings.payment.type.create');
-        Route::post('/payment/type/create', 'PaymentTypeController@store')->name('settings.payment.type.store');
-        Route::get('/payment/type/{type}/edit', 'PaymentTypeController@edit')->name('settings.payment.type.edit');
-        Route::post('/payment/type/{type}/edit', 'PaymentTypeController@update')->name('settings.payment.type.update');
-        Route::get('/payment/type/{type}/delete', 'PaymentTypeController@delete')->name('settings.payment.type.delete');
-        Route::get('/payment/gateway/{gateway}/edit', 'PaymentGatewayController@edit')->name('settings.payment.gateway.edit');
-        Route::post('/payment/gateway/{gateway}/edit', 'PaymentGatewayController@update')->name('settings.payment.gateway.update');
+            // Settings>Invoice Settings
+            Route::get('/invoice', 'InvoiceController@index')->name('settings.invoice');
+            Route::post('/invoice', 'InvoiceController@update')->name('settings.invoice.update');
 
-        // Settings>Product Settings
-        Route::get('/product', 'ProductController@index')->name('settings.product');
-        Route::post('/product', 'ProductController@update')->name('settings.product.update');
-        Route::get('/product/unit/create', 'ProductUnitController@create')->name('settings.product.unit.create');
-        Route::post('/product/unit/create', 'ProductUnitController@store')->name('settings.product.unit.store');
-        Route::get('/product/unit/{product_unit}/edit', 'ProductUnitController@edit')->name('settings.product.unit.edit');
-        Route::post('/product/unit/{product_unit}/edit', 'ProductUnitController@update')->name('settings.product.unit.update');
-        Route::get('/product/unit/{product_unit}/delete', 'ProductUnitController@delete')->name('settings.product.unit.delete');
+            // Settings>Estimate Settings
+            Route::get('/estimate', 'EstimateController@index')->name('settings.estimate');
+            Route::post('/estimate', 'EstimateController@update')->name('settings.estimate.update');
 
-        // Settings>Tax Types
-        Route::get('/tax-types', 'TaxTypeController@index')->name('settings.tax_types');
-        Route::get('/tax-types/create', 'TaxTypeController@create')->name('settings.tax_types.create');
-        Route::post('/tax-types/create', 'TaxTypeController@store')->name('settings.tax_types.store');
-        Route::get('/tax-types/{tax_type}/edit', 'TaxTypeController@edit')->name('settings.tax_types.edit');
-        Route::post('/tax-types/{tax_type}/edit', 'TaxTypeController@update')->name('settings.tax_types.update');
-        Route::get('/tax-types/{tax_type}/delete', 'TaxTypeController@delete')->name('settings.tax_types.delete');
+            // Settings>Payment Settings
+            Route::get('/payment', 'PaymentController@index')->name('settings.payment');
+            Route::post('/payment', 'PaymentController@update')->name('settings.payment.update');
+            Route::get('/payment/type/create', 'PaymentTypeController@create')->name('settings.payment.type.create');
+            Route::post('/payment/type/create', 'PaymentTypeController@store')->name('settings.payment.type.store');
+            Route::get('/payment/type/{type}/edit', 'PaymentTypeController@edit')->name('settings.payment.type.edit');
+            Route::post('/payment/type/{type}/edit', 'PaymentTypeController@update')->name('settings.payment.type.update');
+            Route::get('/payment/type/{type}/delete', 'PaymentTypeController@delete')->name('settings.payment.type.delete');
+            Route::get('/payment/gateway/{gateway}/edit', 'PaymentGatewayController@edit')->name('settings.payment.gateway.edit');
+            Route::post('/payment/gateway/{gateway}/edit', 'PaymentGatewayController@update')->name('settings.payment.gateway.update');
 
-        // Settings>Custom Fields
-        Route::get('/custom-fields', 'CustomFieldController@index')->name('settings.custom_fields');
-        Route::get('/custom-fields/create', 'CustomFieldController@create')->name('settings.custom_fields.create');
-        Route::post('/custom-fields/create', 'CustomFieldController@store')->name('settings.custom_fields.store');
-        Route::get('/custom-fields/{custom_field}/edit', 'CustomFieldController@edit')->name('settings.custom_fields.edit');
-        Route::post('/custom-fields/{custom_field}/edit', 'CustomFieldController@update')->name('settings.custom_fields.update');
-        Route::get('/custom-fields/{custom_field}/delete', 'CustomFieldController@delete')->name('settings.custom_fields.delete');
+            // Settings>Product Settings
+            Route::get('/product', 'ProductController@index')->name('settings.product');
+            Route::post('/product', 'ProductController@update')->name('settings.product.update');
+            Route::get('/product/unit/create', 'ProductUnitController@create')->name('settings.product.unit.create');
+            Route::post('/product/unit/create', 'ProductUnitController@store')->name('settings.product.unit.store');
+            Route::get('/product/unit/{product_unit}/edit', 'ProductUnitController@edit')->name('settings.product.unit.edit');
+            Route::post('/product/unit/{product_unit}/edit', 'ProductUnitController@update')->name('settings.product.unit.update');
+            Route::get('/product/unit/{product_unit}/delete', 'ProductUnitController@delete')->name('settings.product.unit.delete');
 
-        // Settings>Expense Categories
-        Route::get('/expense-categories', 'ExpenseCategoryController@index')->name('settings.expense_categories');
-        Route::get('/expense-categories/create', 'ExpenseCategoryController@create')->name('settings.expense_categories.create');
-        Route::post('/expense-categories/create', 'ExpenseCategoryController@store')->name('settings.expense_categories.store');
-        Route::get('/expense-categories/{expense_category}/edit', 'ExpenseCategoryController@edit')->name('settings.expense_categories.edit');
-        Route::post('/expense-categories/{expense_category}/edit', 'ExpenseCategoryController@update')->name('settings.expense_categories.update');
-        Route::get('/expense-categories/{expense_category}/delete', 'ExpenseCategoryController@delete')->name('settings.expense_categories.delete');
+            // Settings>Tax Types
+            Route::get('/tax-types', 'TaxTypeController@index')->name('settings.tax_types');
+            Route::get('/tax-types/create', 'TaxTypeController@create')->name('settings.tax_types.create');
+            Route::post('/tax-types/create', 'TaxTypeController@store')->name('settings.tax_types.store');
+            Route::get('/tax-types/{tax_type}/edit', 'TaxTypeController@edit')->name('settings.tax_types.edit');
+            Route::post('/tax-types/{tax_type}/edit', 'TaxTypeController@update')->name('settings.tax_types.update');
+            Route::get('/tax-types/{tax_type}/delete', 'TaxTypeController@delete')->name('settings.tax_types.delete');
 
-        // Settings>Team
-        Route::get('/team', 'TeamController@index')->name('settings.team');
-        Route::get('/team/add-member', 'TeamController@createMember')->name('settings.team.createMember');
-        Route::post('/team/add-member', 'TeamController@storeMember')->name('settings.team.storeMember');
-        Route::get('/team/{member}/edit', 'TeamController@editMember')->name('settings.team.editMember');
-        Route::post('/team/{member}/edit', 'TeamController@updateMember')->name('settings.team.updateMember');
-        Route::get('/team/{member}/delete', 'TeamController@deleteMember')->name('settings.team.deleteMember');
+            // Settings>Custom Fields
+            Route::get('/custom-fields', 'CustomFieldController@index')->name('settings.custom_fields');
+            Route::get('/custom-fields/create', 'CustomFieldController@create')->name('settings.custom_fields.create');
+            Route::post('/custom-fields/create', 'CustomFieldController@store')->name('settings.custom_fields.store');
+            Route::get('/custom-fields/{custom_field}/edit', 'CustomFieldController@edit')->name('settings.custom_fields.edit');
+            Route::post('/custom-fields/{custom_field}/edit', 'CustomFieldController@update')->name('settings.custom_fields.update');
+            Route::get('/custom-fields/{custom_field}/delete', 'CustomFieldController@delete')->name('settings.custom_fields.delete');
 
-        // Settings>Email Templates
-        Route::get('/email-templates', 'EmailTemplateController@index')->name('settings.email_template');
-        Route::post('/email-templates', 'EmailTemplateController@update')->name('settings.email_template.update');
+            // Settings>Expense Categories
+            Route::get('/expense-categories', 'ExpenseCategoryController@index')->name('settings.expense_categories');
+            Route::get('/expense-categories/create', 'ExpenseCategoryController@create')->name('settings.expense_categories.create');
+            Route::post('/expense-categories/create', 'ExpenseCategoryController@store')->name('settings.expense_categories.store');
+            Route::get('/expense-categories/{expense_category}/edit', 'ExpenseCategoryController@edit')->name('settings.expense_categories.edit');
+            Route::post('/expense-categories/{expense_category}/edit', 'ExpenseCategoryController@update')->name('settings.expense_categories.update');
+            Route::get('/expense-categories/{expense_category}/delete', 'ExpenseCategoryController@delete')->name('settings.expense_categories.delete');
 
-    });
+            // Settings>Team
+            Route::get('/team', 'TeamController@index')->name('settings.team');
+            Route::get('/team/add-member', 'TeamController@createMember')->name('settings.team.createMember');
+            Route::post('/team/add-member', 'TeamController@storeMember')->name('settings.team.storeMember');
+            Route::get('/team/{member}/edit', 'TeamController@editMember')->name('settings.team.editMember');
+            Route::post('/team/{member}/edit', 'TeamController@updateMember')->name('settings.team.updateMember');
+            Route::get('/team/{member}/delete', 'TeamController@deleteMember')->name('settings.team.deleteMember');
 
-    // Ajax requests
-    Route::get('/ajax/products', 'AjaxController@products')->name('ajax.products');
-    Route::get('/ajax/customers', 'AjaxController@customers')->name('ajax.customers');
-    Route::get('/ajax/invoices', 'AjaxController@invoices')->name('ajax.invoices');
+            // Settings>Email Templates
+            Route::get('/email-templates', 'EmailTemplateController@index')->name('settings.email_template');
+            Route::post('/email-templates', 'EmailTemplateController@update')->name('settings.email_template.update');
+
+        });
+
+        // Ajax requests
+        Route::get('/ajax/products', 'AjaxController@products')->name('ajax.products');
+        Route::get('/ajax/customers', 'AjaxController@customers')->name('ajax.customers');
+        Route::get('/ajax/invoices', 'AjaxController@invoices')->name('ajax.invoices');
+//    });
+
 });
 
 // Order & Checkout Routes

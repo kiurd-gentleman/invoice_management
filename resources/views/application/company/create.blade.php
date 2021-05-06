@@ -51,7 +51,7 @@
                     <div class="card-content">
                         <div class="card-body">
                             <!-- Task List table -->
-                            <form action="{{route('settings.company.update', ['company_uid' => $currentCompany->uid])}}" method="POST" enctype="multipart/form-data">
+                            <form action="{{route('settings.company.update', ['user_uid' => auth()->user()->uid])}}" method="POST" enctype="multipart/form-data">
                                 @include('layouts._form_errors')
                                 @csrf
 

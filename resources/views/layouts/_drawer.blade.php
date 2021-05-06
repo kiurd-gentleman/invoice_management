@@ -40,11 +40,12 @@
 {{--                    <a class=" nav-link" href="{{ route('customers', ['company_uid' => $currentCompany->uid]) }}" ><i class="la la-users" style="color: #ffffff;"></i><span  style="color: #ffffff;">Customer</span></a>--}}
 {{--                </li>--}}
                 <li class="dropdown nav-item {{(Request::segment(2)=='products') ? 'active':''}}">
-                    <a class=" nav-link" href="{{ route('products', ['company_uid' => $currentCompany->uid]) }}"><i class="ft-box" style="color: #ffffff;"></i><span  style="color: #ffffff;">Product</span></a>
+                    <a class=" nav-link" href="{{ route('company-list', ['user_uid' => auth()->user()->uid]) }}"><i class="ft-box" style="color: #ffffff;"></i><span  style="color: #ffffff;">Company</span></a>
                 </li>
                 <li class="dropdown nav-item {{(Request::segment(2)=='products') ? 'active':''}}">
-                    <a class=" nav-link" href="{{ route('company-list', [auth()->user()->uid]) }}"><i class="ft-box" style="color: #ffffff;"></i><span  style="color: #ffffff;">Company</span></a>
+                    <a class=" nav-link" href="{{ route('products', ['company_uid' => $currentCompany->uid]) }}"><i class="ft-box" style="color: #ffffff;"></i><span  style="color: #ffffff;">Product</span></a>
                 </li>
+
                 <li class="dropdown nav-item {{(Request::segment(2)=='invoices' || Request::segment(2)== 'estimates') ? 'active':''}}" data-menu="dropdown"><a class=" nav-link" href="#" data-toggle="dropdown"><i class="la la-folder-open" style="color: #ffffff;"></i><span  style="color: #ffffff;">Deals</span></a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('invoices', ['company_uid' => $currentCompany->uid]) }}"><i class="ft-file-text" ></i> Invoice</a></li>

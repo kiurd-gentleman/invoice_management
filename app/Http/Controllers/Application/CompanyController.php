@@ -20,4 +20,7 @@ class CompanyController extends Controller
 //        dd($companies);
         return view('application.company.create',compact('companies'));
     }
+    public function store(){
+
+    }
 }
