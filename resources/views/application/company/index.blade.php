@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => 'company'])
+@extends('application.company.layouts.master', ['page' => 'company'])
 
 @section('title', __('messages.company'))
 
@@ -17,7 +17,7 @@
                     </ol>
                 </div>
             </div>
-            <h3 class="content-header-title mb-0">Card Headings</h3>
+            <h3 class="content-header-title mb-0">Company List</h3>
         </div>
         <div class="content-header-right col-md-6 col-12">
             <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
@@ -52,7 +52,7 @@
                         </div>
                         <div class="card-footer border-0 text-muted">
                             <span class="danger"><i class="la la-heart"></i> 173 Likes</span>
-                            <span class="float-right primary">View More <i class="ft-arrow-right"></i></span>
+                            <a class="float-right primary" href="{{route('in-to-company',['user_uid' => auth()->user()->uid , 'company_uid' =>$company->uid ])}}" >Go Inside <i class="ft-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

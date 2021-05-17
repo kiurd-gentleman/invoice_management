@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Application;
 
 use App\Http\Controllers\Controller;
+use App\Models\Company;
 use App\Models\Customer;
 use App\Models\Estimate;
 use App\Models\Expense;
@@ -10,6 +11,7 @@ use App\Models\Invoice;
 use Carbon\Carbon;
 use Carbon\CarbonPeriod;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class DashboardController extends Controller
 {
@@ -23,7 +25,10 @@ class DashboardController extends Controller
     public function index(Request $request)
     {
         $user = $request->user();
-        $company = $user->currentCompany();
+        $company_info = Session::get('user_current_company');
+//        dd($company_info['uid']);
+//        $company = $user->currentCompany($company_uid);
+        $company = Company::findByUid($company_info['uid']);
 
         // Dashboard Stats
         $customersCount = Customer::findByCompany($company->id)->count();
@@ -72,6 +77,7 @@ class DashboardController extends Controller
 
         // return dashboard view with params
         return view('application.dashboard.index', [
+            'company_info' => $company_info,
             'customersCount' => $customersCount,
             'invoicesCount' => $invoicesCount,
             'estimatesCount' => $estimatesCount,

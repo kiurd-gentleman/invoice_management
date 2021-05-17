@@ -62,7 +62,7 @@
                 <ul class="nav navbar-nav flex-row">
                     <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
                     <li class="nav-item">
-                        <a href="{{route('dashboard',['user_uid' => auth()->user()->uid , 'company_uid' => Session::get('user_current_company')['uid']])}}" class="navbar-brand">
+                        <a href="{{route('company-list',['user_uid' => auth()->user()->uid])}}" class="navbar-brand">
                             @if(get_system_setting('application_logo'))
                                 <img class="brand-logo" src="https://ui-avatars.com/api/?name={{get_system_setting('application_name')}}" width="125" alt="{{ get_system_setting('application_name') }}">
                                 {{--                                <img class="brand-logo" src="{{ get_system_setting('application_logo') }}" width="125" alt="{{ get_system_setting('application_name') }}">--}}
@@ -83,8 +83,10 @@
                     <ul class="nav navbar-nav mr-auto float-left">
                         <li class="nav-item d-none d-md-block"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu text-white"></i></a></li>
 {{--                        <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>--}}
-                        <li class="nav-item nav-search">
-                            <a class=" nav-link" href="{{ route('company-list', ['user_uid' => auth()->user()->uid ]) }}"><i class="ft-box" style="color: #ffffff;"></i><span  style="color: #ffffff;">Company</span></a>
+                        <li class="nav-item nav-search"><a class="nav-link nav-link-search" href="#"><i class="ficon ft-search text-white"></i></a>
+                            <div class="search-input">
+                                <input class="input" type="text" placeholder="Explore Modern...">
+                            </div>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav float-right">
@@ -97,11 +99,11 @@
                                     <img src="{{ asset(auth()->user()->avatar) }}" alt="avatar"><i></i>
                                 </span>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{route('dashboard',['user_uid' => auth()->user()->uid , 'company_uid' => Session::get('user_current_company')['uid']])}}" ><i class="ft-user"></i> DashBoard</a>
-                                <a class="dropdown-item" href="{{ route('settings.company', ['company_uid' => $currentCompany->uid]) }}"><i class="ft-mail"></i>My Company</a>
-                                <a class="dropdown-item" href="{{ route('settings.account', ['company_uid' => $currentCompany->uid]) }}"><i class="ft-check-square"></i> {{ __('messages.my_profile') }}</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('logout') }}"><i class="ft-power"></i> Logout</a>
-                            </div>
+{{--                            <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{route('dashboard',['user_uid' => auth()->user()->uid , 'company_uid' => session('user_current_company')])}}" ><i class="ft-user"></i> DashBoard</a>--}}
+{{--                                <a class="dropdown-item" href="{{ route('settings.company', ['company_uid' => $currentCompany->uid]) }}"><i class="ft-mail"></i>My Company</a>--}}
+{{--                                <a class="dropdown-item" href="{{ route('settings.account', ['company_uid' => $currentCompany->uid]) }}"><i class="ft-check-square"></i> {{ __('messages.my_profile') }}</a>--}}
+{{--                                <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('logout') }}"><i class="ft-power"></i> Logout</a>--}}
+{{--                            </div>--}}
                         </li>
                     </ul>
                 </div>

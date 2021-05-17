@@ -1,4 +1,5 @@
-<form action="" method="GET">
+<form action="{{route('product-find', ['user_uid' => auth()->user()->uid  , 'company_uid' => Session::get('user_current_company')['uid']])}}" method="POST">
+    @csrf
     <div class="card-form_body w-100">
         <div class="row d-flex justify-content-center">
             <div class="col-md-3">
@@ -20,7 +21,7 @@
             </div>
             <div class="row mb-2">
                 <div class="col-12 button-group mt-1">
-                    <a href="{{ route('products', ['company_uid' => $currentCompany->uid]) }}" class="btn  btn-sm btn-danger mt-1 text-uppercase"><i class="ft-trash"></i> {{ __('messages.clear_filters') }}</a>
+                    <a href="{{ route('products', ['user_uid' => auth()->user()->uid  , 'company_uid' => Session::get('user_current_company')['uid']]) }}" class="btn  btn-sm btn-danger mt-1 text-uppercase"><i class="ft-trash"></i> {{ __('messages.clear_filters') }}</a>
                     <button type="submit" class="btn btn-info btn-sm mt-1 text-uppercase "> <i class="ft-search"></i>
 {{--                        <i class="material-icons text-primary">refresh</i>--}}
                         {{ __('messages.filter') }}

@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => 'company'])
+@extends('application.company.layouts.master', ['page' => 'company'])
 
 @section('title', __('messages.company'))
 
@@ -51,7 +51,7 @@
                     <div class="card-content">
                         <div class="card-body">
                             <!-- Task List table -->
-                            <form action="{{route('settings.company.update', ['user_uid' => auth()->user()->uid])}}" method="POST" enctype="multipart/form-data">
+                            <form action="{{route('company-store', ['user_uid' => auth()->user()->uid])}}" method="POST" enctype="multipart/form-data">
                                 @include('layouts._form_errors')
                                 @csrf
 
@@ -76,13 +76,13 @@
                                     <div class="col">
                                         <div class="form-group required">
                                             <label for="name">{{ __('messages.company_name') }}</label>
-                                            <input name="name" type="text" class="form-control" placeholder="{{ __('messages.company_name') }}" value="{{ $currentCompany->name }}" required>
+                                            <input name="name" type="text" class="form-control" placeholder="{{ __('messages.company_name') }}" value="" required>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="billing[phone]">{{ __('messages.phone') }}</label>
-                                            <input name="billing[phone]" type="text" class="form-control" value="{{ $currentCompany->billing->phone }}" placeholder="{{ __('messages.phone') }}">
+                                            <input name="billing[phone]" type="text" class="form-control" value="" placeholder="{{ __('messages.phone') }}">
                                         </div>
                                     </div>
                                 </div>

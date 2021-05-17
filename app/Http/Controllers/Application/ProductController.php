@@ -7,6 +7,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Requests\Application\Product\Store;
 use App\Http\Requests\Application\Product\Update;
+use Illuminate\Support\Facades\Session;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
@@ -16,24 +17,43 @@ class ProductController extends Controller
      * Display Products Page
      *
      * @param \Illuminate\Http\Request $request
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
         $user = $request->user();
-        $currentCompany = $user->currentCompany();
- 
+        $currentCompany =  Session::get('user_current_company');
+
+
+
         // Get Products by Company
-        $products = QueryBuilder::for(Product::findByCompany($currentCompany->id))
-            ->where('hide', false)
-            ->allowedFilters([
-                AllowedFilter::partial('name'),
-                AllowedFilter::exact('unit_id'),
-            ])
+        $products = Product::findByCompany($currentCompany['id'])
             ->oldest()
-            ->paginate()
-            ->appends(request()->query());
+            ->paginate();
+
+        if ($request->all()) {
+//            dump($request->all());
+//            dump($request->filter['name']);
+            $products = Product::where('name','=',$request->filter['name'])->where('unit_id','=',$request->filter['unit_id'])
+                ->where(function ($query) use  ($currentCompany){
+//                 $query->where('name','=',$request->filter['name'])->orWhere('unit_id','=',$request->filter['unit_id']);
+                 $query->where('company_id' , $currentCompany['id']);
+            })
+                ->oldest()
+                ->paginate();
+
+//            dd($products);
+
+        }
+//            ->where('hide', false)
+//            ->allowedFilters([
+//                AllowedFilter::partial('name'),
+//                AllowedFilter::exact('unit_id'),
+//            ])
+//            ->oldest()
+//            ->paginate()
+//            ->appends(request()->query());
 
         return view('application.products.index', [
             'products' => $products
@@ -44,7 +64,7 @@ class ProductController extends Controller
      * Display the Form for Creating New Product
      *
      * @param \Illuminate\Http\Request $request
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
@@ -58,26 +78,29 @@ class ProductController extends Controller
 
         return view('application.products.create', [
             'product' => $product,
-        ]); 
+        ]);
     }
 
     /**
      * Store the Product in Database
      *
      * @param \App\Http\Requests\Application\Product\Store $request
-     * 
+     *
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function store(Store $request)
     {
         $user = $request->user();
-        $currentCompany = $user->currentCompany();
+        dump($user->currentCompany());
+        $currentCompany = (object) Session::get('user_current_company');
+
+//        dd($currentCompany);
 
         // Redirect back
         $canAdd = $currentCompany->subscription('main')->canUseFeature('products');
         if (!$canAdd) {
             session()->flash('alert-danger', __('messages.you_have_reached_the_limit'));
-            return redirect()->route('products', ['company_uid' => $currentCompany->uid]);
+            return redirect()->route('products', ['user_uid'=>auth()->user()->uid,'company_uid' => Session::get('user_current_company')['uid']]);
         }
 
         // Create Product and Store in Database
@@ -101,7 +124,7 @@ class ProductController extends Controller
             }
         }
 
-        // Record product 
+        // Record product
         $currentCompany->subscription('main')->recordFeatureUsage('products');
 
         session()->flash('alert-success', __('messages.product_added'));
@@ -112,7 +135,7 @@ class ProductController extends Controller
      * Display the Form for Editing Product
      *
      * @param \Illuminate\Http\Request $request
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit(Request $request)
@@ -121,14 +144,14 @@ class ProductController extends Controller
 
         return view('application.products.edit', [
             'product' => $product,
-        ]); 
+        ]);
     }
 
     /**
      * Update the Product in Database
      *
      * @param \App\Http\Requests\Application\Product\Update $request
-     * 
+     *
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function update(Update $request)
@@ -169,14 +192,14 @@ class ProductController extends Controller
      * Delete the Product
      *
      * @param \Illuminate\Http\Request $request
-     * 
+     *
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function delete(Request $request)
     {
         $user = $request->user();
         $currentCompany = $user->currentCompany();
-        
+
         $product = Product::findOrFail($request->product);
 
         // If the product already in use in Invoice Items
@@ -203,7 +226,7 @@ class ProductController extends Controller
 
         // Reduce feature
         $currentCompany->subscription('main')->reduceFeatureUsage('products');
-        
+
         session()->flash('alert-success', __('messages.product_deleted'));
         return redirect()->route('products', ['company_uid' => $currentCompany->uid]);
     }

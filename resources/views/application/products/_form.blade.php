@@ -1,4 +1,4 @@
-<div class="card card-form">
+<div class="card-form">
     <div class="row no-gutters">
         <div class="col-lg-4 card-body">
             <p><strong class="headings-color">{{ __('messages.product_information') }}</strong></p>

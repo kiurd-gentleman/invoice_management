@@ -4,8 +4,17 @@
     <list default="true" id="cdecc018-12f8-43c1-bfa3-6f2a155a7533" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/CompanyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/application/company/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/company/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/company/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/company/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/products/_filters.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/products/_filters.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/products/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/products/_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/products/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/products/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/_drawer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/_drawer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/_header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,9 +177,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/application/company/layouts" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\resources\views\application\company\layouts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\resources\views\application\company\layouts" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -190,7 +208,11 @@
       <updated>1619674778815</updated>
       <workItem from="1619674780987" duration="5664000" />
       <workItem from="1620188042406" duration="13673000" />
-      <workItem from="1620282056715" duration="5511000" />
+      <workItem from="1620282056715" duration="8957000" />
+      <workItem from="1620447330847" duration="593000" />
+      <workItem from="1620535237592" duration="8947000" />
+      <workItem from="1620709149356" duration="595000" />
+      <workItem from="1621225493005" duration="16964000" />
     </task>
     <servers />
   </component>
@@ -198,9 +220,13 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="634" y="353" key="NewPhpFileDialog" timestamp="1620215632463">
+    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1621239811351">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="634" y="353" key="NewPhpFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1620215632463" />
+    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1621239811351" />
+    <state x="634" y="353" key="NewPhpFileDialog" timestamp="1620537040784">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="634" y="353" key="NewPhpFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1620537040784" />
   </component>
 </project>

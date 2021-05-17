@@ -4,7 +4,7 @@
         @if(auth()->user()->hasRole('super_admin'))
             <ul class="nav navbar-nav d-flex justify-content-center" id="main-menu-navigation" data-menu="menu-navigation">
                 <li class="dropdown nav-item" >
-                    <a class=" nav-link" href="{{ route('super_admin.dashboard') }}" ><i class="la la-home text-white"></i><span   style="color: #ffffff;">Dashboard</span></a>
+{{--                    <a class=" nav-link" href="{{ route('super_admin.dashboard') }}" ><i class="la la-home text-white"></i><span   style="color: #ffffff;">Dashboard</span></a>--}}
                 </li>
                 <li class="dropdown nav-item" >
                     <a class=" nav-link" href="{{ route('super_admin.users') }}" ><i class="la la-users text-white"></i><span  style="color: #ffffff;">User</span></a>
@@ -34,16 +34,16 @@
         @else
             <ul class="nav navbar-nav d-flex justify-content-center" id="main-menu-navigation" data-menu="menu-navigation">
                 <li class="dropdown nav-item {{(Request::segment(2)=='dashboard') ? 'active':''}}" >
-                    <a class=" nav-link" href="{{ route('dashboard', ['company_uid' => $currentCompany->uid]) }}" ><i class="la la-home" style="color: #ffffff;"> </i><span   style="color: #ffffff;">Dashboard</span></a>
+                    <a class=" nav-link" href="{{route('dashboard',['user_uid' => auth()->user()->uid  , 'company_uid' => Session::get('user_current_company')['uid']])}}" ><i class="la la-home" style="color: #ffffff;"> </i><span   style="color: #ffffff;">Dashboard</span></a>
                 </li>
 {{--                <li class="dropdown nav-item" >--}}
 {{--                    <a class=" nav-link" href="{{ route('customers', ['company_uid' => $currentCompany->uid]) }}" ><i class="la la-users" style="color: #ffffff;"></i><span  style="color: #ffffff;">Customer</span></a>--}}
 {{--                </li>--}}
+{{--                <li class="dropdown nav-item {{(Request::segment(2)=='products') ? 'active':''}}">--}}
+{{--                    <a class=" nav-link" href="{{ route('company-list', ['user_uid' => auth()->user()->uid ]) }}"><i class="ft-box" style="color: #ffffff;"></i><span  style="color: #ffffff;">Company</span></a>--}}
+{{--                </li>--}}
                 <li class="dropdown nav-item {{(Request::segment(2)=='products') ? 'active':''}}">
-                    <a class=" nav-link" href="{{ route('company-list', ['user_uid' => auth()->user()->uid]) }}"><i class="ft-box" style="color: #ffffff;"></i><span  style="color: #ffffff;">Company</span></a>
-                </li>
-                <li class="dropdown nav-item {{(Request::segment(2)=='products') ? 'active':''}}">
-                    <a class=" nav-link" href="{{ route('products', ['company_uid' => $currentCompany->uid]) }}"><i class="ft-box" style="color: #ffffff;"></i><span  style="color: #ffffff;">Product</span></a>
+                    <a class=" nav-link" href="{{ route('products', ['user_uid' => auth()->user()->uid  , 'company_uid' => Session::get('user_current_company')['uid']]) }}"><i class="ft-box" style="color: #ffffff;"></i><span  style="color: #ffffff;">Product</span></a>
                 </li>
 
                 <li class="dropdown nav-item {{(Request::segment(2)=='invoices' || Request::segment(2)== 'estimates') ? 'active':''}}" data-menu="dropdown"><a class=" nav-link" href="#" data-toggle="dropdown"><i class="la la-folder-open" style="color: #ffffff;"></i><span  style="color: #ffffff;">Deals</span></a>
