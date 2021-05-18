@@ -4,6 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+
 
 class Dashboard
 {
@@ -18,6 +20,10 @@ class Dashboard
     public function handle(Request $request, Closure $next)
     {
         $user = $request->user();
+        // $company_uid = Session::get('user_current_company')['uid'];
+
+        
+        
         $currentCompany = $user->currentCompany();
 
         // Redirect super_user

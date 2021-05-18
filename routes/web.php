@@ -105,19 +105,19 @@ Route::group(['namespace' => 'Application', 'prefix' => '/{company_uid}', 'middl
 
 
 // Application Routes
-Route::group(['namespace' => 'Application', 'middleware' => ['auth', 'dashboard']], function () {
-    Route::get('{user_uid}/company', 'CompanyController@index')->name('company-list');
+Route::group(['namespace' => 'Application', 'middleware' => ['auth']], function () {
+    Route::get('{user_uid}/all-company', 'CompanyController@index')->name('company-list');
     Route::get('/{user_uid}/company-create', 'CompanyController@create')->name('company-create');
     Route::post('/{user_uid}/company-store', 'CompanyController@store')->name('company-store');
 
 
     Route::get('/{user_uid}/{company_uid}/go-to-company', 'CompanyController@inToCompany')->name('in-to-company');
 
-
-//    Route::group(['prefix' => '/{company_uid}'], function () {
+    Route::group(['middleware' => ['dashboard']], function () {
+        //    Route::group(['prefix' => '/{company_uid}'], function () {
         // Company Dashboard
-//        Route::get('/company', 'CompanyController@index')->name('company-list');
-        Route::get('{user_uid}/{company_uid}/dashboard', 'DashboardController@index')->name('dashboard');
+        //        Route::get('/company', 'CompanyController@index')->name('company-list');
+        Route::get('/{company_uid}/dashboard', 'DashboardController@index')->name('dashboard');
 
         // Customers
         Route::get('/{company_uid}/customers', 'CustomerController@index')->name('customers');
@@ -129,10 +129,10 @@ Route::group(['namespace' => 'Application', 'middleware' => ['auth', 'dashboard'
         Route::get('/{company_uid}/customers/{customer}/delete', 'CustomerController@delete')->name('customers.delete');
 
         // Products & Services
-        Route::get('/{user_uid}/{company_uid}/products', 'ProductController@index')->name('products');
-        Route::post('/{user_uid}/{company_uid}/products', 'ProductController@index')->name('product-find');
-        Route::get('/{user_uid}/{company_uid}/products/create', 'ProductController@create')->name('products.create');
-        Route::post('/{user_uid}/{company_uid}/products/create', 'ProductController@store')->name('products.store');
+        Route::get('/{company_uid}/products', 'ProductController@index')->name('products');
+        Route::post('/{company_uid}/products', 'ProductController@index')->name('product-find');
+        Route::get('/{company_uid}/products/create', 'ProductController@create')->name('products.create');
+        Route::post('/{company_uid}/products/create', 'ProductController@store')->name('products.store');
         Route::get('/{company_uid}/products/{product}/edit', 'ProductController@edit')->name('products.edit');
         Route::post('/{company_uid}/products/{product}/edit', 'ProductController@update')->name('products.update');
         Route::get('/{company_uid}/products/{product}/delete', 'ProductController@delete')->name('products.delete');
@@ -281,6 +281,10 @@ Route::group(['namespace' => 'Application', 'middleware' => ['auth', 'dashboard'
             Route::post('/email-templates', 'EmailTemplateController@update')->name('settings.email_template.update');
 
         });
+
+    });
+
+
 
         // Ajax requests
         Route::get('/ajax/products', 'AjaxController@products')->name('ajax.products');

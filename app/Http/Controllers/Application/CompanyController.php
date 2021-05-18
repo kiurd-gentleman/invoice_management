@@ -38,6 +38,6 @@ class CompanyController extends Controller
         $company_info = Session::get('user_current_company');
 //        dd($company_info);
 //        exit();
-        return redirect()->to(route('dashboard',['user_uid' => auth()->user()->uid , 'company_uid' =>$company_info['uid'] ]));
+        return redirect()->to(route('dashboard', ['company_uid' => Session::get('user_current_company')['uid']]));
     }
 }

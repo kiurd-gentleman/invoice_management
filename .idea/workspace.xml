@@ -3,19 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cdecc018-12f8-43c1-bfa3-6f2a155a7533" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/CompanyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/company/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/company/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/company/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/company/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/products/_filters.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/products/_filters.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/products/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/products/_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/products/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/products/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/_drawer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/_drawer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/_header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +199,8 @@
       <workItem from="1620447330847" duration="593000" />
       <workItem from="1620535237592" duration="8947000" />
       <workItem from="1620709149356" duration="595000" />
-      <workItem from="1621225493005" duration="16964000" />
+      <workItem from="1621225493005" duration="17458000" />
+      <workItem from="1621310901060" duration="1062000" />
     </task>
     <servers />
   </component>

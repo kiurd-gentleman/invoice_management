@@ -2,7 +2,9 @@
 
 namespace App\Traits;
 
+use App\Models\Company;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Session;
 
 trait CompanyUserTrait
 {
@@ -26,10 +28,13 @@ trait CompanyUserTrait
         // dd($this->id);
         if ($this->id == null) return null;
 
-//        dump($this->companies()->exists());
-//        dd($this->companies()->first());
+        //    dd($this->companies());
+        // $v = $this->companies()->get();
+        //    dd($v);
+        $company_uid = Session::get('user_current_company')['uid'];
+        
         return $this->companies()->exists()
-            ? $this->companies()->first()
+            ? $this->companies()->where('uid', $company_uid)->first()
             : null;
     }
 

@@ -28,7 +28,7 @@ class DashboardController extends Controller
         $company_info = Session::get('user_current_company');
 //        dd($company_info['uid']);
 //        $company = $user->currentCompany($company_uid);
-        $company = Company::findByUid($company_info['uid']);
+        $company = $user->currentCompany();
 
         // Dashboard Stats
         $customersCount = Customer::findByCompany($company->id)->count();
@@ -77,7 +77,6 @@ class DashboardController extends Controller
 
         // return dashboard view with params
         return view('application.dashboard.index', [
-            'company_info' => $company_info,
             'customersCount' => $customersCount,
             'invoicesCount' => $invoicesCount,
             'estimatesCount' => $estimatesCount,

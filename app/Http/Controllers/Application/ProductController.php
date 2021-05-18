@@ -23,7 +23,8 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $user = $request->user();
-        $currentCompany =  Session::get('user_current_company');
+        // dd($user->currentCompany());
+        $currentCompany =  $user->currentCompany();
 
 
 
@@ -91,7 +92,7 @@ class ProductController extends Controller
     public function store(Store $request)
     {
         $user = $request->user();
-        dump($user->currentCompany());
+        dd($user->currentCompany());
         $currentCompany = (object) Session::get('user_current_company');
 
 //        dd($currentCompany);

@@ -55,7 +55,7 @@
                     <div class="card-content collapse show">
                         <div class="card-body">
                             <div  class="container">
-                                <form action="{{ route('products.store', ['user_uid'=> Session::get('user_current_company')['uid'],'company_uid' => $currentCompany->uid]) }}" method="POST">
+                                <form action="{{ route('products.store', ['company_uid' => $currentCompany->uid]) }}" method="POST">
                                     @include('layouts._form_errors')
                                     @csrf
 

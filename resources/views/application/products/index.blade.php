@@ -23,7 +23,7 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">{{get_system_setting('application_name')}}</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="{{ route('products',  ['user_uid' => auth()->user()->uid  , 'company_uid' => Session::get('user_current_company')['uid']]) }}">Product</a>
+                        <li class="breadcrumb-item"><a href="{{ route('products',  ['company_uid' => $currentCompany->uid]) }}">Product</a>
                         </li>
                         <li class="breadcrumb-item active">{{ __('List') }}
                         </li>
@@ -34,7 +34,7 @@
         <div class="content-header-right col-md-6 col-12">
             <div class="media width-250 float-right">
                 <div class="media-body media-right text-right">
-                    <a href="{{ route('products.create', ['user_uid'=> auth()->user()->uid ,'company_uid' => Session::get('user_current_company')['uid']]) }}" class="btn btn-success rounded mt-1 "><i class="ft-plus"></i> {{ __('messages.create_product') }}</a>
+                    <a href="{{ route('products.create', ['company_uid' => $currentCompany->uid]) }}" class="btn btn-success rounded mt-1 "><i class="ft-plus"></i> {{ __('messages.create_product') }}</a>
                 </div>
             </div>
         </div>
