@@ -342,4 +342,6 @@ class Company extends Model
 //        return $avatar ? asset('public/'.$avatar) : $this->getDefaultAvatar();
         return $avatar ;
     }
+
+
 }

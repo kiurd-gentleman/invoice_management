@@ -29,11 +29,11 @@
         <!-- Card headings examples section start -->
         <section id="card-headings">
             <div class="row">
-                @foreach($companies as $company)
-                    <div class="col-md-6 col-sm-12">
+
+                    <div class="col-md-12 col-sm-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">{{$company->name}}</h4>
+                            <h4 class="card-title">Company List</h4>
                             <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
@@ -43,20 +43,33 @@
                                 </ul>
                             </div>
                         </div>
+                        @foreach($companies as $company)
                         <div class="card-content collapse show">
                             <div class="card-body">
-                                <p>
-                                   @dump($company->settings)
-                                </p>
+{{--                                @dump($company->settings)--}}
+                                @foreach($company->settings as $setting)
+                                    @if ($setting->option == 'avatar')
+                                        <img src="{{$setting->value}}" class="rounded" width="5%">
+                                    @endif
+
+
+{{--                                    @if ($setting->option == 'currency_id')--}}
+{{--                                        <p>Currency {{$setting->value}}</p>--}}
+{{--                                        @dump($setting->option)--}}
+{{--                                        @dump($setting->company_id)--}}
+{{--                                        <p>Currency {{$setting->getSetting($setting->option , $setting->company_id )}}</p>--}}
+{{--                                    @endif--}}
+                                @endforeach
+                                <span>{{$company->name}}</span>
+                                <a class="float-right primary" href="{{route('in-to-company',['user_uid' => auth()->user()->uid , 'company_uid' =>$company->uid ])}}" >Go Inside <i class="ft-arrow-right"></i></a>
+
                             </div>
                         </div>
-                        <div class="card-footer border-0 text-muted">
-                            <span class="danger"><i class="la la-heart"></i> 173 Likes</span>
-                            <a class="float-right primary" href="{{route('in-to-company',['user_uid' => auth()->user()->uid , 'company_uid' =>$company->uid ])}}" >Go Inside <i class="ft-arrow-right"></i></a>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
-                @endforeach
+
             </div>
         </section>
         <!-- Card headings examples section end -->

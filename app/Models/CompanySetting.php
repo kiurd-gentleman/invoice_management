@@ -157,4 +157,8 @@ class CompanySetting extends Model
     {
         $query->where('company_id', $company_id);
     }
+
+//    public function getCurrency(){
+//        return $this->belongsTo(Currency::class , )
+//    }
 }
