@@ -42,7 +42,7 @@ class OrderController extends Controller
         // Auth User & Company
         $user = $request->user();
         $currentCompany = $user->currentCompany();
-        $currentSubscription = $currentCompany->subscription('main');
+        $currentSubscription = $user->subscription('main');
 
         // If the plan is free subscribe user directly
         if ($plan->isFree()) {
@@ -59,12 +59,12 @@ class OrderController extends Controller
                 $currentSubscription->update(['trial_ends_at' => null]);
             } else {
                 // Create new subscription
-                $currentCompany->newSubscription('main', $plan);
+                $user->newSubscription('main', $plan);
             }
 
             // Redirect user to dashboard
             session()->flash('alert-success', __('messages.payment_successful', ['payment_number' => rand()]));
-            return redirect()->route('dashboard', ['company_uid' => $currentCompany->uid]);
+            return redirect()->route('company-list', ['user_uid' => $user->uid]);
         }
 
         // If plan has free trial subscribe user for a time of free trial interval
@@ -75,7 +75,7 @@ class OrderController extends Controller
 
             // Redirect user to dashboard
             session()->flash('alert-success', __('messages.payment_successful', ['payment_number' => rand()]));
-            return redirect()->route('dashboard', ['company_uid' => $currentCompany->uid]);
+            return redirect()->route('company-list', ['user_uid' => $user->uid]);
         }
 
         // Razorpay Setting
@@ -248,7 +248,7 @@ class OrderController extends Controller
             }
 
             session()->flash('alert-success', __('messages.payment_successful', ['payment_number' => $request->orderId]));
-            return redirect()->route('dashboard',$currentCompany->uid);
+            return redirect()->route('company-list', ['user_uid' => $user->uid]);
 //            return $currentCompany->uid;
         }
 

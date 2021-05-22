@@ -3,10 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="cdecc018-12f8-43c1-bfa3-6f2a155a7533" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/Settings/PreferenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/Settings/PreferenceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Dashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/CompanySetting.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CompanySetting.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/company/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/company/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PlanSubscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PlanSubscription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_26_174316_create_plan_subscriptions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_26_174316_create_plan_subscriptions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/company/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/company/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +208,8 @@
       <workItem from="1620709149356" duration="595000" />
       <workItem from="1621225493005" duration="17458000" />
       <workItem from="1621310901060" duration="1062000" />
-      <workItem from="1621505998136" duration="5496000" />
+      <workItem from="1621505998136" duration="6729000" />
+      <workItem from="1621668627406" duration="5833000" />
     </task>
     <servers />
   </component>
@@ -213,13 +217,30 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1621239811351">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="636" y="224" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1621675408158">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1621239811351" />
-    <state x="634" y="353" key="NewPhpFileDialog" timestamp="1620537040784">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="636" y="224" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1621675408158" />
+    <state x="355" y="243" key="NewPhpClassDialog" timestamp="1621669327522">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="355" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1621669327522" />
+    <state x="761" y="427" key="NewPhpFileDialog" timestamp="1621669340568">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="634" y="353" key="NewPhpFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1620537040784" />
+    <state x="761" y="427" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1621669340568" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Models/PlanSubscription.php</url>
+          <line>273</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

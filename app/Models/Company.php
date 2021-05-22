@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Traits\HasAddresses;
-use App\Traits\HasSubscriptions;
+
 use App\Traits\UUIDTrait;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,7 +11,7 @@ class Company extends Model
 {
     use HasAddresses;
     use UUIDTrait;
-    use HasSubscriptions;
+
 
     /**
      * The attributes that are mass assignable.

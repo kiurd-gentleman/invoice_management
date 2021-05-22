@@ -22,8 +22,8 @@ class Dashboard
         $user = $request->user();
         // $company_uid = Session::get('user_current_company')['uid'];
 
-        
-        
+
+
         $currentCompany = $user->currentCompany();
 
         // Redirect super_user
@@ -32,21 +32,21 @@ class Dashboard
         }
 
         // Redirect user if there is no subscription or ended or cancelled
-        $subscription = $currentCompany->subscription('main');
-//        dump($subscription);
-        $route = $request->route()->getName();
-//        dump($route);
-//        dd($subscription->active());
-        // If there is no subscription at all
-        if (substr($route, 0, 6) !== 'order.' && !$subscription) {
-            return redirect()->route('order.plans');
-        }
-
-
-        // If there is a subscription but not an active subscription
-        if (substr($route, 0, 6) !== 'order.' && !$subscription->active()) {
-            return redirect()->route('order.plans');
-        }
+//        $subscription = $currentCompany->subscription('main');
+////        dump($subscription);
+//        $route = $request->route()->getName();
+////        dump($route);
+////        dd($subscription->active());
+//        // If there is no subscription at all
+//        if (substr($route, 0, 6) !== 'order.' && !$subscription) {
+//            return redirect()->route('order.plans');
+//        }
+//
+//
+//        // If there is a subscription but not an active subscription
+//        if (substr($route, 0, 6) !== 'order.' && !$subscription->active()) {
+//            return redirect()->route('order.plans');
+//        }
 
         // Company based preferences
         share([

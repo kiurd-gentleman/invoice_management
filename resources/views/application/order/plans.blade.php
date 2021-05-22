@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => 'Plans'])
+@extends('application.company.layouts.master', ['page' => 'company'])
 @section('title', __('messages.plans'))
 
 @section('content')
@@ -64,11 +64,11 @@
                                     <li class="na"><s>{{ __('bikin.advertisement_on_mails') }}</s></li>
                                 @endif
                             </ul>
-                            @dump($currentCompany->subscriptions)
-                            @if($plan->hasTrial() & !$currentCompany->subscriptions->isNotEmpty())
-                                <a href="{{ route('order.checkout', ['company_uid' => $currentCompany->uid, 'plan' => $plan->slug]) }}" class="btn btn-primary mt-auto">{{ __('messages.start_trial') }}</a>
+                            @dump(auth()->user()->subscriptions)
+                            @if($plan->hasTrial() & !auth()->user()->subscriptions->isNotEmpty())
+                                <a href="{{ route('order.checkout', ['plan' => $plan->slug]) }}" class="btn btn-primary mt-auto">{{ __('messages.start_trial') }}</a>
                             @else
-                                <a href="{{ route('order.checkout', ['company_uid' => $currentCompany->uid, 'plan' => $plan->slug]) }}" class="btn btn-success mt-auto">{{ __('messages.purchase') }}</a>
+                                <a href="{{ route('order.checkout', ['plan' => $plan->slug]) }}" class="btn btn-success mt-auto">{{ __('messages.purchase') }}</a>
                             @endif
                         </div>
                     </div>

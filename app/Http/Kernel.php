@@ -66,5 +66,6 @@ class Kernel extends HttpKernel
         'super_admin' => \App\Http\Middleware\SuperAdmin::class,
         'customer_portal' => \App\Http\Middleware\CustomerPortal::class,
         'installed' => \App\Http\Middleware\CheckInstalled::class,
+        'subscription_check' => \App\Http\Middleware\SubscriptionCheck::class,
     ];
 }

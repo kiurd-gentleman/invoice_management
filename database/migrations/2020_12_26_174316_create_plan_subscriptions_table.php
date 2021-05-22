@@ -15,7 +15,7 @@ class CreatePlanSubscriptionsTable extends Migration
     {
         Schema::create('plan_subscriptions', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedBigInteger('company_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->integer('plan_id')->unsigned();
             $table->string('slug');
             $table->string('name');

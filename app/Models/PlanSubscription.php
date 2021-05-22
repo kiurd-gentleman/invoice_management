@@ -22,7 +22,7 @@ class PlanSubscription extends Model
      * @var array
      */
     protected $fillable = [
-        'company_id',
+        'user_id',
         'plan_id',
         'slug',
         'name',
@@ -40,7 +40,7 @@ class PlanSubscription extends Model
      * @var array
      */
     protected $casts = [
-        'company_id' => 'integer',
+        'user_id' => 'integer',
         'plan_id' => 'integer',
         'slug' => 'string',
         'trial_ends_at' => 'datetime',
@@ -61,7 +61,7 @@ class PlanSubscription extends Model
         'description' => 'nullable|string|max:32768',
         'slug' => 'required|alpha_dash|max:150|unique:plan_subscriptions,slug',
         'plan_id' => 'required|integer|exists:plans,id',
-        'company_id' => 'required|integer',
+        'user_id' => 'required|integer',
         'trial_ends_at' => 'nullable|date',
         'starts_at' => 'required|date',
         'ends_at' => 'required|date',
@@ -76,7 +76,7 @@ class PlanSubscription extends Model
      */
     public function company(): BelongsTo
     {
-        return $this->belongsTo(Company::class);
+        return $this->belongsTo(User::class);
     }
 
     /**
@@ -271,7 +271,7 @@ class PlanSubscription extends Model
      */
     public function scopeOfCompany(Builder $builder, Model $company): Builder
     {
-        return $builder->where('company_id', $company->getKey());
+        return $builder->where('user_id', auth()->user()->id);
     }
 
     /**

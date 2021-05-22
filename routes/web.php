@@ -105,7 +105,7 @@ Route::group(['namespace' => 'Application', 'prefix' => '/{company_uid}', 'middl
 
 
 // Application Routes
-Route::group(['namespace' => 'Application', 'middleware' => ['auth']], function () {
+Route::group(['namespace' => 'Application', 'middleware' => ['auth','subscription_check']], function () {
     Route::get('{user_uid}/all-company', 'CompanyController@index')->name('company-list');
     Route::get('/{user_uid}/company-create', 'CompanyController@create')->name('company-create');
     Route::post('/{user_uid}/company-store', 'CompanyController@store')->name('company-store');
@@ -295,7 +295,7 @@ Route::group(['namespace' => 'Application', 'middleware' => ['auth']], function 
 });
 
 // Order & Checkout Routes
-Route::group(['namespace' => 'Application', 'middleware' => ['auth', 'dashboard']], function () {
+Route::group(['namespace' => 'Application', 'middleware' => ['auth', 'subscription_check']], function () {
    // Orders
     Route::get('/order/plans', 'OrderController@plans')->name('order.plans');
     Route::get('/order/checkout/{plan}', 'OrderController@checkout')->name('order.checkout');

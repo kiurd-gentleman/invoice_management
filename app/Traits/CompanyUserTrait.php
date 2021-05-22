@@ -59,14 +59,14 @@ trait CompanyUserTrait
      *
      * @return bool
      */
-    public function subscribedTo($planId): bool
-    {
-        if (!$this->currentCompany()) return false;
+    // public function subscribedTo($planId): bool
+    // {
+    //     if (!$this->currentCompany()) return false;
 
-        $subscribed = $this->currentCompany()->subscribedTo($planId);
+    //     $subscribed = $this->currentCompany()->subscribedTo($planId);
 
-        return $subscribed;
-    }
+    //     return $subscribed;
+    // }
 
     /**
      * @return mixed

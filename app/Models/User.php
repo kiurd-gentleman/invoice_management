@@ -4,25 +4,27 @@ namespace App\Models;
 
 use App\Traits\CompanyUserTrait;
 use App\Traits\HasAddresses;
+use App\Traits\HasSubscriptions;
 use App\Traits\UUIDTrait;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
-{ 
+{
     use Notifiable;
     use UUIDTrait;
     use HasRoles;
     use HasAddresses;
     use CompanyUserTrait;
+    use HasSubscriptions;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [ 
+    protected $fillable = [
         'first_name',
         'last_name',
         'email',
@@ -40,7 +42,7 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
- 
+
     /**
      * Define Relation with UserSetting Model
      *
@@ -55,7 +57,7 @@ class User extends Authenticatable
      * Get User Specified setting
      *
      * @param string $key
-     * 
+     *
      * @return mixed
      */
     public function getSetting($key)
@@ -68,7 +70,7 @@ class User extends Authenticatable
      *
      * @param string $key
      * @param string $value
-     * 
+     *
      * @return void
      */
     public function setSetting($key, $value)
@@ -78,7 +80,7 @@ class User extends Authenticatable
 
     /**
      * Get Full Name Attribute
-     * 
+     *
      * @return string
      */
     public function getFullNameAttribute()
@@ -88,7 +90,7 @@ class User extends Authenticatable
 
     /**
      * Return Default User Avatar Url
-     * 
+     *
      * @return string (url)
      */
     public function getDefaultAvatar()
@@ -98,7 +100,7 @@ class User extends Authenticatable
 
     /**
      * Get User's Avatar Url || Default Avatar
-     * 
+     *
      * @return string (url)
      */
     public function getAvatarAttribute()
