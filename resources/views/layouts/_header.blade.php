@@ -99,7 +99,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{route('dashboard',['user_uid' => auth()->user()->uid , 'company_uid' => Session::get('user_current_company')['uid']])}}" ><i class="ft-user"></i> DashBoard</a>
                                 <a class="dropdown-item" href="{{ route('settings.company', ['company_uid' => $currentCompany->uid]) }}"><i class="ft-mail"></i>My Company</a>
-                                <a class="dropdown-item" href="{{ route('settings.account', ['company_uid' => $currentCompany->uid]) }}"><i class="ft-check-square"></i> {{ __('messages.my_profile') }}</a>
+{{--                                <a class="dropdown-item" href="{{ route('settings.account', ['company_uid' => $currentCompany->uid]) }}"><i class="ft-check-square"></i> {{ __('messages.my_profile') }}</a>--}}
                                 <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('logout') }}"><i class="ft-power"></i> Logout</a>
                             </div>
                         </li>

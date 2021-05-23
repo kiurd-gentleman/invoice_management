@@ -41,21 +41,21 @@
                     </div>
                 </div>
 
-                <div class="form-group col-12 col-sm-6 col-md-6 ">
-                    <label class="text-label" for="company_name">{{ __('messages.company_name') }}:</label>
-                    <div class="input-group">
-                        <input id="company_name" name="company_name" type="text"
-                               class="form-control form-control-prepended @error('company_name') is-invalid @enderror"
-                               placeholder="{{ __('messages.company_name') }}" value="{{ old('company_name') }}"
-                               required>
-                        @error('company_name')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-                </div>
-                <div class="form-group  col-12 col-sm-6 col-md-6">
+{{--                <div class="form-group col-12 col-sm-6 col-md-6 ">--}}
+{{--                    <label class="text-label" for="company_name">{{ __('messages.company_name') }}:</label>--}}
+{{--                    <div class="input-group">--}}
+{{--                        <input id="company_name" name="company_name" type="text"--}}
+{{--                               class="form-control form-control-prepended @error('company_name') is-invalid @enderror"--}}
+{{--                               placeholder="{{ __('messages.company_name') }}" value="{{ old('company_name') }}"--}}
+{{--                               required>--}}
+{{--                        @error('company_name')--}}
+{{--                        <span class="invalid-feedback" role="alert">--}}
+{{--                            <strong>{{ $message }}</strong>--}}
+{{--                        </span>--}}
+{{--                        @enderror--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+                <div class="form-group  col-12 col-sm-12 col-md-12">
                     <label class="text-label" for="email">{{ __('messages.email') }}:</label>
                     <div class="input-group">
                         <input id="email" name="email" type="email"

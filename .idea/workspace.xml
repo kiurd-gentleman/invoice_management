@@ -2,13 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdecc018-12f8-43c1-bfa3-6f2a155a7533" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/application/company/account/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/application/company/membership/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/Settings/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/AccountController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/Settings/MembershipController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/MembershipController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/PlanSubscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PlanSubscription.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_26_174316_create_plan_subscriptions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_26_174316_create_plan_subscriptions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/company/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/company/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/company/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/company/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/company/layouts/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/company/layouts/_header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/company/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/company/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/_aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/_aside.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/_drawer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/_drawer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/_header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,16 +179,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/application/company/layouts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/application/company" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\app\Http\Controllers\Application" />
       <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\resources\views\application\company\layouts" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\resources\views\application\company" />
       <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\resources\views\application\company\layouts" />
     </key>
   </component>
@@ -209,7 +219,8 @@
       <workItem from="1621225493005" duration="17458000" />
       <workItem from="1621310901060" duration="1062000" />
       <workItem from="1621505998136" duration="6729000" />
-      <workItem from="1621668627406" duration="5833000" />
+      <workItem from="1621668627406" duration="6919000" />
+      <workItem from="1621742946954" duration="16421000" />
     </task>
     <servers />
   </component>

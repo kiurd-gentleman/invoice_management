@@ -70,7 +70,7 @@ class RegisterController extends Controller
      * @return \App\Models\User
      */
     protected function create(array $data)
-    { 
+    {
         // Create new User
         $user = User::create([
             'first_name' => $data['first_name'],
@@ -80,17 +80,17 @@ class RegisterController extends Controller
         ]);
 
         // Create Company
-        $company = Company::create([
-            'name' => $data['company_name'],
-            'owner_id' => $user->id,
-        ]);
+//        $company = Company::create([
+//            'name' => $data['company_name'],
+//            'owner_id' => $user->id,
+//        ]);
 
         // Assign Role
         $user->assignRole("admin");
 
         // Attach User to Company
-        $user->attachCompany($company);
-        
+//        $user->attachCompany($company);
+
 
         return $user;
     }

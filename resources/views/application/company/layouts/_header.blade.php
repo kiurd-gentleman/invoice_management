@@ -99,11 +99,16 @@
                                     <img src="{{ asset(auth()->user()->avatar) }}" alt="avatar"><i></i>
                                 </span>
                             </a>
-{{--                            <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{route('dashboard',['user_uid' => auth()->user()->uid , 'company_uid' => session('user_current_company')])}}" ><i class="ft-user"></i> DashBoard</a>--}}
-{{--                                <a class="dropdown-item" href="{{ route('settings.company', ['company_uid' => $currentCompany->uid]) }}"><i class="ft-mail"></i>My Company</a>--}}
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="{{ route('settings.account', ['user_uid' => auth()->user()->uid]) }}" ><i class="ft-user"></i> {{ __('messages.account_settings') }}</a>
+                                <a class="dropdown-item" href="{{ route('settings.membership', ['user_uid' => auth()->user()->uid]) }}"><i class="ft-mail"></i>{{ __('messages.membership') }}</a>
 {{--                                <a class="dropdown-item" href="{{ route('settings.account', ['company_uid' => $currentCompany->uid]) }}"><i class="ft-check-square"></i> {{ __('messages.my_profile') }}</a>--}}
-{{--                                <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('logout') }}"><i class="ft-power"></i> Logout</a>--}}
-{{--                            </div>--}}
+{{--                                <a href="{{ route('settings.account', ['user_uid' => auth()->user()->uid]) }}" class=" nav-link">--}}
+{{--                                    <i class="sidebar-menu-icon sidebar-menu-icon--left ft-user" ></i>--}}
+{{--                                    <span class="sidebar-menu-text">{{ __('messages.account_settings') }}</span>--}}
+{{--                                </a>--}}
+                                <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('logout') }}"><i class="ft-power"></i> Logout</a>
+                            </div>
                         </li>
                     </ul>
                 </div>

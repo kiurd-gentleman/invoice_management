@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Application\Settings;
+namespace App\Http\Controllers\Application;
 
 use App\Http\Controllers\Controller;
 use App\Models\CompanySetting;
@@ -19,11 +19,11 @@ class MembershipController extends Controller
         $user = $request->user();
         $currentCompany = $user->currentCompany();
 
-        $subscription = $currentCompany->subscription('main');
-        $orders = Order::where('company_id', $currentCompany->id)->latest()->get();
-        $dateFormat = CompanySetting::getSetting('date_format', $currentCompany->id);
+        $subscription = $user->subscription('main');
+        $orders = Order::where('company_id', $user->id)->latest()->get();
+        $dateFormat = CompanySetting::getSetting('date_format', $user->id);
 
-        return view('application.settings.membership.index', [
+        return view('application.company.membership.index', [
             'subscription' => $subscription,
             'orders' => $orders,
             'dateFormat' => $dateFormat,

@@ -41,7 +41,7 @@ class OrderController extends Controller
 
         // Auth User & Company
         $user = $request->user();
-        $currentCompany = $user->currentCompany();
+//        $currentCompany = $user->currentCompany();
         $currentSubscription = $user->subscription('main');
 
         // If the plan is free subscribe user directly
@@ -68,10 +68,10 @@ class OrderController extends Controller
         }
 
         // If plan has free trial subscribe user for a time of free trial interval
-        $isSubscribedBefore = $currentCompany->subscriptions->isNotEmpty();
+        $isSubscribedBefore = $user->subscriptions->isNotEmpty();
         if ($plan->hasTrial() & !$isSubscribedBefore) {
             // Create new subscription
-            $currentCompany->newSubscription('main', $plan, true);
+            $user->newSubscription('main', $plan, true);
 
             // Redirect user to dashboard
             session()->flash('alert-success', __('messages.payment_successful', ['payment_number' => rand()]));
@@ -81,7 +81,7 @@ class OrderController extends Controller
         // Razorpay Setting
         $razorpay_order = [];
         $razorpay_callbackUrl = '';
-        $orderId = $currentCompany->id.strtoupper(str_replace('.', '', uniqid('', true)));
+        $orderId = $user->id.strtoupper(str_replace('.', '', uniqid('', true)));
         if (SystemSetting::isRazorpayActive()) {
             // Get Razorpay Service
             $razorpay = new Razorpay(null, true);
@@ -117,7 +117,7 @@ class OrderController extends Controller
     {
         // Auth User & Company
         $user = $request->user();
-        $currentCompany = $user->currentCompany();
+//        $currentCompany = $user->currentCompany();
 
         // Order Id
         $orderId = $request->orderId;
@@ -128,11 +128,11 @@ class OrderController extends Controller
         // Check the order is exists
         if ($order) {
             // Renew old one
-            if ($currentCompany->subscription('main')) {
-                $currentCompany->subscription('main')->changePlan($order->plan);
+            if ($user->subscription('main')) {
+                $user->subscription('main')->changePlan($order->plan);
             } else {
                 // or Create new subscription
-                $currentCompany->newSubscription('main', $order->plan);
+                $user->newSubscription('main', $order->plan);
             }
 
             session()->flash('alert-success', __('messages.payment_successful', ['payment_number' => $request->orderId]));
@@ -240,11 +240,11 @@ class OrderController extends Controller
             ]);
 
             // Renew old one
-            if ($currentCompany->subscription('main')) {
-                $currentCompany->subscription('main')->changePlan($plan);
+            if ($user->subscription('main')) {
+                $user->subscription('main')->changePlan($plan);
             } else {
                 // or Create new subscription
-                $currentCompany->newSubscription('main', $plan);
+                $user->newSubscription('main', $plan);
             }
 
             session()->flash('alert-success', __('messages.payment_successful', ['payment_number' => $request->orderId]));
@@ -321,11 +321,11 @@ class OrderController extends Controller
             ]);
 
             // Renew old one
-            if ($currentCompany->subscription('main')) {
-                $currentCompany->subscription('main')->changePlan($plan);
+            if ($user->subscription('main')) {
+                $user->subscription('main')->changePlan($plan);
             } else {
                 // or Create new subscription
-                $currentCompany->newSubscription('main', $plan);
+                $user->newSubscription('main', $plan);
             }
 
             session()->flash('alert-success', __('messages.payment_successful', ['payment_number' => $request->orderId]));
@@ -385,11 +385,11 @@ class OrderController extends Controller
             ]);
 
             // Renew old one
-            if ($currentCompany->subscription('main')) {
-                $currentCompany->subscription('main')->changePlan($plan);
+            if ($user->subscription('main')) {
+                $user->subscription('main')->changePlan($plan);
             } else {
                 // or Create new subscription
-                $currentCompany->newSubscription('main', $plan);
+                $user->newSubscription('main', $plan);
             }
 
             session()->flash('alert-success', __('messages.payment_successful', ['payment_number' => $request->orderId]));
@@ -442,11 +442,11 @@ class OrderController extends Controller
             ]);
 
             // Renew old one
-            if ($currentCompany->subscription('main')) {
-                $currentCompany->subscription('main')->changePlan($plan);
+            if ($user->subscription('main')) {
+                $user->subscription('main')->changePlan($plan);
             } else {
                 // or Create new subscription
-                $currentCompany->newSubscription('main', $plan);
+                $user->newSubscription('main', $plan);
             }
 
             session()->flash('alert-success', __('messages.payment_successful', ['payment_number' => $request->orderId]));
@@ -542,11 +542,11 @@ class OrderController extends Controller
             ]);
 
             // Renew old one
-            if ($currentCompany->subscription('main')) {
-                $currentCompany->subscription('main')->changePlan($plan);
+            if ($user->subscription('main')) {
+                $user->subscription('main')->changePlan($plan);
             } else {
                 // or Create new subscription
-                $currentCompany->newSubscription('main', $plan);
+                $user->newSubscription('main', $plan);
             }
         } else {
             Order::create([

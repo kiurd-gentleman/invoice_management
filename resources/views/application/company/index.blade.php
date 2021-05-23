@@ -43,14 +43,29 @@
                                 </ul>
                             </div>
                         </div>
-                        @foreach($companies as $company)
                         <div class="card-content collapse show">
                             <div class="card-body">
 {{--                                @dump($company->settings)--}}
-                                @foreach($company->settings as $setting)
-                                    @if ($setting->option == 'avatar')
-                                        <img src="{{$setting->value}}" class="rounded" width="5%">
-                                    @endif
+                                <table class="table table-bordered table-striped table-hover dark">
+                                    <tbody>
+                                    @foreach($companies as $company)
+                                        <tr>
+                                            <td  width="60%">
+                                                <span>{{$company->name}}</span>
+                                            </td>
+                                            <td>
+                                                <a class="float-right primary" href="{{route('in-to-company',['user_uid' => auth()->user()->uid , 'company_uid' =>$company->uid ])}}" >Go Inside <i class="ft-arrow-right"></i></a>
+
+                                            </td>
+                                        </tr>
+
+                                    @endforeach
+                                    </tbody>
+                                </table>
+
+{{--                                    @if ($setting->option == 'avatar')--}}
+{{--                                        <img src="{{$setting->value}}" class="rounded" width="5%">--}}
+{{--                                    @endif--}}
 
 
 {{--                                    @if ($setting->option == 'currency_id')--}}
@@ -59,13 +74,11 @@
 {{--                                        @dump($setting->company_id)--}}
 {{--                                        <p>Currency {{$setting->getSetting($setting->option , $setting->company_id )}}</p>--}}
 {{--                                    @endif--}}
-                                @endforeach
-                                <span>{{$company->name}}</span>
-                                <a class="float-right primary" href="{{route('in-to-company',['user_uid' => auth()->user()->uid , 'company_uid' =>$company->uid ])}}" >Go Inside <i class="ft-arrow-right"></i></a>
+
 
                             </div>
                         </div>
-                        @endforeach
+
 
                     </div>
                 </div>

@@ -111,6 +111,13 @@ Route::group(['namespace' => 'Application', 'middleware' => ['auth','subscriptio
     Route::post('/{user_uid}/company-store', 'CompanyController@store')->name('company-store');
 
 
+    Route::get('/{user_uid}/account', 'AccountController@index')->name('settings.account');
+    Route::post('/{user_uid}/account', 'AccountController@update')->name('settings.account.update');
+
+    // Settings>Account Settings
+    Route::get('/{user_uid}/membership', 'MembershipController@index')->name('settings.membership');
+
+
     Route::get('/{user_uid}/{company_uid}/go-to-company', 'CompanyController@inToCompany')->name('in-to-company');
 
     Route::group(['middleware' => ['dashboard']], function () {
@@ -198,11 +205,11 @@ Route::group(['namespace' => 'Application', 'middleware' => ['auth','subscriptio
         // Setting Routes
         Route::group(['namespace' => 'Settings', 'prefix' => 'settings'], function () {
             // Settings>Account Settings
-            Route::get('/account', 'AccountController@index')->name('settings.account');
-            Route::post('/account', 'AccountController@update')->name('settings.account.update');
-
-            // Settings>Account Settings
-            Route::get('/membership', 'MembershipController@index')->name('settings.membership');
+//            Route::get('/account', 'AccountController@index')->name('settings.account');
+//            Route::post('/account', 'AccountController@update')->name('settings.account.update');
+//
+//            // Settings>Account Settings
+//            Route::get('/membership', 'MembershipController@index')->name('settings.membership');
 
             // Settings>Notification Settings
             Route::get('/notifications', 'NotificationController@index')->name('settings.notifications');

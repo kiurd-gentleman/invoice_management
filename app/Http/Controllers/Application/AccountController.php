@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Application\Settings;
+namespace App\Http\Controllers\Application;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Application\Settings\Account\Update;
 use App\Models\UserSetting;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class AccountController extends Controller
@@ -14,9 +15,10 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('application.settings.account.index');
+        $user = $request->user();
+        return view('application.company.account.index',compact('user'));
     }
 
     /**
@@ -34,7 +36,7 @@ class AccountController extends Controller
         // If demo mode is active then block this action
         if (config('app.is_demo')) {
             session()->flash('alert-danger', __('messages.action_blocked_in_demo'));
-            return redirect()->route('settings.account', ['company_uid' => $currentCompany->uid]);
+            return redirect()->route('settings.account', ['user_uid' => $user->uid]);
         };
 
         // Update User
@@ -56,6 +58,6 @@ class AccountController extends Controller
         }
 
         session()->flash('alert-success', __('messages.account_updated'));
-        return redirect()->route('settings.account', ['company_uid' => $currentCompany->uid]);
+        return redirect()->route('settings.account', ['user_uid' => $user->uid]);
     }
 }

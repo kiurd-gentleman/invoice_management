@@ -14,11 +14,13 @@
 <body class="horizontal-layout horizontal-menu 2-columns   menu-expanded" data-open="click" data-menu="horizontal-menu" data-col="2-columns">
 
 @include('application.company.layouts._header')
+{{--@include('application.company.layouts._drawer')--}}
 {{--@include('layouts._drawer')--}}
 <div class="app-content content">
 
     <div class="content-wrapper container">
         @yield('page_header')
+
         <div class="content-body">
             @yield('content')
         </div>
@@ -27,6 +29,8 @@
 @include('layouts._footer')
 
 @include('layouts._js')
+
+@yield('scripts')
 @include('layouts._flash')
 </body>
 

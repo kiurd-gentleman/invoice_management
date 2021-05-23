@@ -16,18 +16,18 @@
 </style>
 
 <ul class="list-group list-group-messages">
-    <li class="list-group-item  {{ $tab == 'account' ? '' : '' }}  ">
-        <a href="{{ route('settings.account', ['company_uid' => $currentCompany->uid]) }}" class=" {{ $tab == 'account' ? 'text-danger' : 'text-secondary' }} sidebarNav">
-            <i class="sidebar-menu-icon sidebar-menu-icon--left ft-user" ></i>
-            <span class="sidebar-menu-text">{{ __('messages.account_settings') }}</span>
-        </a>
-    </li>
-    <li class="list-group-item  {{ $tab == 'membership' ? '' : '' }}">
-        <a href="{{ route('settings.membership', ['company_uid' => $currentCompany->uid]) }}" class="sidebar-menu-button {{ $tab == 'membership' ? 'text-danger' : 'text-secondary' }} sidebarNav">
-            <i class=" la la-hand-grab-o"></i>
-            <span class="sidebar-menu-text">{{ __('messages.membership') }}</span>
-        </a>
-    </li>
+{{--    <li class="list-group-item  {{ $tab == 'account' ? '' : '' }}  ">--}}
+{{--        <a href="{{ route('settings.account', ['company_uid' => $currentCompany->uid]) }}" class=" {{ $tab == 'account' ? 'text-danger' : 'text-secondary' }} sidebarNav">--}}
+{{--            <i class="sidebar-menu-icon sidebar-menu-icon--left ft-user" ></i>--}}
+{{--            <span class="sidebar-menu-text">{{ __('messages.account_settings') }}</span>--}}
+{{--        </a>--}}
+{{--    </li>--}}
+{{--    <li class="list-group-item  {{ $tab == 'membership' ? '' : '' }}">--}}
+{{--        <a href="{{ route('settings.membership', ['company_uid' => $currentCompany->uid]) }}" class="sidebar-menu-button {{ $tab == 'membership' ? 'text-danger' : 'text-secondary' }} sidebarNav">--}}
+{{--            <i class=" la la-hand-grab-o"></i>--}}
+{{--            <span class="sidebar-menu-text">{{ __('messages.membership') }}</span>--}}
+{{--        </a>--}}
+{{--    </li>--}}
 
 {{--    <li class="list-group-item  {{ $tab == 'notification' ? '' : '' }}">--}}
 {{--        <a href="{{ route('settings.notifications', ['company_uid' => $currentCompany->uid]) }}" class="sidebar-menu-button {{ $tab == 'notification' ? 'text-danger' : 'text-secondary' }} sidebarNav">--}}
