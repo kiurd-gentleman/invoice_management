@@ -38,7 +38,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">All Bugs</h4>
+                        <h4 class="card-title">Payment settings</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
@@ -52,9 +52,9 @@
                     <div class="card-content">
                         <div class="card-body">
                             <!-- Task List table -->
-                            <div class="card card-form">
+                            <div class="card-form">
                                 <div class="row no-gutters">
-                                    <div class="col card-form__body card-body bg-white">
+                                    <div class="col card-form__body card-body">
                                         <form action="{{ route('settings.payment.update', ['company_uid' => $currentCompany->uid]) }}" method="POST">
                                             @include('layouts._form_errors')
                                             @csrf
@@ -80,7 +80,7 @@
                                                             <input type="checkbox" name="payment_auto_archive" id="payment_auto_archive" {{ $currentCompany->getSetting('payment_auto_archive') ? 'checked' : '' }} class="custom-control-input">
                                                             <label class="custom-control-label" for="payment_auto_archive">{{ __('messages.yes') }}</label>
                                                         </div>
-                                                        <label for="payment_auto_archive" class="mb-0">{{ __('messages.yes') }}</label>
+{{--                                                        <label for="payment_auto_archive" class="mb-0">{{ __('messages.yes') }}</label>--}}
                                                         <small class="form-text text-muted">
                                                             {{ __('messages.auto_archive_description') }}
                                                         </small>
@@ -114,7 +114,7 @@
                 </div>
                 <div class="card">
                     <div class="card-header">
-{{--                        <h4 class="card-title">All Bugs</h4>--}}
+                        <h4 class="card-title">All Payment getway</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
@@ -128,9 +128,9 @@
                     <div class="card-content">
                         <div class="card-body">
                             <!-- Task List table -->
-                            <div class="card card-form">
+                            <div class=" card-form">
                                 <div class="row no-gutters">
-                                    <div class="col card-form__body card-body bg-white">
+                                    <div class="col card-form__body card-body">
                                         <div class="form-group mb-4">
                                             <p class="h5 mb-0">
                                                 <strong class="headings-color">{{ __('messages.online_payment_gateways') }}</strong>

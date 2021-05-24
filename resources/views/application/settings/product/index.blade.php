@@ -62,7 +62,7 @@
                                                 <input type="checkbox" name="discount_per_item" id="discount_per_item" {{ $currentCompany->getSetting('discount_per_item') ? 'checked' : '' }} class="custom-control-input">
                                                 <label class="custom-control-label" for="discount_per_item">{{ __('messages.yes') }}</label>
                                             </div>
-                                            <label for="discount_per_item" class="mb-0">{{ __('messages.yes') }}</label>
+{{--                                            <label for="discount_per_item" class="mb-0">{{ __('messages.yes') }}</label>--}}
                                             <small class="form-text text-muted">
                                                 {{ __('messages.discount_per_item_description') }}
                                             </small>
@@ -75,7 +75,7 @@
                                                 <input type="checkbox" name="tax_per_item" id="tax_per_item" {{ $currentCompany->getSetting('tax_per_item') ? 'checked' : '' }} class="custom-control-input">
                                                 <label class="custom-control-label" for="tax_per_item">{{ __('messages.yes') }}</label>
                                             </div>
-                                            <label for="tax_per_item" class="mb-0">{{ __('messages.yes') }}</label>
+{{--                                            <label for="tax_per_item" class="mb-0">{{ __('messages.yes') }}</label>--}}
                                             <small class="form-text text-muted">
                                                 {{ __('messages.tax_per_item_description') }}
                                             </small>

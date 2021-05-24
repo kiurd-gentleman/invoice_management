@@ -50,9 +50,9 @@
         {{ $custom_fields->links() }}
     </div>
 @else
-    <div class="row justify-content-center card-body pb-0 pt-5">
-        <i class="material-icons fs-64px">text_fields</i>
-    </div>
+{{--    <div class="row justify-content-center card-body pb-0 pt-5">--}}
+{{--        <i class="material-icons fs-64px">text_fields</i>--}}
+{{--    </div>--}}
     <div class="row justify-content-center card-body pb-5">
         <p class="h4">{{ __('messages.no_custom_fields_yet') }}</p>
     </div>

@@ -86,7 +86,7 @@
                     </ul>
                 </li>
                 <li class="dropdown nav-item {{(Request::segment(2)=='settings' ) ? 'active':''}}" >
-{{--                    <a class=" nav-link" href="{{ route('settings.account', ['company_uid' => $currentCompany->uid]) }}"><i class="la la-cogs" style="color: #ffffff;"></i><span style="color: #ffffff;">Settings</span></a>--}}
+                    <a class=" nav-link" href="{{ route('settings.company', ['company_uid' => $currentCompany->uid]) }}"><i class="la la-cogs" style="color: #ffffff;"></i><span style="color: #ffffff;">Settings</span></a>
                 </li>
 {{--                <li class="dropdown nav-item" >--}}
 {{--                    <a class=" nav-link" href="{{ route('logout') }}"><i class="la la-sign-out" style="color: #ffffff;"></i><span style="color: #ffffff;">Logout</span></a>--}}

@@ -37,22 +37,22 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">All Bugs</h4>
+                            <h4 class="card-title">Quotation Settings</h4>
                             <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
-                            <div class="heading-elements">
-                                <button class="btn btn-primary btn-sm"><i class="ft-plus white"></i> Submit Bug</button>
-                                <span class="dropdown">
-                          <button id="btnSearchDrop1" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                  aria-expanded="false" class="btn btn-warning btn-sm dropdown-toggle dropdown-menu-right"><i class="ft-download white"></i></button>
-                          <span aria-labelledby="btnSearchDrop1" class="dropdown-menu mt-1 dropdown-menu-right">
-                            <a href="#" class="dropdown-item"><i class="la la-calendar"></i> Due Date</a>
-                            <a href="#" class="dropdown-item"><i class="la la-random"></i> Priority </a>
-                            <a href="#" class="dropdown-item"><i class="la la-bar-chart"></i> Progress</a>
-                            <a href="#" class="dropdown-item"><i class="la la-user"></i> Assign to</a>
-                          </span>
-                        </span>
-                                <button class="btn btn-success btn-sm"><i class="ft-settings white"></i></button>
-                            </div>
+{{--                            <div class="heading-elements">--}}
+{{--                                <button class="btn btn-primary btn-sm"><i class="ft-plus white"></i> Submit Bug</button>--}}
+{{--                                <span class="dropdown">--}}
+{{--                          <button id="btnSearchDrop1" type="button" data-toggle="dropdown" aria-haspopup="true"--}}
+{{--                                  aria-expanded="false" class="btn btn-warning btn-sm dropdown-toggle dropdown-menu-right"><i class="ft-download white"></i></button>--}}
+{{--                          <span aria-labelledby="btnSearchDrop1" class="dropdown-menu mt-1 dropdown-menu-right">--}}
+{{--                            <a href="#" class="dropdown-item"><i class="la la-calendar"></i> Due Date</a>--}}
+{{--                            <a href="#" class="dropdown-item"><i class="la la-random"></i> Priority </a>--}}
+{{--                            <a href="#" class="dropdown-item"><i class="la la-bar-chart"></i> Progress</a>--}}
+{{--                            <a href="#" class="dropdown-item"><i class="la la-user"></i> Assign to</a>--}}
+{{--                          </span>--}}
+{{--                        </span>--}}
+{{--                                <button class="btn btn-success btn-sm"><i class="ft-settings white"></i></button>--}}
+{{--                            </div>--}}
                         </div>
                         <div class="card-content">
                             <div class="card-body">
@@ -110,7 +110,7 @@
                                         @php $default_template = get_company_setting('estimate_template', $currentCompany->id) @endphp
                                         <div class="row mt-3">
                                             @foreach(\App\Models\EstimateTemplate::all() as $template)
-                                                <div class=" card col-md-3">
+                                                <div class="  col-md-3">
                                                     <div class="custom-control custom-radio image-checkbox">
                                                         <input type="radio" class="custom-control-input" id="{{$template->view}}" name="estimate_template" value="{{$template->view}}" @if($default_template === $template->view) checked='' @endif>
                                                         <label class="custom-control-label" for="{{$template->view}}">

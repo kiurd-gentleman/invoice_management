@@ -26,65 +26,51 @@
         </div>
     </div>
     <div class="content-body">
-        <!-- Card headings examples section start -->
-        <section id="card-headings">
-            <div class="row">
-
-                    <div class="col-md-12 col-sm-12">
+        <section id="lists">
+            <div class="row match-height">
+                <div class="col-md-12 col-sm-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Company List</h4>
-                            <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                            <div class="heading-elements">
-                                <ul class="list-inline mb-0">
-                                    <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
-                                    <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
-                                    <li><a data-action="close"><i class="ft-x"></i></a></li>
-                                </ul>
+                            <h4 class="card-title" id="list-add-item">Company list</h4>
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <div id="add-item-list">
+                                    <input type="text" class="search form-control mb-1" placeholder="Search"/>
+                                    <div class="row w-100">
+                                        <div class="col-md-6 col-sm-12 float-right ">
+                                            <button class="sort btn btn-info  mb-2" data-sort="name">Sort by name</button>
+                                        </div>
+{{--                                        <div class="col-md-6 col-sm-12">--}}
+{{--                                            <button class="sort btn btn-block btn-outline-success btn-round mb-2" data-sort="born">Sort by born</button>--}}
+{{--                                        </div>--}}
+                                    </div>
+                                    <ul class="list-group list">
+                                        @foreach($companies as $company)
+                                        <li class="list-group-item">
+                                            <span class="float-right">
+                                                <a class="born" href="{{route('in-to-company',['user_uid' => auth()->user()->uid , 'company_uid' =>$company->uid ])}}" >Go Inside <i class="ft-arrow-right"></i>
+                                                </a>
+                                            </span>
+                                            <span class="name">{{$company->name}}</span> &nbsp;
+
+                                             <span> <sub>&bull;&nbsp;{{$company->created_at}}</sub></span>
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div class="card-content collapse show">
-                            <div class="card-body">
-{{--                                @dump($company->settings)--}}
-                                <table class="table table-bordered table-striped table-hover dark">
-                                    <tbody>
-                                    @foreach($companies as $company)
-                                        <tr>
-                                            <td  width="60%">
-                                                <span>{{$company->name}}</span>
-                                            </td>
-                                            <td>
-                                                <a class="float-right primary" href="{{route('in-to-company',['user_uid' => auth()->user()->uid , 'company_uid' =>$company->uid ])}}" >Go Inside <i class="ft-arrow-right"></i></a>
-
-                                            </td>
-                                        </tr>
-
-                                    @endforeach
-                                    </tbody>
-                                </table>
-
-{{--                                    @if ($setting->option == 'avatar')--}}
-{{--                                        <img src="{{$setting->value}}" class="rounded" width="5%">--}}
-{{--                                    @endif--}}
-
-
-{{--                                    @if ($setting->option == 'currency_id')--}}
-{{--                                        <p>Currency {{$setting->value}}</p>--}}
-{{--                                        @dump($setting->option)--}}
-{{--                                        @dump($setting->company_id)--}}
-{{--                                        <p>Currency {{$setting->getSetting($setting->option , $setting->company_id )}}</p>--}}
-{{--                                    @endif--}}
-
-
-                            </div>
-                        </div>
-
-
                     </div>
                 </div>
-
             </div>
         </section>
         <!-- Card headings examples section end -->
     </div>
+@endsection
+@section('scripts')
+    <script src="{{asset('app-assets/vendors/js/extensions/listjs/list.min.js')}}" type="text/javascript"></script>
+{{--    <script src="{{asset('app-assets/vendors/js/extensions/listjs/list.fuzzysearch.min.js')}}" type="text/javascript"></script>--}}
+{{--    <script src="{{asset('app-assets/vendors/js/extensions/listjs/list.pagination.min.js')}}" type="text/javascript"></script>--}}
+    <script src="{{asset('app-assets/js/scripts/extensions/list.js')}}" type="text/javascript"></script>
 @endsection

@@ -205,7 +205,7 @@ Route::group(['namespace' => 'Application', 'middleware' => ['auth','subscriptio
         // Setting Routes
         Route::group(['namespace' => 'Settings', 'prefix' => 'settings'], function () {
             // Settings>Account Settings
-//            Route::get('/account', 'AccountController@index')->name('settings.account');
+//            Route::get('/account', 'AccountController@index')->name('settings.company');
 //            Route::post('/account', 'AccountController@update')->name('settings.account.update');
 //
 //            // Settings>Account Settings

@@ -50,15 +50,16 @@
                         <div class="card-content">
                             <div class="card-body">
                                 <!-- Task List table -->
-                                <div class="form-row align-items-center mb-4">
-                                    <div class="col">
-                                        <p class="h4 mb-0">
-                                            <strong class="headings-color"></strong>
-                                        </p>
-                                    </div>
-                                    @include('application.settings.custom_field._table')
+{{--                                <div class="form-row align-items-center mb-4">--}}
+{{--                                    <div class="col">--}}
+{{--                                        <p class="h4 mb-0">--}}
+{{--                                            <strong class="headings-color"></strong>--}}
+{{--                                        </p>--}}
+{{--                                    </div>--}}
+{{--                                    --}}
 
-                                </div>
+{{--                                </div>--}}
+                                @include('application.settings.custom_field._table')
                             </div>
                         </div>
                     </div>
