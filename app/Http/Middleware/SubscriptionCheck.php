@@ -16,6 +16,9 @@ class SubscriptionCheck
     public function handle($request, Closure $next)
     {
         $user = $request->user();
+        if ($user->hasRole('super_admin')) {
+            return redirect()->route('super_admin.dashboard');
+        }
         // Redirect user if there is no subscription or ended or cancelled
         $subscription = $user->subscription('main');
 //        dump($subscription);

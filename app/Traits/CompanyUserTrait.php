@@ -25,14 +25,23 @@ trait CompanyUserTrait
      */
     public function currentCompany()
     {
+
+        if (auth()->user()->hasRole('super_admin')) {
+            if ($this->id == null) return null;
+
+            return $this->companies()->exists()
+                ? $this->companies()->first()
+                : null;
+        }
         // dd($this->id);
         if ($this->id == null) return null;
 
         //    dd($this->companies());
         // $v = $this->companies()->get();
-        //    dd($v);
+
+
         $company_uid = Session::get('user_current_company')['uid'];
-        
+//            dd($company_uid);
         return $this->companies()->exists()
             ? $this->companies()->where('uid', $company_uid)->first()
             : null;

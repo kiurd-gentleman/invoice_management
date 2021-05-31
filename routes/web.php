@@ -18,7 +18,7 @@ Route::get('/viewer/estimate/{estimate}/pdf', 'Application\PDFController@estimat
 Route::get('/viewer/payment/{payment}/pdf', 'Application\PDFController@payment')->name('pdf.payment');
 
 // Super Admin Panel
-Route::group(['namespace' => 'SuperAdmin', 'prefix' => '/admin'], function () {
+Route::group(['namespace' => 'SuperAdmin', 'prefix' => '/admin','middleware' => ['auth', 'super_admin']], function () {
     // Dashboard
     Route::get('/dashboard', 'DashboardController@index')->name('super_admin.dashboard');
 

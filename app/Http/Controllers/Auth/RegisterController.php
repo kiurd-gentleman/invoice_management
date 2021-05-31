@@ -43,6 +43,7 @@ class RegisterController extends Controller
 
         if($request->plan) {
             $this->redirectTo = route('order.checkout', ['plan' => $request->plan]);
+//            $this->redirectTo = route('login');
         }
     }
 
@@ -59,7 +60,7 @@ class RegisterController extends Controller
             'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
-            'company_name' => ['required', 'string'],
+//            'company_name' => ['required', 'string'],
         ]);
     }
 

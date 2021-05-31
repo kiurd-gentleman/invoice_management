@@ -45,7 +45,7 @@ class LoginController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             // Authentication passed...
             if (auth()->user()->hasRole('super_admin')) {
-                return redirect()->to(route('customer_portal.dashboard'));
+                return redirect()->to(route('super_admin.dashboard'));
             }elseif(auth()->user()->hasRole('admin')){
                 return redirect()->to(route('company-list', auth()->user()->uid));
             }

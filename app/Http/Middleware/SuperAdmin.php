@@ -18,22 +18,29 @@ class SuperAdmin
     public function handle(Request $request, Closure $next)
     {
         $user = $request->user();
-        $currentCompany = $user->currentCompany();
+
+//        dd($user->hasRole('super_admin'));
 
         // Check if the user is super_admin
-        if (!$user->hasRole('super_admin')) {
-            return redirect()->route('home');
+        if ($user->hasRole('super_admin')) {
+//            dd($user);
+            $currentCompany = $user->currentCompany();
+//            dd($currentCompany);
+            // Company based preferences
+            share([
+                'company_currency' => $currentCompany->currency,
+            ]);
+
+            // Share Current Company with All Blade Views
+            view()->share('currentCompany', $currentCompany);
+            view()->share('authUser', $user);
+            return $next($request);
+//            return redirect()->route('super_admin.dashboard');
+        }else{
+            return redirect()->to(route('login'));
         }
 
-        // Company based preferences
-        share([
-            'company_currency' => $currentCompany->currency,
-        ]);
- 
-        // Share Current Company with All Blade Views
-        view()->share('currentCompany', $currentCompany);
-        view()->share('authUser', $user);
 
-        return $next($request);
+
     }
 }
