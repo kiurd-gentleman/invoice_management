@@ -9,6 +9,7 @@
     <title>@yield('title')</title>
 
     @include('layouts._css')
+    @yield('styles')
 </head>
 
 <body class="horizontal-layout horizontal-menu 2-columns   menu-expanded" data-open="click" data-menu="horizontal-menu" data-col="2-columns">

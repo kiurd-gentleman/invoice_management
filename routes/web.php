@@ -166,6 +166,18 @@ Route::group(['namespace' => 'Application', 'middleware' => ['auth','subscriptio
         Route::get('/{company_uid}/quotations/{estimate}/mark/{status?}', 'EstimateController@mark')->name('estimates.mark');
         Route::get('/{company_uid}/quotations/{tab?}', 'EstimateController@index')->name('estimates');
 
+        //
+
+        Route::get('/{company_uid}/letter-head/create', 'LetterHeadController@create')->name('letter-head.create');
+        Route::post('/{company_uid}/letter-head/create', 'LetterHeadController@store')->name('letter-head.store');
+        Route::get('/{company_uid}/letter-head/{letter-head}/details', 'LetterHeadController@show')->name('letter-head.details');
+        Route::get('/{company_uid}/letter-head/{letter-head}/edit', 'LetterHeadController@edit')->name('letter-head.edit');
+        Route::post('/{company_uid}/letter-head/{letter-head}/edit', 'LetterHeadController@update')->name('letter-head.update');
+        Route::get('/{company_uid}/letter-head/{letter-head}/delete', 'LetterHeadController@delete')->name('letter-head.delete');
+        Route::get('/{company_uid}/letter-head/{letter-head}/send', 'LetterHeadController@send')->name('letter-head.send');
+        Route::get('/{company_uid}/letter-head/{letter-head}/mark/{status?}', 'LetterHeadController@mark')->name('letter-head.mark');
+        Route::get('/{company_uid}/letter-head/{tab?}', 'LetterHeadController@index')->name('letter-head');
+
         // Payments
         Route::get('/{company_uid}/payments', 'PaymentController@index')->name('payments');
         Route::get('/{company_uid}/payments/create', 'PaymentController@create')->name('payments.create');

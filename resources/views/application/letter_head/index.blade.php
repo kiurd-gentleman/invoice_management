@@ -1,6 +1,6 @@
-@extends('layouts.app', ['page' => 'invoices'])
+@extends('layouts.app', ['page' => 'letter head'])
 
-@section('title', __('messages.invoices'))
+@section('title', __('Letter Head'))
 
 @section('page_header')
 {{--    <div class="page__heading d-flex align-items-center">--}}
@@ -20,13 +20,13 @@
 {{--    </div>--}}
     <div class="content-header row">
         <div class="content-header-left col-md-6 col-12 mb-2">
-            <h3 class="content-header-title text-uppercase">{{ __('messages.invoices') }}</h3>
+            <h3 class="content-header-title text-uppercase">{{ __('Letter Head') }}</h3>
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">{{get_system_setting('application_name')}}</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="{{ route('invoices', ['company_uid' => $currentCompany->uid]) }}" >{{ __('messages.invoices') }}</a>
+                        <li class="breadcrumb-item"><a href="{{ route('letter-head', ['company_uid' => $currentCompany->uid]) }}" >{{ __('Letter Head') }}</a>
                         </li>
                         <li class="breadcrumb-item active">List
                         </li>
@@ -37,7 +37,7 @@
         <div class="content-header-right col-md-6 col-12">
             <div class="media width-250 float-right">
                 <div class="media-body media-right text-right">
-                    <a href="{{ route('invoices.create', ['company_uid' => $currentCompany->uid]) }}" class="btn btn-success btn-sm mt-2 text-uppercase"><i class="ft-plus"></i> {{ __('messages.create_invoice') }}</a>
+                    <a href="{{ route('letter-head.create', ['company_uid' => $currentCompany->uid]) }}" class="btn btn-success btn-sm mt-2 text-uppercase"><i class="ft-plus"></i> {{ __('Create Letter Head') }}</a>
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title" id="basic-layout-round-controls">Invoice List</h4>
+                        <h4 class="card-title" id="basic-layout-round-controls">Letter Head</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
@@ -73,31 +73,31 @@
                             <div >
                                 <div >
                                     <div class="card-header w-100 bg-gradient-directional-black">
-                                        <h4 class="card-title text-center font-weight-bold">Your All Invoice is here. Filter for specific invoice</h4>
+                                        <h4 class="card-title text-center font-weight-bold">Your All Letter Head is here. Filter for specific Letter Head</h4>
                                     </div>
                                     <div class="card-content">
                                         <div class="card-body">
-                                            <ul class="nav nav-tabs nav-linetriangle no-hover-bg">
-                                                <li class="nav-item">
-                                                    <a class="nav-link {{ $tab == 'drafts' ? 'active' : '' }} text-uppercase "
-                                                       href="{{ route('invoices', ['tab' => '', 'company_uid' => $currentCompany->uid]) }}"
-                                                       aria-expanded="{{ $tab == 'drafts' ? 'true' : 'false' }}">
-                                                        Drafts
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link {{ $tab == 'due' ? 'active' : '' }} text-uppercase"
-                                                       href="{{ route('invoices', ['tab' => 'due', 'company_uid' => $currentCompany->uid]) }}"
-                                                       aria-expanded="{{ $tab == 'due' ? 'true' : 'false' }}">Due Invoices</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link {{ $tab == 'all' ? 'active' : '' }} text-uppercase"
-                                                       href="{{ route('invoices', ['tab' => 'all', 'company_uid' => $currentCompany->uid]) }}"
-                                                       aria-expanded="{{ $tab == 'all' ? 'true' : 'false' }}">All Invoices</a>
-                                                </li>
-                                            </ul>
+{{--                                            <ul class="nav nav-tabs nav-linetriangle no-hover-bg">--}}
+{{--                                                <li class="nav-item">--}}
+{{--                                                    <a class="nav-link {{ $tab == 'drafts' ? 'active' : '' }} text-uppercase "--}}
+{{--                                                       href="{{ route('invoices', ['tab' => '', 'company_uid' => $currentCompany->uid]) }}"--}}
+{{--                                                       aria-expanded="{{ $tab == 'drafts' ? 'true' : 'false' }}">--}}
+{{--                                                        Drafts--}}
+{{--                                                    </a>--}}
+{{--                                                </li>--}}
+{{--                                                <li class="nav-item">--}}
+{{--                                                    <a class="nav-link {{ $tab == 'due' ? 'active' : '' }} text-uppercase"--}}
+{{--                                                       href="{{ route('invoices', ['tab' => 'due', 'company_uid' => $currentCompany->uid]) }}"--}}
+{{--                                                       aria-expanded="{{ $tab == 'due' ? 'true' : 'false' }}">Due Invoices</a>--}}
+{{--                                                </li>--}}
+{{--                                                <li class="nav-item">--}}
+{{--                                                    <a class="nav-link {{ $tab == 'all' ? 'active' : '' }} text-uppercase"--}}
+{{--                                                       href="{{ route('invoices', ['tab' => 'all', 'company_uid' => $currentCompany->uid]) }}"--}}
+{{--                                                       aria-expanded="{{ $tab == 'all' ? 'true' : 'false' }}">All Invoices</a>--}}
+{{--                                                </li>--}}
+{{--                                            </ul>--}}
                                             <div class="tab-content px-1 pt-1">
-                                                @include('application.invoices._table')
+                                                @include('application.letter_head._table')
                                             </div>
                                         </div>
                                     </div>

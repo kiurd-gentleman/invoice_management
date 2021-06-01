@@ -50,7 +50,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('invoices', ['company_uid' => $currentCompany->uid]) }}"><i class="ft-file-text" ></i> Invoice</a></li>
                         <li><a class="dropdown-item" href="{{ route('estimates', ['company_uid' => $currentCompany->uid]) }}"><i class="la la-file-text" ></i> Quotation</a></li>
-{{--                        <li><a class="dropdown-item" href="{{ route('reports.profit_loss', ['company_uid' => $currentCompany->uid]) }}"><i  class="ft-minimize-2"></i > Profit OR Loss</a></li>--}}
+                        <li><a class="dropdown-item" href="{{ route('letter-head', ['company_uid' => $currentCompany->uid]) }}"><i  class="ft-minimize-2"></i > Letter Head</a></li>
 {{--                        <li><a class="dropdown-item" href="{{ route('reports.expenses', ['company_uid' => $currentCompany->uid]) }}"><i  class="ft-minimize-2"></i > Expense</a></li>--}}
                     </ul>
                 </li>

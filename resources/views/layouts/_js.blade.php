@@ -5,6 +5,7 @@
 <script type="text/javascript" src="{{asset('/app-assets/vendors/js/ui/jquery.sticky.js')}}"></script>
 <script type="text/javascript" src="{{asset('/app-assets/vendors/js/charts/jquery.sparkline.min.js')}}"></script>
 <script src="{{asset('/app-assets/vendors/js/charts/chartist.min.js')}}" type="text/javascript"></script>
+
 {{--<script src="{{asset('/app-assets/vendors/js/charts/chartist-plugin-tooltip.min.js')}}" type="text/javascript"></script>--}}
 <script src="{{asset('/app-assets/vendors/js/charts/raphael-min.js')}}" type="text/javascript"></script>
 <script src="{{asset('/app-assets/vendors/js/charts/morris.min.js')}}" type="text/javascript"></script>
