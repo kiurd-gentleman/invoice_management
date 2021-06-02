@@ -78,6 +78,31 @@
     <script src="{{asset('app-assets/js/scripts/editors/editor-ckeditor.js')}}" type="text/javascript"></script>
     @include('application.invoices._js')
     <script>
+        // $('#input-image').click (e) -> $('input:file')[0].click();
+        $('#input_image').on('click', function() {
+            $('#header_image').trigger('click');
+        });
+        $('#footer_input_image').on('click', function() {
+            $('#footer_image').trigger('click');
+        });
+        header_image.onchange = evt => {
+            $('#icon').hide();
+            const [file] = header_image.files
+            if (file) {
+                show_header_image.src = URL.createObjectURL(file)
+                $('#show_header_image').show();
+
+            }
+        }
+        footer_image.onchange = evt => {
+            $('#footer_icon').hide();
+            const [file] = footer_image.files
+            if (file) {
+                show_footer_image.src = URL.createObjectURL(file)
+                $('#show_footer_image').show();
+
+            }
+        }
         // function save(){
         //     CKEDITOR.instances.ckeditor.updateElement();
         //     CKEDITOR.instances.ckeditor.destroy();

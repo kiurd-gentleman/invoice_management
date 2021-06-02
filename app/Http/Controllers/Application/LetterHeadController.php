@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Application;
 
 use App\Models\LetterHead;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Controllers\Controller;
@@ -62,28 +63,22 @@ class LetterHeadController extends Controller
         $currentCompany = $user->currentCompany();
 
         // Get next LetterHead number if the auto generation option is enabled
-        $letter_head_prefix = $currentCompany->getSetting('invoice_prefix');
-        $next_letter_head_number = LetterHead::getNextLetterHeadNumber($currentCompany->id, $letter_head_prefix);
+//        $letter_head_prefix = $currentCompany->getSetting('invoice_prefix');
+//        $next_letter_head_number = LetterHead::getNextLetterHeadNumber($currentCompany->id, $letter_head_prefix);
 
 
         // Create new number model and set letter_head_number and company_id
         // so that we can use them in the form
-        $letter_head = new LetterHead();
-        $letter_head->letter_head_number = $next_letter_head_number;
-        $letter_head->company_id = $currentCompany->id;
+//        $letter_head = new LetterHead();
+//        $letter_head->letter_head_number = $next_letter_head_number;
+//        $letter_head->company_id = $currentCompany->id;
 
         // Also for filling form data and the ui
-        $customers = $currentCompany->customers;
+//        $customers = $currentCompany->customers;
 //        $products = $currentCompany->products;
 //        $tax_per_item = (boolean) $currentCompany->getSetting('tax_per_item');
 //        $discount_per_item = (boolean) $currentCompany->getSetting('discount_per_item');
-        return view('application.letter_head.create', [
-            'letter_head' => $letter_head,
-            'customers' => $customers,
-//            'products' => $products,
-//            'tax_per_item' => $tax_per_item,
-//            'discount_per_item' => $discount_per_item,
-        ]);
+        return view('application.letter_head.create');
     }
 
     /**
@@ -94,7 +89,19 @@ class LetterHeadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = $request->user();
+        $currentCompany = $user->currentCompany();
+
+        $insert = new LetterHead();
+        $insert->uid = Str::random(10);
+        $insert->company_id = $currentCompany->id;
+        $insert->letter_head_date = Date('Y-m-d');
+        $insert->letter_head_date = Date('Y-m-d');
+        $insert->header_image = $request->header_image;
+        $insert->footer_image = $request->footer_image;
+        $insert->text = $request->text;
+        $insert->save();
+
     }
 
     /**

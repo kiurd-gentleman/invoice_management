@@ -3,17 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cdecc018-12f8-43c1-bfa3-6f2a155a7533" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app-assets/js/scripts/extensions/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app-assets/js/scripts/extensions/list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app-assets/vendors/js/extensions/listjs/list.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app-assets/vendors/js/extensions/listjs/list.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/company/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/company/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/custom_field/_table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/custom_field/_table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/custom_field/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/custom_field/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/estimate/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/estimate/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/invoice/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/invoice/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/payment/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/payment/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/settings/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/settings/product/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/_drawer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/_drawer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/LetterHeadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/LetterHeadController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/letter_head/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/letter_head/_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/application/letter_head/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/letter_head/create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,19 +167,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/application/company" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/application" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\resources\views\application\company" />
-      <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\resources\views\application\company\layouts" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\app\Http\Controllers\Application\Settings" />
       <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\app\Http\Controllers\Application" />
+      <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\resources\views\application\company\layouts" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\resources\views\application" />
+      <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\resources\views\application\company" />
       <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\resources\views\application\company\layouts" />
     </key>
   </component>
@@ -219,6 +212,8 @@
       <workItem from="1621668627406" duration="6919000" />
       <workItem from="1621742946954" duration="17485000" />
       <workItem from="1621831113465" duration="12526000" />
+      <workItem from="1622531199716" duration="14950000" />
+      <workItem from="1622613426474" duration="8555000" />
     </task>
     <servers />
   </component>
@@ -226,11 +221,15 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="636" y="224" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1621675408158">
+    <state x="636" y="224" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1622538564753">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1621239811351" />
-    <state x="636" y="224" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1621675408158" />
+    <state x="636" y="224" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622538564753" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1622542316118">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1622542316118" />
     <state x="355" y="243" key="NewPhpClassDialog" timestamp="1621669327522">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
