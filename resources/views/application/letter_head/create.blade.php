@@ -26,7 +26,7 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">{{get_system_setting('application_name')}}</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="{{ route('invoices', ['company_uid' => $currentCompany->uid]) }}" >{{ __('Letter Head') }}</a>
+                        <li class="breadcrumb-item"><a href="{{ route('letter-head', ['company_uid' => $currentCompany->uid]) }}" >{{ __('Letter Head') }}</a>
                         </li>
                         <li class="breadcrumb-item active">{{ __('Create') }}
                         </li>
@@ -34,6 +34,13 @@
                 </div>
             </div>
         </div>
+{{--        <div class="content-header-right col-md-6 col-12">--}}
+{{--            <div class="media width-250 float-right">--}}
+{{--                <div class="media-body media-right text-right">--}}
+{{--                    <a href="{{ route('letter-head', ['company_uid' => $currentCompany->uid]) }}" class="btn btn-success btn-sm mt-2 text-uppercase"><i class="ft-plus"></i> {{ __('Create Letter Head') }}</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
 @endsection
 
@@ -58,7 +65,7 @@
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
-                                <form action="{{ route('letter-head.store', ['company_uid' => $currentCompany->uid]) }}" method="POST">
+                                <form action="{{ route('letter-head.store', ['company_uid' => $currentCompany->uid]) }}" method="POST" enctype="multipart/form-data">
                                     @include('layouts._form_errors')
                                     @csrf
                                     @include('application.letter_head._form')

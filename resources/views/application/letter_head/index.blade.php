@@ -68,7 +68,7 @@
                     <div class="card-content collapse show">
                         <div class="card-body">
                             <div class="card-text">
-                                @include('application.invoices._filters')
+                                @include('application.letter_head._filters')
                             </div>
                             <div >
                                 <div >

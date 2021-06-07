@@ -13,6 +13,7 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 // PDF Views
 Route::get('/viewer/invoice/{invoice}/pdf', 'Application\PDFController@invoice')->name('pdf.invoice');
+Route::get('/viewer/invoice/{letter_head}/pdf', 'Application\PDFController@invoice')->name('pdf.letter-head');
 Route::get('/viewer/invoice/link/{invoice}/pdf', 'Application\PDFController@invoice_view')->name('pdf.invoice.link');
 Route::get('/viewer/estimate/{estimate}/pdf', 'Application\PDFController@estimate')->name('pdf.estimate');
 Route::get('/viewer/payment/{payment}/pdf', 'Application\PDFController@payment')->name('pdf.payment');
@@ -166,16 +167,16 @@ Route::group(['namespace' => 'Application', 'middleware' => ['auth','subscriptio
         Route::get('/{company_uid}/quotations/{estimate}/mark/{status?}', 'EstimateController@mark')->name('estimates.mark');
         Route::get('/{company_uid}/quotations/{tab?}', 'EstimateController@index')->name('estimates');
 
-        //
+        //Letter Head
 
         Route::get('/{company_uid}/letter-head/create', 'LetterHeadController@create')->name('letter-head.create');
         Route::post('/{company_uid}/letter-head/create', 'LetterHeadController@store')->name('letter-head.store');
-        Route::get('/{company_uid}/letter-head/{letter-head}/details', 'LetterHeadController@show')->name('letter-head.details');
-        Route::get('/{company_uid}/letter-head/{letter-head}/edit', 'LetterHeadController@edit')->name('letter-head.edit');
-        Route::post('/{company_uid}/letter-head/{letter-head}/edit', 'LetterHeadController@update')->name('letter-head.update');
-        Route::get('/{company_uid}/letter-head/{letter-head}/delete', 'LetterHeadController@delete')->name('letter-head.delete');
-        Route::get('/{company_uid}/letter-head/{letter-head}/send', 'LetterHeadController@send')->name('letter-head.send');
-        Route::get('/{company_uid}/letter-head/{letter-head}/mark/{status?}', 'LetterHeadController@mark')->name('letter-head.mark');
+        Route::get('/{company_uid}/letter-head/{letter_head}/details', 'LetterHeadController@show')->name('letter-head.details');
+        Route::get('/{company_uid}/letter-head/{letter_head}/edit', 'LetterHeadController@edit')->name('letter-head.edit');
+        Route::post('/{company_uid}/letter-head/{letter_head}/edit', 'LetterHeadController@update')->name('letter-head.update');
+        Route::get('/{company_uid}/letter-head/{letter_head}/delete', 'LetterHeadController@delete')->name('letter-head.delete');
+        Route::get('/{company_uid}/letter-head/{letter_head}/send', 'LetterHeadController@send')->name('letter-head.send');
+        Route::get('/{company_uid}/letter-head/{letter_head}/mark/{status?}', 'LetterHeadController@mark')->name('letter-head.mark');
         Route::get('/{company_uid}/letter-head/{tab?}', 'LetterHeadController@index')->name('letter-head');
 
         // Payments

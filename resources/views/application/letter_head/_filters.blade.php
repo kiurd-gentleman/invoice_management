@@ -3,7 +3,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-sm-auto">
                 <div class="form-group">
-                    <label for="filter[invoice_number]">{{ __('Letter Head Number') }}</label>
+                    <label for="filter[invoice_number]">{{ __('Letter Head') }}</label>
                     <input name="filter[invoice_number]" type="text" class="form-control" value="{{ isset(Request::get("filter")['invoice_number']) ? Request::get("filter")['invoice_number'] : '' }}" placeholder="{{ __('messages.search') }}">
                 </div>
             </div>

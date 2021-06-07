@@ -1,14 +1,14 @@
-@if($invoices->count() > 0)
+@if($letter_heads->count() > 0)
     <div class="table-responsive">
         <table class="table table-xl mb-0 thead-border-top-0 table-striped">
             <thead>
                 <tr>
-                    <th>{{ __('messages.invoice_number') }}</th>
-                    <th>{{ __('messages.date') }}</th>
-                    <th>{{ __('messages.customer') }}</th>
+                    <th>{{ __('Letter Head Number') }}</th>
+                    <th>{{ __('Created At') }}</th>
+{{--                    <th>{{ __('messages.customer') }}</th>--}}
                     <th>{{ __('messages.status') }}</th>
-                    <th>{{ __('messages.paid_status') }}</th>
-                    <th>{{ __('messages.amount_due') }}</th>
+{{--                    <th>{{ __('messages.paid_status') }}</th>--}}
+{{--                    <th>{{ __('messages.amount_due') }}</th>--}}
                     <th class="w-50px">{{ __('messages.view') }}</th>
                 </tr>
             </thead>
@@ -17,14 +17,11 @@
                     <tr>
                         <td class="h6">
                             <a href="{{ route('invoices.details', ['invoice' => $letter_head->id, 'company_uid' => $currentCompany->uid]) }}">
-                                {{ $letter_head->invoice_number }}
+                                {{ $letter_head->letter_head_number }}
                             </a>
                         </td>
                         <td class="h6">
-                            {{ $letter_head->formatted_invoice_date }}
-                        </td>
-                        <td class="h6">
-                            <a href="{{ route('customers.details', ['customer' => $letter_head->customer->id,'company_uid' => $currentCompany->uid]) }}">{{ $letter_head->customer->display_name }}</a>
+                            {{ $letter_head->created_at }}
                         </td>
                         <td class="h6">
                             @if($letter_head->status == 'DRAFT')
@@ -49,26 +46,26 @@
                                 </div>
                             @endif
                         </td>
+{{--                        <td class="h6">--}}
+{{--                            @if($letter_head->paid_status == 'UNPAID')--}}
+{{--                                <div class="badge badge-warning fs-0-9rem">--}}
+{{--                                    {{ $letter_head->paid_status }}--}}
+{{--                                </div>--}}
+{{--                            @elseif($letter_head->paid_status == 'PARTIALLY_PAID')--}}
+{{--                                <div class="badge badge-info fs-0-9rem">--}}
+{{--                                    {{ $letter_head->paid_status }}--}}
+{{--                                </div>--}}
+{{--                            @elseif($letter_head->paid_status == 'PAID')--}}
+{{--                                <div class="badge badge-success fs-0-9rem">--}}
+{{--                                    {{ $letter_head->paid_status }}--}}
+{{--                                </div>--}}
+{{--                            @endif--}}
+{{--                        </td>--}}
+{{--                        <td class="h6">jkljhlhnl--}}
+{{--                            {{ money($letter_head->due_amount, $letter_head->currency_code) }}--}}
+{{--                        </td>--}}
                         <td class="h6">
-                            @if($letter_head->paid_status == 'UNPAID')
-                                <div class="badge badge-warning fs-0-9rem">
-                                    {{ $letter_head->paid_status }}
-                                </div>
-                            @elseif($letter_head->paid_status == 'PARTIALLY_PAID')
-                                <div class="badge badge-info fs-0-9rem">
-                                    {{ $letter_head->paid_status }}
-                                </div>
-                            @elseif($letter_head->paid_status == 'PAID')
-                                <div class="badge badge-success fs-0-9rem">
-                                    {{ $letter_head->paid_status }}
-                                </div>
-                            @endif
-                        </td>
-                        <td class="h6">
-                            {{ money($letter_head->due_amount, $letter_head->currency_code) }}
-                        </td>
-                        <td class="h6">
-                            <a href="{{ route('invoices.details', ['invoice' => $letter_head->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-link">
+                            <a href="{{ route('letter-head.details', ['letter_head' => $letter_head->uid, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-link">
                                 <i class="ft-arrow-right text-warning" style="font-size: 15px"></i>
                             </a>
                         </td>

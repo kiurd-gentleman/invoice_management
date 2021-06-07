@@ -18,13 +18,13 @@
 
     <div class="content-header row">
         <div class="content-header-left  col-md-6 col-12 mb-2">
-            <h3 class="content-header-title">{{ __('messages.update_invoice') }}</h3>
+            <h3 class="content-header-title">{{ __('Letter Head Update') }}</h3>
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">{{get_system_setting('application_name')}}</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="{{ route('invoices', ['company_uid' => $currentCompany->uid]) }}" >{{ __('messages.invoices') }}</a>
+                        <li class="breadcrumb-item"><a href="{{ route('invoices', ['company_uid' => $currentCompany->uid]) }}" >{{ __('Letter Head') }}</a>
                         </li>
                         <li class="breadcrumb-item active">Edit
                         </li>
@@ -42,7 +42,7 @@
             <div class="col-md-12 ">
                 <div class="card ">
                     <div class="card-header">
-                        <h4 class="card-title" id="basic-layout-round-controls">{{ __('messages.update_invoice') }}</h4>
+                        <h4 class="card-title" id="basic-layout-round-controls">{{ __('Letter Head Update') }}</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">

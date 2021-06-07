@@ -24,7 +24,7 @@ class LetterHeadController extends Controller
         $currentCompany = $user->currentCompany();
 
         // Query LetterHeads by Company and Tab
-        $query = LetterHead::findByCompany($currentCompany->id)->orderBy('invoice_number');
+        $query = LetterHead::findByCompany($currentCompany->id)->orderBy('letter_head_number');
 //        if($request->tab == 'all') {
 //            $query = LetterHead::findByCompany($currentCompany->id)->orderBy('invoice_number');
 //            $tab = 'all';
@@ -47,7 +47,7 @@ class LetterHeadController extends Controller
             ->appends(request()->query());
 
         return view('application.letter_head.index', [
-            'invoices' => $letter_heads,
+            'letter_heads' => $letter_heads,
         ]);
 
     }
@@ -92,15 +92,35 @@ class LetterHeadController extends Controller
         $user = $request->user();
         $currentCompany = $user->currentCompany();
 
+//        dd($request->all());
         $insert = new LetterHead();
         $insert->uid = Str::random(10);
+        $insert->customer_id = auth()->id();
         $insert->company_id = $currentCompany->id;
-        $insert->letter_head_date = Date('Y-m-d');
-        $insert->letter_head_date = Date('Y-m-d');
-        $insert->header_image = $request->header_image;
-        $insert->footer_image = $request->footer_image;
+        $insert->status = LetterHead::STATUS_DRAFT;
+        $insert->letter_head_number = 'LH-'.Str::random(5);
+//        $insert->letter_head_date = Date('Y-m-d');
+//        $insert->letter_head_date = Date('Y-m-d');
+
+        //upload header image
+        if ($request->header_image) {
+            $request->validate(['header_image' => 'required|image|mimes:png,jpg,jpeg,JPEG,JPG|max:2048']);
+            $header_image_path = 'header_image-'. $user->id .'.'.$request->header_image->getClientOriginalExtension();
+            $path = $request->header_image->storeAs('header_images', $header_image_path , 'public_dir');
+//            $user->setSetting('header_image', '/uploads/'.$path);
+        }
+        //upload footer image
+        if ($request->footer_image) {
+            $request->validate(['footer_image' => 'required|image|mimes:png,jpg,jpeg,JPEG,JPG|max:2048']);
+            $footer_image_path = 'footer_image-'. $user->id .'.'.$request->footer_image->getClientOriginalExtension();
+            $path = $request->footer_image->storeAs('footer_images', $footer_image_path , 'public_dir');
+//            $user->setSetting('footer_image', '/uploads/'.$path);
+        }
+        $insert->header_image = $header_image_path;
+        $insert->footer_image = $footer_image_path;
         $insert->text = $request->text;
         $insert->save();
+        return redirect()->to(route('letter-head',$currentCompany->uid));
 
     }
 
@@ -110,9 +130,14 @@ class LetterHeadController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+
+        $letter_head = LetterHead::where('uid' , $request->letter_head)->firstOrFail();
+//        dd($letter_head);
+        return view('application.letter_head.details', [
+            'letter_head' => $letter_head,
+        ]);
     }
 
     /**

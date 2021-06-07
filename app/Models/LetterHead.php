@@ -6,6 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class LetterHead extends Model
 {
+    // Letter Head Statuses
+    const STATUS_DRAFT = 'DRAFT';
+    const STATUS_SENT = 'SENT';
+    const STATUS_VIEWED = 'VIEWED';
+    const STATUS_OVERDUE = 'OVERDUE';
+    const STATUS_COMPLETED = 'COMPLETED';
+
+    // Letter Head Statuses
+    const STATUS_UNPAID = 'UNPAID';
+    const STATUS_PARTIALLY_PAID = 'PARTIALLY_PAID';
+    const STATUS_PAID = 'PAID';
+
     public function scopeFindByCompany($query, $company_id)
     {
         $query->where('company_id', $company_id);
@@ -22,6 +34,21 @@ class LetterHead extends Model
     public function scopeFindByCustomer($query, $customer_id)
     {
         $query->where('customer_id', $customer_id);
+    }
+    public function customer()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function scopeActive($query)
+    {
+        $active_stats = [
+            self::STATUS_SENT,
+            self::STATUS_VIEWED,
+            self::STATUS_OVERDUE,
+            self::STATUS_COMPLETED,
+        ];
+        $query->whereIn('status', $active_stats);
     }
 
     public static function getNextLetterHeadNumber($company_id, $prefix)

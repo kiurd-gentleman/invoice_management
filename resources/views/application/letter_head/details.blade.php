@@ -8,7 +8,7 @@
 {{--            <nav aria-label="breadcrumb">--}}
 {{--                <ol class="breadcrumb mb-0">--}}
 {{--                    <li class="breadcrumb-item"><a href="#"><i class="material-icons icon-20pt">home</i></a></li>--}}
-{{--                    <li class="breadcrumb-item" aria-current="page"><a href="{{ route('invoices', ['company_uid' => $currentCompany->uid]) }}">{{ __('messages.invoices') }}</a></li>--}}
+{{--                    <li class="breadcrumb-item" aria-current="page"><a href="{{ route('letter-head', ['company_uid' => $currentCompany->uid]) }}">{{ __('messages.invoices') }}</a></li>--}}
 {{--                    <li class="breadcrumb-item active" aria-current="page">{{ __('messages.invoice_details') }}</li>--}}
 {{--                </ol>--}}
 {{--            </nav>--}}
@@ -17,15 +17,15 @@
 {{--    </div>--}}
     <div class="content-header row">
         <div class="content-header-left col-md-6 col-12 mb-2">
-            <h3 class="content-header-title">{{ __('messages.invoice_details') }}</h3>
+            <h3 class="content-header-title">{{ __('Letter Head ') }}</h3>
             <div class="row breadcrumbs-top">
                 <div class="breadcrumb-wrapper col-12">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">{{get_system_setting('application_name')}}</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="{{ route('invoices', ['company_uid' => $currentCompany->uid]) }}" >{{ __('messages.invoices') }}</a>
+                        <li class="breadcrumb-item"><a href="{{ route('invoices', ['company_uid' => $currentCompany->uid]) }}" >{{ __('Letter Head') }}</a>
                         </li>
-                        <li class="breadcrumb-item active">List
+                        <li class="breadcrumb-item active">Details
                         </li>
                     </ol>
                 </div>
@@ -40,7 +40,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title" id="basic-layout-round-controls">Invoice Details</h4>
+                        <h4 class="card-title" id="basic-layout-round-controls">Letter Head Details</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
@@ -57,38 +57,37 @@
                                 <div class="row">
                                     <div class="col-12 col-md-4">
                                         <p class="h2 pb-4">
-                                            Invoice No : #{{ $invoice->invoice_number }}
+                                            Letter No : #{{ $letter_head->letter_head_number }}
                                         </p>
                                     </div>
                                     <div class="col-12 col-md-8 text-right">
                                         <div class="btn-group " role="group">
-                                            <a href="{{ route('pdf.invoice', ['invoice' => $invoice->uid, 'download' => true]) }}" target="_blank" class="btn btn-sm btn-pinterest round">
+                                            <a href="{{ route('pdf.letter-head', ['letter_head' => $letter_head->uid, 'download' => true]) }}" target="_blank" class="btn btn-sm btn-pinterest round">
                                                 <i class="ft-download-cloud"></i>
                                                 <span>Download</span>
-
                                             </a>
-                                            <a href="{{ route('invoices.send', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-pinterest alert-confirm" data-alert-title="Are you sure?" data-alert-text="This action will send an email to customer.">
+                                            <a href="{{ route('letter-head.send', ['letter_head' => $letter_head->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-pinterest alert-confirm" data-alert-title="Are you sure?" data-alert-text="This action will send an email to customer.">
                                                 <i class="ft-share"></i>
                                                 <span>Send</span>
                                             </a>
-                                            <a href="{{ route('payments.create', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" target="_blank" class="btn btn-sm   btn-pinterest">
+                                            <a href="{{ route('payments.create', ['letter_head' => $letter_head->id, 'company_uid' => $currentCompany->uid]) }}" target="_blank" class="btn btn-sm   btn-pinterest">
                                                 <i class="ft-credit-card"></i>
                                                 <span>Payment</span>
 
                                             </a>
-                                            <a href="{{ route('invoices.edit', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-pinterest">
+                                            <a href="{{ route('letter-head.edit', ['letter_head' => $letter_head->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-pinterest">
                                                 <i class="ft-edit"></i>
                                                 <span>Edit</span>
                                             </a>
-                                            <a href="{{ route('invoices.mark', ['invoice' => $invoice->id, 'status' => 'paid', 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-pinterest">
+                                            <a href="{{ route('letter-head.mark', ['letter_head' => $letter_head->id, 'status' => 'paid', 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-pinterest">
                                                 <i class="ft-check"></i>
                                                 <span>{{ __('messages.mark_paid') }}</span>
                                             </a>
-                                            <a href="{{ route('invoices.mark', ['invoice' => $invoice->id, 'status' => 'sent', 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-pinterest">
+                                            <a href="{{ route('letter-head.mark', ['letter_head' => $letter_head->id, 'status' => 'sent', 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-pinterest">
                                                 <i class="ft-check-circle"></i>
                                                 <span>{{ __('messages.mark_sent') }}</span>
                                             </a>
-                                            <a href="{{ route('invoices.delete', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-pinterest round">
+                                            <a href="{{ route('letter-head.delete', ['letter_head' => $letter_head->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-sm btn-pinterest round">
                                                 <i class="ft-trash"></i>
                                                 <span>{{ __('messages.delete') }}</span>
                                             </a>
@@ -98,16 +97,16 @@
 {{--                                                    {{ __('messages.more') }} <span class="caret"></span>--}}
 {{--                                                </button>--}}
 {{--                                                <div class="dropdown-menu dropdown-menu-right">--}}
-{{--                                                    <a href="{{ route('invoices.mark', ['invoice' => $invoice->id, 'status' => 'paid', 'company_uid' => $currentCompany->uid]) }}" class="dropdown-item">{{ __('messages.mark_paid') }}</a>--}}
-{{--                                                    <a href="{{ route('invoices.mark', ['invoice' => $invoice->id, 'status' => 'sent', 'company_uid' => $currentCompany->uid]) }}" class="dropdown-item">{{ __('messages.mark_sent') }}</a>--}}
+{{--                                                    <a href="{{ route('letter-head.mark', ['letter_head' => $letter_head->id, 'status' => 'paid', 'company_uid' => $currentCompany->uid]) }}" class="dropdown-item">{{ __('messages.mark_paid') }}</a>--}}
+{{--                                                    <a href="{{ route('letter-head.mark', ['letter_head' => $letter_head->id, 'status' => 'sent', 'company_uid' => $currentCompany->uid]) }}" class="dropdown-item">{{ __('messages.mark_sent') }}</a>--}}
 {{--                                                    <hr>--}}
-{{--                                                    <a href="{{ route('invoices.delete', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" class="dropdown-item text-danger delete-confirm">{{ __('messages.delete') }}</a>--}}
+{{--                                                    <a href="{{ route('letter-head.delete', ['letter_head' => $letter_head->id, 'company_uid' => $currentCompany->uid]) }}" class="dropdown-item text-danger delete-confirm">{{ __('messages.delete') }}</a>--}}
 {{--                                                </div>--}}
 {{--                                            </div>--}}
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        @if($invoice->status == 'DRAFT')
+                                        @if($letter_head->status == 'DRAFT')
 {{--                                            <div class="alert alert-soft-dark d-flex align-items-center" role="alert">--}}
 {{--                                                <i class="material-icons mr-3">access_time</i>--}}
 {{--                                                <div class="text-body"><strong>{{ __('messages.status') }} : </strong> {{ __('messages.draft') }}</div>--}}
@@ -119,7 +118,7 @@
                                                 </button>
                                                 <strong>{{ __('messages.status') }} : </strong> {{ __('messages.draft') }}
                                             </div>
-                                        @elseif($invoice->status == 'SENT')
+                                        @elseif($letter_head->status == 'SENT')
 {{--                                            <div class="alert alert-soft-info d-flex align-items-center" role="alert">--}}
 {{--                                                <i class="material-icons mr-3">send</i>--}}
 {{--                                                <div class="text-body"><strong>{{ __('messages.status') }} : </strong> {{ __('messages.mailed_to_customer') }}</div>--}}
@@ -131,7 +130,7 @@
                                                 </button>
                                                 <strong><strong>{{ __('messages.status') }} : </strong> {{ __('messages.mailed_to_customer') }}
                                             </div>
-                                        @elseif($invoice->status == 'VIEWED')
+                                        @elseif($letter_head->status == 'VIEWED')
 {{--                                            <div class="alert alert-soft-primary d-flex align-items-center" role="alert">--}}
 {{--                                                <i class="material-icons mr-3">visibility</i>--}}
 {{--                                                <div class="text-body"><strong>{{ __('messages.status') }} : </strong> {{ __('messages.viewed_by_customer') }}</div>--}}
@@ -143,7 +142,7 @@
                                                 </button>
                                                 <strong>{{ __('messages.status') }} : </strong> {{ __('messages.viewed_by_customer') }}
                                             </div>
-                                        @elseif($invoice->status == 'OVERDUE')
+                                        @elseif($letter_head->status == 'OVERDUE')
 {{--                                            <div class="alert alert-soft-danger d-flex align-items-center" role="alert">--}}
 {{--                                                <i class="material-icons mr-3">schedule</i>--}}
 {{--                                                <div class="text-body"><strong>{{ __('messages.status') }} : </strong> {{ __('messages.overdue') }}</div>--}}
@@ -156,7 +155,7 @@
                                                 </button>
                                                 <strong>{{ __('messages.status') }} : </strong> {{ __('messages.overdue') }}
                                             </div>
-                                        @elseif($invoice->status == 'COMPLETED')
+                                        @elseif($letter_head->status == 'COMPLETED')
 {{--                                            <div class="alert alert-soft-success d-flex align-items-center" role="alert">--}}
 {{--                                                <i class="material-icons mr-3">done</i>--}}
 {{--                                                <div class="text-body"><strong>{{ __('messages.status') }} : </strong> {{ __('messages.payment_received') }}</div>--}}
@@ -172,7 +171,7 @@
                                     </div>
                                 </div>
                                 <div class="pdf-iframe">
-                                    <iframe src="{{ route('pdf.invoice', $invoice->uid) }}" frameborder="0" style="width: 100%; height: 100vh"></iframe>
+                                    <iframe src="{{ route('pdf.letter-head', $letter_head->uid) }}" frameborder="0" style="width: 100%; height: 100vh"></iframe>
                                 </div>
                             </div>
                         </div>
@@ -188,24 +187,24 @@
 {{--    <div class="row">--}}
 {{--        <div class="col-12 col-md-4">--}}
 {{--            <p class="h2 pb-4">--}}
-{{--                #{{ $invoice->invoice_number }}--}}
+{{--                #{{ $letter_head->letter_head_number }}--}}
 {{--            </p>--}}
 {{--        </div>--}}
 {{--        <div class="col-12 col-md-8 text-right">--}}
 {{--            <div class="btn-group mb-2">--}}
-{{--                <a href="{{ route('pdf.invoice', ['invoice' => $invoice->uid, 'download' => true]) }}" target="_blank" class="btn btn-light">--}}
+{{--                <a href="{{ route('pdf.letter_head', ['letter_head' => $letter_head->uid, 'download' => true]) }}" target="_blank" class="btn btn-light">--}}
 {{--                    <i class="material-icons">cloud_download</i>--}}
 {{--                    {{ __('messages.download') }}--}}
 {{--                </a>--}}
-{{--                <a href="{{ route('invoices.send', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-light alert-confirm" data-alert-title="Are you sure?" data-alert-text="This action will send an email to customer.">--}}
+{{--                <a href="{{ route('letter-head.send', ['letter_head' => $letter_head->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-light alert-confirm" data-alert-title="Are you sure?" data-alert-text="This action will send an email to customer.">--}}
 {{--                    <i class="material-icons">send</i>--}}
 {{--                    {{ __('messages.send_email') }}--}}
 {{--                </a>--}}
-{{--                <a href="{{ route('payments.create', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" target="_blank" class="btn btn-light">--}}
+{{--                <a href="{{ route('payments.create', ['letter_head' => $letter_head->id, 'company_uid' => $currentCompany->uid]) }}" target="_blank" class="btn btn-light">--}}
 {{--                    <i class="material-icons">payment</i>--}}
 {{--                    {{ __('messages.enter_payment') }}--}}
 {{--                </a>--}}
-{{--                <a href="{{ route('invoices.edit', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-light">--}}
+{{--                <a href="{{ route('letter-head.edit', ['letter_head' => $letter_head->id, 'company_uid' => $currentCompany->uid]) }}" class="btn btn-light">--}}
 {{--                    <i class="material-icons">edit</i>--}}
 {{--                    {{ __('messages.edit') }}--}}
 {{--                </a>--}}
@@ -214,36 +213,36 @@
 {{--                        {{ __('messages.more') }} <span class="caret"></span>--}}
 {{--                    </button>--}}
 {{--                    <div class="dropdown-menu dropdown-menu-right">--}}
-{{--                        <a href="{{ route('invoices.mark', ['invoice' => $invoice->id, 'status' => 'paid', 'company_uid' => $currentCompany->uid]) }}" class="dropdown-item">{{ __('messages.mark_paid') }}</a>--}}
-{{--                        <a href="{{ route('invoices.mark', ['invoice' => $invoice->id, 'status' => 'sent', 'company_uid' => $currentCompany->uid]) }}" class="dropdown-item">{{ __('messages.mark_sent') }}</a>--}}
+{{--                        <a href="{{ route('letter-head.mark', ['letter_head' => $letter_head->id, 'status' => 'paid', 'company_uid' => $currentCompany->uid]) }}" class="dropdown-item">{{ __('messages.mark_paid') }}</a>--}}
+{{--                        <a href="{{ route('letter-head.mark', ['letter_head' => $letter_head->id, 'status' => 'sent', 'company_uid' => $currentCompany->uid]) }}" class="dropdown-item">{{ __('messages.mark_sent') }}</a>--}}
 {{--                        <hr>--}}
-{{--                        <a href="{{ route('invoices.delete', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" class="dropdown-item text-danger delete-confirm">{{ __('messages.delete') }}</a>--}}
+{{--                        <a href="{{ route('letter-head.delete', ['letter_head' => $letter_head->id, 'company_uid' => $currentCompany->uid]) }}" class="dropdown-item text-danger delete-confirm">{{ __('messages.delete') }}</a>--}}
 {{--                    </div>--}}
 {{--                </div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
 {{--        <div class="col-12">--}}
-{{--            @if($invoice->status == 'DRAFT')--}}
+{{--            @if($letter_head->status == 'DRAFT')--}}
 {{--                <div class="alert alert-soft-dark d-flex align-items-center" role="alert">--}}
 {{--                    <i class="material-icons mr-3">access_time</i>--}}
 {{--                    <div class="text-body"><strong>{{ __('messages.status') }} : </strong> {{ __('messages.draft') }}</div>--}}
 {{--                </div>--}}
-{{--            @elseif($invoice->status == 'SENT')--}}
+{{--            @elseif($letter_head->status == 'SENT')--}}
 {{--                <div class="alert alert-soft-info d-flex align-items-center" role="alert">--}}
 {{--                    <i class="material-icons mr-3">send</i>--}}
 {{--                    <div class="text-body"><strong>{{ __('messages.status') }} : </strong> {{ __('messages.mailed_to_customer') }}</div>--}}
 {{--                </div>--}}
-{{--            @elseif($invoice->status == 'VIEWED')--}}
+{{--            @elseif($letter_head->status == 'VIEWED')--}}
 {{--                <div class="alert alert-soft-primary d-flex align-items-center" role="alert">--}}
 {{--                    <i class="material-icons mr-3">visibility</i>--}}
 {{--                    <div class="text-body"><strong>{{ __('messages.status') }} : </strong> {{ __('messages.viewed_by_customer') }}</div>--}}
 {{--                </div>--}}
-{{--            @elseif($invoice->status == 'OVERDUE')--}}
+{{--            @elseif($letter_head->status == 'OVERDUE')--}}
 {{--                <div class="alert alert-soft-danger d-flex align-items-center" role="alert">--}}
 {{--                    <i class="material-icons mr-3">schedule</i>--}}
 {{--                    <div class="text-body"><strong>{{ __('messages.status') }} : </strong> {{ __('messages.overdue') }}</div>--}}
 {{--                </div>--}}
-{{--            @elseif($invoice->status == 'COMPLETED')--}}
+{{--            @elseif($letter_head->status == 'COMPLETED')--}}
 {{--                <div class="alert alert-soft-success d-flex align-items-center" role="alert">--}}
 {{--                    <i class="material-icons mr-3">done</i>--}}
 {{--                    <div class="text-body"><strong>{{ __('messages.status') }} : </strong> {{ __('messages.payment_received') }}</div>--}}
@@ -252,6 +251,6 @@
 {{--        </div>--}}
 {{--    </div>--}}
 {{--    <div class="pdf-iframe">--}}
-{{--        <iframe src="{{ route('pdf.invoice', $invoice->uid) }}" frameborder="0"></iframe>--}}
+{{--        <iframe src="{{ route('pdf.letter_head', $letter_head->uid) }}" frameborder="0"></iframe>--}}
 {{--    </div>--}}
 @endsection
