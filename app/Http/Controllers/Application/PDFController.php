@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Application;
 use App\Http\Controllers\Controller;
 use App\Models\Invoice;
 use App\Models\Estimate;
+use App\Models\LetterHead;
 use App\Models\Payment;
 use Illuminate\Support\Facades\Crypt;
 use PDF;
@@ -19,6 +20,29 @@ class PDFController extends Controller
      *
      * @return pdf
      */
+
+    public function letter_head(Request $request)
+    {
+//        dump($request->letter_head);
+        $letter_head = LetterHead::findByUid($request->letter_head);
+//        dump($letter_head);
+
+        $template = $letter_head->company->getSetting('letter_head_template');
+//        dd($template);
+//        return view('pdf.invoice.template_1' ,compact('invoice'));
+        $pdf = PDF::loadView('pdf.letter_head.'.$template, ['letter_head' => $letter_head]);
+
+
+        //Render or Download
+//        $pdf =0;
+        if($request->has('download')) {
+            return $pdf->download($letter_head->letter_head_number . '-letter_head.pdf');
+        } else {
+            return $pdf->stream('letter_head.pdf');
+        }
+    }
+
+
     public function invoice(Request $request)
     {
 //        dd($request->invoice);

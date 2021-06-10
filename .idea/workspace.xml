@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdecc018-12f8-43c1-bfa3-6f2a155a7533" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Application/LetterHeadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Application/LetterHeadController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/LetterHead.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/LetterHead.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_27_115318_create_letter_heads_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_27_115318_create_letter_heads_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/letter_head/_filters.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/letter_head/_filters.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/letter_head/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/letter_head/_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/letter_head/_table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/letter_head/_table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/letter_head/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/letter_head/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/letter_head/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/letter_head/details.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/letter_head/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/letter_head/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/application/letter_head/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/application/letter_head/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="cdecc018-12f8-43c1-bfa3-6f2a155a7533" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -223,7 +210,7 @@
       <workItem from="1622531199716" duration="14950000" />
       <workItem from="1622613426474" duration="9391000" />
       <workItem from="1622698995220" duration="2464000" />
-      <workItem from="1623049807493" duration="15134000" />
+      <workItem from="1623049807493" duration="15632000" />
     </task>
     <servers />
   </component>

@@ -32,6 +32,7 @@ class CompanySetting extends Model
         'financial_month_ends' => '12',
         'invoice_prefix' => 'INV',
         'estimate_prefix' => 'EST',
+        'Letter_head_prefix' => 'LH', //letter head prefix
         'payment_prefix' => 'PAY',
         'tax_per_item' => false,
         'discount_per_item' => false,
@@ -67,6 +68,7 @@ class CompanySetting extends Model
         'invoice_template' => 'template_1',
         'estimate_template' => 'template_1',
         'payment_template' => 'template_1',
+        'letter_head_template' => 'template_1',
         'mollie_api_key' => '',
         'mollie_test_mode' => false,
         'mollie_active' => false,

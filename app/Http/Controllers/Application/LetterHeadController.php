@@ -91,14 +91,16 @@ class LetterHeadController extends Controller
     {
         $user = $request->user();
         $currentCompany = $user->currentCompany();
+        $letter_head_prefix = $currentCompany->getSetting('Letter_head_prefix');
+        $next_invoice_number = LetterHead::getNextLetterHeadNumber($currentCompany->id, $letter_head_prefix);
 
-//        dd($request->all());
+        dd($next_invoice_number);
         $insert = new LetterHead();
         $insert->uid = Str::random(10);
         $insert->customer_id = auth()->id();
         $insert->company_id = $currentCompany->id;
         $insert->status = LetterHead::STATUS_DRAFT;
-        $insert->letter_head_number = 'LH-'.Str::random(5);
+        $insert->letter_head_number = $next_invoice_number;
 //        $insert->letter_head_date = Date('Y-m-d');
 //        $insert->letter_head_date = Date('Y-m-d');
 
@@ -116,8 +118,8 @@ class LetterHeadController extends Controller
             $path = $request->footer_image->storeAs('footer_images', $footer_image_path , 'public_dir');
 //            $user->setSetting('footer_image', '/uploads/'.$path);
         }
-        $insert->header_image = $header_image_path;
-        $insert->footer_image = $footer_image_path;
+        $insert->header_image = 'uploads/header_images/'.$header_image_path;
+        $insert->footer_image = 'uploads/footer_images/'.$footer_image_path;
         $insert->text = $request->text;
         $insert->save();
         return redirect()->to(route('letter-head',$currentCompany->uid));
