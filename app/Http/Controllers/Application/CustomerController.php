@@ -74,7 +74,7 @@ class CustomerController extends Controller
 //        dump($currentCompany);
 //        dump($currentCompany->subscription('main'));
         // Redirect back
-        $canAdd = $currentCompany->subscription('main')->canUseFeature('customers');
+        $canAdd = $user->subscription('main')->canUseFeature('customers');
 //        dd($canAdd);
         if (!$canAdd) {
             session()->flash('alert-danger', __('messages.you_have_reached_the_limit'));
@@ -101,7 +101,7 @@ class CustomerController extends Controller
         $customer->addCustomFields($request->custom_fields);
 
         // Record product
-        $currentCompany->subscription('main')->recordFeatureUsage('customers');
+        $user->subscription('main')->recordFeatureUsage('customers');
 
         session()->flash('alert-success', __('messages.customer_added'));
         return redirect()->route('customers.details', ['customer' => $customer->id, 'company_uid' => $currentCompany->uid]);
@@ -210,7 +210,7 @@ class CustomerController extends Controller
         };
 
         // Reduce feature
-        $currentCompany->subscription('main')->reduceFeatureUsage('customers');
+        $user->subscription('main')->reduceFeatureUsage('customers');
 
         // Delete Customer's Estimates from Database
         if ($customer->estimates()->exists()) {

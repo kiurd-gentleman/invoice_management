@@ -92,13 +92,13 @@ class ProductController extends Controller
     public function store(Store $request)
     {
         $user = $request->user();
-        dd($user->currentCompany());
+//        dd($user->currentCompany());
         $currentCompany = (object) Session::get('user_current_company');
 
-//        dd($currentCompany);
+//        dd($user->subscription('main')->canUseFeature('products'));
 
         // Redirect back
-        $canAdd = $currentCompany->subscription('main')->canUseFeature('products');
+        $canAdd = $user->subscription('main')->canUseFeature('products');
         if (!$canAdd) {
             session()->flash('alert-danger', __('messages.you_have_reached_the_limit'));
             return redirect()->route('products', ['user_uid'=>auth()->user()->uid,'company_uid' => Session::get('user_current_company')['uid']]);
@@ -126,7 +126,7 @@ class ProductController extends Controller
         }
 
         // Record product
-        $currentCompany->subscription('main')->recordFeatureUsage('products');
+        $user->subscription('main')->recordFeatureUsage('products');
 
         session()->flash('alert-success', __('messages.product_added'));
         return redirect()->route('products', ['company_uid' => $currentCompany->uid]);
@@ -226,7 +226,7 @@ class ProductController extends Controller
         $product->delete();
 
         // Reduce feature
-        $currentCompany->subscription('main')->reduceFeatureUsage('products');
+        $user->subscription('main')->reduceFeatureUsage('products');
 
         session()->flash('alert-success', __('messages.product_deleted'));
         return redirect()->route('products', ['company_uid' => $currentCompany->uid]);

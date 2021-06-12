@@ -369,56 +369,29 @@
 </head>
 
 <body>
-<header id="header">
-    <div class="form-group required">
-        <div class="w-100 h-100 p-1 bg-white">
-            <small>Header Image</small>
-            <div class="p-1 w-100 h-50  border rounded d-flex justify-content-center"  id="input_image"  style="border: 2px solid !important; border-style: dashed !important ; color:#4e2884 ">
-                <i class="ft-upload display-1" id="icon"></i>
-                <img src="{{ isset($letter_head->header_image) ? public_path($letter_head->header_image) :  ''}}" id="show_header_image" class="p-1" style="display: none; height: 85px; width: 100%">
-            </div>
-            <input id="header_image" type="file" name="header_image" style="display: none!important;" />
-        </div>
-    </div>
-</header>
-
-<div class="header-container">
-    <table width="100%">
-{{--        <tr>--}}
-{{--            <td class="text-center">--}}
-{{--                @if(get_company_setting('avatar', $letter_head->company->id))--}}
-{{--                    <img class="header-logo" src="{{ public_path($letter_head->company->avatar) }}" alt="{{ $letter_head->company->name }}">--}}
-{{--                @else--}}
-{{--                    <h2 class="header-logo">{{$letter_head->company->name}}</h2>--}}
-{{--                @endif--}}
-{{--            </td>--}}
-{{--        </tr>--}}
-    </table>
-
+<body>
+<h1>Clients report</h1>
+<!-- Custom HTML header -->
+<div id="header">
+    <h2>Annual Report of our Company</h2>
+</div>  <!-- Custom HTML footer -->
+<div id="footer">
+    <h2>Address: William Road</h2>
+    <span class="custom-footer-page-number">Number: </span>
 </div>
-<div class="content-wrapper">
-    <div style="position: relative; clear: both;padding: 30px">
-        <hr class="header-bottom-divider" style="border: 0.620315px solid #E8E8E8;" />
-        <div class="form-group required">
-            {{--                <small ><a href="#">Preview</a></small>--}}
-            {{--                <small><a href="JavaScript:void(0)" onclick="save()">save</a></small>--}}
-            <div class="w-100 h-100 p-1 bg-white">
-                {!! $letter_head->text !!}
-            </div>
-        </div>
-    </div>
+
+<#assign clients = Root.bands.Clients />
+
+<#list clients as client>
+<!-- New page for each client  -->
+<div class="custom-page-start" style="page-break-before: always;">
+    <h2>Client</h2>
+    <p>Name: ${client.fields.title}</p>
+    <p>Summary: ${client.fields.summary}</p>
 </div>
-<footer id="footer">
-    <div class="form-group required">
-        <div class="w-100 h-100 p-1 bg-white">
-            <small>Footer Image</small>
-            <div class="p-1 h-50  border rounded d-flex justify-content-center"  id="footer_input_image" style="border: 2px solid !important; border-style: dashed !important ; color:#4e2884">
-                <i class="ft-upload display-4" id="footer_icon"></i>
-                <img src="{{ isset($letter_head->footer_image) ? public_path($letter_head->footer_image) :''}}" id="show_footer_image" class="p-1" style="display: none; height: 60px; width: 100%">
-            </div>
-        </div>
-    </div>
-</footer>
+</#list>
+</body>
+
 </body>
 
 </html>

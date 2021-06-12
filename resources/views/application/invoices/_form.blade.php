@@ -1,7 +1,7 @@
 <div class="card-form p-5">
     <div class="row no-gutters ">
 
-        
+
 
         <div class="col-md-4">
             <div class="form-group required">
@@ -51,7 +51,7 @@
                 <div class="form-group required select-container">
                     <label for="customer">{{ __('messages.customer') }}</label>
                     <div class="input-group">
-                        <select id="customer" name="customer_id" data-toggle="" class="form-control " >
+                        <select id="customer" name="customer_id" data-toggle="" class="form-control select2 " >
                             <option disabled selected>{{ __('messages.select_customer') }}</option>
                             @if($invoice->customer_id)
                                 <option value="{{ $invoice->customer_id }}"
@@ -68,7 +68,7 @@
                             <a class="btn btn-primary" href="{{ route('customers.create', ['company_uid' => $currentCompany->uid]) }}"><i class="ft-plus"></i></a>
                         </div>
                     </div>
-    
+
                 </div>
                 <div id="address_component" class="form-row d-none">
                     <div class="col-6">

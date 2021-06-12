@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdecc018-12f8-43c1-bfa3-6f2a155a7533" name="Default Changelist" comment="" />
+    <list default="true" id="cdecc018-12f8-43c1-bfa3-6f2a155a7533" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/resources/views/pdf/letter_head/template_1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/letter_head/template_1.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,20 +164,23 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/application" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/pdf/letter_head" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\app\Http\Controllers\Application\Settings" />
-      <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\app\Http\Controllers\Application" />
-      <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\resources\views\application\company\layouts" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\resources\views\pdf\letter_head" />
       <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\resources\views\application" />
       <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\resources\views\application\company" />
+      <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\resources\views\application\company\layouts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\public\uploads" />
+      <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\public\uploads\letter_head" />
+      <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\app\Http\Controllers\Application\Settings" />
+      <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\app\Http\Controllers\Application" />
       <recent name="D:\project\invoice-generator\codecanyon-29916758-foxtrot-saas-customer-invoice-and-expense-management-system\foxtrot-saas-master\resources\views\application\company\layouts" />
     </key>
   </component>
@@ -211,6 +216,7 @@
       <workItem from="1622613426474" duration="9391000" />
       <workItem from="1622698995220" duration="2464000" />
       <workItem from="1623049807493" duration="15632000" />
+      <workItem from="1623304831354" duration="17280000" />
     </task>
     <servers />
   </component>
@@ -218,11 +224,11 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="636" y="224" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1623060978640">
+    <state x="636" y="224" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1623313120190">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1621239811351" />
-    <state x="636" y="224" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1623060978640" />
+    <state x="636" y="224" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1623313120190" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1622542316118">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -72,7 +72,7 @@
                 <div class="col">
                     <div class="form-group required">
                         <label for="billing[country_id]">{{ __('messages.country') }}</label>
-                        <select id="billing[country_id]" name="billing[country_id]" data-toggle="select" class="form-control select2-hidden-accessible" data-select2-id="billing[country_id]" required>
+                        <select id="billing[country_id]" name="billing[country_id]" data-toggle="select" class="form-control select2" data-select2-id="billing[country_id]" required>
                             <option disabled selected>{{ __('messages.select_country') }}</option>
                             @foreach(get_countries_select2_array() as $option)
                                 <option value="{{ $option['id'] }}" {{ $vendor->billing->country_id == $option['id'] ? 'selected=""' : '' }}>{{ $option['text'] }}</option>

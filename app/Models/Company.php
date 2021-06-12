@@ -13,6 +13,7 @@ class Company extends Model
     use UUIDTrait;
 
 
+
     /**
      * The attributes that are mass assignable.
      *
