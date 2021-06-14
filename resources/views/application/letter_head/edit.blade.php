@@ -24,7 +24,7 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">{{get_system_setting('application_name')}}</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="{{ route('invoices', ['company_uid' => $currentCompany->uid]) }}" >{{ __('Letter Head') }}</a>
+                        <li class="breadcrumb-item"><a href="{{ route('letter-head', ['company_uid' => $currentCompany->uid]) }}" >{{ __('Letter Head') }}</a>
                         </li>
                         <li class="breadcrumb-item active">Edit
                         </li>
@@ -56,11 +56,11 @@
                     <div class="card-content collapse show">
                         <div class="card-body">
 
-                                <form action="{{ route('invoices.update', ['invoice' => $invoice->id, 'company_uid' => $currentCompany->uid]) }}" method="POST">
+                                <form action="{{ route('letter-head.update', ['letter_head' => $letter_head->id, 'company_uid' => $currentCompany->uid]) }}" method="POST">
                                     @include('layouts._form_errors')
                                     @csrf
 
-                                    @include('application.invoices._form')
+                                    @include('application.letter_head._form')
                                 </form>
 
                         </div>

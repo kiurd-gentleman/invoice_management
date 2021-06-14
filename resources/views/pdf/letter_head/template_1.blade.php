@@ -6,6 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style type="text/css">
         /* -- Base -- */
+
         body {
             font-family: "DejaVu Sans";
         }
@@ -16,12 +17,11 @@
             margin-top: 50px;
         }
 
-        .text-center {
-            text-align: center
+        table {
+            border-collapse: collapse;
         }
 
         hr {
-            margin: 0 30px 0 30px;
             color: rgba(0, 0, 0, 0.2);
             border: 0.5px solid #EAF1FB;
         }
@@ -32,100 +32,63 @@
 
         /* -- Header -- */
 
-        .header-bottom-divider {
-            color: rgba(0, 0, 0, 0.2);
-            position: absolute;
-            top: 90px;
-            left: 0px;
-            width: 100%;
-        }
-
         .header-container {
-            position: absolute;
+            margin-top: -30px;
             width: 100%;
-            height: 90px;
-            left: 0px;
-            top: -50px;
+            padding: 0px 30px;
         }
-
         .header-logo {
             height: 50px;
-            margin-top: 20px;
             text-transform: capitalize;
-            color: {{$letter_head->company->getSetting('invoice_color')}};
+            padding-top: 0px;
+            color: black;
         }
-
-        .header {
-            font-size: 20px;
-            color: rgba(0, 0, 0, 0.7);
-        }
-
-        .content-wrapper {
-            display: block;
-            margin-top: 0px;
-            padding-top: 16px;
-            padding-bottom: 20px;
-        }
-
         .company-address-container {
-            padding-top: 15px;
-            padding-left: 30px;
-            float: left;
-            width: 30%;
+            width: 50%;
             text-transform: capitalize;
+            padding-left: 80px;
             margin-bottom: 2px;
         }
-
-        .company-address-container h1 {
-            font-size: 15px;
-            line-height: 22px;
-            letter-spacing: 0.05em;
-            margin-bottom: 0px;
-            margin-top: 10px;
-        }
-
         .company-address {
-            margin-top: 2px;
-            text-align: left;
+            margin-top: 12px;
             font-size: 12px;
             line-height: 15px;
             color: #595959;
-            width: 280px;
             word-wrap: break-word;
         }
 
-        .invoice-details-container {
-            float: right;
-            padding: 10px 30px 0 0;
+        /* -- Content Wrapper  */
+
+        .content-wrapper {
+            display: block;
+            padding-top: 0px;
+            padding-bottom: 20px;
         }
 
-        .attribute-label {
-            font-size: 12px;
-            line-height: 18px;
-            padding-right: 40px;
-            text-align: left;
-            color: #55547A;
-        }
-
-        .attribute-value {
-            font-size: 12px;
-            line-height: 18px;
-            text-align: right;
+        .customer-address-container {
+            display: block;
+            float: left;
+            width: 45%;
+            padding: 10px 0 0 30px;
         }
 
         /* -- Shipping -- */
-
         .shipping-address-container {
-            float: right;
-            padding-left: 40px;
-            width: 160px;
+            float:right;
+            display: block;
         }
+
+        .shipping-address-container--left {
+            float:left;
+            display: block;
+            padding-left: 0;
+        }
+
         .shipping-address {
-            font-size: 12px;
+            font-size: 10px;
             line-height: 15px;
             color: #595959;
-            padding: 45px 0px 0px 40px;
-            margin: 0px;
+            margin-top: 5px;
             width: 160px;
             word-wrap: break-word;
         }
@@ -133,35 +96,38 @@
         /* -- Billing -- */
 
         .billing-address-container {
-            padding-top: 50px;
+            display: block;
             float: left;
-            padding-left: 30px;
-        }
-
-        .billing-address-label {
-            font-size: 12px;
-            line-height: 18px;
-            padding: 0px;
-            margin-top: 27px;
-            margin-bottom: 0px;
-        }
-
-        .billing-address-name {
-            max-width: 160px;
-            font-size: 15px;
-            line-height: 22px;
-            padding: 0px;
-            margin: 0px;
         }
 
         .billing-address {
-            font-size: 12px;
+            font-size: 10px;
             line-height: 15px;
             color: #595959;
-            padding: 45px 0px 0px 30px;
-            margin: 0px;
+            margin-top: 5px;
             width: 160px;
             word-wrap: break-word;
+        }
+
+        /*  -- invoice Details -- */
+
+        .invoice-details-container {
+            display: block;
+            float: right;
+            padding: 10px 30px 0 0;
+        }
+
+        .attribute-label {
+            font-size: 12px;
+            line-height: 18px;
+            text-align: left;
+            color: #55547A
+        }
+
+        .attribute-value {
+            font-size: 12px;
+            line-height: 18px;
+            text-align: right;
         }
 
         /* -- Items Table -- */
@@ -182,7 +148,7 @@
             text-align: center;
             color: rgba(0, 0, 0, 0.85);
             padding: 5px;
-            color: {{$letter_head->company->getSetting('invoice_color')}};
+            color: #55547A;
         }
 
         tr.item-table-heading-row th {
@@ -210,14 +176,18 @@
             line-height: 12px;
         }
 
+        .item-cell-table-hr {
+            margin: 0 30px 0 30px;
+        }
+
         /* -- Total Display Table -- */
 
         .total-display-container {
             padding: 0 25px;
         }
 
+
         .total-display-table {
-            border-top: none;
             box-sizing: border-box;
             page-break-inside: avoid;
             page-break-before: auto;
@@ -227,7 +197,7 @@
         }
 
         .total-table-attribute-label {
-            font-size: 13px;
+            font-size: 12px;
             color: #55547A;
             text-align: left;
             padding-left: 10px;
@@ -236,7 +206,7 @@
         .total-table-attribute-value {
             font-weight: bold;
             text-align: right;
-            font-size: 13px;
+            font-size: 12px;
             color: #040405;
             padding-right: 10px;
             padding-top: 2px;
@@ -258,7 +228,6 @@
         }
 
         /* -- Notes -- */
-
         .notes {
             font-size: 12px;
             color: #595959;
@@ -283,7 +252,7 @@
         /* -- Helpers -- */
 
         .text-primary {
-            color: {{$letter_head->company->getSetting('invoice_color')}};
+            color: red;
         }
 
         .text-center {
@@ -311,12 +280,15 @@
             padding-top: 8px;
             padding-bottom: 8px;
         }
+
         .py-3 {
             padding: 3px 0;
         }
+
         .pr-20 {
             padding-right: 20px;
         }
+
         .pr-10 {
             padding-right: 10px;
         }
@@ -324,74 +296,72 @@
         .pl-20 {
             padding-left: 20px;
         }
+
         .pl-10 {
             padding-left: 10px;
         }
+
         .pl-0 {
             padding-left: 0;
         }
+
         .mb-0 {
             margin-top: 0px;
             margin-bottom: 0px;
             padding-bottom: 0px;
         }
-        /*#header {*/
-        /*    position: fixed;*/
-        /*    width: 100%;*/
-        /*    top: 0;*/
-        /*    left: 0;*/
-        /*    right: 0;*/
-        /*}*/
-        /*#footer {*/
-        /*    position: fixed;*/
-        /*    width: 100%;*/
-        /*    bottom: 0;*/
-        /*    left: 0;*/
-        /*    right: 0;*/
-        /*}*/
-        body {
-            font: 12pt Georgia, "Times New Roman", Times, serif;
-            line-height: 1.3;}
-        @page {
-            /* switch to landscape */
-            size: landscape;
-            /* set page margins */
-            margin: 0.5cm;
-            /* Default footers */
-            @bottom-left {
-                content: "Department of Strategy";
-            }
-            @bottom-right {
-                content: counter(page) " of " counter(pages);
-            }
-        }
     </style>
 </head>
 
 <body>
-<body>
-<h1>Clients report</h1>
-<!-- Custom HTML header -->
-<div id="header">
-    <h2>Annual Report of our Company</h2>
-</div>  <!-- Custom HTML footer -->
-<div id="footer">
-    <h2>Address: William Road</h2>
-    <span class="custom-footer-page-number">Number: </span>
+<div class="header-container">
+    <div class="col-md-12">
+        <div class="form-group required">
+            <div class="w-100 h-100 p-1 bg-white">
+                <small>Header Image</small>
+                <div class="p-1 w-100 h-50  border rounded d-flex justify-content-center"  id="input_image"  {{--style="border: 2px solid !important; border-style: dashed !important ; color:#4e2884 "--}}>
+                    <i class="ft-upload display-1" id="icon"></i>
+                    <img src="{{ isset($letter_head->header_image) ? $letter_head->header_image :  ''}}" id="show_header_image" class="p-1" style="display: none; height: 85px; width: 100%">
+                </div>
+{{--                <input id="header_image" type="file" name="header_image" style="display: none!important;" />--}}
+            </div>
+        </div>
+    </div>
 </div>
 
-<#assign clients = Root.bands.Clients />
+<hr class="header-bottom-divider">
 
-<#list clients as client>
-<!-- New page for each client  -->
-<div class="custom-page-start" style="page-break-before: always;">
-    <h2>Client</h2>
-    <p>Name: ${client.fields.title}</p>
-    <p>Summary: ${client.fields.summary}</p>
+<div class="content-wrapper">
+    <div class="main-content">
+        <div class="customer-address-container">
+            <div class="billing-address-container billing-address">
+                <h3>{{ __('messages.to') }}</h3>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+        <h1>This is me</h1>
+        {!!  isset($letter_head->text)? $letter_head->text:'' !!}
+
+        <div class="notes">
+            <h2>Imtiaz Ur Rahmna Khan</h2>
+        </div>
+    </div>
 </div>
-</#list>
-</body>
-
+<footer>
+    <div class="col-md-12">
+        <div class="form-group required">
+            <div class="w-100 h-100 p-1 bg-white">
+                <small>Footer Image</small>
+                <div class="p-1 h-50  border rounded d-flex justify-content-center"  id="footer_input_image" {{--style="border: 2px solid !important; border-style: dashed !important ; color:#4e2884"--}}>
+                    <i class="ft-upload display-4" id="footer_icon"></i>
+                    <img src="{{ isset($letter_head->footer_image) ? $letter_head->footer_image :''}}" id="show_footer_image" class="p-1" style="display: none; height: 60px; width: 100%">
+                </div>
+{{--                <input id="footer_image" type="file" name="footer_image" style="display: none!important;" />--}}
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 
 </html>

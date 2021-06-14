@@ -19,7 +19,7 @@
 {{--                <small ><a href="#">Preview</a></small>--}}
 {{--                <small><a href="JavaScript:void(0)" onclick="save()">save</a></small>--}}
                 <div class="w-100 h-100 p-1 bg-white">
-                    <textarea name="text" id="ckeditor" cols="50" rows="30" class="ckeditor">{{isset($letter_head->text)? $letter_head->text:''}}</textarea>
+                    <textarea name="text" id="ckeditor" cols="50" rows="30" class="ckeditor">{!! isset($letter_head->text)? $letter_head->text:'' !!}</textarea>
                 </div>
 
             </div>

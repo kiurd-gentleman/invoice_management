@@ -148,9 +148,27 @@ class LetterHeadController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        $user = $request->user();
+        $currentCompany = $user->currentCompany();
+
+        // Query LetterHeads by Company and Tab
+        $query = LetterHead::findOrFail($request->letter_head);
+//        $query = LetterHead::findByCompany($currentCompany->id)->orderBy('letter_head_number');
+//        if($request->tab == 'all') {
+//            $query = LetterHead::findByCompany($currentCompany->id)->orderBy('invoice_number');
+//            $tab = 'all';
+//        } else if($request->tab == 'due') {
+//            $query = LetterHead::findByCompany($currentCompany->id)->active()->orderBy('due_date');
+//            $tab = 'due';
+//        } else {
+//            $query = LetterHead::findByCompany($currentCompany->id)->drafts()->orderBy('invoice_number');
+//            $tab = 'drafts';
+//        }
+        return view('application.letter_head.edit', [
+            'letter_head' => $query,
+        ]);
     }
 
     /**
