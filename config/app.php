@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Foxtrot'),
+    'name' => env('APP_NAME', 'invoice_management'),
 
     /*
     |--------------------------------------------------------------------------
